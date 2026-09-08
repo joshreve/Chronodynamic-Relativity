@@ -1,0 +1,7 @@
+# Subatomic Precision Laboratory QED & Fundamental Constant Bounds
+observable_name,experimental_value,experimental_uncertainty,standard_model_prediction,qcr_predicted_coupling_bound
+electron_g_minus_2_ae,0.00115965218073,2.8e-13,0.00115965218161,g_s <= 1.44e-6
+muon_g_minus_2_amu,0.00116592061,4.1e-10,0.00116591810,g_s <= 8.50e-5
+cs_recoil_alpha_inv,137.035999046,2.7e-8,137.035999084,delta_alpha/alpha <= 1.9e-10
+sme_lorentz_anisotropy_delta_c_c,0.0,1.0e-18,0.0,delta_c/c <= 2.1e-19
+nist_optical_clock_d_ln_alpha_dh,0.0,1.0e-19,0.0,screened_grad = 2.0e-20 m^-1

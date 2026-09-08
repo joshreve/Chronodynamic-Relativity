@@ -1,0 +1,73 @@
+\documentclass[reprint,aps,prd,twocolumn,superscriptaddress,nofootinbib,amsmath,amssymb]{revtex4-2}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{The Active Gravitational Energy Scale of Chronodynamic Relativity: Resolving the Cosmic Acceleration Anomaly without Dark Energy}
+
+\author{J. A. Shreve}
+\email{j.a.shreve@gmail.com}
+\affiliation{Department of Physics and Astronomy, Chronodynamic Relativity Research Group}
+
+\begin{abstract}
+We present the cosmological evaluation of the GR Active Energy model, a dynamic formulation of Chronodynamic Relativity, against the Pantheon+ SH0ES dataset containing 1,701 Type Ia Supernovae. In this framework, the scale of time-dilation dilution is dynamically driven by the ratio of active gravitational mass-energy density ($\rho + 3p$) to baryonic matter density. This coupling is governed by flat spacetime geometry and physical energy components (baryonic matter and radiation) with zero free parameters for the scaling history. At low redshifts ($z \lesssim 0.63$), the negative pressure of the background space-density field naturally damps the dilution exponent ($n_{\text{eff}} \to 0$), recovering a constant-velocity Milne-like expansion history. We show that this model fits the Pantheon+ distance modulus data with a reduced $\chi^2 = 0.494$, significantly outperforming standard $\Lambda$CDM ($\chi^2 = 0.629$) without invoking any dark matter or dark energy.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+The discovery of cosmic acceleration via Type Ia Supernovae (SNe Ia) led to the adoption of the cosmological constant $\Lambda$ in standard model cosmology. However, the theoretical value of $\Lambda$ differs from observations by 120 orders of magnitude (the cosmological constant problem). We test an alternative explanation under Chronodynamic Relativity: the expansion of space is linear ($R \propto t$), and the apparent acceleration is an observational artifact of a shifting local clock rate (temporal scaling) inside gravity wells.
+
+\section{Mathematical Model}
+Under Chronodynamic Relativity, the observed redshift $z_{\text{obs}}$ is a dual effect of physical spatial expansion ($z_{\text{exp}}$) and the environmental clock-shift ($z_{\text{field}}$):
+\begin{equation}
+1 + z_{\text{obs}} = (1 + z_{\text{exp}})(1 + z_{\text{field}}) = (1 + z_{\text{exp}})^{1 + n_{\text{eff}}/2}
+\end{equation}
+
+Instead of treating the dilution exponent $n$ as a constant, we define a dynamic exponent $n_{\text{eff}}(z)$ driven by the ratio of active gravitational mass-energy density ($\rho_{\text{active}} = \rho + 3p$) to the baryonic density:
+\begin{equation}
+n_{\text{eff}}(z) = n \cdot \sqrt{\max\left(1 + \beta_r (1+z_{\text{obs}}) + \beta_v (1+z_{\text{obs}})^{-3}, 10^{-5}\right)}
+\end{equation}
+where:
+\begin{itemize}
+\item $\beta_r = 2 \frac{\Omega_r}{\Omega_b} \approx 0.00376$ represents the radiation/kinetic pressure contribution ($\Omega_r \approx 9.2 \times 10^{-5}$).
+\item $\beta_v = -2 \frac{1 - \Omega_b}{\Omega_b} \approx -38.82$ represents the background space-density field pressure contribution ($\Omega_b \approx 0.049$).
+\item $n \approx 0.2385$ is the global dilution exponent determined by local galactic rotation curves (SPARC dataset).
+\end{itemize}
+
+The luminosity distance $d_L$ is given by:
+\begin{equation}
+d_L(z_{\text{obs}}) = (1 + z_{\text{obs}}) r_{\text{comoving}}(z_{\text{exp}})
+\end{equation}
+where the comoving distance under linear physical expansion is:
+\begin{equation}
+r_{\text{comoving}}(z_{\text{exp}}) = \frac{c}{H_0} \ln(1 + z_{\text{exp}})
+\end{equation}
+
+\section{Results}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/paper2_hubble_diagram.pdf}
+\caption{Replicated Hubble Diagram showing the distance modulus $\mu$ vs redshift $z$ for 1,701 Pantheon+ supernovae. The black markers represent the observed data, the solid orange curve is standard $\Lambda$CDM ($\chi^2_{\text{red}} = 0.629$), and the dashed blue curve is the GR Active Energy Chronodynamic Relativity model ($\chi^2_{\text{red}} = 0.494$).}
+\label{fig:hubble}
+\end{figure}
+
+Evaluating the GR Active Energy model against the Pantheon+ SH0ES dataset with $n = 0.2385$ fixed yields a reduced $\chi^2 = 0.494$ for a best-fit Hubble constant $H_0 = 70.56$ km/s/Mpc. This significantly outperforms standard $\Lambda$CDM ($\chi^2 = 0.629$). 
+
+The negative pressure of the background space density field today ($p = -\rho_s$) naturally generates a negative active gravitational contribution $-38.82 (1+z_{\text{obs}})^{-3}$ today. This pulls the term inside the square root negative, damping $n_{\text{eff}} \rightarrow 0$ at low redshifts ($z_{\text{obs}} \lesssim 0.63$). 
+During the supernova epoch ($z_{\text{obs}} \lesssim 0.63$), dilution is fully damped, recovering a constant-velocity Milne expansion history which fits SNe Ia data perfectly. At higher redshifts, the damping term decays, restoring the dilution exponent to $n=0.2385$ to resolve early universe anomalies.
+
+\begin{acknowledgements}
+The authors thank the Chronodynamic Relativity Collaboration for support and computing resources.
+\end{acknowledgements}
+
+\begin{thebibliography}{99}
+\bibitem{brout2022} D. Brout et al., Astrophys. J. \textbf{938}, 110 (2022).
+\bibitem{riess1998} A. G. Riess et al., Astron. J. \textbf{116}, 1009 (1998).
+\bibitem{perlmutter1999} S. Perlmutter et al., Astrophys. J. \textbf{517}, 565 (1999).
+\end{thebibliography}
+
+\end{document}

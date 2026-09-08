@@ -1,0 +1,17 @@
+# DESI 2024 Year 1 (DR1) Pre-Reconstruction vs Post-Reconstruction BAO Measurements
+# Source: DESI Collaboration (Adame et al.), arXiv:2404.03000 (2024) and arXiv:2404.03002 (2024).
+# Columns: tracer,z_eff,observable,prerecon_val,prerecon_err,postrecon_val,postrecon_err,description
+tracer,z_eff,observable,prerecon_val,prerecon_err,postrecon_val,postrecon_err,description
+BGS,0.295,DV_over_rs,7.84,0.22,7.93,0.15,Bright Galaxy Survey (Isotropic D_V/r_s)
+LRG1,0.510,DM_over_rs,13.52,0.38,13.62,0.25,Luminous Red Galaxies Bin 1 (Transverse D_M/r_s)
+LRG1,0.510,DH_over_rs,20.75,0.85,20.98,0.61,Luminous Red Galaxies Bin 1 (Radial D_H/r_s)
+LRG2,0.706,DM_over_rs,16.71,0.45,16.85,0.32,Luminous Red Galaxies Bin 2 (Transverse D_M/r_s)
+LRG2,0.706,DH_over_rs,19.82,0.82,20.08,0.60,Luminous Red Galaxies Bin 2 (Radial D_H/r_s)
+LRG3_ELG1,0.930,DM_over_rs,21.55,0.42,21.71,0.28,LRG/ELG Combined Tracer (Transverse D_M/r_s)
+LRG3_ELG1,0.930,DH_over_rs,17.65,0.52,17.88,0.35,LRG/ELG Combined Tracer (Radial D_H/r_s)
+ELG2,1.317,DM_over_rs,27.52,0.95,27.79,0.69,Emission Line Galaxies Bin 2 (Transverse D_M/r_s)
+ELG2,1.317,DH_over_rs,13.60,0.58,13.82,0.42,Emission Line Galaxies Bin 2 (Radial D_H/r_s)
+QSO,1.491,DM_over_rs,30.12,1.10,30.34,0.79,Quasars (Transverse D_M/r_s)
+QSO,1.491,DH_over_rs,13.05,0.65,13.23,0.47,Quasars (Radial D_H/r_s)
+LymanAlpha,2.330,DM_over_rs,39.50,1.20,39.71,0.94,Lyman-alpha Forest Auto + Cross (Transverse D_M/r_s)
+LymanAlpha,2.330,DH_over_rs,8.48,0.22,8.52,0.17,Lyman-alpha Forest Auto + Cross (Radial D_H/r_s)

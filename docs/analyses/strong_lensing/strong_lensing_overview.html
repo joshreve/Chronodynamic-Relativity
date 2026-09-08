@@ -1,0 +1,180 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strong Lensing | Chronodynamic Relativity</title>
+        <script>
+            window.MathJax = {
+                tex: {
+                    inlineMath: [['$', '$']],
+                    displayMath: [['$$', '$$']]
+                },
+                svg: { fontCache: 'global' }
+            };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+        <style>
+            :root { 
+                --primary: #1e3a8a; 
+                --secondary: #0d9488; 
+                --accent: #2563eb; 
+                --text: #1e293b; 
+                --bg: #f8fafc; 
+                --card: #ffffff; 
+                --border: #e2e8f0;
+            }
+            body { 
+                font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+                margin: 0; 
+                background-color: var(--bg); 
+                color: var(--text); 
+                line-height: 1.6; 
+            }
+            .top-nav-bar {
+                background: #0f172a;
+                color: #ffffff;
+                padding: 12px 28px;
+                /* display: flex; */
+                align-items: center;
+                justify-content: space-between;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            .nav-return-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #1e293b;
+                color: #38bdf8;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.9em;
+                padding: 7px 16px;
+                border-radius: 6px;
+                border: 1px solid #334155;
+                transition: all 0.2s ease;
+            }
+            .nav-return-btn:hover {
+                background: #334155;
+                color: #ffffff;
+                border-color: #38bdf8;
+            }
+            .nav-brand {
+                font-size: 0.95em;
+                font-weight: 600;
+                color: #94a3b8;
+                letter-spacing: 0.5px;
+            }
+            main { 
+                padding: 30px 40px; 
+                max-width: 1400px; 
+                margin: 0 auto; 
+                box-sizing: border-box;
+            }
+            h1 { color: var(--primary); border-bottom: 2px solid var(--border); padding-bottom: 12px; font-size: 2.2em; margin-top: 10px; }
+            h2 { color: var(--secondary); margin-top: 30px; }
+            .card { background: var(--card); padding: 28px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid var(--border); margin-bottom: 28px; }
+            .math-box { background: #f1f5f9; border-left: 4px solid var(--accent); padding: 18px 24px; font-size: 1.05em; overflow-x: auto; margin: 20px 0; border-radius: 0 8px 8px 0; }
+            .success-tag { color: #16a34a; font-weight: bold; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 10px; border-radius: 6px; font-size: 0.8em; float: right; }
+
+            /* Matrix/Table Styling */
+            table { border-collapse: collapse; width: 100%; margin: 20px 0; font-size: 0.9em; }
+            th, td { border: 1px solid var(--border); padding: 12px 16px; text-align: left; }
+            th { background-color: #0f172a; color: white; font-weight: 600; }
+            tr:nth-child(even) { background-color: #f8fafc; }
+            tr:hover { background-color: #f1f4f8; }
+            .param-global { color: #c0392b; font-weight: bold; }
+            .param-analysis { color: #d35400; font-weight: bold; }
+            .param-data { color: #27ae60; font-weight: bold; }
+            .feat-pri { color: #8e44ad; font-weight: bold; }
+            .feat-sec { color: #2980b9; font-weight: 500; }
+            .feat-neg { color: #95a5a6; font-style: italic; }
+            .feat-exc { color: #e74c3c; text-decoration: line-through; opacity: 0.7; }
+        </style>
+    
+<style id="cr-universal-top-nav-style">
+.cr-top-nav-bar {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+.cr-nav-return-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1e293b !important;
+    color: #38bdf8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9em !important;
+    padding: 7px 16px !important;
+    border-radius: 6px !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.2s ease !important;
+}
+.cr-nav-return-btn:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+    border-color: #38bdf8 !important;
+}
+.cr-nav-brand {
+    font-size: 0.95em !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    letter-spacing: 0.5px !important;
+}
+@media (max-width: 640px) {
+    .cr-top-nav-bar { padding: 10px 16px !important; flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+}
+</style>
+
+</head>
+    <body>
+        <header class="cr-top-nav-bar">
+    <a href="../../index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+    <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+</header>
+        <main>
+            
+        <h1>Strong Lensing: Relativistic Consistency</h1>
+        <div class='card'>
+            <h2>The Einstein-Hilbert Lensing Boost</h2>
+            <p>In Chronodynamic Relativity, lensing is calculated via a rigorous 3D line-of-sight integration of the metric potential gradient:</p>
+            <div class='math-box'>$$\alpha_{def} = \frac{4}{c^2} \int_{-\infty}^{\infty} g_{\perp}(z) dz$$</div>
+            <p>The transition from a point-mass Newtonian potential ($1/r$) to a distributed non-linear field natively provides the additional deflection boost required to match massive elliptical galaxies without Dark Matter.</p>
+        </div>
+        <div class='card' style='min-height: 500px;'>
+            <div style="height:450px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.0.0.min.js" integrity="sha256-FEYfO0yRyLtZCpnW0Dw/0DHKQO7Afrq3ml4+rBB818o=" crossorigin="anonymous"></script>                <div id="strong-lensing-plot" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("strong-lensing-plot")) {                    Plotly.newPlot(                        "strong-lensing-plot",                        [{"marker":{"color":"black","size":12,"symbol":"diamond"},"mode":"markers","name":"Observed (HST\u002fSLACS)","x":["J0037","J0216","J0737","J0912","J0946","J0956","J1205","J1627","J2300"],"y":[1.47,1.15,1.03,1.63,1.43,1.32,1.24,1.21,1.24],"type":"scatter"},{"line":{"color":"#8e44ad","width":3},"mode":"lines+markers","name":"Chronodynamic Relativity","x":["J0037","J0216","J0737","J0912","J0946","J0956","J1205","J1627","J2300"],"y":[1.5656250000000018,0.7249999999999998,0.7890624999999999,1.404687500000001,1.4453125000000009,1.1148437500000001,1.1460937500000004,1.2945312500000006,1.08515625],"type":"scatter"},{"line":{"color":"orange","dash":"dash"},"mode":"lines+markers","name":"LambdaCDM (SIS Ref)","x":["J0037","J0216","J0737","J0912","J0946","J0956","J1205","J1627","J2300"],"y":[1.4271016272690118,1.0057763292535045,1.0825210725759513,1.2944567063103354,1.3455677563816504,1.131109007025218,0.8026189516901492,1.2047199037481202,1.033122910074005],"type":"scatter"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"margin":{"t":50,"b":50,"l":50,"r":50},"height":450,"title":{"text":"Einstein Radii Comparison: SLACS Dataset"},"xaxis":{"title":{"text":"Lens Galaxy (SLACS Survey)"}},"yaxis":{"title":{"text":"Einstein Radius (arcsec)"}}},                        {"responsive": true}                    )                };            </script>        </div>
+        </div>
+        <div class="card">
+            <h2>SLACS Dataset Benchmarks</h2>
+            <p>Direct comparison of calculated Einstein Radii against Observed data and SIS baseline.</p>
+            
+        <table>
+            <thead>
+                <tr style='background-color:var(--primary); color:white;'>
+                    <th>Galaxy ID</th><th>Observed (&theta;<sub>E</sub>)</th><th>Chronodynamic Relativity</th><th>&Lambda;CDM (SIS)</th>
+                </tr>
+            </thead>
+            <tbody><tr><td><b>J0037</b></td><td>1.47"</td><td>1.57"</td><td>1.43"</td></tr><tr><td><b>J0216</b></td><td>1.15"</td><td>0.72"</td><td>1.01"</td></tr><tr><td><b>J0737</b></td><td>1.03"</td><td>0.79"</td><td>1.08"</td></tr><tr><td><b>J0912</b></td><td>1.63"</td><td>1.40"</td><td>1.29"</td></tr><tr><td><b>J0946</b></td><td>1.43"</td><td>1.45"</td><td>1.35"</td></tr><tr><td><b>J0956</b></td><td>1.32"</td><td>1.11"</td><td>1.13"</td></tr><tr><td><b>J1205</b></td><td>1.24"</td><td>1.15"</td><td>0.80"</td></tr><tr><td><b>J1627</b></td><td>1.21"</td><td>1.29"</td><td>1.20"</td></tr><tr><td><b>J2300</b></td><td>1.24"</td><td>1.09"</td><td>1.03"</td></tr></tbody>
+        </table>
+        
+        </div>
+        
+        </main>
+    </body>
+    </html>
+    

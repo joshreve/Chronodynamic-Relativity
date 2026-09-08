@@ -1,0 +1,82 @@
+{
+  "benchmark_title": "Chronodynamic Relativity CMB Publication Baseline",
+  "version": "1.0-publication",
+  "timestamp": "2026-08-28T12:12:00Z",
+  "manuscript_reference": "Figure 3 (Temperature Power Spectrum TT vs. Planck 2018 PR3)",
+  "cosmological_parameters": {
+    "H0_km_s_mpc": 70.50,
+    "n_space_density": 0.2390,
+    "alpha_m": 1.2e-10,
+    "omega_b_h2": 0.02237,
+    "omega_gamma_h2": 2.47e-5,
+    "z_recombination": 1089.92,
+    "D_M_recomb_mpc": 24502.32,
+    "r_s_sound_horizon_mpc": 255.07,
+    "fundamental_acoustic_scale_l_A": 301.79,
+    "silk_damping_scale_l_D": 1403.66
+  },
+  "calibrated_model_parameters": {
+    "A_0": 1206.18,
+    "A_base": 4444.74,
+    "phi_shift": 14.95,
+    "alpha_disp": -0.034,
+    "gamma_d": 1.349,
+    "y_cal": 0.970,
+    "A_ps": 17.72,
+    "sw_norm": 509.73,
+    "refractive_lensing_sigma": 45.0
+  },
+  "verified_extrema_landmarks": {
+    "l_2_sachs_wolfe": {
+      "model_dl": 486.1,
+      "planck_dl": 287.4,
+      "planck_sigma": 212.0,
+      "pull_sigma": -0.94
+    },
+    "peak_1_compression": {
+      "ell": 220.0,
+      "model_dl": 5957.7,
+      "planck_dl": 5742.6,
+      "planck_sigma": 36.1,
+      "percent_error": 3.7
+    },
+    "peak_2_rarefaction": {
+      "ell": 540.0,
+      "model_dl": 2570.7,
+      "planck_dl": 2598.7,
+      "planck_sigma": 22.4,
+      "percent_error": 1.08
+    },
+    "trough_2_acoustic_dip": {
+      "ell": 680.0,
+      "model_dl": 2114.8,
+      "planck_dl": 2120.4,
+      "planck_sigma": 20.1,
+      "percent_error": 0.26
+    },
+    "peak_3_compression": {
+      "ell": 810.0,
+      "model_dl": 2448.0,
+      "planck_dl": 2542.1,
+      "planck_sigma": 18.4,
+      "percent_error": 3.7
+    },
+    "trough_3_acoustic_dip": {
+      "ell": 1200.0,
+      "model_dl": 900.4,
+      "planck_dl": 920.1,
+      "planck_sigma": 13.0,
+      "percent_error": 2.1
+    },
+    "silk_damping_tail": {
+      "ell": 2500.0,
+      "model_dl": 72.1,
+      "planck_dl": 28.5,
+      "planck_sigma": 6.5
+    }
+  },
+  "goodness_of_fit": {
+    "total_chi2_42_bins": 10731.38,
+    "reduced_chi2_ndof_42": 255.51
+  }
+}

@@ -1,0 +1,210 @@
+{
+    "theory_formulation": "Scale-Based Unified Formulation (k=1 Free Parameter: Universe Scale R_0)",
+    "primary_benchmark": {
+        "tier_name": "Tier 1: Official Standardized Pantheon+ (BBC LambdaCDM Simulation Prior)",
+        "description": "Full standard pipeline with simulated BEAMS BBC corrections and host galaxy mass step.",
+        "n_data": 1617,
+        "models": {
+            "Chronodynamic Relativity": {
+                "k_params": 1,
+                "R_0_Mpc": 4755.149329273738,
+                "H_0": 63.04585560634492,
+                "a_0": 1.4623054259275433e-10,
+                "chi2_min": 798.0383798072612,
+                "red_chi2": 0.49383563106884976,
+                "aic": 800.0383798072612,
+                "bic": 805.4267076668383,
+                "ln_z": -403.2900002148265
+            },
+            "LambdaCDM": {
+                "k_params": 2,
+                "omega_m": 0.31813672803648574,
+                "R_0_Mpc": 4097.359175249531,
+                "H_0": 73.16723898918197,
+                "chi2_min": 722.1206831225105,
+                "red_chi2": 0.44713354992105914,
+                "aic": 726.1206831225105,
+                "bic": 736.8973388416647,
+                "ln_z": -367.8542168538022
+            }
+        },
+        "comparison": {
+            "delta_chi2": 75.9176966847507,
+            "delta_aic": 73.9176966847507,
+            "delta_bic": 68.5293688251736,
+            "bayes_factor_delta_ln_z": -35.43578336102428
+        }
+    },
+    "data_processing_tiers": {
+        "tier_1_official": {
+            "tier_name": "Tier 1: Official Standardized Pantheon+ (BBC LambdaCDM Simulation Prior)",
+            "description": "Full standard pipeline with simulated BEAMS BBC corrections and host galaxy mass step.",
+            "n_data": 1617,
+            "models": {
+                "Chronodynamic Relativity": {
+                    "k_params": 1,
+                    "R_0_Mpc": 4755.149329273738,
+                    "H_0": 63.04585560634492,
+                    "a_0": 1.4623054259275433e-10,
+                    "chi2_min": 798.0383798072612,
+                    "red_chi2": 0.49383563106884976,
+                    "aic": 800.0383798072612,
+                    "bic": 805.4267076668383,
+                    "ln_z": -403.2900002148265
+                },
+                "LambdaCDM": {
+                    "k_params": 2,
+                    "omega_m": 0.31813672803648574,
+                    "R_0_Mpc": 4097.359175249531,
+                    "H_0": 73.16723898918197,
+                    "chi2_min": 722.1206831225105,
+                    "red_chi2": 0.44713354992105914,
+                    "aic": 726.1206831225105,
+                    "bic": 736.8973388416647,
+                    "ln_z": -367.8542168538022
+                }
+            },
+            "comparison": {
+                "delta_chi2": 75.9176966847507,
+                "delta_aic": 73.9176966847507,
+                "delta_bic": 68.5293688251736,
+                "bayes_factor_delta_ln_z": -35.43578336102428
+            }
+        },
+        "tier_2_clean_physical": {
+            "tier_name": "Tier 2: Clean Physical Standardization (x1 + c Only, No BBC CDM Prior)",
+            "description": "Empirical light-curve stretch and color corrections only; removing model-dependent simulation priors.",
+            "n_data": 1617,
+            "models": {
+                "Chronodynamic Relativity": {
+                    "k_params": 1,
+                    "R_0_Mpc": 4646.279976270476,
+                    "H_0": 64.52311516548782,
+                    "a_0": 1.4965694492810561e-10,
+                    "chi2_min": 946.7638035010038,
+                    "red_chi2": 0.5858686902852747,
+                    "aic": 948.7638035010038,
+                    "bic": 954.1521313605809,
+                    "ln_z": -477.6762278741848
+                },
+                "LambdaCDM": {
+                    "k_params": 2,
+                    "omega_m": 0.3200808632640644,
+                    "R_0_Mpc": 4250.001001584145,
+                    "H_0": 70.53938525855767,
+                    "chi2_min": 857.1487026052998,
+                    "red_chi2": 0.530742230715356,
+                    "aic": 861.1487026052998,
+                    "bic": 871.925358324454,
+                    "ln_z": -435.20645163537307
+                }
+            },
+            "comparison": {
+                "delta_chi2": 89.61510089570402,
+                "delta_aic": 87.61510089570402,
+                "delta_bic": 82.22677303612693,
+                "bayes_factor_delta_ln_z": -42.46977623881173
+            }
+        },
+        "tier_3_cosmic_chronometers": {
+            "tier_name": "Tier 3: Pure Cosmic Chronometers (Direct Model-Independent Age)",
+            "description": "Direct differential stellar aging measurements H(z) = -1/(1+z) dz/dt with zero standard candle calibrations.",
+            "n_data": 27,
+            "models": {
+                "Chronodynamic Relativity": {
+                    "k_params": 1,
+                    "R_0_Mpc": 4646.36200005008,
+                    "H_0": 64.52197611739437,
+                    "a_0": 1.496543029840929e-10,
+                    "chi2_min": 20.218634659164827,
+                    "red_chi2": 0.7776397945832626,
+                    "aic": 22.218634659164827,
+                    "bic": 23.514471525169157,
+                    "ln_z": -12.126856711928859
+                },
+                "LambdaCDM": {
+                    "k_params": 2,
+                    "omega_m": 0.2627925924069505,
+                    "R_0_Mpc": 4250.00301240624,
+                    "H_0": 70.53935188395675,
+                    "chi2_min": 16.605827313052846,
+                    "red_chi2": 0.6642330925221138,
+                    "aic": 20.605827313052846,
+                    "bic": 23.197501045061504,
+                    "ln_z": -11.411550807454969
+                }
+            },
+            "comparison": {
+                "delta_chi2": 3.612807346111982,
+                "delta_aic": 1.6128073461119818,
+                "delta_bic": 0.3169704801076527,
+                "bayes_factor_delta_ln_z": -0.7153059044738903
+            }
+        },
+        "tier_4_age_corrected": {
+            "tier_name": "Tier 4: Progenitor Age-Corrected SNe Ia (Kang & Lee 2020)",
+            "description": "Astrophysical correction for stellar progenitor age and metallicity evolution across cosmic time.",
+            "n_data": 1617,
+            "models": {
+                "Chronodynamic Relativity": {
+                    "k_params": 1,
+                    "R_0_Mpc": 4646.174286356667,
+                    "H_0": 64.52458291982941,
+                    "a_0": 1.4966034928374008e-10,
+                    "chi2_min": 865.101487728927,
+                    "red_chi2": 0.5353350790401776,
+                    "aic": 867.101487728927,
+                    "bic": 872.4898155885041,
+                    "ln_z": -436.84509551124665
+                },
+                "LambdaCDM": {
+                    "k_params": 2,
+                    "omega_m": 0.45597231568907687,
+                    "R_0_Mpc": 4890.545472581703,
+                    "H_0": 61.30041315038434,
+                    "chi2_min": 859.2173514636825,
+                    "red_chi2": 0.5320231278412895,
+                    "aic": 863.2173514636825,
+                    "bic": 873.9940071828366,
+                    "ln_z": -435.974484479182
+                }
+            },
+            "comparison": {
+                "delta_chi2": 5.884136265244592,
+                "delta_aic": 3.8841362652445923,
+                "delta_bic": -1.5041915943324966,
+                "bayes_factor_delta_ln_z": -0.8706110320646303
+            }
+        }
+    },
+    "models": {
+        "Chronodynamic Relativity": {
+            "k_params": 1,
+            "R_0_Mpc": 4755.149329273738,
+            "H_0": 63.04585560634492,
+            "a_0": 1.4623054259275433e-10,
+            "chi2_min": 798.0383798072612,
+            "red_chi2": 0.49383563106884976,
+            "aic": 800.0383798072612,
+            "bic": 805.4267076668383,
+            "ln_z": -403.2900002148265
+        },
+        "LambdaCDM": {
+            "k_params": 2,
+            "omega_m": 0.31813672803648574,
+            "R_0_Mpc": 4097.359175249531,
+            "H_0": 73.16723898918197,
+            "chi2_min": 722.1206831225105,
+            "red_chi2": 0.44713354992105914,
+            "aic": 726.1206831225105,
+            "bic": 736.8973388416647,
+            "ln_z": -367.8542168538022
+        }
+    },
+    "comparison": {
+        "delta_chi2": 75.9176966847507,
+        "delta_aic": 73.9176966847507,
+        "delta_bic": 68.5293688251736,
+        "bayes_factor_delta_ln_z": -35.43578336102428
+    }
+}

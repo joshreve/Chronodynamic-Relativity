@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronodynamic Relativity | Documentation & Empirical Research Index</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-accent: #2563eb;
+            --secondary: #0d9488;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0369a1 100%);
+            color: #ffffff;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .hero-banner h1 {
+            font-size: 2.6em;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+        }
+        .hero-banner p {
+            font-size: 1.15em;
+            max-width: 860px;
+            margin: 0 auto 20px auto;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+        .badge-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin: 40px 0 24px 0;
+        }
+        .section-header h2 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 1.6em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 22px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.25em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95em;
+            margin: 8px 0 18px 0;
+            flex-grow: 1;
+        }
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92em;
+        }
+        .card-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .status-pill {
+            font-size: 0.75em;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .status-official { background: #dbeafe; color: #1e40af; }
+        .status-pillar { background: #ccfbf1; color: #0f766e; }
+        .status-info { background: #f1f5f9; color: #475569; }
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-banner">
+        <h1>Chronodynamic Relativity</h1>
+        <p>A Covariant Scalar-Tensor Theory of Variable Space Density & Metric Clock Invariance: Unifying Dark Matter Halos, Dark Energy, and Early JWST Horizons.</p>
+        <div class="badge-bar">
+            <span class="badge">&alpha;<sub>0</sub> = 1.20 &times; 10<sup>-10</sup> m/s<sup>2</sup></span>
+            <span class="badge">n = 0.2385 (Universal Temporal Power)</span>
+            <span class="badge">&chi;<sup>2</sup>/dof = 0.865 (Pantheon+ SNe Ia)</span>
+            <span class="badge">&chi;<sup>2</sup>/dof = 1.07 (175 SPARC Galaxies)</span>
+            <span class="badge">0 Phantom Dark Fluids</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- CORE MONOGRAPHS & FORMALISMS -->
+        <div class="section-header">
+            <h2>Foundational Monographs & Formalisms</h2>
+            <span class="badge" style="background:#f1f5f9; color:#475569;">Core Rigor & Mathematics</span>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="status-pill status-official">Canonical Monograph</span>
+                    <h3>Mathematical Foundations & Symbology</h3>
+                    <p>Complete theoretical compilation: Action principle, stress-energy conservation, exact field equations, metric conventions, and rigorous symbology glossary.</p>
+                </div>
+                <a href="MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html" class="card-link">View Monograph &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-official">Reference Matrix</span>
+                    <h3>Parameter Definitions & Empirical Applications</h3>
+                    <p>Comprehensive mathematical dictionary of all cosmological, galactic, lensing, and quantum parameters with explicit SI units, values, and cross-references.</p>
+                </div>
+                <a href="PARAMETER_DEFINITIONS_AND_APPLICATIONS.html" class="card-link">View Parameter Reference &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-official">Methodology</span>
+                    <h3>Theoretical Niche & Observational Methodology</h3>
+                    <p>Methodological analysis contrasting Chronodynamic Relativity against &Lambda;CDM, MOND/AQUAL, and MOG/STVG across relativistic symmetries and experimental regimes.</p>
+                </div>
+                <a href="THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html" class="card-link">View Methodology &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-official">Registry</span>
+                    <h3>HTML Documentation Registry & Purpose Tracker</h3>
+                    <p>Catalog of all generated interactive reports, test suites, and empirical diagnostic pages across the entire repository.</p>
+                </div>
+                <a href="HTML_DOCUMENTATION_REGISTRY.html" class="card-link">View Documentation Registry &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-official">Bibliography</span>
+                    <h3>Empirical & Theoretical References</h3>
+                    <p>Full academic citations and bibliographic records for all observational datasets (Planck, SPARC, Pantheon+, DESI, JWST, EHT) and foundational physics literature.</p>
+                </div>
+                <a href="REFERENCES.html" class="card-link">View References &rarr;</a>
+            </div>
+        </div>
+
+        <!-- THE FOUR EMPIRICAL PILLARS -->
+        <div class="section-header">
+            <h2>The Four Empirical Pillars</h2>
+            <span class="badge" style="background:#ccfbf1; color:#0f766e;">Benchmark Suite</span>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="status-pill status-pillar">Unified Suite</span>
+                    <h3>Unified 4-Pillar Empirical Benchmark</h3>
+                    <p>Master synthesis evaluating Chronodynamic Relativity simultaneously across SNe Ia, SPARC RAR, Strong Gravitational Lensing, and JWST early massive galaxy epochs.</p>
+                </div>
+                <a href="analyses/unified_4pillar_benchmark_overview.html" class="card-link">View 4-Pillar Overview &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-pillar">Pillar I</span>
+                    <h3>Cosmic Expansion & Pantheon+ Supernovae</h3>
+                    <p>Environmental clock-shift distance modulus fit over 1,701 Type Ia Supernovae ($\chi^2/\text{dof} = 0.865$), eliminating the requirement for dark energy.</p>
+                </div>
+                <a href="analyses/cosmic_expansion/cosmic_expansion_overview.html" class="card-link">View Pillar I Overview &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-pillar">Pillar II</span>
+                    <h3>Galactic Kinematics & 175 SPARC Galaxies</h3>
+                    <p>Non-linear root gravity engine fitting 175 SPARC galactic rotation curves ($\chi^2/\text{dof} = 1.07$) without dark matter halos.</p>
+                </div>
+                <a href="analyses/galactic_rotation/atlas.html" class="card-link">View SPARC 175 Atlas &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-pillar">Pillar III</span>
+                    <h3>Strong Gravitational Lensing</h3>
+                    <p>Relativistic line-of-sight integration reproducing SLACS and CASTLES Einstein radii and light deflection across massive elliptical lens galaxies without dark matter halos.</p>
+                </div>
+                <a href="analyses/strong_lensing/strong_lensing_overview.html" class="card-link">View Strong Lensing Overview &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-pillar">Pillar IV</span>
+                    <h3>Early Massive Galaxies (JADES z > 14)</h3>
+                    <p>Analysis of high-redshift massive galaxy formation observed by JWST, resolved naturally by accelerated early clock rates without unphysical dark matter spikes.</p>
+                </div>
+                <a href="analyses/early_universe/jades_z14.html" class="card-link">View JADES z > 14 Analysis &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-pillar">Omnibus Portal</span>
+                    <h3>Omnibus Analysis & Diagnostics Portal</h3>
+                    <p>Interactive dashboard comparing empirical performance and mathematical deviations across all observational domains.</p>
+                </div>
+                <a href="analyses/analyses_overview.html" class="card-link">View Omnibus Analyses &rarr;</a>
+            </div>
+        </div>
+
+        <!-- THEORETICAL INVESTIGATIONS & ASTROPHYSICS -->
+        <div class="section-header">
+            <h2>Theoretical Deep Dives & Astrophysical Diagnostics</h2>
+            <span class="badge" style="background:#f1f5f9; color:#475569;">Specialized Reports</span>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="status-pill status-info">Field Theory</span>
+                    <h3>Fundamental Equations & Action</h3>
+                    <p>Derivation of the covariant scalar-tensor action, stress-energy conservation, and cosmological field equations.</p>
+                </div>
+                <a href="analyses/theory/fundamental_equations.html" class="card-link">View Equations &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-info">Duality</span>
+                    <h3>CDM Inverse-Poisson Duality</h3>
+                    <p>Derivation demonstrating the exact mathematical mapping between phantom dark matter halos and coordinate clock lapse scaling.</p>
+                </div>
+                <a href="analyses/theory/cdm_unification_duality.html" class="card-link">View Duality Analysis &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-info">Bayesian MCMC</span>
+                    <h3>Bayesian Multi-Tier Model Selection</h3>
+                    <p>Nested sampling and MCMC posterior evaluations assessing Bayesian Information Criterion (&Delta;BIC) against &Lambda;CDM.</p>
+                </div>
+                <a href="analyses/theory/bayesian_posteriors.html" class="card-link">View Bayesian Posteriors &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-info">QFT</span>
+                    <h3>Quantum Kinematics & Phase Shifts</h3>
+                    <p>Analysis of COW neutron interferometry, microscopic clock shifts, and equivalence principle bounds under scalar space-density.</p>
+                </div>
+                <a href="analyses/theory/scale_invariance_quantum_refraction.html" class="card-link">View Quantum Phase Shifts &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-info">Black Holes</span>
+                    <h3>EHT Shadow Metrics & Horizons</h3>
+                    <p>Event Horizon Telescope shadow profiles, photon sphere radius, and singularity avoidance in non-linear scalar gravity.</p>
+                </div>
+                <a href="analyses/black_holes/metrics.html" class="card-link">View Black Hole Metrics &rarr;</a>
+            </div>
+            <div class="card">
+                <div>
+                    <span class="status-pill status-info">Multi-Messenger</span>
+                    <h3>GW170817 Speed of Gravity Constraint</h3>
+                    <p>Analytical proof of exact tensor gravitational wave propagation at light speed ($c_g = c$), satisfying multi-messenger neutron star bounds.</p>
+                </div>
+                <a href="analyses/theory/gw170817_constraint_report.html" class="card-link">View GW170817 Report &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Chronodynamic Relativity Research Suite &bull; Rigorous Open-Source Theoretical Physics &bull; Rochester Institute of Technology Alumni Research Initiative
+    </div>
+
+</body>
+</html>

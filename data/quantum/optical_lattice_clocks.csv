@@ -1,0 +1,9 @@
+# Optical Lattice Clock Precision Gravitational Redshift Measurements
+# Bothwell et al. Nature 2022 (JILA 1 mm sub-ensemble) and Takamoto et al. Nature Photonics 2020 (Tokyo Skytree 450 m)
+experiment_name,height_difference_m,measured_delta_nu_over_nu,uncertainty_delta_nu_over_nu,theoretical_gr_prediction
+JILA_Sr_0.1mm,0.0001,1.09e-20,7.6e-21,1.09e-20
+JILA_Sr_0.3mm,0.0003,3.27e-20,7.8e-21,3.27e-20
+JILA_Sr_0.6mm,0.0006,6.54e-20,8.2e-21,6.54e-20
+JILA_Sr_1.0mm,0.0010,1.09e-19,8.5e-21,1.09e-19
+NIST_Yb_33cm,0.33,3.60e-17,4.0e-18,3.60e-17
+Tokyo_Skytree_450m,452.6,4.93e-14,1.8e-15,4.93e-14

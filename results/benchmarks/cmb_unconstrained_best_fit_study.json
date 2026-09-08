@@ -1,0 +1,60 @@
+{
+  "study_title": "Chronodynamic Relativity CMB Unconstrained Global Best-Fit Study",
+  "version": "1.0-study-archive",
+  "timestamp": "2026-08-28T12:56:00Z",
+  "objective": "Identify the true mathematical global minimum and optimal equation form for the CLASS-CR Boltzmann fork",
+  "optimal_parameters": {
+    "l_A_0_asymptotic_acoustic_scale": 316.29,
+    "delta_1_low_ell_dispersion_shift": -1.026,
+    "ell_0_transition_knee_scale": 220.9,
+    "alpha_1_dispersion_exponent": 3.01,
+    "phi_0_primordial_phase_offset_rad": -2.892,
+    "beta_boost_potential_root_factor": 76.63,
+    "psi_0_potential_well_coupling": 0.273,
+    "A_ISW_early_gravitational_amplitude": 112.0,
+    "ell_ISW_early_peak_multipole": 136.9,
+    "A_0_acoustic_modulation_amplitude": 1042.6,
+    "A_base_acoustic_fluid_floor": 4487.8,
+    "gamma_d_silk_damping_exponent": 1.770,
+    "sigma_lens_refractive_kernel_width": 74.8,
+    "sw_norm_sachs_wolfe_baseline": 707.3,
+    "y_cal_planck_calibration": 0.9138,
+    "A_ps_point_sources": 28.62
+  },
+  "resolved_peaks": [
+    {
+      "peak_number": 1,
+      "ell": 226.0,
+      "amplitude_uK2": 5224.4,
+      "planck_observed_uK2": 5742.6,
+      "planck_observed_sigma": 36.1
+    },
+    {
+      "peak_number": 2,
+      "ell": 807.0,
+      "amplitude_uK2": 2431.8,
+      "planck_observed_uK2": 2542.1,
+      "planck_observed_sigma": 18.4
+    },
+    {
+      "peak_number": 3,
+      "ell": 1388.0,
+      "amplitude_uK2": 641.8,
+      "planck_observed_uK2": 580.4,
+      "planck_observed_sigma": 12.0
+    }
+  ],
+  "goodness_of_fit": {
+    "total_chi2_42_bins": 5760.63,
+    "reduced_chi2_ndof_42": 137.16,
+    "delta_chi2_vs_baseline": -4970.75
+  },
+  "recommended_equation_form_for_class_fork": {
+    "background_clock_dilation": "eta(z) = (1+z)^(n/2)",
+    "thermodynamic_optical_depth": "dkappa/dtau = a * n_e * sigma_T * eta(tau)",
+    "perturbation_gravity_potential": "Phi_eff(k, tau) = Phi_GR * 0.5 * (1 + sqrt(1 + 4*a0(z)/g_N(k)))",
+    "relativistic_ISW_source": "S_ISW(k, tau) = exp(-kappa) * (dot_Phi + dot_Psi)",
+    "transfer_function_integrand": "Delta_Tl(k) = Integral[ (S_monopole + S_ISW)*j_l + S_dipole*j_l' ]",
+    "3d_refractive_lensing": "Gaussian convolution sigma_lens = 74.8"
+  }
+}

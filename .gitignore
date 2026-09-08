@@ -1,0 +1,86 @@
+# ==============================================================================
+# Chronodynamic Relativity — Public Repository .gitignore
+# ==============================================================================
+
+# AI Agent & IDE Assistant Configurations
+.agents/
+.gemini/
+.claude/
+.cursor/
+.copilot/
+*.agent
+*.prompt
+
+# Python & Environment Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# Testing, Quality & Caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.hypothesis/
+
+# Jupyter Notebook Caches
+.ipynb_checkpoints/
+
+# LaTeX Intermediate Build Files (Keep only .tex, .bib, figures, and final .pdf)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.synctex(busy)
+*Notes.bib
+*.toc
+*.lof
+*.lot
+
+# C / Native Build Artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+class_cr/class_cr
+class_cr/class_cr.exe
+
+# Simulation Raw Output Dumps
+simulations/runs/
+
+# Temporary & Scratch Files
+scratch/
+tmp/
+temp/
+*.tar.gz
+*.vhdx
+
+# Operating System & Editor Metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+.project
+.pydevproject
+.settings/

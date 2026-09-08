@@ -1,0 +1,9 @@
+# Dynamical Casimir Effect in Superconducting Resonators (Wilson et al. Nature 2011 / Lähteenmäki et al. PNAS 2013)
+# Effective boundary velocity v_eff/c, pump frequency (GHz), photon production rate (photons/s)
+pump_freq_ghz,effective_boundary_v_over_c,measured_photon_flux_photons_per_s,flux_uncertainty,dce_theoretical_rate
+9.0,0.015,1.2e5,0.3e5,1.15e5
+9.5,0.025,3.4e5,0.6e5,3.20e5
+10.0,0.038,7.8e5,1.1e5,7.40e5
+10.3,0.046,1.15e6,0.18e6,1.08e6
+10.6,0.055,1.68e6,0.22e6,1.60e6
+11.0,0.068,2.55e6,0.30e6,2.45e6

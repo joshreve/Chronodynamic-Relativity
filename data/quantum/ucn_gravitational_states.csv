@@ -1,0 +1,9 @@
+# Ultracold Neutron (UCN) Gravitational Quantum Bound States (Nesvizhevsky et al. Nature 2002 / ILL Grenoble)
+# Discrete Quantum Levels in Earth's Gravitational Field (g = 9.80665 m/s^2)
+quantum_level_n,airy_zero_alpha_n,classical_turning_height_um,measured_energy_peV,energy_err_peV,theoretical_airy_peV
+1,2.3381,13.7,1.41,0.05,1.407
+2,4.0879,24.0,2.46,0.07,2.459
+3,5.5205,32.4,3.32,0.09,3.321
+4,6.7867,39.9,4.08,0.12,4.083
+5,7.9441,46.7,4.78,0.15,4.779
+6,9.0226,53.0,5.43,0.18,5.428

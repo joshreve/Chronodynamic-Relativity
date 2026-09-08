@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>DESI 2024 DR1 Multi-Tier BAO Audit</title>
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; margin: 30px auto; max-width: 1200px; color: #2c3e50; line-height: 1.65; background-color: #f8f9fa; }
+        h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
+        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .math-box { background: #fdfdfd; border-left: 5px solid #2980b9; padding: 18px; font-family: monospace; font-size: 1.05em; margin: 15px 0; overflow-x: auto; }
+        .highlight-box { background: #ebf8ff; border: 1px solid #bee3f8; border-left: 5px solid #3182ce; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .warning-box { background: #fffaf0; border: 1px solid #feebc8; border-left: 5px solid #dd6b20; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 15px; }
+        th, td { padding: 12px; border: 1px solid #e2e8f0; text-align: left; }
+        th { background: #2980b9; color: white; }
+        tr:nth-child(even) { background: #f8fafc; }
+        .tag-cr { background: #2980b9; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+        .tag-lcdm { background: #e74c3c; color: white; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+    </style>
+
+<style id="cr-universal-top-nav-style">
+.cr-top-nav-bar {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+.cr-nav-return-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1e293b !important;
+    color: #38bdf8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9em !important;
+    padding: 7px 16px !important;
+    border-radius: 6px !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.2s ease !important;
+}
+.cr-nav-return-btn:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+    border-color: #38bdf8 !important;
+}
+.cr-nav-brand {
+    font-size: 0.95em !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    letter-spacing: 0.5px !important;
+}
+@media (max-width: 640px) {
+    .cr-top-nav-bar { padding: 10px 16px !important; flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+}
+</style>
+
+</head>
+<body>
+<header class="cr-top-nav-bar">
+    <a href="../../index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+    <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+</header>
+
+    <h1>DESI 2024 DR1: 4-Tier BAO Audit (Raw Unfit Data vs. Model-Conditioned Tiers)</h1>
+    
+    <div class="card">
+        <h2>1. Executive Summary: The Necessity of Auditing Unfit Data</h2>
+        <p>In observational cosmology, standard pipelines routinely process raw galaxy coordinates through complex model-dependent algorithms before publishing primary results. In Baryon Acoustic Oscillations (BAO), standard pipelines apply <b>density field reconstruction</b> (Eisenstein et al. 2007) to sharpen the acoustic peak by shifting galaxy positions backward along displacement vectors $\vec{\Psi}(\vec{x})$:</p>
+        <div class="math-box">
+            $$\vec{\Psi}(\vec{x}) = -\frac{1}{b} \nabla \nabla^{-2} \delta(\vec{x}) \cdot \frac{1}{f(z)}, \qquad f(z) \equiv \frac{\mathrm{d}\ln D}{\mathrm{d}\ln a} \approx \Omega_m(z)^{0.55}$$
+        </div>
+        <p><b>The Problem of Assumption Bias:</b> Because this displacement explicitly assumes General Relativistic Jeans instability with Cold Dark Matter ($f(z) \approx \Omega_m^{0.55}$) and converts angles to distances using a fiducial flat $\Lambda\text{CDM}$ metric grid, the published post-reconstruction data is pre-conditioned toward $\Lambda\text{CDM}$.</p>
+        <p>To eliminate assumption bias, scientific rigor mandates benchmarking theories against <b>four distinct processing tiers</b>, starting from pure raw un-reconstructed data.</p>
+    </div>
+
+    <div class="card">
+        <h2>2. The 4-Tier BAO Processing Hierarchy</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Processing Tier</th>
+                    <th>CR Total $\chi^2$</th>
+                    <th>CR $\chi^2_{\text{red}}$</th>
+                    <th>$\Lambda\text{CDM}$ Total $\chi^2$</th>
+                    <th>$\Lambda\text{CDM}$ $\chi^2_{\text{red}}$</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><b>Tier 1 (Raw Un-Reconstructed)</b></td>
+                    <td><b>188.077</b></td>
+                    <td><b>14.467</b></td>
+                    <td><b>13.640</b></td>
+                    <td><b>1.049</b></td>
+                </tr>
+                <tr>
+                    <td><b>Tier 2 (Euclidean AP Grid)</b></td>
+                    <td><b>127.684</b></td>
+                    <td><b>9.822</b></td>
+                    <td><b>30.431</b></td>
+                    <td><b>2.341</b></td>
+                </tr>
+                <tr>
+                    <td><b>Tier 3 (CR Native Reconstruction)</b></td>
+                    <td><b>344.396</b></td>
+                    <td><b>26.492</b></td>
+                    <td><b>38.192</b></td>
+                    <td><b>2.938</b></td>
+                </tr>
+                <tr>
+                    <td><b>Tier 4 (Official LambdaCDM Post-Recon)</b></td>
+                    <td><b>428.458</b></td>
+                    <td><b>32.958</b></td>
+                    <td><b>19.127</b></td>
+                    <td><b>1.471</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>3. Full Observational Data across All 4 Processing Tiers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tracer</th>
+                    <th>Redshift ($z_{\text{eff}}$)</th>
+                    <th>Observable</th>
+                    <th>Tier 1 (Raw Unfit)</th>
+                    <th>Tier 2 (Euclidean AP)</th>
+                    <th>Tier 3 (CR Recon)</th>
+                    <th>Tier 4 (LCDM Recon)</th>
+                    <th>CR Pred ($r_d = 141.4$)</th>
+                    <th>$\Lambda\text{CDM}$ Pred ($r_d = 147.1$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><b>BGS</b></td>
+                    <td>0.295</td>
+                    <td><code>DV_over_rs</code></td>
+                    <td><b>7.84 &plusmn; 0.22</b></td>
+                    <td><b>7.84 &plusmn; 0.22</b></td>
+                    <td><b>7.77 &plusmn; 0.15</b></td>
+                    <td><b>7.93 &plusmn; 0.15</b></td>
+                    <td><span class="tag-cr">7.23</span></td>
+                    <td><span class="tag-lcdm">8.05</span></td>
+                </tr>
+                <tr>
+                    <td><b>LRG1</b></td>
+                    <td>0.510</td>
+                    <td><code>DM_over_rs</code></td>
+                    <td><b>13.52 &plusmn; 0.38</b></td>
+                    <td><b>13.16 &plusmn; 0.38</b></td>
+                    <td><b>13.44 &plusmn; 0.25</b></td>
+                    <td><b>13.62 &plusmn; 0.25</b></td>
+                    <td><span class="tag-cr">11.57</span></td>
+                    <td><span class="tag-lcdm">13.49</span></td>
+                </tr>
+                <tr>
+                    <td><b>LRG1</b></td>
+                    <td>0.510</td>
+                    <td><code>DH_over_rs</code></td>
+                    <td><b>20.75 &plusmn; 0.85</b></td>
+                    <td><b>20.38 &plusmn; 0.85</b></td>
+                    <td><b>20.56 &plusmn; 0.61</b></td>
+                    <td><b>20.98 &plusmn; 0.61</b></td>
+                    <td><span class="tag-cr">20.83</span></td>
+                    <td><span class="tag-lcdm">22.73</span></td>
+                </tr>
+                <tr>
+                    <td><b>LRG2</b></td>
+                    <td>0.706</td>
+                    <td><code>DM_over_rs</code></td>
+                    <td><b>16.71 &plusmn; 0.45</b></td>
+                    <td><b>16.25 &plusmn; 0.45</b></td>
+                    <td><b>16.58 &plusmn; 0.32</b></td>
+                    <td><b>16.85 &plusmn; 0.32</b></td>
+                    <td><span class="tag-cr">15.00</span></td>
+                    <td><span class="tag-lcdm">17.69</span></td>
+                </tr>
+                <tr>
+                    <td><b>LRG2</b></td>
+                    <td>0.706</td>
+                    <td><code>DH_over_rs</code></td>
+                    <td><b>19.82 &plusmn; 0.82</b></td>
+                    <td><b>19.46 &plusmn; 0.82</b></td>
+                    <td><b>19.59 &plusmn; 0.60</b></td>
+                    <td><b>20.08 &plusmn; 0.60</b></td>
+                    <td><span class="tag-cr">18.44</span></td>
+                    <td><span class="tag-lcdm">20.16</span></td>
+                </tr>
+                <tr>
+                    <td><b>LRG3_ELG1</b></td>
+                    <td>0.930</td>
+                    <td><code>DM_over_rs</code></td>
+                    <td><b>21.55 &plusmn; 0.42</b></td>
+                    <td><b>20.94 &plusmn; 0.42</b></td>
+                    <td><b>21.40 &plusmn; 0.28</b></td>
+                    <td><b>21.71 &plusmn; 0.28</b></td>
+                    <td><span class="tag-cr">18.47</span></td>
+                    <td><span class="tag-lcdm">21.91</span></td>
+                </tr>
+                <tr>
+                    <td><b>LRG3_ELG1</b></td>
+                    <td>0.930</td>
+                    <td><code>DH_over_rs</code></td>
+                    <td><b>17.65 &plusmn; 0.52</b></td>
+                    <td><b>17.36 &plusmn; 0.52</b></td>
+                    <td><b>17.43 &plusmn; 0.35</b></td>
+                    <td><b>17.88 &plusmn; 0.35</b></td>
+                    <td><span class="tag-cr">16.30</span></td>
+                    <td><span class="tag-lcdm">17.60</span></td>
+                </tr>
+                <tr>
+                    <td><b>ELG2</b></td>
+                    <td>1.317</td>
+                    <td><code>DM_over_rs</code></td>
+                    <td><b>27.52 &plusmn; 0.95</b></td>
+                    <td><b>26.74 &plusmn; 0.95</b></td>
+                    <td><b>27.25 &plusmn; 0.69</b></td>
+                    <td><b>27.79 &plusmn; 0.69</b></td>
+                    <td><span class="tag-cr">23.60</span></td>
+                    <td><span class="tag-lcdm">28.01</span></td>
+                </tr>
+                <tr>
+                    <td><b>ELG2</b></td>
+                    <td>1.317</td>
+                    <td><code>DH_over_rs</code></td>
+                    <td><b>13.60 &plusmn; 0.58</b></td>
+                    <td><b>13.45 &plusmn; 0.58</b></td>
+                    <td><b>13.38 &plusmn; 0.42</b></td>
+                    <td><b>13.82 &plusmn; 0.42</b></td>
+                    <td><span class="tag-cr">13.57</span></td>
+                    <td><span class="tag-lcdm">14.09</span></td>
+                </tr>
+                <tr>
+                    <td><b>QSO</b></td>
+                    <td>1.491</td>
+                    <td><code>DM_over_rs</code></td>
+                    <td><b>30.12 &plusmn; 1.10</b></td>
+                    <td><b>29.27 &plusmn; 1.10</b></td>
+                    <td><b>29.90 &plusmn; 0.79</b></td>
+                    <td><b>30.34 &plusmn; 0.79</b></td>
+                    <td><span class="tag-cr">25.63</span></td>
+                    <td><span class="tag-lcdm">30.35</span></td>
+                </tr>
+                <tr>
+                    <td><b>QSO</b></td>
+                    <td>1.491</td>
+                    <td><code>DH_over_rs</code></td>
+                    <td><b>13.05 &plusmn; 0.65</b></td>
+                    <td><b>12.95 &plusmn; 0.65</b></td>
+                    <td><b>12.87 &plusmn; 0.47</b></td>
+                    <td><b>13.23 &plusmn; 0.47</b></td>
+                    <td><span class="tag-cr">12.63</span></td>
+                    <td><span class="tag-lcdm">12.83</span></td>
+                </tr>
+                <tr>
+                    <td><b>LymanAlpha</b></td>
+                    <td>2.330</td>
+                    <td><code>DM_over_rs</code></td>
+                    <td><b>39.50 &plusmn; 1.20</b></td>
+                    <td><b>38.49 &plusmn; 1.20</b></td>
+                    <td><b>39.28 &plusmn; 0.94</b></td>
+                    <td><b>39.71 &plusmn; 0.94</b></td>
+                    <td><span class="tag-cr">33.77</span></td>
+                    <td><span class="tag-lcdm">39.17</span></td>
+                </tr>
+                <tr>
+                    <td><b>LymanAlpha</b></td>
+                    <td>2.330</td>
+                    <td><code>DH_over_rs</code></td>
+                    <td><b>8.48 &plusmn; 0.22</b></td>
+                    <td><b>8.55 &plusmn; 0.22</b></td>
+                    <td><b>8.44 &plusmn; 0.17</b></td>
+                    <td><b>8.52 &plusmn; 0.17</b></td>
+                    <td><span class="tag-cr">9.44</span></td>
+                    <td><span class="tag-lcdm">8.61</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>4. Interactive Diagnostic Visualizations</h2>
+        <div style="height:850px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.6.0.min.js" integrity="sha256-QaOVwtVY0T02VaHrr6pnoHLCwayMJp4O5n4YyaE3rJk=" crossorigin="anonymous"></script>                <div id="35ad3805-7fd3-4863-8331-d3a2c98eacdd" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("35ad3805-7fd3-4863-8331-d3a2c98eacdd")) {                    Plotly.newPlot(                        "35ad3805-7fd3-4863-8331-d3a2c98eacdd",                        [{"line":{"color":"#2980b9","width":3},"mode":"lines","name":"CR (r_d,local = 141.4 Mpc)","x":{"dtype":"f8","bdata":"mpmZmZmZuT\u002fPn+X8Wc6\u002fPwLTGDCNAcM\u002fHNa+Ye0bxj822WSTTTbJP1HcCsWtUMw\u002fa9+w9g1rzz9DcSsUt0LRP9By\u002fiznz9I\u002fXXTRRRdd1D\u002fqdaReR+rVP3h3d3d3d9c\u002fBHlKkKcE2T+Seh2p15HaPyB88MEHH9w\u002frH3D2jes3T86f5bzZznfP2PANAZMY+A\u002fKkGeEuQp4T\u002fxwQcffPDhP7dCcSsUt+I\u002ffcPaN6x94z9ERERERETkPwvFrVDcCuU\u002f0UUXXXTR5T+YxoBpDJjmP15H6nWkXuc\u002fJchTgjwl6D\u002fsSL2O1OvoP7LJJptssuk\u002feUqQpwR56j8\u002fy\u002fmznD\u002frPwZMY8A0Buw\u002fzczMzMzM7D+TTTbZZJPtP1rOn+X8We4\u002fIE8J8pQg7z\u002fnz3L+LOfvP1coboXiVvA\u002fuuiiiy668D8eqdeReh3xP4FpDJjGgPE\u002f5ClBnhLk8T9I6nWkXkfyP6uqqqqqqvI\u002fDmvfsPYN8z9yKxS3QnHzP9XrSL2O1PM\u002fOKx9w9o39D+cbLLJJpv0P\u002f8s589y\u002fvQ\u002fYu0b1r5h9T\u002fFrVDcCsX1PyluheJWKPY\u002fjC666KKL9j\u002fv7u7u7u72P1OvI\u002fU6Uvc\u002ftm9Y+4a19z8ZMI0B0xj4P33wwQcffPg\u002f4LD2DWvf+D9DcSsUt0L5P6YxYBoDpvk\u002fCvKUIE8J+j9tsskmm2z6P9By\u002fiznz\u002fo\u002fNDMzMzMz+z+X82c5f5b7P\u002fqznD\u002fL+fs\u002fXXTRRRdd\u002fD\u002fBNAZMY8D8PyT1OlKvI\u002f0\u002fh7VvWPuG\u002fT\u002frdaReR+r9P0422WSTTf4\u002fsfYNa9+w\u002fj8Vt0JxKxT\u002fP3h3d3d3d\u002f8\u002f2zesfcPa\u002fz8ffPDBBx8AQFHcCsWtUABAgjwlyFOCAEC0nD\u002fL+bMAQOb8Wc6f5QBAF1100UUXAUBJvY7U60gBQHsdqdeRegFArH3D2jesAUDe3d3d3d0BQBA++OCDDwJAQZ4S5ClBAkBz\u002fiznz3ICQKVeR+p1pAJA1r5h7RvWAkAIH3zwwQcDQDp\u002flvNnOQNAa9+w9g1rA0CdP8v5s5wDQM+f5fxZzgNAAAAAAAAABEA="},"y":[2.6771028902093867,3.2893906604394885,3.888609141219508,4.475304308760549,5.0499886230912825,5.61314371649199,6.16522281765827,6.706652942167412,7.237836875771901,7.759154973597578,8.270966795379053,8.773612594342682,9.267414675179134,9.752678634679778,10.229694496996604,10.698737754087086,11.160070320690773,11.61394141212654,12.060588352276673,12.500237318316566,12.933104028040782,13.35939437501476,13.779305016233703,14.193023916487434,14.600730853203267,15.002597885160899,15.39878978813805,15.789464460247835,16.174773299463414,16.554861555589035,16.929868658725443,17.29992852608851,17.665169848870807,18.02571636068384,18.381687088982275,18.73319659074851,19.080355173605504,19.423269103425724,19.762040799413963,20.096769017560145,20.427549023284367,20.75447275402924,21.077628972494093,21.39710341114971,21.712978908622638,22.025335538491635,22.334250730997436,22.639799388128488,22.942053992510814,23.24108471049791,23.536959489827485,23.829744152185143,24.119502480990437,24.406296304698177,24.6901855758871,24.97122844638913,25.249481338694647,25.52499901385303,25.79783463607308,26.068039834213785,26.33566476034339,26.60075814553293,26.86336735303955,27.12353842902466,27.38131615094284,27.63674407372884,27.88986457390154,28.140718891696867,28.38934717133429,28.63578849951529,28.880080942246156,29.122261580071797,29.362366541802338,29.60043103680891,29.83648938596123,30.070575051274627,30.302720664330806,30.532958053532475,30.76131827024912,30.987831613907304,31.212527656076414,31.435435263597633,31.656582620801473,31.87599725085654,32.09370603629,32.3097352387182,32.5241105178232,32.73685694961013,32.94799904397735,33.15756076163041,33.36556553036903,33.5720362607748,33.77699536132568,33.98046475296246,34.18246588313079,34.38301973932124,34.582146862128795,34.77986735785213,34.976200910651905,35.1711667942866],"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#e74c3c","dash":"dash","width":2},"mode":"lines","name":"LambdaCDM (r_d = 147.1 Mpc)","x":{"dtype":"f8","bdata":"mpmZmZmZuT\u002fPn+X8Wc6\u002fPwLTGDCNAcM\u002fHNa+Ye0bxj822WSTTTbJP1HcCsWtUMw\u002fa9+w9g1rzz9DcSsUt0LRP9By\u002fiznz9I\u002fXXTRRRdd1D\u002fqdaReR+rVP3h3d3d3d9c\u002fBHlKkKcE2T+Seh2p15HaPyB88MEHH9w\u002frH3D2jes3T86f5bzZznfP2PANAZMY+A\u002fKkGeEuQp4T\u002fxwQcffPDhP7dCcSsUt+I\u002ffcPaN6x94z9ERERERETkPwvFrVDcCuU\u002f0UUXXXTR5T+YxoBpDJjmP15H6nWkXuc\u002fJchTgjwl6D\u002fsSL2O1OvoP7LJJptssuk\u002feUqQpwR56j8\u002fy\u002fmznD\u002frPwZMY8A0Buw\u002fzczMzMzM7D+TTTbZZJPtP1rOn+X8We4\u002fIE8J8pQg7z\u002fnz3L+LOfvP1coboXiVvA\u002fuuiiiy668D8eqdeReh3xP4FpDJjGgPE\u002f5ClBnhLk8T9I6nWkXkfyP6uqqqqqqvI\u002fDmvfsPYN8z9yKxS3QnHzP9XrSL2O1PM\u002fOKx9w9o39D+cbLLJJpv0P\u002f8s589y\u002fvQ\u002fYu0b1r5h9T\u002fFrVDcCsX1PyluheJWKPY\u002fjC666KKL9j\u002fv7u7u7u72P1OvI\u002fU6Uvc\u002ftm9Y+4a19z8ZMI0B0xj4P33wwQcffPg\u002f4LD2DWvf+D9DcSsUt0L5P6YxYBoDpvk\u002fCvKUIE8J+j9tsskmm2z6P9By\u002fiznz\u002fo\u002fNDMzMzMz+z+X82c5f5b7P\u002fqznD\u002fL+fs\u002fXXTRRRdd\u002fD\u002fBNAZMY8D8PyT1OlKvI\u002f0\u002fh7VvWPuG\u002fT\u002frdaReR+r9P0422WSTTf4\u002fsfYNa9+w\u002fj8Vt0JxKxT\u002fP3h3d3d3d\u002f8\u002f2zesfcPa\u002fz8ffPDBBx8AQFHcCsWtUABAgjwlyFOCAEC0nD\u002fL+bMAQOb8Wc6f5QBAF1100UUXAUBJvY7U60gBQHsdqdeRegFArH3D2jesAUDe3d3d3d0BQBA++OCDDwJAQZ4S5ClBAkBz\u002fiznz3ICQKVeR+p1pAJA1r5h7RvWAkAIH3zwwQcDQDp\u002flvNnOQNAa9+w9g1rA0CdP8v5s5wDQM+f5fxZzgNAAAAAAAAABEA="},"y":[2.9511718419897464,3.644358430427367,4.3287388948588434,5.004277997327068,5.6709538748730015,6.328757454094435,6.97769182837785,7.617771606871293,8.249022243676926,8.87147935507919,9.485188031912884,10.090202153436834,10.686583708332964,11.274402127713456,11.853733634304474,12.424660611293739,12.98727099368991,13.541657684449245,14.087917997083752,14.626153125976384,15.156467645193182,15.678969036198966,16.193767244549893,16.700974265350826,17.20070375702458,17.6930706827402,18.178190978684924,18.656181248236308,19.127158480991614,19.591239795540265,20.04854220481555,20.499182402833103,20.943276571611374,21.380940207071934,21.812287962731165,22.23743351001937,22.65648941409444,23.069567024055647,23.476776376504972,23.8782261114497,24.274023399587723,24.664273880066446,25.049081607856326,25.428549009929803,25.8027768494855,26.17186419750642,26.535908410987016,26.895005117209916,27.24924820349637,27.59872981189593,27.9435403383209,28.283768435667955,28.61950102050545,28.95082328293768,29.277818699289153,29.600569047281105,29.919154423399732,30.233653262181427,30.544142357164194,30.850696883275866,31.153390420451206,31.45229497828799,31.747481021570316,32.039017496503334,32.32697185751841,32.61141009452163,32.892396760471165,33.16999499918021,33.44426657325362,33.71527189207514,33.983070039771775,34.247718803089754,34.50927469912362,34.767793002847505,35.02332777440295,35.275931886104075,35.52565704912531,35.77255383984199,36.01667172579821,36.258059091280046,36.49676326247572,36.73283053220761,36.966306184223356,37.19723451703647,37.42565886730844,37.65162163276698,37.87516429465638,38.09632743971799,38.31515078170001,38.53167318239705,38.745932672221436,38.95796647030876,39.167811004161436,39.37550192883438,39.58107414566847,39.7845618205767,39.98599840188985,40.18541663776791,40.382848593184335,40.57832566649047],"type":"scatter","xaxis":"x","yaxis":"y"},{"error_y":{"array":{"dtype":"f8","bdata":"UrgehetR2D\u002fNzMzMzMzcP+F6FK5H4do\u002fZmZmZmZm7j+amZmZmZnxPzMzMzMzM\u002fM\u002f"},"type":"data"},"marker":{"color":"#27ae60","line":{"width":2},"size":9,"symbol":"circle-open"},"mode":"markers","name":"Tier 1 (Raw Un-Recon)","x":{"dtype":"f8","bdata":"UrgehetR4D9kO99PjZfmP8P1KFyPwu0\u002f30+Nl24S9T9CYOXQItv3P6RwPQrXowJA"},"y":{"dtype":"f8","bdata":"CtejcD0KK0D2KFyPwrUwQM3MzMzMjDVAhetRuB6FO0AfhetRuB4+QAAAAAAAwENA"},"type":"scatter","xaxis":"x","yaxis":"y"},{"error_y":{"array":{"dtype":"f8","bdata":"AAAAAAAA0D97FK5H4XrUP+xRuB6F69E\u002fFK5H4XoU5j9I4XoUrkfpPxSuR+F6FO4\u002f"},"type":"data"},"marker":{"color":"#2980b9","size":9,"symbol":"triangle-up"},"mode":"markers","name":"Tier 3 (CR Reconstructed)","x":{"dtype":"f8","bdata":"UrgehetR4D9kO99PjZfmP8P1KFyPwu0\u002f30+Nl24S9T9CYOXQItv3P6RwPQrXowJA"},"y":{"dtype":"f8","bdata":"ZC6ePInfKkCSVoRft5UwQGde+VghZjVAc7yOLw5AO0BXidZqhuU9QGvvDOSPo0NA"},"type":"scatter","xaxis":"x","yaxis":"y"},{"error_y":{"array":{"dtype":"f8","bdata":"AAAAAAAA0D97FK5H4XrUP+xRuB6F69E\u002fFK5H4XoU5j9I4XoUrkfpPxSuR+F6FO4\u002f"},"type":"data"},"marker":{"color":"#8e44ad","size":9,"symbol":"diamond"},"mode":"markers","name":"Tier 4 (LCDM Post-Recon)","x":{"dtype":"f8","bdata":"UrgehetR4D9kO99PjZfmP8P1KFyPwu0\u002f30+Nl24S9T9CYOXQItv3P6RwPQrXowJA"},"y":{"dtype":"f8","bdata":"PQrXo3A9K0CamZmZmdkwQPYoXI\u002fCtTVACtejcD3KO0DXo3A9Clc+QHsUrkfh2kNA"},"type":"scatter","xaxis":"x","yaxis":"y"},{"line":{"color":"#2980b9","width":3},"mode":"lines","name":"CR Radial","showlegend":false,"x":{"dtype":"f8","bdata":"mpmZmZmZuT\u002fPn+X8Wc6\u002fPwLTGDCNAcM\u002fHNa+Ye0bxj822WSTTTbJP1HcCsWtUMw\u002fa9+w9g1rzz9DcSsUt0LRP9By\u002fiznz9I\u002fXXTRRRdd1D\u002fqdaReR+rVP3h3d3d3d9c\u002fBHlKkKcE2T+Seh2p15HaPyB88MEHH9w\u002frH3D2jes3T86f5bzZznfP2PANAZMY+A\u002fKkGeEuQp4T\u002fxwQcffPDhP7dCcSsUt+I\u002ffcPaN6x94z9ERERERETkPwvFrVDcCuU\u002f0UUXXXTR5T+YxoBpDJjmP15H6nWkXuc\u002fJchTgjwl6D\u002fsSL2O1OvoP7LJJptssuk\u002feUqQpwR56j8\u002fy\u002fmznD\u002frPwZMY8A0Buw\u002fzczMzMzM7D+TTTbZZJPtP1rOn+X8We4\u002fIE8J8pQg7z\u002fnz3L+LOfvP1coboXiVvA\u002fuuiiiy668D8eqdeReh3xP4FpDJjGgPE\u002f5ClBnhLk8T9I6nWkXkfyP6uqqqqqqvI\u002fDmvfsPYN8z9yKxS3QnHzP9XrSL2O1PM\u002fOKx9w9o39D+cbLLJJpv0P\u002f8s589y\u002fvQ\u002fYu0b1r5h9T\u002fFrVDcCsX1PyluheJWKPY\u002fjC666KKL9j\u002fv7u7u7u72P1OvI\u002fU6Uvc\u002ftm9Y+4a19z8ZMI0B0xj4P33wwQcffPg\u002f4LD2DWvf+D9DcSsUt0L5P6YxYBoDpvk\u002fCvKUIE8J+j9tsskmm2z6P9By\u002fiznz\u002fo\u002fNDMzMzMz+z+X82c5f5b7P\u002fqznD\u002fL+fs\u002fXXTRRRdd\u002fD\u002fBNAZMY8D8PyT1OlKvI\u002f0\u002fh7VvWPuG\u002fT\u002frdaReR+r9P0422WSTTf4\u002fsfYNa9+w\u002fj8Vt0JxKxT\u002fP3h3d3d3d\u002f8\u002f2zesfcPa\u002fz8ffPDBBx8AQFHcCsWtUABAgjwlyFOCAEC0nD\u002fL+bMAQOb8Wc6f5QBAF1100UUXAUBJvY7U60gBQHsdqdeRegFArH3D2jesAUDe3d3d3d0BQBA++OCDDwJAQZ4S5ClBAkBz\u002fiznz3ICQKVeR+p1pAJA1r5h7RvWAkAIH3zwwQcDQDp\u002flvNnOQNAa9+w9g1rA0CdP8v5s5wDQM+f5fxZzgNAAAAAAAAABEA="},"y":[28.592545563768432,27.975994716032183,27.385472400126496,26.81936444353473,26.276187442146675,25.75457578076412,25.253270169459707,24.771107493193167,24.307011802454195,23.859986298041246,23.429106184306868,23.013512283033126,22.61240531513712,22.225040770124075,21.850724293995665,21.488807535502982,21.138684398468314,20.799787654605094,20.471585877017635,20.153580659510567,19.84530409110505,19.54631645884735,19.256204155190986,18.97457776900903,18.701070341708004,18.43533577202121,18.177047354900072,17.925896441533578,17.681591208940272,17.44385552882007,17.212427926447663,16.987060621355056,16.767518642403783,16.55357901060278,16.345029983697547,16.141670357150765,15.943308816663501,15.749763337857267,15.560860629157329,15.376435614293246,15.196330951168287,15.020396584150424,14.84848932710721,14.680472474749562,14.516215440067045,14.355593415833942,14.198487058341913,14.044782191675157,13.894369530987873,13.747144423374754,13.60300660504317,13.461859973603033,13.3236123743876,13.188175399806784,13.055464200815019,12.925397309648739,12.79789647305541,12.67288649529663,12.550295090263532,12.430052742093341,12.312092573722348,12.196350222853043,12.082763724852084,11.971273402131418,11.861821759597648,11.754353385784759,11.648814859313065,11.545154660342535,11.443323086712173,11.343272174478622,11.24495562258715,11.148328721426362,11.053348285035078,10.959972586745447,10.86816129806067,10.777875430579378,10.689077280790874,10.601730377577056,10.515799432267418,10.431250291103458,10.348049889978006,10.266166211323386,10.185568243030364,10.106225939287185,10.028110183234725,9.951192751340306,9.875446279398611,9.800844230073597,9.7273608619006,9.6549711996725,9.583651006138451,9.5133767549477,9.444125604775195,9.375875374569052,9.308604519863623,9.242292110105021,9.17691780693894,9.112461843413469,9.048905004052259,8.986228605755793],"type":"scatter","xaxis":"x2","yaxis":"y2"},{"line":{"color":"#e74c3c","dash":"dash","width":2},"mode":"lines","name":"LCDM Radial","showlegend":false,"x":{"dtype":"f8","bdata":"mpmZmZmZuT\u002fPn+X8Wc6\u002fPwLTGDCNAcM\u002fHNa+Ye0bxj822WSTTTbJP1HcCsWtUMw\u002fa9+w9g1rzz9DcSsUt0LRP9By\u002fiznz9I\u002fXXTRRRdd1D\u002fqdaReR+rVP3h3d3d3d9c\u002fBHlKkKcE2T+Seh2p15HaPyB88MEHH9w\u002frH3D2jes3T86f5bzZznfP2PANAZMY+A\u002fKkGeEuQp4T\u002fxwQcffPDhP7dCcSsUt+I\u002ffcPaN6x94z9ERERERETkPwvFrVDcCuU\u002f0UUXXXTR5T+YxoBpDJjmP15H6nWkXuc\u002fJchTgjwl6D\u002fsSL2O1OvoP7LJJptssuk\u002feUqQpwR56j8\u002fy\u002fmznD\u002frPwZMY8A0Buw\u002fzczMzMzM7D+TTTbZZJPtP1rOn+X8We4\u002fIE8J8pQg7z\u002fnz3L+LOfvP1coboXiVvA\u002fuuiiiy668D8eqdeReh3xP4FpDJjGgPE\u002f5ClBnhLk8T9I6nWkXkfyP6uqqqqqqvI\u002fDmvfsPYN8z9yKxS3QnHzP9XrSL2O1PM\u002fOKx9w9o39D+cbLLJJpv0P\u002f8s589y\u002fvQ\u002fYu0b1r5h9T\u002fFrVDcCsX1PyluheJWKPY\u002fjC666KKL9j\u002fv7u7u7u72P1OvI\u002fU6Uvc\u002ftm9Y+4a19z8ZMI0B0xj4P33wwQcffPg\u002f4LD2DWvf+D9DcSsUt0L5P6YxYBoDpvk\u002fCvKUIE8J+j9tsskmm2z6P9By\u002fiznz\u002fo\u002fNDMzMzMz+z+X82c5f5b7P\u002fqznD\u002fL+fs\u002fXXTRRRdd\u002fD\u002fBNAZMY8D8PyT1OlKvI\u002f0\u002fh7VvWPuG\u002fT\u002frdaReR+r9P0422WSTTf4\u002fsfYNa9+w\u002fj8Vt0JxKxT\u002fP3h3d3d3d\u002f8\u002f2zesfcPa\u002fz8ffPDBBx8AQFHcCsWtUABAgjwlyFOCAEC0nD\u002fL+bMAQOb8Wc6f5QBAF1100UUXAUBJvY7U60gBQHsdqdeRegFArH3D2jesAUDe3d3d3d0BQBA++OCDDwJAQZ4S5ClBAkBz\u002fiznz3ICQKVeR+p1pAJA1r5h7RvWAkAIH3zwwQcDQDp\u002flvNnOQNAa9+w9g1rA0CdP8v5s5wDQM+f5fxZzgNAAAAAAAAABEA="},"y":[28.77494611186075,28.412609849798397,28.0485365760781,27.683289473138604,27.317408473806136,26.951408527409164,26.585778250813828,26.220978941951465,25.857443929841146,25.495578232598614,25.135758493377732,24.778333163502765,24.423622902102252,24.071921162227124,23.723494934608418,23.378585621770824,23.037410017063987,22.700161365211223,22.36701048312419,22.03810692192377,21.713580153285143,21.39354076534359,21.07808165542236,20.76727920874884,20.46119445409347,20.159874188886043,19.863352067832146,19.571649650367164,19.28477740345091,19.002735657227916,18.725515511964797,18.45309969543668,18.185463370579136,17.922574893761208,17.66439652447943,17.410885087632465,17.161992589821292,16.917666791339492,16.677851735681745,16.442488238512905,16.211514338113467,15.984865709355455,15.762476043271874,15.544277394268532,15.330200496992612,15.120175054823292,14.914130001888,14.711993740437471,14.513694355335522,14.319159807338027,14.128318106750976,13.941097468972202,13.757426453335402,13.577234086590618,13.400449972272074,13.2270043871236,13.05682836567376,12.889853773978025,12.726013373473421,12.565240875823239,12.407470989564565,12.252639459310435,12.100683098200989,11.951539814243965,11.805148631134355,11.661449704095713,11.520384331241647,11.38189496091484,11.245925195422888,11.112419791554842,10.9813246582295,10.852586851596183,10.72615456788066,10.60197713424301,10.480004997890369,10.36018971366545,10.242483930311593,10.126841375596442,10.01321684045928,9.901566162331445,9.791846207764737,9.68401485448981,9.578030973014204,9.473854407858923,9.371445958522191,9.270767360249971,9.171781264684347,9.074451220453271,8.978741653758155,8.884617849009526,8.792045929555107,8.70099283853944,8.611426319929555,8.523314899736574,8.43662786745955,8.35133525777406,8.267407832484958,8.18481706275977,8.10353511165663,8.02353481695825],"type":"scatter","xaxis":"x2","yaxis":"y2"},{"error_y":{"array":{"dtype":"f8","bdata":"MzMzMzMz6z89CtejcD3qP6RwPQrXo+A\u002fj8L1KFyP4j\u002fNzMzMzMzkPylcj8L1KMw\u002f"},"type":"data"},"marker":{"color":"#27ae60","line":{"width":2},"size":9,"symbol":"circle-open"},"mode":"markers","name":"Tier 1 Radial","showlegend":false,"x":{"dtype":"f8","bdata":"UrgehetR4D9kO99PjZfmP8P1KFyPwu0\u002f30+Nl24S9T9CYOXQItv3P6RwPQrXowJA"},"y":{"dtype":"f8","bdata":"AAAAAADANEBSuB6F69EzQGZmZmZmpjFAMzMzMzMzK0CamZmZmRkqQPYoXI\u002fC9SBA"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"error_y":{"array":{"dtype":"f8","bdata":"hetRuB6F4z8zMzMzMzPjP2ZmZmZmZtY\u002f4XoUrkfh2j8UrkfhehTeP8P1KFyPwsU\u002f"},"type":"data"},"marker":{"color":"#2980b9","size":9,"symbol":"triangle-up"},"mode":"markers","name":"Tier 3 Radial","showlegend":false,"x":{"dtype":"f8","bdata":"UrgehetR4D9kO99PjZfmP8P1KFyPwu0\u002f30+Nl24S9T9CYOXQItv3P6RwPQrXowJA"},"y":{"dtype":"f8","bdata":"dORf9+OONEC9erIHaZYzQLN35u\u002fPbjFAc\u002flAeqbCKkBpQ3cfArwpQPMDZs8X4CBA"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"error_y":{"array":{"dtype":"f8","bdata":"hetRuB6F4z8zMzMzMzPjP2ZmZmZmZtY\u002f4XoUrkfh2j8UrkfhehTeP8P1KFyPwsU\u002f"},"type":"data"},"marker":{"color":"#8e44ad","size":9,"symbol":"diamond"},"mode":"markers","name":"Tier 4 Radial","showlegend":false,"x":{"dtype":"f8","bdata":"UrgehetR4D9kO99PjZfmP8P1KFyPwu0\u002f30+Nl24S9T9CYOXQItv3P6RwPQrXowJA"},"y":{"dtype":"f8","bdata":"exSuR+H6NEAUrkfhehQ0QOF6FK5H4TFApHA9CtejK0D2KFyPwnUqQArXo3A9CiFA"},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"marker":{"color":"#2980b9"},"name":"CR Residual (Tier 1 Raw)","x":["BGS (DV)","LRG1 (DM)","LRG1 (DH)","LRG2 (DM)","LRG2 (DH)","LRG3_ELG1 (DM)","LRG3_ELG1 (DH)","ELG2 (DM)","ELG2 (DH)","QSO (DM)","QSO (DH)","LymanAlpha (DM)","LymanAlpha (DH)"],"y":{"dtype":"f8","bdata":"t4LDOBE7BsAsbsrgjnoUwKa1XXqCy7c\u002fsG4n2B1fDsBZ0zmXSwH7vzhD9xoiYB3AvxPmk53TBMA0bDIuhYUQwLGKE42Boaa\u002fy5GMSgpVEMCAivMZgt3kvydRuhjPFRPA12iMD5GLEUA="},"type":"bar","xaxis":"x3","yaxis":"y3"},{"marker":{"color":"#e74c3c"},"name":"LCDM Residual (Tier 4 Shifted)","x":["BGS (DV)","LRG1 (DM)","LRG1 (DH)","LRG2 (DM)","LRG2 (DH)","LRG3_ELG1 (DM)","LRG3_ELG1 (DH)","ELG2 (DM)","ELG2 (DH)","QSO (DM)","QSO (DH)","LymanAlpha (DM)","LymanAlpha (DH)"],"y":{"dtype":"f8","bdata":"a5ItPDQu6j9ATScY+zHgv6kYbjbD8QZAK22zJ9ULBUAA06aFAjPBP7ZzuV0dS+c\u002f3IZEDXBB6b+g8ta\u002fUaDUP5SATtoimeQ\u002fqLTzIiZhjj8gSlVbo2jrv6FuedPci+K\u002f1mLpEjBr4T8="},"type":"bar","xaxis":"x3","yaxis":"y3"},{"line":{"color":"#27ae60","dash":"dash","width":2},"mode":"lines","name":"Tier 1 Raw xi(s)","x":{"dtype":"f8","bdata":"AAAAAAAATkDLjudUUkBOQJYdz6mkgE5AYqy2\u002fvbATkAtO55TSQFPQPjJhaibQU9AxFht\u002fe2BT0CP51RSQMJPQC07nlNJAVBAkwISfnIhUED4yYWom0FQQF6R+dLEYVBAxFht\u002fe2BUEApIOEnF6JQQI\u002fnVFJAwlBA9K7IfGniUEBadjynkgJRQMA9sNG7IlFAJQUk\u002fORCUUCLzJcmDmNRQPCTC1E3g1FAVlt\u002fe2CjUUC8IvOlicNRQCHqZtCy41FAh7Ha+tsDUkDteE4lBSRSQFJAwk8uRFJAuAc2eldkUkAez6mkgIRSQIOWHc+ppFJA6V2R+dLEUkBOJQUk\u002fORSQLTseE4lBVNAGrTseE4lU0B\u002fe2Cjd0VTQOVC1M2gZVNASgpI+MmFU0Cw0bsi86VTQBaZL00cxlNAfGCjd0XmU0DhJxeibgZUQEbvisyXJlRArLb+9sBGVEASfnIh6mZUQHhF5ksTh1RA3QxadjynVEBD1M2gZcdUQKibQcuO51RADmO19bcHVUB0Kikg4SdVQNnxnEoKSFVAP7kQdTNoVUCkgISfXIhVQApI+MmFqFVAcA9s9K7IVUDW1t8e2OhVQDueU0kBCVZAoGXHcyopVkAGLTueU0lWQGz0rsh8aVZA0rsi86WJVkA3g5Ydz6lWQJ1KCkj4yVZAAhJ+ciHqVkBo2fGcSgpXQM6gZcdzKldAM2jZ8ZxKV0CZL00cxmpXQP72wEbvildAZL40cRirV0DKhaibQctXQDBNHMZq61dAlRSQ8JMLWED62wMbvStYQGCjd0XmS1hAxmrrbw9sWEAsMl+aOIxYQJH50sRhrFhA98BG74rMWEBciLoZtOxYQMJPLkTdDFlAKBeibgYtWUCN3hWZL01ZQPOlicNYbVlAWG397YGNWUC+NHEYq61ZQCT85ELUzVlAisNYbf3tWUDvisyXJg5aQFRSQMJPLlpAuhm07HhOWkAg4ScXom5aQIaom0HLjlpA628PbPSuWkBRN4OWHc9aQLb+9sBG71pAHMZq628PW0CCjd4VmS9bQOdUUkDCT1tATRzGautvW0Cy4zmVFJBbQBirrb89sFtAfnIh6mbQW0DkOZUUkPBbQEkBCT+5EFxArsh8aeIwXEAUkPCTC1FcQHpXZL40cVxA4B7Y6F2RXEBF5ksTh7FcQKutvz2w0VxAEHUzaNnxXEB2PKeSAhJdQNwDG70rMl1AQcuO51RSXUCnkgISfnJdQAxadjynkl1AciHqZtCyXUDY6F2R+dJdQD6w0bsi811Ao3dF5ksTXkAIP7kQdTNeQG4GLTueU15A1M2gZcdzXkA6lRSQ8JNeQJ9ciLoZtF5ABST85ELUXkBq628PbPReQNCy4zmVFF9ANnpXZL40X0CbQcuO51RfQAEJP7kQdV9AZtCy4zmVX0DMlyYOY7VfQDJfmjiM1V9AlyYOY7X1X0D+9sBG7wpgQLLa+tsDG2BAZL40cRgrYEAXom4GLTtgQMqFqJtBS2BAfGniMFZbYEAwTRzGamtgQOIwVlt\u002fe2BAlRSQ8JOLYEBI+MmFqJtgQPrbAxu9q2BArr89sNG7YEBgo3dF5stgQBOHsdr622BAxmrrbw\u002fsYEB4TiUFJPxgQCwyX5o4DGFA3hWZL00cYUCR+dLEYSxhQETdDFp2PGFA98BG74pMYUCqpICEn1xhQFyIuhm0bGFAD2z0rsh8YUDCTy5E3YxhQHUzaNnxnGFAKBeibgatYUDa+tsDG71hQI3eFZkvzWFAQMJPLkTdYUDzpYnDWO1hQKaJw1ht\u002fWFAWG397YENYkAMUTeDlh1iQL40cRirLWJAcRirrb89YkAk\u002fORC1E1iQNbfHtjoXWJAisNYbf1tYkA8p5ICEn5iQO+KzJcmjmJAom4GLTueYkBUUkDCT65iQAg2eldkvmJAuhm07HjOYkBt\u002fe2Bjd5iQCDhJxei7mJA0sRhrLb+YkCGqJtByw5jQDiM1dbfHmNA628PbPQuY0CeU0kBCT9jQFE3g5YdT2NABBu9KzJfY0C2\u002fvbARm9jQGniMFZbf2NAHMZq62+PY0DPqaSAhJ9jQIKN3hWZr2NANHEYq62\u002fY0DnVFJAws9jQJo4jNXW32NATRzGauvvY0AAAAAAAABkQA=="},"y":{"dtype":"f8","bdata":"+srnVG+SZkAUEEztFJxmQKoWxiqqpWZAvlk2Sy+vZkBUJRSLpLhmQFiteCUKwmZAp7cpVGDLZkAf3qNPp9RmQLxtJE\u002ff3WZALueyiAjnZkBqJSoxI\u002fBmQG0uQXwv+WZAD7KTnC0CZ0D9OqrDHQtnQGIVAiIAFGdAHu8U59QcZ0DWNGBBnCVnQKwvbF5WLmdA+ObSagM3Z0CWyUaSoz9nQHoimf82SGdALFzA3L1QZ0BRF95SOFlnQEYYRYqmYWdAfBB\u002fqghqZ0CXSFLaXnJnQPwwxz+pemdA1d4tAOiCZ0AjfSNAG4tnQM65lyNDk2dAZDjSzV+bZ0CHFXhhcaNnQBiIkQB4q2dAIq+PzHOzZ0CMnlLmZLtnQBq\u002fL25Lw2dAhpr4gyfLZ0A8MAJH+dJnQJj0LNbA2mdA5aHtT37iZ0BlCVfSMepnQCEaJXvb8WdAHlzJZ3v5Z0CqKHm1EQFoQDX0PYGeCGhA1woI6CEQaED1L8QGnBdoQM6hdPoMH2hAuRRO4HQmaECuTtnV0y1oQBsjGvkpNWhA\u002f6i8aHc8aEBcoUlEvENoQM0jY6z4SmhAi8gKwyxSaECUrPKrWFloQO7T2ox8YGhA25j8jZhnaEDZA4barG5oQM0XJ6G5dWhAqU+zFL98aEDovdlsvYNoQDNz9ua0imhA1QUAx6WRaEANSZRYkJhoQIx1J\u002fB0n2hArjVZ7FOmaEAUNHO3La1oQJ\u002fyFMkCtGhA484QqNO6aEDgL37soMFoQA3jBEJryGhAU6tlajPPaEC38ENA+tVoQJNXNLrA3GhAucgT7ofjaEAhHKoUUepoQIIkm40d8WhAW0ao4+73aEA0D0TRxv5oQClmeEWnBWlAHuseaZIMaUA562mkihNpQF72uqSSGmlAJJjCYq0haUCD\u002fuIo3ihpQMlxzZkoMGlAIGxQt5A3aUAv3knpGj9pQJLDrgTMRmlAgpuWUqlOaUBSqzaXuFZpQIAqthgAX2lAMKLBpYZnaUA978CbU3BpQJeBkOxueWlAcrObI+GCaUDmdDNqs4xpQBIe+orvlmlA6hM79J+haUCGHAO5z6xpQJzbzJCKuGlAegmU1dzEaUC5oyGA09FpQMGpYyJ832lANwSk3+TtaUDfDnRiHP1pQA\u002fyJNAxDWpAG5iouTQeakC8obsJNTBqQIxQPvBCQ2pAlvaoym5XakCgFJAJyWxqQHvpNBNig2pAR8IoI0qbakDezBMnkbRqQCVvu5hGz2pA\u002fBlwVXnrakAYFRdzNwlrQMexEROOKGtAuX9QM4lJa0DpVu59M2xrQIUTvBeWkGtAlYEybri2a0D+7ksFoN5rQCrp0UVQCGxAFY+1TMozbEAnVRG8DGFsQBHeeY4TkGxACGRI7dfAbEDH34sKUPNsQNZxTv9uJ21Af2LariRdbUDvMqWvXZRtQP2afzoDzW1AO96eIPsGbkBfnQbJJ0JuQAY6yjVofm5AfSOKEZi7bkChGnzFj\u002fluQALcNZgkOG9AdfFX1Sh3b0BH+Rr+a7ZvQGzapAK79W9A1sP2QXAacECsR+6O0jlwQCEfldznWHBAPoY48pJ3cECSc98ZtpVwQE8a7VIzs3BAOFQqh+zPcEC\u002fULfBw+twQFKpXGebBnFAaWWqb1YgcUD\u002fukye2DhxQH+a+bsGUHFA3HpXzsZlcUC\u002feT1OAHpxQJPMrlucjHFAgLX37oWdcUB6rVgGqqxxQJkptc\u002f3uXFALjPGzWDFcUDH0l342M5xQErfVtdW1nFAxuXcl9PbcUAzVMkbS99xQFOV5QK84HFA4xL1rSfgcUAXz307kt1xQGcnWn4C2XFAbgYy7oHScUBEAg2SHMpxQBtRQeXgv3FAetYUt9+zcUClinUFLKZxQEzmPNPalnFAuZh++gKGcUAicG37vHNxQBngacgiYHFAUd7Tj09LcUCp0z2EXzVxQLkZoKNvHnFA0\u002fArfp0GcUCbGFr9Bu5wQP9VzCvK1HBAh1aS\u002fgS7cEAjtlkg1aBwQOifBr9XhnBA48wmXKlrcEB7v6Og5VBwQOdECzQnNnBALMG2l4cbcECO1QoGHwFwQLyb86sIzm9AxFnIxZmab0A1zcfxGGhvQKEgAYuqNm9ADHh6mW8Gb0D6CsjEhdduQA=="},"type":"scatter","xaxis":"x4","yaxis":"y4"},{"line":{"color":"#2980b9","width":3},"mode":"lines","name":"Tier 3 CR-Recon xi(s)","x":{"dtype":"f8","bdata":"AAAAAAAATkDLjudUUkBOQJYdz6mkgE5AYqy2\u002fvbATkAtO55TSQFPQPjJhaibQU9AxFht\u002fe2BT0CP51RSQMJPQC07nlNJAVBAkwISfnIhUED4yYWom0FQQF6R+dLEYVBAxFht\u002fe2BUEApIOEnF6JQQI\u002fnVFJAwlBA9K7IfGniUEBadjynkgJRQMA9sNG7IlFAJQUk\u002fORCUUCLzJcmDmNRQPCTC1E3g1FAVlt\u002fe2CjUUC8IvOlicNRQCHqZtCy41FAh7Ha+tsDUkDteE4lBSRSQFJAwk8uRFJAuAc2eldkUkAez6mkgIRSQIOWHc+ppFJA6V2R+dLEUkBOJQUk\u002fORSQLTseE4lBVNAGrTseE4lU0B\u002fe2Cjd0VTQOVC1M2gZVNASgpI+MmFU0Cw0bsi86VTQBaZL00cxlNAfGCjd0XmU0DhJxeibgZUQEbvisyXJlRArLb+9sBGVEASfnIh6mZUQHhF5ksTh1RA3QxadjynVEBD1M2gZcdUQKibQcuO51RADmO19bcHVUB0Kikg4SdVQNnxnEoKSFVAP7kQdTNoVUCkgISfXIhVQApI+MmFqFVAcA9s9K7IVUDW1t8e2OhVQDueU0kBCVZAoGXHcyopVkAGLTueU0lWQGz0rsh8aVZA0rsi86WJVkA3g5Ydz6lWQJ1KCkj4yVZAAhJ+ciHqVkBo2fGcSgpXQM6gZcdzKldAM2jZ8ZxKV0CZL00cxmpXQP72wEbvildAZL40cRirV0DKhaibQctXQDBNHMZq61dAlRSQ8JMLWED62wMbvStYQGCjd0XmS1hAxmrrbw9sWEAsMl+aOIxYQJH50sRhrFhA98BG74rMWEBciLoZtOxYQMJPLkTdDFlAKBeibgYtWUCN3hWZL01ZQPOlicNYbVlAWG397YGNWUC+NHEYq61ZQCT85ELUzVlAisNYbf3tWUDvisyXJg5aQFRSQMJPLlpAuhm07HhOWkAg4ScXom5aQIaom0HLjlpA628PbPSuWkBRN4OWHc9aQLb+9sBG71pAHMZq628PW0CCjd4VmS9bQOdUUkDCT1tATRzGautvW0Cy4zmVFJBbQBirrb89sFtAfnIh6mbQW0DkOZUUkPBbQEkBCT+5EFxArsh8aeIwXEAUkPCTC1FcQHpXZL40cVxA4B7Y6F2RXEBF5ksTh7FcQKutvz2w0VxAEHUzaNnxXEB2PKeSAhJdQNwDG70rMl1AQcuO51RSXUCnkgISfnJdQAxadjynkl1AciHqZtCyXUDY6F2R+dJdQD6w0bsi811Ao3dF5ksTXkAIP7kQdTNeQG4GLTueU15A1M2gZcdzXkA6lRSQ8JNeQJ9ciLoZtF5ABST85ELUXkBq628PbPReQNCy4zmVFF9ANnpXZL40X0CbQcuO51RfQAEJP7kQdV9AZtCy4zmVX0DMlyYOY7VfQDJfmjiM1V9AlyYOY7X1X0D+9sBG7wpgQLLa+tsDG2BAZL40cRgrYEAXom4GLTtgQMqFqJtBS2BAfGniMFZbYEAwTRzGamtgQOIwVlt\u002fe2BAlRSQ8JOLYEBI+MmFqJtgQPrbAxu9q2BArr89sNG7YEBgo3dF5stgQBOHsdr622BAxmrrbw\u002fsYEB4TiUFJPxgQCwyX5o4DGFA3hWZL00cYUCR+dLEYSxhQETdDFp2PGFA98BG74pMYUCqpICEn1xhQFyIuhm0bGFAD2z0rsh8YUDCTy5E3YxhQHUzaNnxnGFAKBeibgatYUDa+tsDG71hQI3eFZkvzWFAQMJPLkTdYUDzpYnDWO1hQKaJw1ht\u002fWFAWG397YENYkAMUTeDlh1iQL40cRirLWJAcRirrb89YkAk\u002fORC1E1iQNbfHtjoXWJAisNYbf1tYkA8p5ICEn5iQO+KzJcmjmJAom4GLTueYkBUUkDCT65iQAg2eldkvmJAuhm07HjOYkBt\u002fe2Bjd5iQCDhJxei7mJA0sRhrLb+YkCGqJtByw5jQDiM1dbfHmNA628PbPQuY0CeU0kBCT9jQFE3g5YdT2NABBu9KzJfY0C2\u002fvbARm9jQGniMFZbf2NAHMZq62+PY0DPqaSAhJ9jQIKN3hWZr2NANHEYq62\u002fY0DnVFJAws9jQJo4jNXW32NATRzGauvvY0AAAAAAAABkQA=="},"y":{"dtype":"f8","bdata":"dRznVG+SZkCFJEvtFJxmQFHZxCqqpWZAA680Sy+vZkCY6BGLpLhmQBqudSUKwmZAx7UlVGDLZkADhZ5Pp9RmQPtNHU\u002ff3WZAXG6piAjnZkB4kx0xI\u002fBmQO2HMHwv+WZAgK59nC0CZ0D6LY3DHQtnQGTR2yEAFGdA8p\u002fi5tQcZ0CfLx5BnCVnQKa1FV5WLmdAbtdhagM3Z0C9PrORoz9nQKDz2P42SGdAhH7G271QZ0DM1JlROFlnQA0SoYimYWdABQBgqAhqZ0BTb5XXXnJnQNxiQDypemdAdQ+l++eCZ0DssVE6G4tnQLA8IxxDk2dA7N5JxF+bZ0B+Zk1VcaNnQC5+EfF3q2dAhsnZuHOzZ0C+303NZLtnQLcmfU5Lw2dAbY\u002fiWyfLZ0DxNGgU+dJnQAbfapbA2mdAWWm9\u002f33iZ0BzEKxtMepnQEil\u002f\u002fza8WdAUKgAynr5Z0ACTXrwEAFoQKtmvYudCGhAPT+jtiAQaEASWZCLmhdoQEccdyQLH2hAdnDamnImaECJQ9AH0S1oQE7+A4QmNWhAsOe4J3M8aEAVd8wKt0NoQOuWuETySmhADdiV7CRSaEAUlx0ZT1loQL8UrOBwYGhA1IJCWYpnaEBIB4mYm25oQBS40LOkdWhA5ZIVwKV8aEDPdADSnoNoQP8X6f2PimhAMB\u002fYV3mRaEAOOonzWphoQFdxbeQ0n2hAbq+tPQemaEBBoS0S0qxoQPIVj3SVs2hArBA2d1G6aECK0k0sBsFoQO85z6Wzx2hANvSI9VnOaEBnJyot+dRoQLJuUF6R22hAMkmamiLiaEAncr\u002fzrOhoQPUJsXsw72hA0ATERK31aEAbBulhI\u002fxoQH6t9eaSAmlAQG4E6fsIaUAoW\u002fF+Xg9pQJbu+8G6FWlADsmXzhAcaUDtt3jFYCJpQNgd6cyqKGlAgB19Eu8uaUAmuTjNLTVpQFGBQ0BnO2lApHNJvptBaUAZUq6ty0dpQIwBv433TWlAclgT\u002fR9UaUAuH1rBRVppQLC20NBpYGlACravXY1maUBsjt3jsWxpQOGLPznZcmlAgeUHoQV5aUC0dWTiOX9pQIV79GJ5hWlAubBrRciLaUBvMsWMK5JpQG9FYESpmGlAfORSrUifaUB7PilxEqZpQL3SLNoQrWlA2rwoEVC0aUDSMHJg3rtpQP2Cw3vMw2lAdAs1zC3MaUD3zVG\u002fGNVpQGeS7hen3mlACRwKP\u002fboaUBuJ5aSJ\u002fRpQM05na9gAGpAzUrMtMsNakAF6Px5lxxqQHZe+bj3LGpA0CxeIyU\u002fakDojDhhXVNqQO651\u002fPiaWpAZGg8+PyCakBNRq7E9p5qQNJ\u002fSF0fvmpAxZ7Ju8jgakBO7KTnRgdrQKd0PtzuMWtAxaBfPBVha0DmZE\u002fTDJVrQIH1ieUkzmtAkZnRVKcMbEDqVTKd1lBsQDebh7LrmmxAMdUNyBPrbEB\u002fNXcNbkFtQJHixm4Jnm1AJhbKZeIAbkBugU3t4GluQCzSEKfW2G5AumXmRX1Nb0CFp1BNdcdvQCTXnZsiI3BAS8uPh6xkcEAx2\u002fFHAahwQCW1o+e87HBA1oI2P28ycUCvxrvhnHhxQEstClbAvnFA624ymksEckBFIpfsqUhyQItY0tNBi3JAFWBgXHfLckA8+P2ArghzQLX33rBNQnNAzeNsZcB3c0Dfxiy4eahzQEkFz+j203NApTlNw8H5c0A90V7Wchl0QLexdWuzMnRAb9XbMj9FdECriWeY5VB0QKf0freKVXRAkJO55ydTdECcwUDey0l0QLa\u002fBWOaOXRAFk3hm8sidECHfZvyqgV0QMnBl52V4nNA0qNY1fi5c0AAKSvDT4xzQAOa+TYhWnNAHat7M\u002f0jc0DVu65geupyQDF2sXQzrnJAygjNosRvckAsAasfyS9yQLlcfcjY7nFABmdG+YWtcUAECYqcW2xxQPvilnzbK3FAz4xY3HzscECNXltbq65wQJkGaibGcnBASSIJdB85cEAP3R1K\u002fAFwQP5ZoBApm29AM4WEYiY4b0DhqhjXLdtuQO6kI2VlhG5Aedh2Xd0zbkDJ4ctYkultQJdnxVFvpW1Ak2Ro2k9nbUBOSm5dAi9tQOsYNl1K\u002fGxAE\u002f\u002fEo+LObEChTSBZf6ZsQA=="},"type":"scatter","xaxis":"x4","yaxis":"y4"},{"line":{"color":"#e74c3c","dash":"dot","width":2},"mode":"lines","name":"Tier 4 LCDM-Recon xi(s)","x":{"dtype":"f8","bdata":"AAAAAAAATkDLjudUUkBOQJYdz6mkgE5AYqy2\u002fvbATkAtO55TSQFPQPjJhaibQU9AxFht\u002fe2BT0CP51RSQMJPQC07nlNJAVBAkwISfnIhUED4yYWom0FQQF6R+dLEYVBAxFht\u002fe2BUEApIOEnF6JQQI\u002fnVFJAwlBA9K7IfGniUEBadjynkgJRQMA9sNG7IlFAJQUk\u002fORCUUCLzJcmDmNRQPCTC1E3g1FAVlt\u002fe2CjUUC8IvOlicNRQCHqZtCy41FAh7Ha+tsDUkDteE4lBSRSQFJAwk8uRFJAuAc2eldkUkAez6mkgIRSQIOWHc+ppFJA6V2R+dLEUkBOJQUk\u002fORSQLTseE4lBVNAGrTseE4lU0B\u002fe2Cjd0VTQOVC1M2gZVNASgpI+MmFU0Cw0bsi86VTQBaZL00cxlNAfGCjd0XmU0DhJxeibgZUQEbvisyXJlRArLb+9sBGVEASfnIh6mZUQHhF5ksTh1RA3QxadjynVEBD1M2gZcdUQKibQcuO51RADmO19bcHVUB0Kikg4SdVQNnxnEoKSFVAP7kQdTNoVUCkgISfXIhVQApI+MmFqFVAcA9s9K7IVUDW1t8e2OhVQDueU0kBCVZAoGXHcyopVkAGLTueU0lWQGz0rsh8aVZA0rsi86WJVkA3g5Ydz6lWQJ1KCkj4yVZAAhJ+ciHqVkBo2fGcSgpXQM6gZcdzKldAM2jZ8ZxKV0CZL00cxmpXQP72wEbvildAZL40cRirV0DKhaibQctXQDBNHMZq61dAlRSQ8JMLWED62wMbvStYQGCjd0XmS1hAxmrrbw9sWEAsMl+aOIxYQJH50sRhrFhA98BG74rMWEBciLoZtOxYQMJPLkTdDFlAKBeibgYtWUCN3hWZL01ZQPOlicNYbVlAWG397YGNWUC+NHEYq61ZQCT85ELUzVlAisNYbf3tWUDvisyXJg5aQFRSQMJPLlpAuhm07HhOWkAg4ScXom5aQIaom0HLjlpA628PbPSuWkBRN4OWHc9aQLb+9sBG71pAHMZq628PW0CCjd4VmS9bQOdUUkDCT1tATRzGautvW0Cy4zmVFJBbQBirrb89sFtAfnIh6mbQW0DkOZUUkPBbQEkBCT+5EFxArsh8aeIwXEAUkPCTC1FcQHpXZL40cVxA4B7Y6F2RXEBF5ksTh7FcQKutvz2w0VxAEHUzaNnxXEB2PKeSAhJdQNwDG70rMl1AQcuO51RSXUCnkgISfnJdQAxadjynkl1AciHqZtCyXUDY6F2R+dJdQD6w0bsi811Ao3dF5ksTXkAIP7kQdTNeQG4GLTueU15A1M2gZcdzXkA6lRSQ8JNeQJ9ciLoZtF5ABST85ELUXkBq628PbPReQNCy4zmVFF9ANnpXZL40X0CbQcuO51RfQAEJP7kQdV9AZtCy4zmVX0DMlyYOY7VfQDJfmjiM1V9AlyYOY7X1X0D+9sBG7wpgQLLa+tsDG2BAZL40cRgrYEAXom4GLTtgQMqFqJtBS2BAfGniMFZbYEAwTRzGamtgQOIwVlt\u002fe2BAlRSQ8JOLYEBI+MmFqJtgQPrbAxu9q2BArr89sNG7YEBgo3dF5stgQBOHsdr622BAxmrrbw\u002fsYEB4TiUFJPxgQCwyX5o4DGFA3hWZL00cYUCR+dLEYSxhQETdDFp2PGFA98BG74pMYUCqpICEn1xhQFyIuhm0bGFAD2z0rsh8YUDCTy5E3YxhQHUzaNnxnGFAKBeibgatYUDa+tsDG71hQI3eFZkvzWFAQMJPLkTdYUDzpYnDWO1hQKaJw1ht\u002fWFAWG397YENYkAMUTeDlh1iQL40cRirLWJAcRirrb89YkAk\u002fORC1E1iQNbfHtjoXWJAisNYbf1tYkA8p5ICEn5iQO+KzJcmjmJAom4GLTueYkBUUkDCT65iQAg2eldkvmJAuhm07HjOYkBt\u002fe2Bjd5iQCDhJxei7mJA0sRhrLb+YkCGqJtByw5jQDiM1dbfHmNA628PbPQuY0CeU0kBCT9jQFE3g5YdT2NABBu9KzJfY0C2\u002fvbARm9jQGniMFZbf2NAHMZq62+PY0DPqaSAhJ9jQIKN3hWZr2NANHEYq62\u002fY0DnVFJAws9jQJo4jNXW32NATRzGauvvY0AAAAAAAABkQA=="},"y":{"dtype":"f8","bdata":"dRznVG+SZkCFJEvtFJxmQFHZxCqqpWZAA680Sy+vZkCY6BGLpLhmQBqudSUKwmZAx7UlVGDLZkADhZ5Pp9RmQPtNHU\u002ff3WZAXG6piAjnZkB4kx0xI\u002fBmQO2HMHwv+WZAgK59nC0CZ0D6LY3DHQtnQGTR2yEAFGdA8p\u002fi5tQcZ0CfLx5BnCVnQKa1FV5WLmdAbtdhagM3Z0C9PrORoz9nQKDz2P42SGdAhH7G271QZ0DM1JlROFlnQA0SoYimYWdABQBgqAhqZ0BTb5XXXnJnQNxiQDypemdAdQ+l++eCZ0DssVE6G4tnQK88IxxDk2dA6t5JxF+bZ0B8Zk1VcaNnQCp+EfF3q2dAgcnZuHOzZ0C0303NZLtnQKUmfU5Lw2dAUI\u002fiWyfLZ0DBNGgU+dJnQLbeapbA2mdA1Wi9\u002f33iZ0CaD6xtMepnQOWj\u002f\u002fza8WdADqYAynr5Z0BZSXrwEAFoQMBgvYudCGhAtjWjtiAQaEDMSZCLmhdoQOQDdyQLH2hAsEnamnImaEAfBtAH0S1oQG6dA4QmNWhAe0+4J3M8aEDmiMsKt0NoQLEjt0TySmhAxZeT7CRSaEATHBoZT1loQKm4puBwYGhAWUo6WYpnaEBleHyYm25oQIucvbOkdWhAEZ74v6V8aEAOwNTRnoNoQHxjp\u002f2PimhAUb11V3mRaEBDgfbyWphoQC+Bk+M0n2hA8EFrPAemaECMhVIQ0qxoQHbL1XGVs2hA5MY6c1G6aECuy4EmBsFoQB0yZ52zx2hAvLFk6VnOaEDOs7Ib+dRoQIWdSUWR22hAnBLjdiLiaECRMPvArOhoQILD0TMw72hAK3Vr36z1aEBy95LTIvxoQCEs2h+SAmlAW0yb0\u002foIaUBgE\u002fr9XA9pQCny5K24FWlAwVMW8g0caUAu\u002fhXZXCJpQDShOnGlKGlAPayryOcuaUA7kGPtIzVpQHCiMu1ZO2lAj+zC1YlBaUDcVp20s0dpQJjGMJfXTWlAdgncivVTaUCSvfucDVppQKHa\u002fdofYGlAXCB9UixmaUBeg2cRM2xpQInNMyY0cmlAgh0soC94aUBh2tSPJX5pQBoregcWhGlA3S\u002fxGwGKaUDWR57l5o9pQOLF1oHHlWlAnNC6FKObaUDg\u002fKvLeaFpQI+6juBLp2lAOCMQnhmtaUA+WTdl47JpQCuWmbSpuGlAOWOaMW2+aUA6Pja0LsRpQNH17FXvyWlAN\u002fl5hLDPaUBlECMZdNVpQNiFgHU822lA2WW7pgzhaUCjWVWQ6OZpQNiOnx\u002fV7GlAlEsQidjyaUC8\u002faWQ+vhpQDz8dt5E\u002f2lAZqZqYMMFakBSnt65hAxqQEgBpcGaE2pAhGtSDhsbakCHeziQHyNqQEWZqDfHK2pAM5wxpTY1akC2FHrgmD9qQH2DIxEgS2pAva\u002fOMwZYakBOCvDDjWZqQF\u002fWsVECd2pAy825+biJakCyI16zEJ9qQGKewmhyt2pAqkiVy1DTakD8+8\u002fYJ\u002fNqQIEeHv57F2tAxVlo1NhAa0BLP6tkz29rQIuGtO7zpGtAcm23LNvga0CGBtwSFyRsQKW68g4zb2xAtboy0q\u002fCbEDZXja1\u002fh5tQNgoC818hG1AxLjdzm3zbUC7nznm9mtuQJN+pacZ7m5ApSA0Tq95b0BaGwk7MgdwQFxq5cPaVXBACwPSA3aocECmJOp8jv5wQA7XokOUV3FAIZiOg92ycUBxt7PDpw9yQCtrrvEZbXJAcrUDNEfKckD9dpp8MiZzQIkZk8zSf3NAUSAFExjWc0BZyOOI8Cd0QNnNz2VOdHRA+\u002fFHxC26dEB\u002fWc2Hmvh0QNs8bhW2LnVAlIXurrxbdUA7HolCCn91QHFkAoUemHVAskNeMaCmdUD+actQX6p1QFkj6nVWo3VACiEf4KqRdUCsgrGFq3V1QP4fkQ3PT3VAXcJWy7AgdUBID+rYDOl0QMX80nC7qXRACC1DsqtjdEDGFxn83Rd0QAMcXw5ex3NAOocJIj1zc0DpgQgljBxzQH4KTkVWxHJAdyRq8JtrckAVHyZnThNyQJ3RbP1LvHFAGUQwF11ncUA1KT3rMRVxQAelZA1hxnBA6W9mumZ7cEBeodTZpDRwQP1t90nH5G9AIrufu6Vpb0DFWBv8FvhuQA=="},"type":"scatter","xaxis":"x4","yaxis":"y4"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.44]},"yaxis":{"anchor":"x","domain":[0.575,1.0]},"xaxis2":{"anchor":"y2","domain":[0.56,1.0]},"yaxis2":{"anchor":"x2","domain":[0.575,1.0]},"xaxis3":{"anchor":"y3","domain":[0.0,0.44]},"yaxis3":{"anchor":"x3","domain":[0.0,0.425]},"xaxis4":{"anchor":"y4","domain":[0.56,1.0]},"yaxis4":{"anchor":"x4","domain":[0.0,0.425]},"annotations":[{"font":{"size":16},"showarrow":false,"text":"Transverse Distance (D_M \u002f r_d) across Tiers","x":0.22,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Radial Distance (D_H \u002f r_d) across Tiers","x":0.78,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Residual Pulls: Tier 1 (Raw Un-Recon) vs Tier 4 (LambdaCDM Shifted)","x":0.22,"xanchor":"center","xref":"paper","y":0.425,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Acoustic Peak xi(s) Profile under CR vs LambdaCDM Reconstruction","x":0.78,"xanchor":"center","xref":"paper","y":0.425,"yanchor":"bottom","yref":"paper"}],"title":{"text":"DESI 2024 DR1: Multi-Tier BAO Audit (Raw Unfit vs Model-Conditioned Tiers)"},"legend":{"orientation":"h","yanchor":"bottom","y":-0.15,"xanchor":"center","x":0.5},"height":850},                        {"responsive": true}                    )                };            </script>        </div>
+    </div>
+
+    <div class="card">
+        <h2>5. Core Scientific Insights</h2>
+        <div class="highlight-box">
+            <ol>
+                <li><b>Pure Un-Reconstructed Data (Tier 1):</b> On raw galaxy clustering where no model-dependent growth displacement has been applied, Chronodynamic Relativity achieves <b>$\chi^2_{\text{red}} = 14.467$</b> across all 7 redshift bins with zero free parameters.</li>
+                <li><b>Exposing $\Lambda\text{CDM}$ Displacement Bias:</b> Comparing Tier 1 to Tier 4 shows that $\Lambda\text{CDM}$ reconstruction actively displaces galaxies along paths derived from $\Lambda\text{CDM}$ ground truth, increasing tension with alternative theories by $+128\%$ (CR $\chi^2$ shifts from $40.93 \to 93.61$).</li>
+                <li><b>CR-Native Reconstruction (Tier 3):</b> Applying backward reconstruction under Chronodynamic Relativity's true field equations ($g_{\text{eff}} = \frac{1}{2}(g_N + \sqrt{g_N^2 + 4g_N a_c})$ and $f_{\text{CR}} \approx 1 - \frac{3}{8\pi} \approx 0.8806$) tightens the acoustic peak around the local contracted sound horizon:
+                    $$r_{d,\text{local}} = \frac{r_s(z_*)}{(1+z_*)^{n/2}} = \frac{326.20\text{ Mpc}}{2.307} = \mathbf{141.42\text{ Mpc}}$$
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker | Chronodynamic Relativity Documentation</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-accent: #2563eb;
+            --secondary: #0d9488;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .cr-top-nav-bar {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+        }
+        .cr-nav-return-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 7px 16px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+        .cr-nav-return-btn:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .cr-nav-brand {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 28px;
+            box-sizing: border-box;
+        }
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .doc-meta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f1f5f9;
+            border-left: 4px solid var(--primary-accent);
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .raw-md-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--primary-accent);
+            text-decoration: none;
+            background: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+        .raw-md-btn:hover {
+            background: #e2e8f0;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.3em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.65em;
+            margin-top: 36px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3em;
+            margin-top: 26px;
+        }
+        h4 {
+            color: #334155;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 24px 0;
+            font-size: 0.92em;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        tr:hover { background-color: #f1f5f9; }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        code {
+            background: #f1f5f9;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 14px 20px;
+            border-left: 4px solid var(--primary-accent);
+            background: #f8fafc;
+            color: #334155;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Callout alert boxes */
+        .alert {
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+        .alert-note { background: #eff6ff; border-color: #3b82f6; color: #1e40af; }
+        .alert-important { background: #faf5ff; border-color: #8b5cf6; color: #5b21b6; }
+        .alert-warning { background: #fffbeb; border-color: #f59e0b; color: #92400e; }
+        .alert-tip { background: #f0fdf4; border-color: #22c55e; color: #166534; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .content-card { padding: 24px 18px; }
+            .container { padding: 20px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cr-top-nav-bar">
+        <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+        <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="doc-meta-banner">
+                <div>Canonical Formal Markdown Document &bull; <b>HTML_DOCUMENTATION_REGISTRY.md</b></div>
+                <a href="HTML_DOCUMENTATION_REGISTRY.md" class="raw-md-btn">&darr; View Raw Markdown Source</a>
+            </div>
+            <h1 id="chronodynamic-relativity-html-documentation-registry-purpose-tracker">Chronodynamic Relativity: HTML Documentation Registry &amp; Purpose Tracker</h1>
+<blockquote>
+<p><strong>Auto-Generated on:</strong> <code>2026-09-08 18:26:45</code><br />
+<strong>Total Tracked HTML Documents:</strong> <code>43</code><br />
+<strong>Auditing Tool:</strong> <code>scripts/audit_html_registry.py</code></p>
+</blockquote>
+<hr />
+<h2 id="1-release-classification-summary">1. Release Classification Summary</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Release Status</th>
+<th style="text-align: center;">Count</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Active Public Release</strong></td>
+<td style="text-align: center;">36</td>
+<td style="text-align: left;">Canonical production pages and recategorized public-ready analyses published to <code>Chronodynamic-Relativity</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dev Repository Only (Paper II)</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">In-progress CLASS-CR Boltzmann solvers and high-$\ell$ polarization suites reserved for companion papers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dev Repository Only</strong></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Intermediate research scripts, exploratory parameter sweeps, and 3D simulation sandboxes.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-complete-html-document-catalog">2. Complete HTML Document Catalog</h2>
+<h3 id="development-paper-ii-boltzmann-investigations">Development: Paper II Boltzmann Investigations</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>cmb_perturbations.html</code></strong><br><sub><code>docs/investigations/cmb_perturbations.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">141.7 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only (Paper II)</code></td>
+<td style="text-align: left;">In-progress Boltzmann solver test: Cmb Perturbations</td>
+</tr>
+</tbody>
+</table>
+<h3 id="miscellaneous-documentation">Miscellaneous Documentation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>HTML_DOCUMENTATION_REGISTRY.html</code></strong><br><sub><code>docs/HTML_DOCUMENTATION_REGISTRY.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">71.8 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only</code></td>
+<td style="text-align: left;">Chronodynamic Relativity: HTML Documentation Registry &amp; Purpose Tracker</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html</code></strong><br><sub><code>docs/MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">41.2 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only</code></td>
+<td style="text-align: left;">Mathematical Foundations and Symbology Reference Guide</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>PARAMETER_DEFINITIONS_AND_APPLICATIONS.html</code></strong><br><sub><code>docs/PARAMETER_DEFINITIONS_AND_APPLICATIONS.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">40.8 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only</code></td>
+<td style="text-align: left;">Comprehensive Parameter Dictionary, Definitions, and Domain Application Guide</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>REFERENCES.html</code></strong><br><sub><code>docs/REFERENCES.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">14.8 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only</code></td>
+<td style="text-align: left;">Scientific References and Accepted Parameters</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html</code></strong><br><sub><code>docs/THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">34.4 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only</code></td>
+<td style="text-align: left;">Theoretical Paradigm Niche and Observational Data Conditioning Methodology</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>index.html</code></strong><br><sub><code>docs/index.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">15.8 KB</td>
+<td style="text-align: center;"><code>Dev Repository Only</code></td>
+<td style="text-align: left;">Chronodynamic Relativity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="official-analysis-cosmic-expansion-sne-ia">Official Analysis: Cosmic Expansion &amp; SNe Ia</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>cosmic_expansion_chronology.html</code></strong><br><sub><code>docs/analyses/cosmic_expansion/cosmic_expansion_chronology.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">105.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar I canonical analysis: Cosmic Expansion &amp; Chronology Deep-Dive</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>cosmic_expansion_overview.html</code></strong><br><sub><code>docs/analyses/cosmic_expansion/cosmic_expansion_overview.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">222.2 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar I canonical analysis: Cosmic Expansion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>master_distance_modulus.html</code></strong><br><sub><code>docs/analyses/cosmic_expansion/master_distance_modulus.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">103.8 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar I canonical analysis: Master Omnibus Distance Modulus Investigation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>supernova_raw_vs_conditioned.html</code></strong><br><sub><code>docs/analyses/cosmic_expansion/supernova_raw_vs_conditioned.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">351.4 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar I canonical analysis: Supernova Raw Vs Conditioned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="official-analysis-early-universe-cmb-desi-bao">Official Analysis: Early Universe, CMB &amp; DESI BAO</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>desi_bao.html</code></strong><br><sub><code>docs/analyses/early_universe/desi_bao.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">51.8 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar IV canonical analysis: Desi Bao</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>desi_unreconstructed_bao.html</code></strong><br><sub><code>docs/analyses/early_universe/desi_unreconstructed_bao.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">54.9 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar IV canonical analysis: DESI 2024 DR1 Multi-Tier BAO Audit</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>early_universe_overview.html</code></strong><br><sub><code>docs/analyses/early_universe/early_universe_overview.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">7.8 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar IV canonical analysis: Early Universe</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>jades_z14.html</code></strong><br><sub><code>docs/analyses/early_universe/jades_z14.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">46.2 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar IV canonical analysis: Early Galaxies Anomaly</td>
+</tr>
+</tbody>
+</table>
+<h3 id="official-analysis-galactic-kinematics-sparc">Official Analysis: Galactic Kinematics &amp; SPARC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>atlas.html</code></strong><br><sub><code>docs/analyses/galactic_rotation/atlas.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">2.46 MB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar II canonical analysis: SPARC Atlas</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>comparison_galaxy_3d_final.html</code></strong><br><sub><code>docs/analyses/galactic_rotation/comparison_galaxy_3d_final.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">1.72 MB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar II canonical analysis: Comparison Galaxy 3D Final</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>cr_galaxy_3d_particle_cloud.html</code></strong><br><sub><code>docs/analyses/galactic_rotation/cr_galaxy_3d_particle_cloud.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">6.71 MB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar II canonical analysis: Cr Galaxy 3D Particle Cloud</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>galactic_rotation_overview.html</code></strong><br><sub><code>docs/analyses/galactic_rotation/galactic_rotation_overview.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">58.1 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar II canonical analysis: Galactic Dynamics</td>
+</tr>
+</tbody>
+</table>
+<h3 id="official-analysis-master-portals-dashboards">Official Analysis: Master Portals &amp; Dashboards</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>analyses_overview.html</code></strong><br><sub><code>docs/analyses/analyses_overview.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">246.8 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Primary portal dashboard: Omnibus Summary</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>metrics.html</code></strong><br><sub><code>docs/analyses/black_holes/metrics.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">26.3 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Primary portal dashboard: EHT Shadow Metrics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>demonstrative_impact.html</code></strong><br><sub><code>docs/analyses/demonstrative_impact.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">121.1 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Primary portal dashboard: Demonstrative Impact</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>cmb_perturbations.html</code></strong><br><sub><code>docs/analyses/investigations/cmb_perturbations.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">141.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Primary portal dashboard: Cmb Perturbations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>energy_time_dilation.html</code></strong><br><sub><code>docs/analyses/investigations/energy_time_dilation.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">11.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Primary portal dashboard: Energy-Driven Time Dilation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>unified_4pillar_benchmark_overview.html</code></strong><br><sub><code>docs/analyses/unified_4pillar_benchmark_overview.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">4.79 MB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Primary portal dashboard: Unified 4Pillar Benchmark Overview</td>
+</tr>
+</tbody>
+</table>
+<h3 id="official-analysis-strong-lensing-bullet-cluster">Official Analysis: Strong Lensing &amp; Bullet Cluster</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>strong_lensing_overview.html</code></strong><br><sub><code>docs/analyses/strong_lensing/strong_lensing_overview.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">16.4 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Pillar III canonical analysis: Strong Lensing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="official-analysis-theoretical-foundations-qft">Official Analysis: Theoretical Foundations &amp; QFT</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">HTML Document / Path</th>
+<th style="text-align: center;">Last Modified</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: center;">Release Status</th>
+<th style="text-align: left;">Purpose / Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>bayesian_posteriors.html</code></strong><br><sub><code>docs/analyses/theory/bayesian_posteriors.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">230.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Bayesian Model Selection across Data Processing Tiers - Chronodynamic Relativity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>cdm_unification_duality.html</code></strong><br><sub><code>docs/analyses/theory/cdm_unification_duality.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">15.0 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: CDM Inverse-Poisson Duality</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>chronon_quantization.html</code></strong><br><sub><code>docs/analyses/theory/chronon_quantization.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">8.8 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Chronon Quantization Bounds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>comparison.html</code></strong><br><sub><code>docs/analyses/theory/comparison.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">18.8 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Theory Comparison</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>energy_repulsion_kinematics.html</code></strong><br><sub><code>docs/analyses/theory/energy_repulsion_kinematics.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">11.3 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Energy Repulsion Kinematics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>fundamental_equations.html</code></strong><br><sub><code>docs/analyses/theory/fundamental_equations.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">17.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Fundamental Equations</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>future_horizons.html</code></strong><br><sub><code>docs/analyses/theory/future_horizons.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">10.6 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Future Horizons</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>gravity_duality_report.html</code></strong><br><sub><code>docs/analyses/theory/gravity_duality_report.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">204.6 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Investigation: Gravity Duality (Geodesics vs Field Force)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>gw170817_constraint_report.html</code></strong><br><sub><code>docs/analyses/theory/gw170817_constraint_report.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">4.5 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Defense Plan: GW170817 Speed of Gravity</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>laboratory_qed_bounds.html</code></strong><br><sub><code>docs/analyses/theory/laboratory_qed_bounds.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">28.0 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Laboratory QED Bounds &amp; Space-Density Gradients</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>methodology.html</code></strong><br><sub><code>docs/analyses/theory/methodology.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">10.6 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Methodology</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>qft_framework.html</code></strong><br><sub><code>docs/analyses/theory/qft_framework.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">8.9 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Quantum Field Theory (QFT)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>quantum_kinematics.html</code></strong><br><sub><code>docs/analyses/theory/quantum_kinematics.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">7.2 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Quantum Kinematics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>quantum_schrodinger_simulation.html</code></strong><br><sub><code>docs/analyses/theory/quantum_schrodinger_simulation.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">894.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Quantum Schrodinger Simulation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>refraction_vs_curvature.html</code></strong><br><sub><code>docs/analyses/theory/refraction_vs_curvature.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">9.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Refraction vs. Curvature</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>scale_invariance_quantum_refraction.html</code></strong><br><sub><code>docs/analyses/theory/scale_invariance_quantum_refraction.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">119.7 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Scale Invariance Quantum Refraction</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>special_relativity.html</code></strong><br><sub><code>docs/analyses/theory/special_relativity.html</code></sub></td>
+<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
+<td style="text-align: center;">11.2 KB</td>
+<td style="text-align: center;"><code>Active Public Release</code></td>
+<td style="text-align: left;">Theoretical foundations: Special Relativity &amp; Kinematics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-maintenance-instructions">3. Maintenance Instructions</h2>
+<p>To refresh this registry after modifying HTML files or running new simulations:</p>
+<pre><code class="language-bash">&amp; &quot;.venv/Scripts/python.exe&quot; scripts/audit_html_registry.py
+</code></pre>
+        </div>
+    </div>
+
+    <div class="footer">
+        Chronodynamic Relativity Research Suite &bull; Rigorous Open-Source Theoretical Physics &bull; Rochester Institute of Technology Alumni Research Initiative
+    </div>
+
+</body>
+</html>

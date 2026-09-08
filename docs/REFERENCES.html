@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific References and Accepted Parameters | Chronodynamic Relativity Documentation</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-accent: #2563eb;
+            --secondary: #0d9488;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .cr-top-nav-bar {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+        }
+        .cr-nav-return-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 7px 16px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+        .cr-nav-return-btn:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .cr-nav-brand {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 28px;
+            box-sizing: border-box;
+        }
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .doc-meta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f1f5f9;
+            border-left: 4px solid var(--primary-accent);
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .raw-md-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--primary-accent);
+            text-decoration: none;
+            background: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+        .raw-md-btn:hover {
+            background: #e2e8f0;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.3em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.65em;
+            margin-top: 36px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3em;
+            margin-top: 26px;
+        }
+        h4 {
+            color: #334155;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 24px 0;
+            font-size: 0.92em;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        tr:hover { background-color: #f1f5f9; }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        code {
+            background: #f1f5f9;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 14px 20px;
+            border-left: 4px solid var(--primary-accent);
+            background: #f8fafc;
+            color: #334155;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Callout alert boxes */
+        .alert {
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+        .alert-note { background: #eff6ff; border-color: #3b82f6; color: #1e40af; }
+        .alert-important { background: #faf5ff; border-color: #8b5cf6; color: #5b21b6; }
+        .alert-warning { background: #fffbeb; border-color: #f59e0b; color: #92400e; }
+        .alert-tip { background: #f0fdf4; border-color: #22c55e; color: #166534; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .content-card { padding: 24px 18px; }
+            .container { padding: 20px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cr-top-nav-bar">
+        <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+        <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="doc-meta-banner">
+                <div>Canonical Formal Markdown Document &bull; <b>REFERENCES.md</b></div>
+                <a href="REFERENCES.md" class="raw-md-btn">&darr; View Raw Markdown Source</a>
+            </div>
+            <h1 id="scientific-references-and-accepted-parameters">Scientific References and Accepted Parameters</h1>
+<p>This document provides the foundational parameters and literature references used as baselines for the Chronodynamic Relativity tool.</p>
+<h2 id="1-global-cosmological-parameters-cr_math_inline_0cdm">1. Global Cosmological Parameters ($\Lambda$CDM)</h2>
+<p>The standard baseline for cosmic expansion is derived from the Cosmic Microwave Background (CMB) measurements and Type Ia Supernova (SN Ia) surveys.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hubble Constant (CMB)</td>
+<td style="text-align: left;">$H_0$</td>
+<td style="text-align: left;">$67.4 \pm 0.5$ km/s/Mpc</td>
+<td style="text-align: left;">Planck 2018 [1]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hubble Constant (Local)</td>
+<td style="text-align: left;">$H_0$</td>
+<td style="text-align: left;">$73.5 \pm 1.1$ km/s/Mpc</td>
+<td style="text-align: left;">Pantheon+ / SH0ES [2]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Matter Density</td>
+<td style="text-align: left;">$\Omega_m$</td>
+<td style="text-align: left;">$0.315 \pm 0.007$</td>
+<td style="text-align: left;">Planck 2018 [1]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dark Energy Density</td>
+<td style="text-align: left;">$\Omega_\Lambda$</td>
+<td style="text-align: left;">$0.685 \pm 0.007$</td>
+<td style="text-align: left;">Planck 2018 [1]</td>
+</tr>
+<tr>
+<td style="text-align: left;">DE Equation of State</td>
+<td style="text-align: left;">$w$</td>
+<td style="text-align: left;">$-1.028 \pm 0.032$</td>
+<td style="text-align: left;">Pantheon+ [2]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Space Curvature</td>
+<td style="text-align: left;">$\Omega_k$</td>
+<td style="text-align: left;">$0.001 \pm 0.002$</td>
+<td style="text-align: left;">Planck 2018 [1]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="citations">Citations</h3>
+<ul>
+<li><strong>[1] Planck Collaboration (2020).</strong> "Planck 2018 results. VI. Cosmological parameters." <em>Astronomy &amp; Astrophysics</em>, 641, A6. <a href="https://doi.org/10.1051/0004-6361/201833910">DOI: 10.1051/0004-6361/201833910</a></li>
+<li><strong>[2] Scolnic, D., et al. (2022).</strong> "The Pantheon+ Analysis: The Combined Sample of Type Ia Supernovae and Cosmological Constraints." <em>The Astrophysical Journal</em>, 938, 113. <a href="https://doi.org/10.3847/1538-4357/ac8b7a">DOI: 10.3847/1538-4357/ac8b7a</a></li>
+</ul>
+<hr />
+<h2 id="2-galactic-dynamics-and-modified-gravity">2. Galactic Dynamics and Modified Gravity</h2>
+<p>The alternative physics baseline uses Modified Newtonian Dynamics (MOND) as the primary comparison for galactic rotation curves without dark matter halos.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MOND Acceleration Scale</td>
+<td style="text-align: left;">$a_0$</td>
+<td style="text-align: left;">$1.2 \times 10^{-10}$ m/s²</td>
+<td style="text-align: left;">Milgrom 1983 [3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empirical a0 (SPARC)</td>
+<td style="text-align: left;">$a_0$</td>
+<td style="text-align: left;">$1.21 \pm 0.02$ m/s²</td>
+<td style="text-align: left;">Lelli et al. 2016 [4]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="citations_1">Citations</h3>
+<ul>
+<li><strong>[3] Milgrom, M. (1983).</strong> "A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis." <em>The Astrophysical Journal</em>, 270, 365. <a href="https://doi.org/10.1086/161130">DOI: 10.1086/161130</a></li>
+<li><strong>[4] Lelli, F., McGaugh, S. S., &amp; Schombert, J. M. (2016).</strong> "SPARC: Spatzer Photometry and Accurate Rotation Curves." <em>The Astronomical Journal</em>, 152, 157. <a href="https://doi.org/10.3847/0004-6256/152/6/157">DOI: 10.3847/0004-6256/152/6/157</a></li>
+<li><strong>[5] Begeman, K. G., Broeils, A. H., &amp; Sanders, R. H. (1991).</strong> "Extended rotation curves of spiral galaxies: dark haloes and modified dynamics." <em>MNRAS</em>, 249, 439.</li>
+</ul>
+<hr />
+<h2 id="3-foundational-machian-metric-origin-literature">3. Foundational Machian &amp; Metric Origin Literature</h2>
+<p>Foundational literature connecting local inertia, acceleration thresholds, and cosmic boundary conditions:</p>
+<ul>
+<li><strong>[6] Mach, E. (1883).</strong> <em>Die Mechanik in ihrer Entwickelung historisch-kritisch dargestellt.</em> Leipzig: F. A. Brockhaus.</li>
+<li><strong>[7] Sciama, D. W. (1953).</strong> "On the origin of inertia." <em>Monthly Notices of the Royal Astronomical Society</em>, 113(1), 34–42. <a href="https://doi.org/10.1093/mnras/113.1.34">DOI: 10.1093/mnras/113.1.34</a></li>
+<li><strong>[8] Brans, C., &amp; Dicke, R. H. (1961).</strong> "Mach's Principle and a Relativistic Theory of Gravitation." <em>Physical Review</em>, 124(3), 925–935. <a href="https://doi.org/10.1103/PhysRev.124.925">DOI: 10.1103/PhysRev.124.925</a></li>
+<li><strong>[9] Milgrom, M. (1999).</strong> "The MOND limit from spacetime scale invariance." <em>Physics Letters A</em>, 253(5-6), 273–279. <a href="https://doi.org/10.1016/S0375-9601(99)00077-8">DOI: 10.1016/S0375-9601(99)00077-8</a></li>
+</ul>
+<hr />
+<h2 id="4-data-ingestion-standards">4. Data Ingestion Standards</h2>
+<p>The Chronodynamic Relativity tool is designed to interface with the following standard data formats:</p>
+<ul>
+<li><strong>SPARC (Galaxies):</strong> Tabulated text files with columns: <code>R</code>, <code>Vobs</code>, <code>errV</code>, <code>Vgas</code>, <code>Vdisk</code>, <code>Vbulge</code>.</li>
+<li><strong>Pantheon+ (Supernovae):</strong> CSV files with columns: <code>zcmb</code> (redshift), <code>mu</code> (distance modulus), <code>mu_err</code>.</li>
+</ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        Chronodynamic Relativity Research Suite &bull; Rigorous Open-Source Theoretical Physics &bull; Rochester Institute of Technology Alumni Research Initiative
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "title": "Chronodynamic Relativity: Unified Relativistic & Cosmological Empirical Evaluation Framework",
+  "description": "The official reproduction codebase and empirical evaluation framework for Chronodynamic Relativity. Unifies linear cosmic expansion (Pantheon+ SNe Ia), CMB acoustic hierarchy (Planck 2018 PR3), galactic rotation curves (SPARC 175 galaxies), and cluster collision dynamics (Bullet Cluster) from first principles.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "cosmology",
+    "dark matter",
+    "dark energy",
+    "cosmic microwave background",
+    "baryon acoustic oscillations",
+    "sparc",
+    "bullet cluster",
+    "gravitation",
+    "astrophysics"
+  ],
+  "upload_type": "software"
+}

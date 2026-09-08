@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "Chronodynamic Relativity Empirical Evaluation Manifest",
+  "version": "1.0.0",
+  "description": "Scientific provenance mapping linking raw empirical inputs, evaluation routines, computed results, and published artifacts.",
+  "analyses": {
+    "cosmic_expansion_pantheon": {
+      "pillar": "Pillar 1: Cosmic Expansion",
+      "scope": "official",
+      "description": "Validation of linear cosmic expansion against Pantheon+ 1,701 Type Ia supernovae.",
+      "inputs": [
+        "data/pantheon_plus/Pantheon+SH0ES.dat"
+      ],
+      "scripts": [
+        "src/evaluations/benchmark_suite.py"
+      ],
+      "results": [],
+      "figures": [
+        "manuscripts/paper_1_foundations/figures/cdm_duality.pdf"
+      ],
+      "documentation": [
+        "docs/analyses/cosmic_expansion/cosmic_expansion_overview.html",
+        "docs/analyses/cosmic_expansion/master_distance_modulus.html"
+      ]
+    },
+    "cmb_acoustic_planck": {
+      "pillar": "Pillar 2: Early Universe CMB",
+      "scope": "official",
+      "description": "Relativistic linear perturbation solver matching Planck 2018 PR3 acoustic peak hierarchy via dynamic membrane tension.",
+      "inputs": [
+        "data/planck/COM_PowerSpect_CMB-TT-binned_R3.01.txt",
+        "data/planck/COM_PowerSpect_CMB-TT-full_R3.01.txt",
+        "data/planck/COM_PowerSpect_CMB-base-plikHM-TTTEEE-lowl-lowE-lensing-minimum-theory_R3.01.txt",
+        "data/planck/planck_2018_tt_binned.csv"
+      ],
+      "scripts": [
+        "src/evaluations/cmb_perturbation_solver.py",
+        "src/evaluations/generate_manuscript_figures.py"
+      ],
+      "results": [],
+      "figures": [
+        "manuscripts/paper_1_foundations/figures/cmb_spectrum.pdf"
+      ],
+      "documentation": [
+        "docs/analyses/early_universe/early_universe_overview.html"
+      ]
+    },
+    "galactic_rotation_sparc": {
+      "pillar": "Pillar 3: Galactic Dynamics",
+      "scope": "official",
+      "description": "Radial acceleration relation (RAR) and rotation curves across 175 SPARC galaxies.",
+      "inputs": [
+        "data/sparc/Rotmod_LTG"
+      ],
+      "scripts": [
+        "src/evaluations/benchmark_suite.py"
+      ],
+      "results": [],
+      "figures": [
+        "manuscripts/paper_1_foundations/figures/sparc_rar.pdf"
+      ],
+      "documentation": [
+        "docs/analyses/galactic_rotation/galactic_rotation_overview.html",
+        "docs/analyses/galactic_rotation/atlas.html"
+      ]
+    },
+    "baryon_acoustic_oscillations_desi": {
+      "pillar": "Pillar 3 (Cosmological): Baryon Acoustic Oscillations",
+      "scope": "official",
+      "description": "DESI DR1 2024 BAO evaluation and native chronodynamic density reconstruction.",
+      "inputs": [
+        "data/desi/desi_2024_bao.csv",
+        "data/desi/desi_2024_prerecon_vs_postrecon.csv"
+      ],
+      "scripts": [
+        "src/evaluations/desi_reconstruction.py"
+      ],
+      "results": [
+        "results/cosmology/desi_native_reconstruction_results.json"
+      ],
+      "figures": [],
+      "documentation": [
+        "docs/analyses/early_universe/desi_bao.html",
+        "docs/analyses/early_universe/desi_unreconstructed_bao.html"
+      ]
+    },
+    "milky_way_kinematics": {
+      "pillar": "Pillar 3 (Galactic): Milky Way Decline",
+      "scope": "shared",
+      "description": "Gaia DR3 rotation curve and Keplerian decline kinematic modeling.",
+      "inputs": [
+        "data/milky_way/mw_rotation_curve.dat"
+      ],
+      "scripts": [
+        "src/evaluations/benchmark_suite.py"
+      ],
+      "results": [
+        "results/investigations/gaia_decline_fit.json"
+      ],
+      "figures": [],
+      "documentation": []
+    },
+    "quantum_bounds": {
+      "pillar": "Laboratory & Quantum Precision Bounds",
+      "scope": "official",
+      "description": "Laboratory tests including neutron interferometry, optical lattice clocks, and UCN states.",
+      "inputs": [
+        "data/quantum/cow_neutron_interferometry.csv",
+        "data/quantum/dce_superconducting_flux.csv",
+        "data/quantum/optical_lattice_clocks.csv",
+        "data/quantum/qed_precision_bounds.csv",
+        "data/quantum/solar_neutrinos_sno_sk.csv",
+        "data/quantum/ucn_gravitational_states.csv"
+      ],
+      "scripts": [
+        "src/evaluations/benchmark_suite.py"
+      ],
+      "results": [],
+      "figures": [],
+      "documentation": [
+        "docs/analyses/theory/laboratory_qed_bounds.html"
+      ]
+    },
+    "unified_4pillar_benchmark": {
+      "pillar": "Joint Empirical Validation",
+      "scope": "official",
+      "description": "Unified 4-pillar joint likelihood and comparative publication dossier.",
+      "inputs": [
+        "data/pantheon_plus/Pantheon+SH0ES.dat",
+        "data/planck/planck_2018_tt_binned.csv",
+        "data/sparc/Rotmod_LTG"
+      ],
+      "scripts": [
+        "src/evaluations/run_unified_joint_likelihood.py",
+        "src/evaluations/plot_unified_4pillars.py"
+      ],
+      "results": [
+        "results/benchmarks/unified_4pillar_benchmark_results.json",
+        "results/benchmarks/cmb_publication_baseline.json",
+        "results/cosmology/desi_native_reconstruction_results.json"
+      ],
+      "figures": [
+        "docs/analyses/unified_4pillar_benchmark_overview.png"
+      ],
+      "documentation": [
+        "docs/analyses/unified_4pillar_benchmark_overview.html",
+        "docs/analyses/analyses_overview.html"
+      ]
+    }
+  }
+}

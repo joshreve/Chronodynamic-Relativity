@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or empirical evaluation suite in your research, please cite it as below."
+title: "Chronodynamic Relativity: Unified Relativistic & Cosmological Empirical Evaluation Framework"
+authors:
+  - family-names: "Shreve"
+    given-names: "Joshua A."
+    orcid: "https://orcid.org/0009-0000-5942-5351"
+version: "1.0.0"
+date-released: "2026-09-07"
+license: "MIT"
+repository-code: "https://github.com/joshreve/Chronodynamic-Relativity"
+keywords:
+  - "cosmology"
+  - "dark matter"
+  - "dark energy"
+  - "cosmic microwave background"
+  - "baryon acoustic oscillations"
+  - "sparc rotation curves"
+  - "bullet cluster"
+  - "relativistic gravitation"
+abstract: >-
+  Chronodynamic Relativity is a first-principles theoretical framework unifying cosmological expansion,
+  galactic rotation curves, and early-universe acoustic scales without fine-tuned cold dark matter or
+  cosmological constant parameters. This repository provides the official empirical evaluation suite,
+  Boltzmann numerical solvers, observational data loaders, and reproduction pipelines across 1,930
+  observational data points spanning four fundamental empirical pillars.

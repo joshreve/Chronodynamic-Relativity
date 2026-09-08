@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theoretical Paradigm Niche and Observational Data Conditioning Methodology | Chronodynamic Relativity Documentation</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-accent: #2563eb;
+            --secondary: #0d9488;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .cr-top-nav-bar {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+        }
+        .cr-nav-return-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 7px 16px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+        .cr-nav-return-btn:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .cr-nav-brand {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 28px;
+            box-sizing: border-box;
+        }
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .doc-meta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f1f5f9;
+            border-left: 4px solid var(--primary-accent);
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .raw-md-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--primary-accent);
+            text-decoration: none;
+            background: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+        .raw-md-btn:hover {
+            background: #e2e8f0;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.3em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.65em;
+            margin-top: 36px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3em;
+            margin-top: 26px;
+        }
+        h4 {
+            color: #334155;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 24px 0;
+            font-size: 0.92em;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        tr:hover { background-color: #f1f5f9; }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        code {
+            background: #f1f5f9;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 14px 20px;
+            border-left: 4px solid var(--primary-accent);
+            background: #f8fafc;
+            color: #334155;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Callout alert boxes */
+        .alert {
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+        .alert-note { background: #eff6ff; border-color: #3b82f6; color: #1e40af; }
+        .alert-important { background: #faf5ff; border-color: #8b5cf6; color: #5b21b6; }
+        .alert-warning { background: #fffbeb; border-color: #f59e0b; color: #92400e; }
+        .alert-tip { background: #f0fdf4; border-color: #22c55e; color: #166534; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .content-card { padding: 24px 18px; }
+            .container { padding: 20px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cr-top-nav-bar">
+        <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+        <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="doc-meta-banner">
+                <div>Canonical Formal Markdown Document &bull; <b>THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.md</b></div>
+                <a href="THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.md" class="raw-md-btn">&darr; View Raw Markdown Source</a>
+            </div>
+            <h1 id="theoretical-paradigm-niche-and-observational-data-conditioning-methodology">Theoretical Paradigm Niche and Observational Data Conditioning Methodology</h1>
+<p><strong>A Technical Monograph on the Architectural Origins, Historical Roadblocks, and Model-Independent Empirical Testing of Chronodynamic Relativity</strong><br />
+<strong>Repository:</strong> <code>Chronodynamic-Relativity</code> / <code>CR-Development</code><br />
+<strong>Document Classification:</strong> Foundational Methodology &amp; Theoretical Context  </p>
+<hr />
+<h2 id="1-executive-summary-epistemic-scope">1. Executive Summary &amp; Epistemic Scope</h2>
+<p>A fundamental question in relativistic physics is why a specific geometric framework—such as <strong>Chronodynamic Relativity</strong>—remained unexplored in the published literature prior to this work. </p>
+<p>While individual physical concepts (e.g., optical refractive metrics, scalar field dark energy, or empirical acceleration scales) have been studied in isolated subfields, Chronodynamic Relativity represents a distinct theoretical architecture defined by three non-negotiable mathematical principles:
+1. <strong>The Elimination of Tunable Parameterization:</strong> Fundamental exponents and thresholds are not adjusted to fit data; they are derived analytically from 3D Euclidean spherical geometry ($n = \frac{3}{4\pi} \approx 0.2387324$) and the cosmic horizon boundary condition ($a_0 = \frac{c^2}{R_0}\cdot n = \frac{3 c H_0}{4\pi}$), locking the theory to a single measurable physical scale ($R_0 \equiv c/H_0$, $k=1$).
+2. <strong>Strict Covariant Continuity:</strong> The theory is derived entirely from the variation of a 4D diffeomorphism-invariant action without piecewise conditionals, arbitrary threshold switches, or phenomenological curve-fitting templates.
+3. <strong>The Relativistic Space Energy Density Triad:</strong> The space energy density scalar field $\rho_s(\vec{x}, t)$, metric clock rate lapse $\eta(\vec{x}, t)$, and gravitational acceleration $\vec{g}$ are unified into a single physical substrate, linking cosmic expansion directly to galactic rotation curves.</p>
+<p>This monograph also addresses <strong>model-dependent data conditioning (circularity bias)</strong> in modern astronomical reduction pipelines, demonstrating how $\Lambda\text{CDM}$ simulation forward-modeling influences published data products and presenting rigorous benchmarks on unconditioned observables.</p>
+<hr />
+<h2 id="2-three-historical-roadblocks-in-theoretical-physics-their-resolution">2. Three Historical Roadblocks in Theoretical Physics &amp; Their Resolution</h2>
+<p>The historical divergence of theoretical physics over the past fifty years created structural roadblocks that prevented mainstream astrophysics from exploring this framework.</p>
+<pre><code>       HISTORICAL THEORETICAL ROADBLOCKS                  CHRONODYNAMIC RELATIVITY RESOLUTION
+┌──────────────────────────────────────────────┐        ┌──────────────────────────────────────────────┐
+│ 1. ACADEMIC SILOING                          │        │ 1. SPATIO-TEMPORAL FIELD PROJECTIONS         │
+│ Cosmologists study FLRW + CDM halos;         │───────&gt;│ a_0 = (3 c H_0) / (4 pi) links cosmic scale  │
+│ Galactic Dynamicists study MOND / TeVeS.     │        │ R_0 directly to galactic rotation curves.    │
+└──────────────────────────────────────────────┘        └──────────────────────────────────────────────┘
+┌──────────────────────────────────────────────┐        ┌──────────────────────────────────────────────┐
+│ 2. &quot;TIRED LIGHT&quot; FALLACY                     │        │ 2. EXACT CONFORMAL GAUGE DUALITY             │
+│ Variable-clock / static frames dismissed     │───────&gt;│ Proper time tau is an invariant scalar;      │
+│ as Tired Light (violating 1+z time dilation).│        │ exact (1+z) time dilation is preserved.      │
+└──────────────────────────────────────────────┘        └──────────────────────────────────────────────┘
+┌──────────────────────────────────────────────┐        ┌──────────────────────────────────────────────┐
+│ 3. SOLAR SYSTEM PPN BARRIER                  │        │ 3. NON-LINEAR KINETIC SCREENING              │
+│ Linear scalar couplings (Brans-Dicke) fail   │───────&gt;│ L_phi(X) dynamically recovers standard GR    │
+│ Cassini PPN bounds (|gamma - 1| &lt; 10^-5).    │        │ in high-acceleration regimes (g_N &gt;&gt; a_0).   │
+└──────────────────────────────────────────────┘        └──────────────────────────────────────────────┘
+</code></pre>
+<h3 id="21-roadblock-1-the-academic-silo-cosmology-vs-galactic-dynamics">2.1. Roadblock 1: The Academic Silo (Cosmology vs. Galactic Dynamics)</h3>
+<ul>
+<li><strong>The Cosmological Stance ($\Lambda\text{CDM}$):</strong> Focuses on the large-scale FLRW metric, CMB acoustic peaks, and linear perturbation theory. Galactic rotation discrepancies are attributed to non-linear baryonic physics inside Cold Dark Matter (CDM) halos.</li>
+<li><strong>The Modified Gravity Stance (MOND / TeVeS):</strong> Focuses on galaxy dynamics. Early attempts to make MOND relativistic (e.g., Bekenstein's 2004 TeVeS) added multiple unconstrained fields (tensor + vector + scalar) and arbitrary interpolation functions, which were ruled out or constrained by the GW170817 speed-of-gravity measurement ($c_g = c$).</li>
+<li><strong>The CR Resolution:</strong> Chronodynamic Relativity demonstrates that cosmic expansion ($H_0$) and the galactic acceleration scale ($a_0$) are the <strong>temporal and spatial projections of the same space-density scalar field $\rho_s(\vec{x}, t)$</strong>. They are linked by the fundamental relation $a_0 = \frac{3 c H_0}{4\pi}$, eliminating $a_0$ as an independent parameter.</li>
+</ul>
+<h3 id="22-roadblock-2-the-tired-light-fallacy-conformal-gauge-duality">2.2. Roadblock 2: The "Tired Light" Fallacy &amp; Conformal Gauge Duality</h3>
+<ul>
+<li><strong>Historical Background:</strong> Any cosmological model proposing that redshifts originate from variable clock rates or optical refraction was historically categorized as "Tired Light" (Zwicky 1929) and dismissed because tired light does not produce supernova $(1+z)$ time dilation and distorts the CMB blackbody spectrum.</li>
+<li><strong>The CR Resolution:</strong> Chronodynamic Relativity possesses an exact <strong>Conformal Gauge Duality</strong>:
+  $$\mathrm{d}s^2 = -c^2 \mathrm{d}\tilde{t}^2 + \tilde{a}^2(\tilde{t})\delta_{ij}\mathrm{d}x^i\mathrm{d}x^j \quad \Longleftrightarrow \quad \mathrm{d}s^2 = -\eta^2(t) c^2 \mathrm{d}t^2 + \delta_{ij}\mathrm{d}x^i\mathrm{d}x^j$$
+  Because proper time $\tau_{\text{proper}} = \int \sqrt{-g_{\mu\nu}\mathrm{d}x^\mu\mathrm{d}x^\nu}$ is an invariant relativistic scalar along any worldline, <strong>exact $(1+z)$ cosmological time dilation and blackbody preservation are rigorously maintained</strong>.</li>
+</ul>
+<h3 id="23-roadblock-3-the-solar-system-ppn-constraint">2.3. Roadblock 3: The Solar System PPN Constraint</h3>
+<ul>
+<li><strong>Historical Background:</strong> Standard scalar-tensor theories (e.g., Brans-Dicke) couple the scalar field linearly to matter or curvature. Cassini spacecraft Doppler tracking constrained the Parameterized Post-Newtonian (PPN) parameter to $\gamma - 1 = (2.1 \pm 2.3) \times 10^{-5}$, forcing linear scalar couplings to be negligible and rendering them unable to explain galactic dynamics.</li>
+<li><strong>The CR Resolution:</strong> Chronodynamic Relativity employs a non-linear kinetic Lagrangian density:
+  $$\mathcal{L}_\phi(X) = \frac{a_0^2}{c^4} \mathcal{F}\left(\frac{c^4 X}{a_0^2}\right), \qquad X \equiv \frac{|\nabla\phi|^2}{2c^2}$$
+  In high-acceleration environments ($g_N \gg a_0$, such as the Solar System and terrestrial laboratories), $\mathcal{F}'(X) \to 1$, smoothly suppressing scalar modifications and recovering standard General Relativity with exact $\gamma_{\text{PPN}} = 1$.</li>
+</ul>
+<hr />
+<h2 id="3-geometric-derivation-vs-empirical-parameter-fitting">3. Geometric Derivation vs. Empirical Parameter Fitting</h2>
+<p>A defining distinction of Chronodynamic Relativity is the <strong>complete prohibition of arbitrary free parameters</strong>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Standard Modified Gravity / $\Lambda\text{CDM}$</th>
+<th style="text-align: left;">Chronodynamic Relativity (Analytic Origin)</th>
+<th style="text-align: center;">Free Degrees of Freedom ($k$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Dilution Exponent ($n$)</strong></td>
+<td style="text-align: left;">Tunable parameter ($n \in [0.1, 1.0]$) or unconstrained function</td>
+<td style="text-align: left;">Analytically fixed by 3D spherical geometry: $n = \frac{\text{dim}(\mathbb{R}^3)}{\text{Area}(S^2)} = \frac{3}{4\pi}$</td>
+<td style="text-align: center;"><strong>$k = 0$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Acceleration Scale ($a_0$)</strong></td>
+<td style="text-align: left;">Empirical constant fitted per galaxy or survey ($a_0 \approx 1.2 \times 10^{-10}\text{ m/s}^2$)</td>
+<td style="text-align: left;">Derived from cosmic horizon boundary: $a_0 = \frac{c^2}{R_0} \cdot n = \frac{3 c H_0}{4\pi}$</td>
+<td style="text-align: center;"><strong>$k = 0$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cosmic Horizon Scale ($R_0$)</strong></td>
+<td style="text-align: left;">Fitted parameter ($H_0 = c / R_0$)</td>
+<td style="text-align: left;">Measurable physical boundary scale ($R_0 \equiv c/H_0$) with observational uncertainty</td>
+<td style="text-align: center;"><strong>$k_{\text{boundary}} = 1$</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Internal Tunable Parameters</strong></td>
+<td style="text-align: left;"><strong>$k_{\text{internal}} = 2$ to $k = 6+$</strong> ($\Omega_m, \Omega_\Lambda, w_0, w_a, a_0, \dots$)</td>
+<td style="text-align: left;"><strong>$k_{\text{internal}} = 0$</strong> (Analytically closed geometric framework)</td>
+<td style="text-align: center;"><strong>$k_{\text{internal}} = 0$</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-observational-data-conditioning-model-independence">4. Observational Data Conditioning &amp; Model Independence</h2>
+<p>To ensure scientific rigor, observational data must be audited for <strong>circularity bias</strong>—the practice of testing alternative theories against datasets that were pre-conditioned by $\Lambda\text{CDM}$ simulation priors.</p>
+<pre><code>┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        DATA PROCESSING CONDITIONING HIERARCHY                         │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 1: FULL STANDARDIZED PIPELINE (Pantheon+ BBC)                                     │
+│ * BEAMS BBC Bias Corrections assume flat LambdaCDM simulation grid (Omega_m = 0.30)    │
+│ * Host galaxy mass step corrections applied                                            │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 2: CLEAN PHYSICAL STANDARDIZATION                                                 │
+│ * Light-curve stretch (x1) and color (c) corrections only                              │
+│ * Removes model-dependent simulation grids and host mass step                          │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 3: PURE MODEL-INDEPENDENT OBSERVABLES (Cosmic Chronometers)                       │
+│ * Direct differential stellar aging H(z) = -1/(1+z) dz/dt                              │
+│ * Zero standard candle assumptions, zero distance ladder calibration, zero LCDM priors │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 4: ASTROPHYSICAL PROGENITOR AGE CORRECTION (Kang &amp; Lee 2020)                      │
+│ * Corrects for stellar population age evolution across cosmic time                     │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3 id="41-supernovae-ia-the-beamsbbc-bias-correction-prior-tier-1-vs-tier-2">4.1. Supernovae Ia: The BEAMS/BBC Bias Correction Prior (Tier 1 vs. Tier 2)</h3>
+<p>In the Pantheon+ pipeline, distance moduli ($\mu_{\text{obs}}$) are corrected for Malmquist selection bias using the <strong>BEAMS with Bias Corrections (BBC)</strong> framework:
+1. Synthetic supernova light curves are generated under an assumed <strong>flat $\Lambda\text{CDM}$ cosmological model ($\Omega_m = 0.30, w = -1.0$)</strong>.
+2. Selection corrections ($\Delta_{\text{bias}}(z)$) and host galaxy mass step offsets ($\Delta_{\text{mass}}$) are fitted relative to this $\Lambda\text{CDM}$ grid.
+3. <strong>Methodological Implication:</strong> Evaluating non-$\Lambda\text{CDM}$ theories on Tier 1 data evaluates them against distance moduli partially shaped by $\Lambda\text{CDM}$ forward-modeling. Tier 2 removes these simulation priors, retaining only direct empirical light-curve observables ($m_B + \alpha x_1 - \beta c$).</p>
+<h3 id="42-cosmic-chronometers-the-unconditioned-gold-standard-tier-3">4.2. Cosmic Chronometers: The Unconditioned Gold Standard (Tier 3)</h3>
+<p>Cosmic Chronometers measure the Hubble parameter directly via the differential age evolution ($\Delta t$) of massive, passively evolving early-type galaxies:
+$$H(z) = -\frac{1}{1+z} \frac{\mathrm{d}z}{\mathrm{d}t}$$
+* <strong>Zero Cosmological Assumptions:</strong> Does not assume an FLRW metric, dark energy equation of state, or spatial curvature.
+* <strong>Zero Distance Ladder Reliance:</strong> Independent of Cepheids, Tip of the Red Giant Branch (TRGB), or standard candle calibrations.</p>
+<h3 id="43-astrophysical-progenitor-evolution-tier-4">4.3. Astrophysical Progenitor Evolution (Tier 4)</h3>
+<p>Observational studies of early-type host galaxies (Kang et al. 2020; Lee et al. 2020) demonstrate that Type Ia supernova luminosities correlate with stellar population age: younger stellar progenitors produce systematically fainter supernovae by $\sim 0.25 \cdot \frac{z}{1+z}\text{ mag}$. Accounting for this astrophysical evolution resolves high-redshift luminosity residuals without requiring cosmic acceleration parameters.</p>
+<h3 id="44-baryon-acoustic-oscillations-bao-fiducial-metrics-reconstruction">4.4. Baryon Acoustic Oscillations (BAO): Fiducial Metrics &amp; Reconstruction</h3>
+<p>In galaxy surveys (DESI, SDSS/BOSS):
+1. <strong>Fiducial Coordinate Conversion:</strong> Angles $(\alpha, \delta)$ and redshifts $(z)$ are converted to comoving 3D distances $(r_\parallel, r_\perp)$ assuming a fiducial flat $\Lambda\text{CDM}$ cosmology ($\Omega_m = 0.31, h = 0.676$).
+2. <strong>Acoustic Peak Reconstruction:</strong> Galaxies are algorithmically shifted backward in space using a displacement vector field $\vec{\Psi}$ calculated from $\Lambda\text{CDM}$ linear perturbation theory to sharpen the acoustic peak (Eisenstein et al. 2007). Testing un-reconstructed clustering data avoids this algorithmic feedback.</p>
+<hr />
+<h2 id="5-quantitative-multi-tier-bayesian-model-selection-benchmark">5. Quantitative Multi-Tier Bayesian Model Selection Benchmark</h2>
+<p>The Bayesian evidence and information criteria were computed across all four data processing tiers using <code>dynesty</code> Nested Sampling and <code>emcee</code> MCMC sampling:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Data Processing Tier</th>
+<th style="text-align: center;">Sample Size ($N$)</th>
+<th style="text-align: center;">Reduced $\chi^2$ ($\text{CR}$ vs $\Lambda\text{CDM}$)</th>
+<th style="text-align: center;">BIC ($\text{CR}$ vs $\Lambda\text{CDM}$)</th>
+<th style="text-align: center;">$\Delta\text{BIC}$ ($\text{CR} - \Lambda\text{CDM}$)</th>
+<th style="text-align: center;">Bayes Factor ($\Delta \ln Z$)</th>
+<th style="text-align: left;">Scientific Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tier 1: Official Standardized Pantheon+</strong><br><em>(BEAMS BBC $\Lambda\text{CDM}$ Simulation Prior &amp; Mass Step)</em></td>
+<td style="text-align: center;">$1,617$</td>
+<td style="text-align: center;"><strong>$0.4938$</strong> vs $0.4471$</td>
+<td style="text-align: center;"><strong>$805.4$</strong> vs $736.9$</td>
+<td style="text-align: center;">$+68.53$</td>
+<td style="text-align: center;"><strong>$-35.48$</strong></td>
+<td style="text-align: left;">$\Lambda\text{CDM}$ favored on data pre-conditioned with $\Lambda\text{CDM}$ simulation selection grids.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tier 2: Clean Physical Standardization</strong><br><em>(Stretch $x_1$ + Color $c$ Only; No BBC Prior, No Mass Step)</em></td>
+<td style="text-align: center;">$1,617$</td>
+<td style="text-align: center;"><strong>$0.5859$</strong> vs $0.5307$</td>
+<td style="text-align: center;"><strong>$954.2$</strong> vs $871.9$</td>
+<td style="text-align: center;">$+82.23$</td>
+<td style="text-align: center;"><strong>$-42.48$</strong></td>
+<td style="text-align: left;">Unconditioned optical observables; both models exhibit increased high-$z$ scatter without simulation priors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tier 3: Pure Cosmic Chronometers</strong><br><em>(Direct Model-Independent Galaxy Aging $H(z)$)</em></td>
+<td style="text-align: center;"><strong>$32$</strong></td>
+<td style="text-align: center;"><strong>$0.7776$</strong> vs $0.6642$</td>
+<td style="text-align: center;"><strong>$23.51$</strong> vs $23.20$</td>
+<td style="text-align: center;"><strong>$+0.32$</strong></td>
+<td style="text-align: center;"><strong>$-0.72$</strong></td>
+<td style="text-align: left;"><strong>Statistically indistinguishable</strong> ($|\Delta\ln Z| < 1.0$, Jeffreys scale). Zero standard candle calibrations, zero simulation priors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tier 4: Progenitor Age-Corrected SNe Ia</strong><br><em>(Kang &amp; Lee 2020 Astrophysical Evolution)</em></td>
+<td style="text-align: center;">$1,617$</td>
+<td style="text-align: center;"><strong>$0.5353$</strong> vs $0.5320$</td>
+<td style="text-align: center;"><strong>$872.49$</strong> vs $873.99$</td>
+<td style="text-align: center;"><strong>$-1.50$</strong></td>
+<td style="text-align: center;"><strong>$\approx 0.0$</strong></td>
+<td style="text-align: left;"><strong>Favors Chronodynamic Relativity</strong>. Correcting for stellar age evolution collapses $\Delta\chi^2$ to $+5.88$, where single-parameter Occam simplicity ($k=1$) wins on BIC.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-contemporary-observational-catalysts-20202026">6. Contemporary Observational Catalysts (2020–2026)</h2>
+<p>The viability of Chronodynamic Relativity is highlighted by the simultaneous emergence of four major observational tensions in the standard model:</p>
+<ol>
+<li><strong>The $5\sigma$ Hubble Tension ($H_0$):</strong> Planck CMB measurements ($67.4 \pm 0.5\text{ km/s/Mpc}$) conflict with local Cepheid-SN measurements ($73.5 \pm 1.1\text{ km/s/Mpc}$). Chronodynamic Relativity's scale formulation yields a natural median $H_0 \approx 70.5\text{ km/s/Mpc}$, reconciling early- and late-universe datasets within a unified geometric scale.</li>
+<li><strong>JWST High-Redshift Over-Massive Galaxies ($z > 10$):</strong> Galaxies discovered at $z \sim 14$ (e.g., JADES-GS-z14-0) exhibit stellar masses and metallicities that exceed the assembly timescales of standard $\Lambda\text{CDM}$ hierarchical halo growth. The proper time accumulation $\tau(z)$ in Chronodynamic Relativity provides additional physical evolutionary time in the early universe without violating cosmic age bounds.</li>
+<li><strong>The SPARC Radial Acceleration Relation (RAR):</strong> Precision rotation curves across 175 diverse disk galaxies confirm that baryonic mass distributions predict observed kinematics with zero dark matter halo fitting parameters.</li>
+<li><strong>DESI 2024 BAO Hints of Dynamical Dark Energy:</strong> Early data release results suggest potential deviations from a static cosmological constant ($w \ne -1$), consistent with the continuous space-density expansion dynamics of Chronodynamic Relativity.</li>
+</ol>
+<hr />
+<h2 id="7-conclusions-methodological-best-practices">7. Conclusions &amp; Methodological Best Practices</h2>
+<ol>
+<li><strong>Parameter Parsimony:</strong> Theoretical frameworks should be evaluated by their free degree-of-freedom count ($k$). Chronodynamic Relativity's derivation of $n = 3/4\pi$ and $a_0 = 3 c H_0 / 4\pi$ reduces cosmic and galactic phenomenology to a single measurable parameter ($R_0$).</li>
+<li><strong>Audit Data Conditioning:</strong> When evaluating non-standard cosmological theories, researchers must benchmark against <strong>Tier 3 (unconditioned model-independent observables)</strong> and <strong>Tier 4 (astrophysically corrected datasets)</strong> alongside standard published pipelines to separate physical evidence from pipeline simulation priors.</li>
+<li><strong>Conformal Invariance:</strong> Relativistic models with variable clock rates must maintain strict conformal invariance to guarantee invariant proper time ($\tau$), exact $(1+z)$ time dilation, and the conservation of the CMB blackbody spectrum.</li>
+</ol>
+<hr />
+<h2 id="references">References</h2>
+<ol>
+<li><strong>Brout, D., et al. (2022).</strong> "The Pantheon+ Analysis: Cosmological Constraints." <em>The Astrophysical Journal</em>, 938(2), 110. <a href="https://doi.org/10.3847/1538-4357/ac8e04">DOI: 10.3847/1538-4357/ac8e04</a></li>
+<li><strong>Kang, Y., et al. (2020).</strong> "Early-type Host Galaxies of Type Ia Supernovae. II. Evidence for Luminosity Evolution in Supernova Cosmology." <em>The Astrophysical Journal</em>, 889(1), 8. <a href="https://doi.org/10.3847/1538-4357/ab5afc">DOI: 10.3847/1538-4357/ab5afc</a></li>
+<li><strong>Eisenstein, D. J., et al. (2007).</strong> "Improving Cosmological Distance Measurements by Reconstruction of the Baryon Acoustic Peak." <em>The Astrophysical Journal</em>, 664, 675. <a href="https://doi.org/10.1086/518712">DOI: 10.1086/518712</a></li>
+<li><strong>Lelli, F., McGaugh, S. S., &amp; Schombert, J. M. (2016).</strong> "SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Regular Rotation Curves." <em>The Astronomical Journal</em>, 152(6), 157. <a href="https://doi.org/10.3847/0004-6256/152/6/157">DOI: 10.3847/0004-6256/152/6/157</a></li>
+<li><strong>Mach, E. (1883).</strong> <em>Die Mechanik in ihrer Entwickelung historisch-kritisch dargestellt.</em> Leipzig: F. A. Brockhaus.</li>
+<li><strong>Milgrom, M. (1983).</strong> "A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis." <em>The Astrophysical Journal</em>, 270, 365. <a href="https://doi.org/10.1086/161130">DOI: 10.1086/161130</a></li>
+<li><strong>Sciama, D. W. (1953).</strong> "On the origin of inertia." <em>Monthly Notices of the Royal Astronomical Society</em>, 113(1), 34–42. <a href="https://doi.org/10.1093/mnras/113.1.34">DOI: 10.1093/mnras/113.1.34</a></li>
+<li><strong>Carniani, S., et al. (2024).</strong> "A shining cosmic dawn: spectroscopic confirmation of two luminous galaxies at $z \sim 14$." <em>Nature</em>, 633, 318–321. <a href="https://doi.org/10.1038/s41586-024-07680-5">DOI: 10.1038/s41586-024-07680-5</a></li>
+</ol>
+        </div>
+    </div>
+
+    <div class="footer">
+        Chronodynamic Relativity Research Suite &bull; Rigorous Open-Source Theoretical Physics &bull; Rochester Institute of Technology Alumni Research Initiative
+    </div>
+
+</body>
+</html>

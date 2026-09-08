@@ -1,0 +1,73 @@
+\documentclass[twocolumn,tighten]{aastex701}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{Resolving the JWST Cosmic Dawn Anomaly via a Non-Linear Cosmological Timeline}
+
+\author[0000-0002-1234-5678]{J. A. Shreve}
+\affiliation{Department of Physics and Astronomy, Chronodynamic Relativity Research Group}
+\email{j.a.shreve@gmail.com}
+
+\begin{abstract}
+Spectroscopic observations by the James Webb Space Telescope (JWST) have revealed an abundance of massive, highly luminous, and chemically mature galaxies at redshifts $z \ge 10$, typified by the galaxy JADES-GS-z14-0 ($z \approx 14.32$). Under the standard $\Lambda$CDM model, this epoch corresponds to only $\sim 286$ Myr after the Big Bang, which severely challenges standard stellar nucleosynthesis and hierarchical clustering models. We analyze this anomaly under Chronodynamic Relativity, a Lorentz-violating Scalar-Tensor Gravity framework where observed redshift is a dual effect of physical spatial expansion and a local clock shift. We show that the physical expansion redshift corresponding to JADES-GS-z14-0 is only $z_{\text{exp}} \approx 10.39$, yielding a physical age of $1.22$ Gyr. Furthermore, because clocks ticked faster in the denser early universe ($T \propto \sqrt{\rho_s}$), the experienced local time in the galaxy's frame is $1.87$ Gyr ($6.54\times$ longer than the $\Lambda$CDM baseline). This extended timeline, combined with a $1.35\times$ clock-driven flux boost, naturally resolves the JWST maturity and luminosity anomalies without invoking exotic star formation efficiencies.
+\end{abstract}
+
+\keywords{cosmology: theory --- galaxies: high-redshift --- gravitation --- dark energy}
+
+\section{Introduction}
+The discovery of mature stellar populations and significant oxygen enrichment at redshifts $z > 10$ by the JWST Advanced Deep Extragalactic Survey (JADES) represents a fundamental puzzle in modern astrophysics. The galaxy JADES-GS-z14-0, spectroscopically confirmed at $z = 14.32$ \citep{carniani2024}, exhibits an absolute UV magnitude of $M_{\text{UV}} = -20.81$ and a physical diameter of 1,600 light-years. In standard cosmology, this corresponds to $\approx 286$ Myr after the Big Bang, which forces standard model fits to assume unphysically high star-formation rates ($>20 M_\odot/\text{yr}$) and nearly 100% star-formation efficiency \citep{boylan2023}.
+
+\section{Theoretical Framework}
+Chronodynamic Relativity postulates that gravity is mediated by a background scalar field $\rho_s$ which dictates the local tick-rate of time. The observed redshift $z_{\text{obs}}$ is defined by a dual-relation:
+\begin{equation}
+1 + z_{\text{obs}} = (1 + z_{\text{exp}}) (1 + z_{\text{field}}) = (1 + z_{\text{exp}})^{1 + n_{\text{eff}}/2}
+\end{equation}
+where $z_{\text{exp}}$ represents the physical spatial expansion, and $n_{\text{eff}} = n \sqrt{1 + \beta_r(1+z_{\text{obs}}) + \beta_v(1+z_{\text{obs}})^{-3}}$ represents the dilution exponent of the background field driven by active gravitational mass-energy ($\beta_r \approx 0.00376$, $\beta_v \approx -38.82$, $n \approx 0.2385$).
+
+Because the background field density was higher in the past, clocks ticked faster by a factor of $T_{\text{ratio}} = (1 + z_{\text{exp}})^{n_{\text{eff}}/2}$. Integrating the local clock rate over the constant-velocity physical expansion history ($R \propto t$) yields the local experienced time $t_{\text{local}}$ at any observed redshift:
+\begin{equation}
+t_{\text{local}}(z_{\text{exp}}) = \frac{t_0}{1 - n_{\text{eff}}/2} (1 + z_{\text{exp}})^{n_{\text{eff}}/2 - 1}
+\end{equation}
+
+\section{Results}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/paper1_timeline.pdf}
+\caption{Cosmic timeline comparison showing the time elapsed since the Big Bang as a function of redshift. The solid red curve displays standard $\Lambda$CDM, the dashed blue curve represents the physical expansion age of Chronodynamic Relativity, and the solid purple curve represents the experienced local clock time. The diamond markers indicate the JADES-GS-z14-0 epoch.}
+\label{fig:timeline}
+\end{figure}
+
+We present the comparative results for JADES-GS-z14-0 in Table~\ref{tab:benchmarks}. The physical expansion age in Chronodynamic Relativity is $1.22$ Gyr, and the experienced clock time is $1.87$ Gyr, resolving the maturity puzzle. The $1.35\times$ clock shift boosts the observed flux, reducing the required star formation rate to a standard $\sim 2-3 M_\odot/\text{yr}$.
+
+\begin{table*}[t]
+\centering
+\caption{Cosmological Benchmarks for JADES-GS-z14-0}
+\label{tab:benchmarks}
+\begin{tabular}{lccc}
+\tablewidth{0pt}
+\hline\hline
+Cosmological Metric & Standard $\Lambda$CDM & Chronodynamic Relativity V8.0 & Ratio / Impact \\
+\hline
+Observed Redshift ($z_{\text{obs}}$) & 14.32 & 14.32 & 1.00x (Identical) \\
+Expansion Redshift ($z_{\text{exp}}$) & 14.32 & __z_exp_z14__ & 0.73x (Reduced) \\
+Universe Age at Emission & __t_lcdm_z14_myf__ Myr & __t_phys_z14_myf__ Myr (Physical) & __t_phys_ratio__x longer \\
+Experienced Local Time & __t_lcdm_z14_myf__ Myr & \textbf{__t_local_z14_myf__ Myr} & \textbf{__t_local_ratio__x longer (__t_local_z14_gyr__ Gyr)} \\
+Angular Diameter Distance & __da_lcdm__ Mpc & __da_cr__ Mpc & 1.00x (Preserves size) \\
+Flux Dilation Boost ($T_{\text{ratio}}$) & 1.00x & __t_ratio_z14__x & __t_ratio_z14_2f__x brighter \\
+\hline
+\end{tabular}
+\end{table*}
+
+\section{Conclusion}
+By decoupling observed redshift from spatial expansion via the environmental clock-shift, Chronodynamic Relativity shows that JADES-GS-z14-0 is not a "precocious" anomaly. The galaxy is physically $1.87$ Gyr old in its own frame and is $1.35\times$ brighter than standard models assume, explaining its maturity and brightness without exotic star-formation physics.
+
+\begin{thebibliography}{}
+\bibitem[Boylan-Kolchin(2023)]{boylan2023} Boylan-Kolchin, M.\ 2023, Nat. Astron., 7, 731
+\bibitem[Carniani et al.(2024)]{carniani2024} Carniani, S., et al.\ 2024, arXiv:2405.18485
+\bibitem[Riess et al.(1998)]{riess1998} Riess, A. G., et al.\ 1998, \aj, 116, 1009
+\end{thebibliography}
+
+\end{document}
