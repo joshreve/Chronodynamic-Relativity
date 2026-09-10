@@ -67,7 +67,7 @@ class TestManifestIntegrity(unittest.TestCase):
         for field in required_fields:
             self.assertIn(field, data, f".zenodo.json missing required field '{field}'.")
 
-        self.assertEqual(data.get("version"), "1.0.2", ".zenodo.json version mismatch.")
+        self.assertEqual(data.get("version"), "1.0.3", ".zenodo.json version mismatch.")
         self.assertIsInstance(data["creators"], list, "creators must be a list in .zenodo.json.")
         self.assertGreater(len(data["creators"]), 0, "creators list cannot be empty.")
         for creator in data["creators"]:
@@ -84,8 +84,8 @@ class TestManifestIntegrity(unittest.TestCase):
 
         self.assertIn("cff-version:", content, "CITATION.cff missing 'cff-version'.")
         self.assertIn("title:", content, "CITATION.cff missing 'title'.")
-        self.assertIn("version: \"1.0.2\"", content, "CITATION.cff missing version 1.0.2.")
-        self.assertIn("10.5281/zenodo.22697450", content, "CITATION.cff missing canonical Zenodo DOI.")
+        self.assertIn("version: \"1.0.3\"", content, "CITATION.cff missing version 1.0.3.")
+        self.assertIn("10.5281/zenodo.22697449", content, "CITATION.cff missing canonical Zenodo DOI.")
         self.assertIn("0009-0000-5942-5351", content, "CITATION.cff missing canonical ORCID.")
         self.assertIn("https://github.com/joshreve/Chronodynamic-Relativity", content, "CITATION.cff missing repository-code.")
 
