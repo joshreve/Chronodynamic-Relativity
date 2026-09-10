@@ -98,7 +98,7 @@ If you use this framework or empirical reproduction pipelines in your research, 
   month        = sep,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {v1.0.0},
+  version      = {v1.0.1},
   url          = {https://github.com/joshreve/Chronodynamic-Relativity}
 }
 ```
