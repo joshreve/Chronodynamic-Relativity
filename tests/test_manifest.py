@@ -56,5 +56,36 @@ class TestManifestIntegrity(unittest.TestCase):
         for subdir in ["benchmarks", "cosmology", "global"]:
             self.assertTrue((results_dir / subdir).exists(), f"results/{subdir} directory missing.")
 
+    def test_zenodo_metadata_integrity(self):
+        """Verifies .zenodo.json exists, is valid JSON, and adheres to Zenodo upload schema."""
+        zenodo_path = REPO_ROOT / ".zenodo.json"
+        self.assertTrue(zenodo_path.exists(), ".zenodo.json does not exist in repository root.")
+        with open(zenodo_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        required_fields = ["title", "description", "creators", "access_right", "license", "upload_type"]
+        for field in required_fields:
+            self.assertIn(field, data, f".zenodo.json missing required field '{field}'.")
+
+        self.assertIsInstance(data["creators"], list, "creators must be a list in .zenodo.json.")
+        self.assertGreater(len(data["creators"]), 0, "creators list cannot be empty.")
+        for creator in data["creators"]:
+            self.assertIn("name", creator, "Creator missing 'name'.")
+            self.assertIn("orcid", creator, "Creator missing 'orcid'.")
+            self.assertEqual(creator["orcid"], "0009-0000-5942-5351", "Unexpected ORCID in .zenodo.json.")
+
+    def test_citation_cff_integrity(self):
+        """Verifies CITATION.cff exists and contains required citation metadata."""
+        cff_path = REPO_ROOT / "CITATION.cff"
+        self.assertTrue(cff_path.exists(), "CITATION.cff does not exist in repository root.")
+        with open(cff_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        self.assertIn("cff-version:", content, "CITATION.cff missing 'cff-version'.")
+        self.assertIn("title:", content, "CITATION.cff missing 'title'.")
+        self.assertIn("0009-0000-5942-5351", content, "CITATION.cff missing canonical ORCID.")
+        self.assertIn("https://github.com/joshreve/Chronodynamic-Relativity", content, "CITATION.cff missing repository-code.")
+
 if __name__ == '__main__':
     unittest.main()
+

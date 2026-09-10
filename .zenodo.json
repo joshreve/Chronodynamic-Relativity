@@ -21,5 +21,6 @@
     "gravitation",
     "astrophysics"
   ],
-  "upload_type": "software"
+  "upload_type": "software",
+  "version": "1.0.0"
 }

@@ -1,6 +1,6 @@
 # Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker
 
-> **Auto-Generated on:** `2026-09-08 18:26:45`  
+> **Auto-Generated on:** `2026-09-10 16:01:42`  
 > **Total Tracked HTML Documents:** `43`  
 > **Auditing Tool:** `scripts/audit_html_registry.py`
 
@@ -29,11 +29,11 @@
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`HTML_DOCUMENTATION_REGISTRY.html`**<br><sub>`docs/HTML_DOCUMENTATION_REGISTRY.html`</sub> | `2026-09-08 00:56:47` | 71.8 KB | `Dev Repository Only` | Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker | Chronodynamic Relativity Documentation |
-| **`MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`**<br><sub>`docs/MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`</sub> | `2026-09-08 00:56:47` | 41.2 KB | `Dev Repository Only` | Mathematical Foundations and Symbology Reference Guide | Chronodynamic Relativity Documentation |
-| **`PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`**<br><sub>`docs/PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`</sub> | `2026-09-08 00:56:47` | 40.8 KB | `Dev Repository Only` | Comprehensive Parameter Dictionary, Definitions, and Domain Application Guide | Chronodynamic Relativity Documentation |
-| **`REFERENCES.html`**<br><sub>`docs/REFERENCES.html`</sub> | `2026-09-08 00:56:47` | 14.8 KB | `Dev Repository Only` | Scientific References and Accepted Parameters | Chronodynamic Relativity Documentation |
-| **`THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`**<br><sub>`docs/THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`</sub> | `2026-09-08 00:56:47` | 34.4 KB | `Dev Repository Only` | Theoretical Paradigm Niche and Observational Data Conditioning Methodology | Chronodynamic Relativity Documentation |
+| **`HTML_DOCUMENTATION_REGISTRY.html`**<br><sub>`docs/HTML_DOCUMENTATION_REGISTRY.html`</sub> | `2026-09-08 18:27:42` | 66.1 KB | `Dev Repository Only` | Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker | Chronodynamic Relativity Documentation |
+| **`MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`**<br><sub>`docs/MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`</sub> | `2026-09-08 18:27:42` | 39.7 KB | `Dev Repository Only` | Mathematical Foundations and Symbology Reference Guide | Chronodynamic Relativity Documentation |
+| **`PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`**<br><sub>`docs/PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`</sub> | `2026-09-08 18:27:42` | 39.4 KB | `Dev Repository Only` | Comprehensive Parameter Dictionary, Definitions, and Domain Application Guide | Chronodynamic Relativity Documentation |
+| **`REFERENCES.html`**<br><sub>`docs/REFERENCES.html`</sub> | `2026-09-08 18:27:42` | 13.4 KB | `Dev Repository Only` | Scientific References and Accepted Parameters | Chronodynamic Relativity Documentation |
+| **`THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`**<br><sub>`docs/THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`</sub> | `2026-09-08 18:27:42` | 32.9 KB | `Dev Repository Only` | Theoretical Paradigm Niche and Observational Data Conditioning Methodology | Chronodynamic Relativity Documentation |
 | **`index.html`**<br><sub>`docs/index.html`</sub> | `2026-09-08 00:56:47` | 15.8 KB | `Dev Repository Only` | Chronodynamic Relativity | Documentation & Empirical Research Index |
 
 ### Official Analysis: Cosmic Expansion & SNe Ia

@@ -38,7 +38,7 @@
             background: #0f172a;
             color: #ffffff;
             padding: 12px 28px;
-            display: flex;
+            /* display: flex; */
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -85,7 +85,7 @@
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
         .doc-meta-banner {
-            display: flex;
+            /* display: flex; */
             align-items: center;
             justify-content: space-between;
             background: #f1f5f9;
@@ -208,13 +208,58 @@
             .container { padding: 20px 12px; }
         }
     </style>
+
+<style id="cr-universal-top-nav-style">
+.cr-top-nav-bar {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+.cr-nav-return-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1e293b !important;
+    color: #38bdf8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9em !important;
+    padding: 7px 16px !important;
+    border-radius: 6px !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.2s ease !important;
+}
+.cr-nav-return-btn:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+    border-color: #38bdf8 !important;
+}
+.cr-nav-brand {
+    font-size: 0.95em !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    letter-spacing: 0.5px !important;
+}
+@media (max-width: 640px) {
+    .cr-top-nav-bar { padding: 10px 16px !important; flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+}
+</style>
+
 </head>
 <body>
 
     <header class="cr-top-nav-bar">
-        <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
-        <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
-    </header>
+    <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+    <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+</header>
 
     <div class="container">
         <div class="content-card">
@@ -224,7 +269,7 @@
             </div>
             <h1 id="chronodynamic-relativity-html-documentation-registry-purpose-tracker">Chronodynamic Relativity: HTML Documentation Registry &amp; Purpose Tracker</h1>
 <blockquote>
-<p><strong>Auto-Generated on:</strong> <code>2026-09-08 18:26:45</code><br />
+<p><strong>Auto-Generated on:</strong> <code>2026-09-10 16:01:42</code><br />
 <strong>Total Tracked HTML Documents:</strong> <code>43</code><br />
 <strong>Auditing Tool:</strong> <code>scripts/audit_html_registry.py</code></p>
 </blockquote>
@@ -293,36 +338,36 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><strong><code>HTML_DOCUMENTATION_REGISTRY.html</code></strong><br><sub><code>docs/HTML_DOCUMENTATION_REGISTRY.html</code></sub></td>
-<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
-<td style="text-align: center;">71.8 KB</td>
+<td style="text-align: center;"><code>2026-09-08 18:27:42</code></td>
+<td style="text-align: center;">66.1 KB</td>
 <td style="text-align: center;"><code>Dev Repository Only</code></td>
 <td style="text-align: left;">Chronodynamic Relativity: HTML Documentation Registry &amp; Purpose Tracker</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><code>MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html</code></strong><br><sub><code>docs/MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html</code></sub></td>
-<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
-<td style="text-align: center;">41.2 KB</td>
+<td style="text-align: center;"><code>2026-09-08 18:27:42</code></td>
+<td style="text-align: center;">39.7 KB</td>
 <td style="text-align: center;"><code>Dev Repository Only</code></td>
 <td style="text-align: left;">Mathematical Foundations and Symbology Reference Guide</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><code>PARAMETER_DEFINITIONS_AND_APPLICATIONS.html</code></strong><br><sub><code>docs/PARAMETER_DEFINITIONS_AND_APPLICATIONS.html</code></sub></td>
-<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
-<td style="text-align: center;">40.8 KB</td>
+<td style="text-align: center;"><code>2026-09-08 18:27:42</code></td>
+<td style="text-align: center;">39.4 KB</td>
 <td style="text-align: center;"><code>Dev Repository Only</code></td>
 <td style="text-align: left;">Comprehensive Parameter Dictionary, Definitions, and Domain Application Guide</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><code>REFERENCES.html</code></strong><br><sub><code>docs/REFERENCES.html</code></sub></td>
-<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
-<td style="text-align: center;">14.8 KB</td>
+<td style="text-align: center;"><code>2026-09-08 18:27:42</code></td>
+<td style="text-align: center;">13.4 KB</td>
 <td style="text-align: center;"><code>Dev Repository Only</code></td>
 <td style="text-align: left;">Scientific References and Accepted Parameters</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><code>THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html</code></strong><br><sub><code>docs/THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html</code></sub></td>
-<td style="text-align: center;"><code>2026-09-08 00:56:47</code></td>
-<td style="text-align: center;">34.4 KB</td>
+<td style="text-align: center;"><code>2026-09-08 18:27:42</code></td>
+<td style="text-align: center;">32.9 KB</td>
 <td style="text-align: center;"><code>Dev Repository Only</code></td>
 <td style="text-align: left;">Theoretical Paradigm Niche and Observational Data Conditioning Methodology</td>
 </tr>
