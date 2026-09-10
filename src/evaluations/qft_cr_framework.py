@@ -1,4 +1,4 @@
-"""
+r"""
 Quantum Field Theory (QFT) Evaluation Engine for Chronodynamic Relativity.
 Quantizes the spatial metric field \hat{\rho}_s(x), formulates Feynman loop integrals,
 and calculates precision QFT bounds:
@@ -21,7 +21,7 @@ class QFTChronodynamicFramework:
         self.m_chronon_gev = m_chronon_gev
 
     def calculate_one_loop_g_minus_two(self):
-        """
+        r"""
         Calculates the 1-loop chronon exchange vertex correction to electron g-2:
         \Delta a_e = (g_s^2 / (4 \pi^2)) \int_0^1 dx \frac{x^2 (1-x)}{x^2 + (1-x) (m_s / m_e)^2}
         """
@@ -35,7 +35,7 @@ class QFTChronodynamicFramework:
         return delta_a_e
 
     def calculate_sme_lorentz_anisotropy(self, v_solar_c=0.0012):
-        """
+        r"""
         Calculates preferred-frame Lorentz violation parameter \Delta c / c:
         \Delta c / c = g_s^2 (v / c)^2
         """
@@ -53,13 +53,13 @@ class QFTChronodynamicFramework:
         print(f"\n--- 1. Electron g-2 1-Loop Shift ---")
         print(f"  Coupling Constant g_s:         {self.g_s:.3e}")
         print(f"  Chronon Mass (m_s):            {self.m_chronon_gev*1e3:.2f} MeV")
-        print(f"  Predicted 1-Loop Shift \Delta a_e: {delta_a_e:.3e}")
+        print(rf"  Predicted 1-Loop Shift \Delta a_e: {delta_a_e:.3e}")
         print(f"  Experimental QED Error Limit:  {A_E_EXPERIMENTAL_ERR:.3e}")
         print(f"  QED Bound Status:              {'PASS (Within QED Error)' if delta_a_e <= A_E_EXPERIMENTAL_ERR else 'EXCEEDED'}")
 
         print(f"\n--- 2. Preferred-Frame SME Lorentz Anisotropy ---")
         print(f"  Solar Velocity (v/c):          {0.0012:.4f}")
-        print(f"  Predicted \Delta c / c:         {delta_c_c:.3e}")
+        print(rf"  Predicted \Delta c / c:         {delta_c_c:.3e}")
 
         print("\n==================================================================")
         print("Evaluation Complete. Generating HTML Report...")

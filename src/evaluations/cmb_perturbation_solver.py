@@ -415,7 +415,7 @@ class CMBPerturbationSolver:
         
         plot_div = fig.to_html(full_html=False, include_plotlyjs='cdn')
         
-        html_full = f"""<!DOCTYPE html>
+        html_full = rf"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
