@@ -1,5 +1,6 @@
 # Chronodynamic Relativity: The Space Density Theory
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22697450.svg)](https://doi.org/10.5281/zenodo.22697450)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--5942--5351-green.svg)](https://orcid.org/0009-0000-5942-5351)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -98,11 +99,13 @@ If you use this framework or empirical reproduction pipelines in your research, 
   month        = sep,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {v1.0.1},
+  version      = {v1.0.2},
+  doi          = {10.5281/zenodo.22697450},
   url          = {https://github.com/joshreve/Chronodynamic-Relativity}
 }
 ```
 * **Author:** Joshua A. Shreve ([ORCID: 0009-0000-5942-5351](https://orcid.org/0009-0000-5942-5351))  
+* **DOI:** [10.5281/zenodo.22697450](https://doi.org/10.5281/zenodo.22697450)  
 * Formal metadata is provided in `CITATION.cff` and `.zenodo.json`.
 
 ---

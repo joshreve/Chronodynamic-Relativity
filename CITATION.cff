@@ -5,10 +5,10 @@ authors:
   - family-names: "Shreve"
     given-names: "Joshua A."
     orcid: "https://orcid.org/0009-0000-5942-5351"
-version: "1.0.1"
+version: "1.0.2"
 date-released: "2026-09-10"
+doi: "10.5281/zenodo.22697450"
 license: "MIT"
-type: software
 repository-code: "https://github.com/joshreve/Chronodynamic-Relativity"
 keywords:
   - "cosmology"
