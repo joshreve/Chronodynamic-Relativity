@@ -258,6 +258,14 @@ def generate_master_index_html():
             <span class="badge" style="background:#f1f5f9; color:#475569;">Core Rigor & Mathematics</span>
         </div>
         <div class="grid">
+            <div class="card" style="border-color: #38bdf8; background: linear-gradient(to bottom, #ffffff, #f0f9ff);">
+                <div>
+                    <span class="status-pill status-official" style="background: #0284c7; color: #ffffff;">Featured Pedagogical Primer</span>
+                    <h3>Understanding Space, Time, and Gravity</h3>
+                    <p>Comprehensive 4-tier visual and mathematical primer with 12 high-resolution infographics—spanning intuitive concepts, nonlinear root gravity, potential funnels, Snell's law refraction, Roche lobes, tidal tensors, and cosmic tri-factor coupling.</p>
+                </div>
+                <a href="textbook_foundations_space_time_gravity.html" class="card-link" style="color: #0284c7; font-weight: 700;">Explore Foundations Guide &rarr;</a>
+            </div>
             <div class="card">
                 <div>
                     <span class="status-pill status-official">Canonical Monograph</span>
@@ -850,11 +858,10 @@ def clean_and_inject_navigation(html_path, docs_root):
     <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
 </header>"""
 
-    # If old navigation header exists, replace it
-    if 'cr-top-nav-bar' in content:
-        content = re.sub(r'<header class=[\'"]cr-top-nav-bar[\'"].*?</header>', top_nav_html, content, flags=re.DOTALL)
-    elif 'top-nav-bar' in content:
-        content = re.sub(r'<header class=[\'"]top-nav-bar[\'"].*?</header>', top_nav_html, content, flags=re.DOTALL)
+    # If old navigation header/div exists, replace it
+    nav_pattern = r'<(header|div)\s+class=[\'"][^\'"]*(?:cr-top-nav-bar|top-nav-bar)[^\'"]*[\'"].*?</\1>'
+    if re.search(nav_pattern, content, flags=re.DOTALL):
+        content = re.sub(nav_pattern, top_nav_html, content, flags=re.DOTALL)
     else:
         # Inject right after <body>
         if '<body' in content:

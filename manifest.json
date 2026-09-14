@@ -146,6 +146,34 @@
         "docs/analyses/unified_4pillar_benchmark_overview.html",
         "docs/analyses/analyses_overview.html"
       ]
+    },
+    "textbook_foundations_space_time_gravity": {
+      "pillar": "Foundations: Multi-Tier Theoretical Primer",
+      "scope": "official",
+      "description": "Comprehensive 4-tier pedagogical guide covering the physical meaning of space, time, and gravity from intuitive visual concepts to covariant field theory.",
+      "inputs": [],
+      "scripts": [
+        "src/evaluations/generate_textbook_infographics.py"
+      ],
+      "results": [],
+      "figures": [
+        "docs/figures/investigations/space_time_gravity_pedagogical_tiers.png",
+        "docs/figures/investigations/space_time_gravity_physical_models.png",
+        "docs/figures/investigations/gravity_acceleration_crossover_scales.png",
+        "docs/figures/investigations/relational_clocks_and_time_dilation.png",
+        "docs/figures/investigations/nonlinear_gravity_two_three_spheres.png",
+        "docs/figures/investigations/nonlinear_gravity_mass_scales_and_screening.png",
+        "docs/figures/investigations/nonlinear_gravity_potential_wells.png",
+        "docs/figures/investigations/refraction_snell_law_clock_lapse.png",
+        "docs/figures/investigations/effective_orbital_potential_wells.png",
+        "docs/figures/investigations/roche_lobes_lagrange_topography.png",
+        "docs/figures/investigations/tidal_tensor_geodesic_deviation.png",
+        "docs/figures/investigations/cosmic_expansion_distance_clock_redshift_coupling.png"
+      ],
+      "documentation": [
+        "docs/textbook_foundations_space_time_gravity.md",
+        "docs/textbook_foundations_space_time_gravity.html"
+      ]
     }
   }
 }

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Space, Time, and Gravity • Chronodynamic Relativity</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #131b2e;
+            --bg-accent: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --danger: #f43f5e;
+            --purple: #c084fc;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .cr-top-nav-bar {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 14px 28px;
+            /* /* /* /* /* /* display: flex; */ */ */ */ */ */
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cr-nav-return-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 8px 18px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+
+        .cr-nav-return-btn:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+
+        .cr-nav-brand {
+            font-size: 1em;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .hero-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .hero-title {
+            font-size: 2.6em;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25em;
+            color: var(--text-muted);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Tier Tabs */
+        .tier-tabs {
+            /* /* /* /* /* /* display: flex; */ */ */ */ */ */
+            justify-content: center;
+            gap: 12px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+
+        .tier-tab-btn {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            color: var(--text-muted);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .tier-tab-btn:hover {
+            border-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .tier-tab-btn.active {
+            background: #1e293b;
+            color: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+        }
+
+        .tier-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .tier-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+            /* /* /* /* /* /* display: flex; */ */ */ */ */ */
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card h3 {
+            font-size: 1.3em;
+            color: var(--primary);
+            margin-top: 25px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-grade { background: rgba(56, 189, 248, 0.2); color: var(--primary); border: 1px solid var(--primary); }
+        .badge-high { background: rgba(52, 211, 153, 0.2); color: var(--success); border: 1px solid var(--success); }
+        .badge-undergrad { background: rgba(251, 191, 36, 0.2); color: var(--warning); border: 1px solid var(--warning); }
+        .badge-grad { background: rgba(244, 63, 94, 0.2); color: var(--danger); border: 1px solid var(--danger); }
+        .badge-worked { background: rgba(192, 132, 252, 0.2); color: var(--purple); border: 1px solid var(--purple); }
+
+        .img-showcase {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin: 20px 0;
+            background: #0f172a;
+        }
+
+        .math-box {
+            background: #0f172a;
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05em;
+            overflow-x: auto;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .concept-item {
+            background: #1e293b;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .concept-item h4 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.15em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #1e293b;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .highlight-box {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+    </style>
+
+<style id="cr-universal-top-nav-style">
+.cr-top-nav-bar {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+.cr-nav-return-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1e293b !important;
+    color: #38bdf8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9em !important;
+    padding: 7px 16px !important;
+    border-radius: 6px !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.2s ease !important;
+}
+.cr-nav-return-btn:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+    border-color: #38bdf8 !important;
+}
+.cr-nav-brand {
+    font-size: 0.95em !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    letter-spacing: 0.5px !important;
+}
+@media (max-width: 640px) {
+    .cr-top-nav-bar { padding: 10px 16px !important; flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+}
+</style>
+
+</head>
+<body>
+
+<header class="cr-top-nav-bar">
+    <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+    <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+</header>
+
+<div class="container">
+    <div class="hero-header">
+        <div class="hero-title">Understanding Space, Time, and Gravity</div>
+        <div class="hero-subtitle">A visual and mathematical guide connecting everyday physical intuition, orbital mechanics, nonlinear gravity, and relativistic field theory across four levels of depth.</div>
+    </div>
+
+    <div class="tier-tabs">
+        <button class="tier-tab-btn active" onclick="switchTier('grade')">Level 1: Physical Intuition</button>
+        <button class="tier-tab-btn" onclick="switchTier('high')">Level 2: Cosmic Scales & Orbits</button>
+        <button class="tier-tab-btn" onclick="switchTier('nonlinear')">Worked Examples: Nonlinear Gravity</button>
+        <button class="tier-tab-btn" onclick="switchTier('undergrad')">Level 3: Relativistic Dynamics</button>
+        <button class="tier-tab-btn" onclick="switchTier('grad')">Level 4: Quantum Field Foundations</button>
+        <button class="tier-tab-btn" onclick="switchTier('master')">Master Comparison & Tests</button>
+    </div>
+
+    <!-- TIER 1 -->
+    <div id="tier-grade" class="tier-content active">
+        <div class="card">
+            <h2><span class="badge badge-grade">Level 1</span> Physical Intuition</h2>
+            <p>Welcome! In this section, we build qualitative physical intuition using transparent mechanical models, physical analogies, and fundamental conceptual shifts.</p>
+
+            <img src="figures/investigations/space_time_gravity_pedagogical_tiers.png" alt="4 Tier Knowledge Ladder" class="img-showcase">
+
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <h4>1. What is Space? (The Giant Trampoline)</h4>
+                    <p>Space is not an empty black void. Imagine space as a giant, super-elastic foam mattress or ocean of clear jelly. Long ago, it was squeezed tight; today, it is slowly stretching and relaxing.</p>
+                </div>
+                <div class="concept-item">
+                    <h4>2. What is Time? (The Unwinding Spring)</h4>
+                    <p>Time moves forward because the cosmic spring is unwinding. Just like a wound-up pocket watch ticks as its spring releases energy, our universe ticks as its space fabric relaxes.</p>
+                </div>
+                <div class="concept-item">
+                    <h4>3. What is Gravity? (Time Slowing & Space Repulsion)</h4>
+                    <p>Space itself does not bend or curve downward into a hole. Instead, heavy planets displace the springy space foam, making clocks tick slightly slower. Objects naturally slide toward where time passes slowest, while the displaced space foam pushes back with elastic repulsion force!</p>
+                </div>
+                <div class="concept-item">
+                    <h4>4. No Invisible Ghosts!</h4>
+                    <p>Old theories needed 95% invisible "Dark Matter" ghosts to hold galaxies and "Dark Energy" ghosts to push space. In Chronodynamic Relativity, the fabric itself explains everything—no ghosts needed!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div id="tier-high" class="tier-content">
+        <div class="card">
+            <h2><span class="badge badge-high">Level 2</span> Cosmic Scales & Orbits</h2>
+            <p>Here we explore algebraic equations, lightcone geometry, and how the cosmic acceleration threshold $a_c$ solves galaxy rotation.</p>
+
+            <img src="figures/investigations/space_time_gravity_physical_models.png" alt="Physical Models Comparison" class="img-showcase">
+
+            <h3>The Straight-Line Cosmic Lightcone</h3>
+            <p>The cosmic causal horizon expands linearly at the speed of light: $R_H(t) = c \cdot t$. This means the cosmic expansion rate is uniquely:</p>
+            <div class="math-box">
+                $$H(t) = \frac{\dot{R}_H(t)}{R_H(t)} = \frac{c}{c \cdot t} = \frac{1}{t}$$
+            </div>
+
+            <h3>The Acceleration Threshold ($a_c$)</h3>
+            <p>When gravitational acceleration drops below the cosmic horizon limit across $4\pi$ steradians, space tension engages:</p>
+            <div class="math-box">
+                $$a_c(t) = \frac{c}{4\pi} H(t) = \frac{c}{4\pi\,t} \approx 1.07 \times 10^{-10}\text{ m/s}^2$$
+            </div>
+
+            <h3>Flat Galaxy Rotation Curves (Tully-Fisher Relation)</h3>
+            <p>In galactic outskirts where $g_N \ll a_c$, effective gravity becomes the geometric mean:</p>
+            <div class="math-box">
+                $$g_{\text{eff}} = \sqrt{g_N \cdot a_c} = \frac{\sqrt{G M_{\text{bar}} a_c}}{r} \implies \frac{v^2}{r} = \frac{\sqrt{G M_{\text{bar}} a_c}}{r} \implies v_{\text{flat}} = \left( G M_{\text{bar}} a_c \right)^{1/4}$$
+            </div>
+            <p>The orbital velocity $v$ becomes completely flat with radius $r$, exactly matching observational SPARC data with 0% dark matter.</p>
+
+            <img src="figures/investigations/gravity_acceleration_crossover_scales.png" alt="Gravity Crossover" class="img-showcase">
+        </div>
+    </div>
+
+    <!-- WORKED EXAMPLES: NONLINEAR GRAVITY -->
+    <div id="tier-nonlinear" class="tier-content">
+        <div class="card">
+            <h2><span class="badge badge-worked">Worked Examples</span> The Geometry of Nonlinear Gravity</h2>
+            <p>To understand how nonlinear root gravity operates in real astrophysical scenarios, we examine multi-body systems, saddle point dynamics, mass scaling, and environmental field screening.</p>
+
+            <img src="figures/investigations/nonlinear_gravity_two_three_spheres.png" alt="2 and 3 Sphere Systems" class="img-showcase">
+
+            <h3>Example 1: The 2-Sphere Binary System (Line of Centers)</h3>
+            <p>For two equal masses $M_1 = M_2 = 1\,M_\odot$ separated by $2d = 10,000\text{ AU}$ along the $x$-axis:</p>
+            <ul>
+                <li><strong>Saddle Point Anomaly ($x \to 0$):</strong> In Newtonian gravity, the force near the midpoint cancels linearly ($g_N \propto x$). In Chronodynamic Relativity, the root operation creates a sharp restoring gradient $g_{\text{eff}} \approx \sqrt{|g_N| a_c} \propto \sqrt{|x|}$, meaning $|\mathrm{d}g/\mathrm{d}x| \to \infty$ at $x = 0$ (sharp V-notch).</li>
+                <li><strong>Enhanced Far-Field Attraction ($|x| > 5,000\text{ AU}$):</strong> Chronodynamic gravity falls as $1/x$ rather than $1/x^2$, providing $+30\%$ to $+80\%$ extra binding force matching Gaia DR3 wide binaries.</li>
+            </ul>
+
+            <h3>Example 2: The 3-Sphere Collinear System (Asymmetric Masses)</h3>
+            <p>For three masses ($2\,M_\odot, 1\,M_\odot, 3\,M_\odot$ at $-8\text{k}, 0, +8\text{k}\text{ AU}$):</p>
+            <p>The vector sum $\mathbf{g}_N = \sum \mathbf{g}_{N,i}$ creates multiple discrete saddle points where nonlinear tension dynamically locks gas into inter-body filamentary bridges.</p>
+
+            <img src="figures/investigations/nonlinear_gravity_mass_scales_and_screening.png" alt="Mass Scales and Screening" class="img-showcase">
+
+            <h3>Example 3: Mass Scales & Transition Radius ($r_c = \sqrt{G M / a_c}$)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scale</th>
+                        <th>Mass ($M$)</th>
+                        <th>Transition Radius ($r_c$)</th>
+                        <th>Physical Regime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Planetary (Earth/Moon)</strong></td>
+                        <td>$\sim 10^{-6}\,M_\odot$</td>
+                        <td>$\approx 20\text{ AU}$</td>
+                        <td>Inner solar system is 100% Newtonian; threshold at outer Kuiper Belt.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stellar (Wide Binary)</strong></td>
+                        <td>$1.0\,M_\odot$</td>
+                        <td>$\approx 7,000\text{ AU}$</td>
+                        <td>Matches exact separation ($s > 2,000\text{ AU}$) where Gaia velocity boosts appear.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dwarf Galaxy</strong></td>
+                        <td>$10^8\,M_\odot$</td>
+                        <td>$\approx 0.70\text{ kpc}$</td>
+                        <td>Entire galaxy is inside the root gravity regime; high velocity dispersion.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Spiral Galaxy (MW)</strong></td>
+                        <td>$10^{11}\,M_\odot$</td>
+                        <td>$\approx 22\text{ kpc}$</td>
+                        <td>Transition at optical radius produces flat outer rotation curves.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Galaxy Cluster</strong></td>
+                        <td>$10^{14}\,M_\odot$</td>
+                        <td>$\approx 680\text{ kpc}$</td>
+                        <td>Explains strong lensing and 330 kpc gas-potential cluster collision offsets.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Example 4: The External Field Effect (High Background Gravity Screening)</h3>
+            <p>When a small subsystem experiences an external background field $\mathbf{g}_{\text{ext}}$ from a host galaxy:</p>
+            <div class="math-box">
+                $$\mathbf{g}_{\text{total}} = \mathbf{g}_{\text{int}} + \mathbf{g}_{\text{ext}} \implies g_{\text{eff,net}} \approx \left[ \frac{\mathrm{d}g_{\text{eff}}}{\mathrm{d}g_N}\Bigg|_{g_{\text{ext}}} \right] g_{\text{int}}$$
+            </div>
+            <p>When $g_{\text{ext}} \gg a_c$ (e.g. inner solar system or galaxy core), the root gravity boost is <strong>quenched</strong>, restoring purely Newtonian behavior ($g_{\text{eff,net}} \to g_{\text{int}}$). When $g_{\text{ext}} \ll a_c$ (isolated deep space), the full boost is expressed.</p>
+
+            <img src="figures/investigations/nonlinear_gravity_potential_wells.png" alt="Nonlinear Potential Wells and Topography" class="img-showcase">
+
+            <h3>Example 5: Gravitational Potential Wells & Funnel Topography</h3>
+            <div class="highlight-box">
+                <h4 style="margin-top:0; color:var(--primary);">Physical Foundation: Temporal Distortion & Substrate Repulsion (Not Spatial Curvature)</h4>
+                <p><strong>Unlike General Relativity (GR)</strong>, where gravity is modeled as a geometric warping and depression of 3D space ($g_{ij}$ spatial curvature requiring 95% invisible dark matter halos to deepen the funnel):</p>
+                <ul>
+                    <li><strong>3D Space Remains Euclidean Flat ($g_{ij} = \delta_{ij}$):</strong> There is zero spatial bending, curvature, or geometrical sagging into higher dimensions.</li>
+                    <li><strong>Temporal Clock Lapse Gradient:</strong> Mass displaces the local space-energy density $\rho_s(\mathbf{x})$, causing atomic clocks to tick slower ($\eta(\mathbf{x}) = \sqrt{\rho_s(\mathbf{x})/\rho_0}$). Freely moving particles follow paths that maximize elapsed proper time, refracting down the clock gradient ($\mathbf{a} = -c^2 \nabla \ln \eta$).</li>
+                    <li><strong>Substrate Repulsion Force:</strong> Displaced space-energy exerts an outward hydrostatic back-reaction pressure ($\nabla \rho_s$), creating the effective mutual attraction between mass bodies.</li>
+                    <li><strong>The "Potential Well" is an Energy/Clock Profile:</strong> The well $\Phi(\mathbf{x}) = c^2 \ln \eta(\mathbf{x})$ is a scalar landscape of clock lapse and vacuum tension, not a physical hole in space.</li>
+                </ul>
+            </div>
+
+            <p>In physics education, gravitational fields are most intuitively visualized as <strong>potential wells $\Phi(r)$</strong> and contour landscapes:</p>
+            <ul>
+                <li><strong>Logarithmic Far-Field Well:</strong> In Chronodynamic Relativity, integrating the root acceleration field $\mathbf{g}_{\text{eff}} = -\nabla \Phi_{\text{eff}}$ produces a <strong>logarithmic deep-field potential</strong> $\Phi_{\text{eff}}(r) \propto \sqrt{G M a_c} \ln(r/r_c)$. Unlike the shallow Newtonian $1/r$ tail that flattens out, the Chronodynamic well remains substantially deeper ($\Delta \Phi = \Phi_{\text{eff}} - \Phi_N < 0$), keeping outer disk stars strongly bound without dark matter halos.</li>
+                <li><strong>Saddle Point Barriers & Filaments:</strong> Between multiple masses, the steep non-linear restoring force creates stable equilibrium saddle throats ($L_1, L_2$) that confine gas into inter-body bridges.</li>
+                <li><strong>2D Funnel Topography (Rubber-Sheet):</strong> Equipotential elevation contours and gravitational streamlines illustrate the twin funnels, figure-8 Roche-like equilibrium boundary, and wide binding basin.</li>
+            </ul>
+
+            <img src="figures/investigations/refraction_snell_law_clock_lapse.png" alt="Snell Law of Gravity and Clock Refraction" class="img-showcase">
+
+            <h3>Example 6: The Optical-Mechanical Analogy (Snell's Law of Gravity)</h3>
+            <p>How does a test particle or light ray curve toward a mass if 3D space is completely Euclidean flat ($g_{ij} = \delta_{ij}$)?</p>
+            <div class="math-box">
+                $$\mathbf{a} = -c^2\,\nabla \ln \eta(\mathbf{x}) = -\nabla \Phi(\mathbf{x}), \quad \text{where } \eta(\mathbf{x}) = \sqrt{\frac{\rho_s(\mathbf{x})}{\rho_0}}$$
+            </div>
+            <ul>
+                <li><strong>Wavefront Tilt via Clock Slowing:</strong> The side of an incoming wavefront closer to the mass travels through a region of displaced space-energy $\rho_s(\mathbf{x})$ where atomic clocks tick slower ($\eta < 1$). The wavefront tilts and refracts downward toward the mass.</li>
+                <li><strong>Fermat's Principle of Maximal Proper Time:</strong> Freely falling bodies follow worldlines that maximize total elapsed proper clock time $\tau = \int \eta(\mathbf{x}(t))\,\mathrm{d}t$. Gravity is purely <strong>optical-mechanical refraction through a relaxing thermodynamic substrate</strong>.</li>
+            </ul>
+
+            <img src="figures/investigations/effective_orbital_potential_wells.png" alt="Effective Orbital Potential and Rotation Curves" class="img-showcase">
+
+            <h3>Example 7: Effective Orbital Potential Energy & Escape Velocity</h3>
+            <p>Balancing gravitational attraction against the centrifugal angular momentum barrier $V_{\text{cent}} = \frac{L^2}{2 m r^2}$ yields the total effective radial potential:</p>
+            <div class="math-box">
+                $$V_{\text{eff}}(r) = \Phi(r) + \frac{L^2}{2 m r^2}$$
+            </div>
+            <ul>
+                <li><strong>The Newtonian Defect:</strong> In Newtonian gravity, $\Phi_N(r) \propto -1/r$ flattens to zero beyond $20\text{ kpc}$. Outer stars with typical galactic orbital speeds ($v \approx 220\text{ km/s}$) would easily exceed the zero-energy unbound threshold ($E \ge 0$) and fly apart unless surrounded by hypothetical dark matter halos.</li>
+                <li><strong>The Chronodynamic Solution:</strong> The logarithmic deep-field potential $\Phi_{\text{eff}}(r) \propto \sqrt{G M a_c}\ln(r/r_c)$ causes $V_{\text{eff},\text{CR}}(r)$ to continue rising outward, firmly binding outer stars in stable circular orbits ($v_{\text{flat}} = (G M a_c)^{1/4}$) with an elevated escape velocity ($v_{\text{esc}} > 350\text{ km/s}$).</li>
+            </ul>
+
+            <img src="figures/investigations/roche_lobes_lagrange_topography.png" alt="Roche Lobes and Lagrange Topography" class="img-showcase">
+
+            <h3>Example 8: Multi-Body Celestial Topography & Roche Saddle Traps</h3>
+            <p>In co-rotating binary systems, effective potential topography reveals 5 Lagrange equilibrium points and critical Roche lobes:</p>
+            <ul>
+                <li><strong>Critical Roche Lobe (Figure-8 Surface):</strong> The equipotential contour passing through $L_1$ defines the tidal boundary between binary stars.</li>
+                <li><strong>The Chronodynamic $L_1$ Saddle Trap:</strong> While Newtonian gravity has a flat restoring slope near $L_1$ ($g_N \propto x$), root gravity creates a sharp <strong>V-notch restoring throat</strong> with infinite gradient $|\mathrm{d}g/\mathrm{d}x| \to \infty$, dynamically locking gas into inter-body filamentary bridges.</li>
+            </ul>
+
+            <img src="figures/investigations/tidal_tensor_geodesic_deviation.png" alt="Tidal Forces and Substrate Stress" class="img-showcase">
+
+            <h3>Example 9: Tidal Forces, Geodesic Deviation & Substrate Stress Fields</h3>
+            <p>Differential gravitational acceleration deforms falling test bodies into prolate ellipsoids while space-substrate displacement creates back-reaction pressure:</p>
+            <ul>
+                <li><strong>Extended Tidal Gradient:</strong> Unlike the short-range Newtonian tidal falloff $\partial g_N / \partial r \propto 1/r^3$, Chronodynamic deep fields produce a long-range tidal gradient $\partial g_{\text{eff}} / \partial r \propto 1/r^2$, maintaining tidal coherence across galaxy cluster scales.</li>
+                <li><strong>Substrate Back-Reaction Pressure:</strong> Displaced space energy exerts an outward hydrostatic back-reaction pressure ($\nabla \rho_s$), demonstrating that gravity is an elastic contact force mediated by the relaxation of the space substrate.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div id="tier-undergrad" class="tier-content">
+        <div class="card">
+            <h2><span class="badge badge-undergrad">Level 3</span> Relativistic Dynamics & Thermodynamic Cosmology</h2>
+            <p>Here we derive the relational spacetime metric, clock lapse factor $\eta(z)$, and thermodynamic arrow of time.</p>
+
+            <h3>The Relational Spacetime Metric</h3>
+            <div class="math-box">
+                $$\mathrm{d}s^2 = -c^2\,\eta^2(t)\,\mathrm{d}t^2 + a^2(t)\,\mathrm{d}\mathbf{x}^2, \quad \eta(t) = \sqrt{\frac{\rho_s(t)}{\rho_{s,0}}}$$
+            </div>
+
+            <h3>Geometric Flux Exponent & Relational Clock Speed</h3>
+            <p>Conserving geometric flux across the enclosing 2-sphere yields $n = \frac{3}{4\pi} \approx 0.2387$:</p>
+            <div class="math-box">
+                $$\rho_s(z) = \rho_{s,0}\,(1+z)^{3/4\pi} \implies \eta(z) = (1+z)^{-3/8\pi} \approx (1+z)^{-0.1194}$$
+            </div>
+
+            <img src="figures/investigations/relational_clocks_and_time_dilation.png" alt="Relational Clocks and Time Dilation" class="img-showcase">
+
+            <h3>Exact Algebraic Root Gravity</h3>
+            <div class="math-box">
+                $$g_{\text{eff}}(g_N, z) = \frac{1}{2} \left[ g_N + \sqrt{g_N^2 + 4\,g_N\,a_c(z)} \right], \quad a_c(z) = a_{c,0}\,(1+z)^{3/2\pi}$$
+            </div>
+
+            <img src="figures/investigations/cosmic_expansion_distance_clock_redshift_coupling.png" alt="Cosmic Tri-Factor Coupling: Distance, Relational Clocks, and Redshift" class="img-showcase">
+
+            <h3>The Cosmic Tri-Factor: Distance, Relational Clocks & Redshift Coupling</h3>
+            <p>Observational cosmology in Chronodynamic Relativity is governed by the interplay of <strong>three coupled physical factors</strong> across lightcones:</p>
+            <ul>
+                <li><strong>Geometric Comoving Distance:</strong> $D_C(z) = \frac{c}{H_0} \ln(1+z)$ (photon travel path in linear causal expansion).</li>
+                <li><strong>Relational Clock Lapse:</strong> $\eta(z) = (1+z)^{-3/8\pi} \approx (1+z)^{-0.1194}$ (slower emitter atomic clock tick rates).</li>
+                <li><strong>Kinematic Redshift:</strong> $(1+z) = \lambda_{\text{obs}} / \lambda_{\text{emit}}$ (photon wavelength expansion).</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4 style="margin-top:0; color:var(--primary);">Physical Unifications Derived from the Tri-Factor</h4>
+                <ul>
+                    <li><strong>Supernova Dimming (0% Dark Energy):</strong> Luminosity distance $d_L(z) = D_C(z)\cdot(1+z)\cdot\eta(z)^{-1} = D_C(z)\cdot(1+z)^{1.1194}$ matches Pantheon+ 1,701 SNe Ia without dark energy ($\Omega_\Lambda = 0$).</li>
+                    <li><strong>Quasar Light Curve Dilation (Hawkins Resolution):</strong> Net time dilation $\Delta t_{\text{obs}} / \Delta t_{\text{emit}} = (1+z)\cdot\eta(z) = (1+z)^{0.8806}$ resolves the 30-year sub-linear Hawkins quasar dilation paradox.</li>
+                    <li><strong>JWST Early Galaxy Maturation:</strong> Accretion proper time $\Delta \tau(z) = \frac{t_0}{1 - n/2}(1+z)^{-(1 - n/2)}$ expands baryonic growth windows by $+80\%$ to $+109\%$ at $z = 10$, explaining mature JWST galaxies without anomalous star formation.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- TIER 4 -->
+    <div id="tier-grad" class="tier-content">
+        <div class="card">
+            <h2><span class="badge badge-grad">Level 4</span> Quantum Field Foundations</h2>
+            <p>Covariant field action, non-conservative stress-energy exchange, and Page-Wootters relational quantum Hamiltonians.</p>
+
+            <h3>Covariant Action Principle</h3>
+            <div class="math-box">
+                $$S = \int \mathrm{d}^4x\,\sqrt{-g} \left[ \frac{R}{16\pi G} - \frac{1}{2} g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi - V(\phi) + \mathcal{L}_{\text{matter}} \right] + S_{\text{diss}}$$
+            </div>
+
+            <h3>Non-Conservative Stress-Energy Conservation</h3>
+            <div class="math-box">
+                $$\nabla_\mu T^{\mu\nu}_{\text{matter}} = -\nabla_\mu T^{\mu\nu}_{\text{space}} = Q^\nu, \quad Q^0 = 3 H(t) \left( \frac{n}{2} \right) \rho_s(t)$$
+            </div>
+
+            <h3>Page-Wootters Relational Quantum Clock</h3>
+            <div class="math-box">
+                $$\hat{H}_{\text{tot}} |\Psi\rangle = 0 \implies |\psi_{\mathcal{S}}(\tau)\rangle \equiv \langle \tau_{\mathcal{C}} | \Psi \rangle, \quad \hat{H}_{\mathcal{C}} = \hbar\,\omega_{\text{fund}}\sqrt{\frac{\hat{\rho}_s}{\rho_{\text{ref}}}}$$
+            </div>
+        </div>
+    </div>
+
+    <!-- MASTER COMPARISON -->
+    <div id="tier-master" class="tier-content">
+        <div class="card">
+            <h2>Master Comparison: Space, Time, and Gravity Across Paradigms</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Newton (1687)</th>
+                        <th>General Relativity / $\Lambda$CDM</th>
+                        <th>Chronodynamic Relativity (CR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Space</strong></td>
+                        <td>Absolute rigid Euclidean void</td>
+                        <td>Curved 4D geometric spacetime manifold</td>
+                        <td>Flat 3D Euclidean substrate with active space-energy $\rho_s(t)$ (No spatial warping)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Time</strong></td>
+                        <td>Absolute master clock ($t = \text{const}$)</td>
+                        <td>Coordinate time with relativistic dilation</td>
+                        <td>Relational clock rate $\mathrm{d}\tau = \eta(\mathbf{x},t)\,\mathrm{d}t$ emerging from vacuum relaxation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gravity</strong></td>
+                        <td>Instantaneous $F = G M m / r^2$ force</td>
+                        <td>Geodesic motion along curved 4D spacetime geometry</td>
+                        <td><strong>Temporal clock gradient ($\nabla\eta$)</strong> & <strong>substrate repulsion force ($\nabla\rho_s$)</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expansion</strong></td>
+                        <td>Static / None</td>
+                        <td>Accelerated by Dark Energy ($\Lambda$)</td>
+                        <td>Linear lightcone $R_H = c t$; $H(t) = 1/t$</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dark Sector</strong></td>
+                        <td>None</td>
+                        <td>95% Unseen (Cold Dark Matter + $\Lambda$)</td>
+                        <td><strong>0% Dark Matter, 0% Dark Energy (100% Baryonic)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Primary Empirical Falsification Tests</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>Sun-Earth $L_1$ Saddle Point:</strong> Laser interferometry within $\pm 480\text{ m}$ will measure a $+68\%$ to $+400\%$ restoring acceleration boost where $g_N \le 10^{-10}\text{ m/s}^2$.</li>
+                    <li><strong>Gaia DR3 Wide Binaries:</strong> Kinematic velocity plateau at $v_{\text{flat}} \approx 0.5\text{ km/s}$ for separation $s > 2,000\text{ AU}$ ($\chi^2/\text{dof} = 0.64$ vs. GR $7.20$).</li>
+                    <li><strong>Quasar Light Curves:</strong> Observational time dilation scales as $(1+z)^{0.88}$, resolving the 20-year quasar zero-dilation paradox.</li>
+                    <li><strong>JWST Early Galaxies:</strong> $+100\%$ extra baryonic accretion time at $z > 10$ naturally produces massive disk galaxies without fine-tuned dark matter.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTier(tierId) {
+        document.querySelectorAll('.tier-tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tier-content').forEach(content => content.classList.remove('active'));
+        
+        event.target.classList.add('active');
+        document.getElementById('tier-' + tierId).classList.add('active');
+        
+        if (window.MathJax) {
+            MathJax.typesetPromise();
+        }
+    }
+</script>
+
+</body>
+</html>
