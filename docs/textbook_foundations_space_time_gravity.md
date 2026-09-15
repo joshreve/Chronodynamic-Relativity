@@ -203,7 +203,7 @@ A test particle moves along the line passing through their centers.
 Consider three collinear masses: $M_1 = 2\,M_\odot$ at $x = -8,000\text{ AU}$, $M_2 = 1\,M_\odot$ at $x = 0$, and $M_3 = 3\,M_\odot$ at $x = +8,000\text{ AU}$ (Panels B1 & B2 above).
 
 * **Superposition Breakdown:** Unlike Newtonian gravity where each mass acts independently, the non-linear root operation acts on the **vector sum** $\mathbf{g}_N = \sum_i \mathbf{g}_{N,i}$.
-* **Asymmetric Saddle Points:** Two discrete gravitational null points appear (at $x \approx -4,400\text{ AU}$ and $x \approx +3,700\text{ AU}$). Around both nulls, the sharp root-gradient restoring well dynamically locks surrounding gas into stable inter-body filamentary structures.
+* **Asymmetric Saddle Points:** Two discrete gravitational null points appear (at $x \approx -3,560\text{ AU}$ and $x \approx +3,060\text{ AU}$). Around both nulls, the sharp root-gradient restoring well dynamically locks surrounding gas into stable inter-body filamentary structures.
 * **Collective Multi-Body Binding:** The outer attraction beyond $M_3$ scales as $\sqrt{G (M_1+M_2+M_3) a_c}/x$, tightly binding triple stellar and galaxy cluster systems without dark matter halos.
 
 ---

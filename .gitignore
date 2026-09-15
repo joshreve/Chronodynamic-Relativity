@@ -15,32 +15,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.Python
 .venv/
-.venv*/
 venv/
-venv*/
 env/
-env*/
-ENV/
-env.bak/
-venv.bak/
 .env
-.env.*
 *.egg-info/
-develop-eggs/
 dist/
 build/
-eggs/
-.eggs/
-parts/
-var/
-sdist/
-wheels/
-share/python-wheels/
-*.egg
-pip-log.txt
-pip-delete-this-directory.txt
 
 # Testing, Quality & Caches
 .pytest_cache/

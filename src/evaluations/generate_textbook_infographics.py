@@ -1208,15 +1208,35 @@ def generate_roche_lagrange_topography_figure():
     cf = ax1.contourf(X, Y, Phi_corot, levels=levels, cmap='viridis', alpha=0.75)
     cs = ax1.contour(X, Y, Phi_corot, levels=levels, colors='#cbd5e1', linewidths=0.5, alpha=0.4)
     
-    # Critical Roche Lobe through L1 (L1 potential is approx -1.8)
-    ax1.contour(X, Y, Phi_corot, levels=[-1.82], colors='#f43f5e', linewidths=2.0, linestyles='--')
+    # Exact Lagrange points via root finding
+    from scipy.optimize import brentq
+    def dphi_dx_exact(x):
+        f1 = (1.0 - mu) * np.sign(x - x1) / (np.abs(x - x1)**2 + 0.04**2)
+        f2 = mu * np.sign(x - x2) / (np.abs(x - x2)**2 + 0.04**2)
+        return f1 + f2 - x
+
+    l1_x = brentq(dphi_dx_exact, x1 + 0.05, x2 - 0.05)
+    l2_x = brentq(dphi_dx_exact, x2 + 0.05, 2.0)
+    l3_x = brentq(dphi_dx_exact, -2.0, x1 - 0.05)
     
-    # Lagrange points
-    l1_x = 0.15
-    l2_x = 1.25
-    l3_x = -1.15
-    l4_x, l4_y = 0.167, np.sqrt(3)/2
-    l5_x, l5_y = 0.167, -np.sqrt(3)/2
+    r1_l1 = np.sqrt((l1_x - x1)**2 + 0.04**2)
+    r2_l1 = np.sqrt((l1_x - x2)**2 + 0.04**2)
+    phi_l1 = - (1.0 - mu) / r1_l1 - mu / r2_l1 - 0.5 * l1_x**2
+    
+    l4_x, l4_y = 0.5 - mu, np.sqrt(3)/2
+    l5_x, l5_y = 0.5 - mu, -np.sqrt(3)/2
+    
+    # Panel 1: 2D Equipotential Topography with Roche Lobes
+    ax1 = fig.add_subplot(gs[0, 0])
+    ax1.set_facecolor('#0f172a')
+    
+    # Contour landscape
+    levels = np.linspace(-4.5, -1.2, 28)
+    cf = ax1.contourf(X, Y, Phi_corot, levels=levels, cmap='viridis', alpha=0.75)
+    cs = ax1.contour(X, Y, Phi_corot, levels=levels, colors='#cbd5e1', linewidths=0.5, alpha=0.4)
+    
+    # Critical Roche Lobe through L1 passing exactly through the saddle
+    ax1.contour(X, Y, Phi_corot, levels=[phi_l1], colors='#f43f5e', linewidths=2.2, linestyles='--')
     
     # Draw Stars
     ax1.scatter([x1], [0], s=220, color='#fbbf24', edgecolors='#ffffff', linewidth=1.5, zorder=10)
@@ -1226,9 +1246,9 @@ def generate_roche_lagrange_topography_figure():
     
     # Collinear saddle points
     ax1.scatter([l1_x, l2_x, l3_x], [0, 0, 0], color='#f43f5e', s=85, marker='X', edgecolors='#ffffff', zorder=10)
-    ax1.text(l1_x, 0.12, "L₁ Saddle", ha='center', va='bottom', color='#f43f5e', fontsize=8.5, fontweight='bold')
-    ax1.text(l2_x, 0.12, "L₂", ha='center', va='bottom', color='#f43f5e', fontsize=8.5, fontweight='bold')
-    ax1.text(l3_x, 0.12, "L₃", ha='center', va='bottom', color='#f43f5e', fontsize=8.5, fontweight='bold')
+    ax1.text(l1_x, 0.12, f"L₁ Saddle\n({l1_x:.2f})", ha='center', va='bottom', color='#f43f5e', fontsize=8, fontweight='bold')
+    ax1.text(l2_x, 0.12, f"L₂\n({l2_x:.2f})", ha='center', va='bottom', color='#f43f5e', fontsize=8, fontweight='bold')
+    ax1.text(l3_x, 0.12, f"L₃\n({l3_x:.2f})", ha='center', va='bottom', color='#f43f5e', fontsize=8, fontweight='bold')
     
     # Triangular peaks
     ax1.scatter([l4_x, l5_x], [l4_y, l5_y], color='#38bdf8', s=85, marker='^', edgecolors='#ffffff', zorder=10)
@@ -1250,26 +1270,44 @@ def generate_roche_lagrange_topography_figure():
     ax2 = fig.add_subplot(gs[0, 1])
     ax2.set_facecolor('#131b2e')
     
-    x_1d = np.linspace(-1.7, 1.7, 500)
+    x_1d = np.linspace(-1.7, 1.7, 600)
     r1_1d = np.sqrt((x_1d - x1)**2 + 0.04**2)
     r2_1d = np.sqrt((x_1d - x2)**2 + 0.04**2)
     
     # Classical Co-rotating Potential
     phi_1d_N = - (1.0 - mu) / r1_1d - mu / r2_1d - 0.5 * x_1d**2
     
-    # Chronodynamic Root-Enhanced Saddle Throat
-    # Effective root gravity strengthens restoring slope near L1
-    phi_1d_CR = phi_1d_N - 0.35 * np.exp(-((x_1d - l1_x)/0.25)**2) * np.abs(x_1d - l1_x)**0.5
+    # Co-rotating net force
+    g_1d_N = - ((1.0 - mu) * (x_1d - x1) / (r1_1d**3) + mu * (x_1d - x2) / (r2_1d**3) - x_1d)
+    
+    # Chronodynamic Root-Enhanced Effective Acceleration
+    a_c_dim = 0.6
+    mag_g = np.abs(g_1d_N)
+    g_eff_1d = 0.5 * (mag_g + np.sqrt(mag_g**2 + 4.0 * mag_g * a_c_dim)) * np.sign(g_1d_N)
+    
+    # Exact potential integration starting from L1
+    l1_idx = np.argmin(np.abs(x_1d - l1_x))
+    l2_idx = np.argmin(np.abs(x_1d - l2_x))
+    l3_idx = np.argmin(np.abs(x_1d - l3_x))
+    
+    phi_1d_CR = np.zeros_like(x_1d)
+    phi_1d_CR[l1_idx] = phi_1d_N[l1_idx]
+    for i in range(l1_idx + 1, len(x_1d)):
+        dx = x_1d[i] - x_1d[i-1]
+        phi_1d_CR[i] = phi_1d_CR[i-1] - 0.5 * (g_eff_1d[i] + g_eff_1d[i-1]) * dx
+    for i in range(l1_idx - 1, -1, -1):
+        dx = x_1d[i] - x_1d[i+1]
+        phi_1d_CR[i] = phi_1d_CR[i+1] - 0.5 * (g_eff_1d[i] + g_eff_1d[i+1]) * dx
     
     ax2.plot(x_1d, phi_1d_N, label='Newtonian Collinear Potential', color='#94a3b8', linestyle='--', linewidth=2.0)
     ax2.plot(x_1d, phi_1d_CR, label='Chronodynamic Potential (Sharp L₁ V-Notch)', color='#34d399', linewidth=3.0)
     
     ax2.scatter([x1, x2], [np.min(phi_1d_N), np.min(phi_1d_N)], color='#fbbf24', s=100, edgecolors='#ffffff', zorder=6, label='Mass Centers (M₁, M₂)')
-    ax2.scatter([l1_x, l2_x, l3_x], [phi_1d_CR[np.argmin(np.abs(x_1d - l1_x))], phi_1d_CR[np.argmin(np.abs(x_1d - l2_x))], phi_1d_CR[np.argmin(np.abs(x_1d - l3_x))]],
+    ax2.scatter([l1_x, l2_x, l3_x], [phi_1d_CR[l1_idx], phi_1d_CR[l2_idx], phi_1d_CR[l3_idx]],
                 color='#f43f5e', s=80, marker='X', zorder=6, label='Saddle Points (L₁, L₂, L₃)')
                 
-    ax2.annotate("Sharp L₁ V-Notch Throat\n(Dynamically Confines Gas Filaments)",
-                 xy=(l1_x, phi_1d_CR[np.argmin(np.abs(x_1d - l1_x))]),
+    ax2.annotate("Sharp L₁ Saddle Barrier\n(Enhanced Restoring Grip Toward Filaments)",
+                 xy=(l1_x, phi_1d_CR[l1_idx]),
                  xytext=(l1_x, -1.2),
                  arrowprops=dict(facecolor='#34d399', edgecolor='#34d399', arrowstyle='->', lw=1.3),
                  color='#34d399', fontsize=8, fontweight='bold', ha='center',
