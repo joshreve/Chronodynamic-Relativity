@@ -5,7 +5,7 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0000--5942--5351-green.svg)](https://orcid.org/0009-0000-5942-5351)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Chronodynamic Relativity (CR)** is a Covariant Scalar-Tensor Gravity framework. It fundamentally reimagines gravitational dynamics and cosmic acceleration not as dark matter halos or a cosmological constant, but as the non-linear spatial gradient and temporal dilation of a universal background space energy density scalar field ($\rho_s(\vec{x}, t)$).
+**Chronodynamic Relativity (CR)** is a Covariant Scalar-Tensor Gravity framework. It fundamentally reimagines gravitational dynamics and cosmic acceleration not as dark matter halos or a cosmological constant, but as the non-linear spatial gradient and temporal dilation of a universal background space energy density scalar field ( $\rho_s(\vec{x}, t)$ ).
 
 By linking the local metric clock rate ($\eta$) to space energy density, Chronodynamic Relativity natively replicates the primary observational pillars of modern cosmology with zero internal tunable parameters ($k_{\text{internal}} = 0$).
 
