@@ -65,6 +65,31 @@ class LambdaCDM(CosmologyModel):
         da = dl / (1 + np.array(z))**2
         return self.validate_result(da, "dA(z)")
 
+    def cosmic_age(self, z, unit='myr'):
+        """
+        Computes cosmic elapsed time t(z) in standard LambdaCDM by integrating:
+        t(z) = integral_z^inf dz' / [ (1+z') H(z') ]
+        
+        Args:
+            z: Redshift (scalar or array-like).
+            unit: 'myr' (default) or 's'/'seconds'.
+        """
+        from src.utils.constants import MYR_TO_S, MPC_TO_M
+        z_arr = np.atleast_1d(z)
+        ages = []
+        for zi in z_arr:
+            integrand = lambda zp: 1.0 / ((1.0 + zp) * self.hubble_parameter(zp))
+            val, _ = quad(integrand, zi, np.inf)
+            t_seconds = val * (MPC_TO_M / 1000.0)
+            if unit.lower() == 'myr':
+                ages.append(t_seconds / MYR_TO_S)
+            else:
+                ages.append(t_seconds)
+        res = np.array(ages)
+        if np.isscalar(z):
+            return self.validate_result(res[0], "cosmic_age(z)")
+        return self.validate_result(res, "cosmic_age(z)")
+
 class CustomCosmology(CosmologyModel):
     """
     Cosmological model with a custom Hubble parameter injection hook.

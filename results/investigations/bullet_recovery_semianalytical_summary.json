@@ -1,0 +1,14 @@
+{
+  "model": "Chronodynamic Relativity Semi-Analytical Virial Recovery (Lagrangian Relaxation)",
+  "f_gas": 0.85,
+  "f_stars": 0.15,
+  "tau_eff_myr": 115.0,
+  "pericenter_time_myr": 370.0,
+  "observed_epoch_time_myr": 435.0,
+  "observed_offset_lensing_gas_kpc": 296.06408709897744,
+  "observed_offset_stars_gas_kpc": 521.0225550520867,
+  "observed_offset_lensing_stars_kpc": 224.95846795310928,
+  "apocenter_turnaround_time_gyr": 1.215,
+  "apocenter_separation_kpc": 2052.647027216822,
+  "final_offset_lensing_gas_1_5gyr_kpc": 0.11057690874139325
+}

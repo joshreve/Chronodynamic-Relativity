@@ -72,7 +72,7 @@ def main():
     print("  * Master Documentation:  docs/index.html")
     print("  * 4-Pillar Overview:     docs/analyses/unified_4pillar_benchmark_overview.html")
     print("  * 4-Pillar Overview Img: docs/analyses/unified_4pillar_benchmark_overview.png")
-    print("  * Manuscript Figures:    manuscripts/paper_1_foundations/figures/")
+    print("  * Manuscript Figures:    manuscripts/series_1_paper_1_foundations/figures/")
     print("  * 4-Pillar JSON Results: results/benchmarks/unified_4pillar_benchmark_results.json")
     print("=" * 90)
 

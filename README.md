@@ -98,37 +98,34 @@ python -m unittest discover tests/
 *   `manifest.json`: Machine-readable provenance manifest mapping raw inputs $\to$ evaluation scripts $\to$ results $\to$ figures.
 *   `data/`: Curated raw empirical datasets ONLY (SPARC, Pantheon+ SNe Ia, Planck PR3 spectra, DESI BAO, MW Gaia, Quantum bounds).
 *   `results/`: Generated numerical outputs, benchmark summaries, and parameter sets (`benchmarks/`, `cosmology/`, `global/`, `investigations/`).
+*   `simulations/`: High-performance numerical Boltzmann solvers (`class_cr/`).
 *   `src/models/`: Core theoretical physics engines (Gravity, Cosmology, Space Density).
 *   `src/evaluations/`: Automated evaluation pipelines, joint likelihood suites, and SSOT site builder.
-*   `manuscripts/`: Publication-ready RevTeX 4-2 manuscript, vector figures, and compiled PDF.
-*   `docs/`: Interactive SSOT HTML analyses and foundational monographs.
+*   `manuscripts/`: Publication-ready RevTeX 4-2 multi-paper series manuscripts, vector figures, and compiled PDFs.
+*   `docs/`: Interactive SSOT HTML analyses, technical investigation reports, and foundational monographs.
 *   `tests/`: Test suite protecting physical invariants, field equations, and data provenance integrity.
 
 ---
 
 ## Citation & Archival Record
 
-### 1. Publication Manuscript (Preprint)
-```bibtex
-@article{Shreve2026_ChronodynamicRelativity,
-  author  = {Shreve, Joshua A.},
-  title   = {{Chronodynamic Relativity: Unifying Cosmic Expansion, Galactic Dynamics, Gravitational Lensing, and CMB Acoustic Peaks from a Single Environmental Scalar Field}},
-  journal = {Zenodo Preprint},
-  year    = {2026},
-  doi     = {10.5281/zenodo.22697884},
-  url     = {https://doi.org/10.5281/zenodo.22697884}
-}
-```
+### 1. Publication Manuscript Series (Preprints)
+* **Paper 1.1 (Foundations):** `manuscripts/series_1_paper_1_foundations/`
+* **Paper 1.2 (Thermodynamic Arrow of Time):** `manuscripts/series_1_paper_2_temporal_dissipation/`
+* **Paper 2.1 (JWST Early Galaxies):** `manuscripts/series_2_paper_1_jwst_early_galaxies/`
+* **Paper 2.3 (Hubble Tension & Cosmic Expansion):** `manuscripts/series_2_paper_3_hubble_tension_expansion/`
+* **Paper 2.4 (CMB Boltzmann Hierarchy):** `manuscripts/series_2_paper_4_cmb_boltzmann_hierarchy/`
+* **Paper 2.5 (Wide Binary Kinematics):** `manuscripts/series_2_paper_5_wide_binary_kinematics/`
 
 ### 2. Empirical Framework & Code Repository
 ```bibtex
 @software{shreve_chronodynamic_software_2026,
   author       = {Shreve, Joshua A.},
   title        = {{Chronodynamic Relativity: Unified Relativistic \& Cosmological Empirical Evaluation Framework}},
-  month        = sep,
+  month        = oct,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {v1.0.3},
+  version      = {v1.1.0},
   doi          = {10.5281/zenodo.22697449},
   url          = {https://github.com/joshreve/Chronodynamic-Relativity}
 }

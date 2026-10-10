@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canonical Equations, Derivation Processes, and Derived Physical Observables | Chronodynamic Relativity Documentation</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-accent: #2563eb;
+            --secondary: #0d9488;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .cr-top-nav-bar {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+        }
+        .cr-nav-return-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e293b;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 7px 16px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+        .cr-nav-return-btn:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .cr-nav-brand {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 40px 28px;
+            box-sizing: border-box;
+        }
+        .content-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .doc-meta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f1f5f9;
+            border-left: 4px solid var(--primary-accent);
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+        .raw-md-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            color: var(--primary-accent);
+            text-decoration: none;
+            background: #ffffff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid #cbd5e1;
+        }
+        .raw-md-btn:hover {
+            background: #e2e8f0;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 2.3em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.65em;
+            margin-top: 36px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3em;
+            margin-top: 26px;
+        }
+        h4 {
+            color: #334155;
+            font-size: 1.1em;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 24px 0;
+            font-size: 0.92em;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            text-align: left;
+        }
+        th {
+            background-color: #0f172a;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        tr:hover { background-color: #f1f5f9; }
+        pre {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        code {
+            background: #f1f5f9;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 14px 20px;
+            border-left: 4px solid var(--primary-accent);
+            background: #f8fafc;
+            color: #334155;
+            border-radius: 0 8px 8px 0;
+        }
+        /* Callout alert boxes */
+        .alert {
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+        .alert-note { background: #eff6ff; border-color: #3b82f6; color: #1e40af; }
+        .alert-important { background: #faf5ff; border-color: #8b5cf6; color: #5b21b6; }
+        .alert-warning { background: #fffbeb; border-color: #f59e0b; color: #92400e; }
+        .alert-tip { background: #f0fdf4; border-color: #22c55e; color: #166534; }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .content-card { padding: 24px 18px; }
+            .container { padding: 20px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cr-top-nav-bar">
+        <a href="./index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
+        <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
+    </header>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="doc-meta-banner">
+                <div>Canonical Formal Markdown Document &bull; <b>CANONICAL_EQUATIONS_AND_DERIVATIONS.md</b></div>
+                <a href="CANONICAL_EQUATIONS_AND_DERIVATIONS.md" class="raw-md-btn">&darr; View Raw Markdown Source</a>
+            </div>
+            <h1 id="canonical-equations-derivation-processes-and-derived-physical-observables">Canonical Equations, Derivation Processes, and Derived Physical Observables</h1>
+<p>This document provides the authoritative, single-source-of-truth mathematical reference for <strong>Chronodynamic Relativity (CR)</strong>. 
+Every equation, asymptotic series limit, and zero-parameter physical observable is derived symbolically from first principles using the SymPy symbolic engine (<code>src.models.SymbolicChronodynamicModel</code>).</p>
+<div class="alert alert-important">**The Four-Tier Derivation Architecture:** 1. **Tier 1: Dynamic Continuous Field Equations** formulated strictly in continuous variables: metric coordinate time $t$, dynamic causal horizon radius $R(t) = c \cdot t$, and particle proper clock time $\tau$. 2. **Tier 2: Present-Epoch Boundary Evaluations** deriving the subscript-0 parameters ($H_0, t_0, R_0, a_0, \tau_0, \rho_0$) by evaluating the continuous Tier 1 equations at the present epoch $t = t_0$ ($R = R_0$). 3. **Tier 3: Geometric First-Principles Derivations** analytically determining the dilution exponent $n = \frac{3}{4\pi}$ and relaxation stiffness $k = \frac{3}{4\pi\sqrt{2}}$ from 3D Euclidean spatial geometry. 4. **Tier 4: Derived Zero-Parameter Observables & Asymptotic Series** yielding the exact formulas tested across all 11 manuscripts in Series 1 and Series 2.</div>
+
+<hr />
+<h2 id="relativistic-time-disentanglement-proper-time-cr_math_inline_41-vs-metric-coordinate-time-cr_math_inline_42">Relativistic Time Disentanglement: Proper Time ($\tau$) vs. Metric Coordinate Time ($t$)</h2>
+<p>A critical foundation of Chronodynamic Relativity is the rigorous separation between <strong>observer coordinate time $t$</strong> and <strong>worldline proper time $\tau$</strong>. Along any physical worldline, the differential line element establishes:
+$$\mathrm{d}\tau = \eta_{\text{dyn}}(t, v) \, \mathrm{d}t = \frac{1}{\gamma_{\text{dyn}}(t)} \, \mathrm{d}t$$</p>
+<p>Consequently, the frame conversion operator between proper time derivatives and coordinate time derivatives is:
+$$\frac{\mathrm{d}}{\mathrm{d}\tau} \equiv \frac{1}{\eta_{\text{dyn}}} \frac{\mathrm{d}}{\mathrm{d}t} = \gamma_{\text{dyn}} \frac{\mathrm{d}}{\mathrm{d}t}$$</p>
+<p>This operator prevents any derivative skew between laboratory frame tracking (where coordinate velocity $v = \mathrm{d}x/\mathrm{d}t$ and 3-force $F = \mathrm{d}p/\mathrm{d}t$ reside) and particle worldlines (where 4-acceleration $a^\mu = \mathrm{d}u^\mu/\mathrm{d}\tau$ and atomic clock frequencies reside).</p>
+<hr />
+<h2 id="tier-1-dynamic-continuous-field-equations-variable-cr_math_inline_48-horizon-cr_math_inline_49">Tier 1: Dynamic Continuous Field Equations (Variable $t$ &amp; Horizon $R(t)$)</h2>
+<p>These equations are the primary, fundamental field relations of Chronodynamic Relativity. They are independent of epoch boundary assumptions and expressed continuously in metric coordinate time $t$, dynamic horizon radius $R(t) = c \cdot t$, or particle proper time $\tau$.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Equation</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Derivative Frame</th>
+<th style="text-align: left;">Paper Cross-Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$R{\left(t \right)} = c t$</td>
+<td style="text-align: left;"><strong>Dynamic Causal Horizon Radius</strong></td>
+<td style="text-align: left;"><code>coordinate_time_t</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 1.4 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$H{\left(t \right)} = \frac{1}{t}$</td>
+<td style="text-align: left;"><strong>Dynamic Expansion Rate (Temporal)</strong></td>
+<td style="text-align: left;"><code>coordinate_time_t</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 1.2 Sec. III</td>
+</tr>
+<tr>
+<td style="text-align: left;">$H{\left(R \right)} = \frac{c}{R}$</td>
+<td style="text-align: left;"><strong>Dynamic Expansion Rate (Geometric)</strong></td>
+<td style="text-align: left;"><code>spatial_horizon_radius_R</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$a_{c}{\left(t \right)} = \frac{c n}{t}$</td>
+<td style="text-align: left;"><strong>Dynamic Critical Acceleration Scale (Temporal)</strong></td>
+<td style="text-align: left;"><code>coordinate_time_t</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 1.3 Sec. II; Paper 2.1 Sec. III</td>
+</tr>
+<tr>
+<td style="text-align: left;">$a_{c}{\left(R \right)} = \frac{c^{2} n}{R}$</td>
+<td style="text-align: left;"><strong>Dynamic Critical Acceleration Scale (Geometric)</strong></td>
+<td style="text-align: left;"><code>spatial_horizon_radius_R</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 2.5 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\eta{\left(t \right)} = \left(\frac{t}{t_{\text{ref}}}\right)^{\frac{n}{2}}$</td>
+<td style="text-align: left;"><strong>Dynamic Metric Clock Lapse</strong></td>
+<td style="text-align: left;"><code>proper_worldline_tau_to_coordinate_t</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 1.2 Sec. II; Paper 1.6 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathrm{d}\tau = \eta_{\text{dyn}} \mathrm{d}t$</td>
+<td style="text-align: left;"><strong>Worldline Proper-Time Metric Relation</strong></td>
+<td style="text-align: left;"><code>worldline_differential</code></td>
+<td style="text-align: left;">Paper 1.2 Sec. II; Paper 1.3 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\frac{\mathrm{d}}{\mathrm{d}\tau} = \frac{\mathrm{d}}{\mathrm{d}t} \gamma_{\text{dyn}}$</td>
+<td style="text-align: left;"><strong>Worldline Derivative Transformation Operator</strong></td>
+<td style="text-align: left;"><code>operator_transformation</code></td>
+<td style="text-align: left;">Paper 1.3 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$- a_{c} g_{N} - g_{N} g_{\text{eff}} + g_{\text{eff}}^{2} = 0$</td>
+<td style="text-align: left;"><strong>Root Gravity Algebraic Constraint</strong></td>
+<td style="text-align: left;"><code>algebraic_field_constraint</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (13); Paper 2.5 Eq. (2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$g_{\text{eff}}{\left(g_{N},t \right)} = \frac{\sqrt{g_{N}} \sqrt{\frac{4 c n}{t} + g_{N}}}{2} + \frac{g_{N}}{2}$</td>
+<td style="text-align: left;"><strong>Dynamic Non-Linear Root Gravity Solution</strong></td>
+<td style="text-align: left;"><code>spatial_radius_r_and_time_t</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (14); Paper 2.2 Eq. (2); Paper 2.5 Eq. (3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\tau{\left(t,g_{N} \right)} = \frac{\sqrt{2} t e^{- \frac{\sqrt{2} g_{N} t}{2 c}}}{n}$</td>
+<td style="text-align: left;"><strong>Dynamic Vacuum Relaxation Timescale</strong></td>
+<td style="text-align: left;"><code>coordinate_time_t</code></td>
+<td style="text-align: left;">Paper 1.3 Sec. II; Paper 2.2 Eq. (4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\frac{\mathrm{d}\eta_{\text{dyn}}}{\mathrm{d}t} = - \frac{\eta_{\text{dyn}} - \sqrt{1 - \frac{v^{2}}{c^{2}}}}{\tau_{\text{eff}}}$</td>
+<td style="text-align: left;"><strong>Dynamic Vacuum Relaxation ODE (Coordinate Frame)</strong></td>
+<td style="text-align: left;"><code>coordinate_time_t</code></td>
+<td style="text-align: left;">Paper 1.3 Eq. (83); Paper 2.2 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\frac{\mathrm{d}\eta_{\text{dyn}}}{\mathrm{d}\tau} = - \frac{\gamma_{\text{dyn}} \left(\eta_{\text{dyn}} - \sqrt{1 - \frac{v^{2}}{c^{2}}}\right)}{\tau_{\text{eff}}}$</td>
+<td style="text-align: left;"><strong>Dynamic Vacuum Relaxation ODE (Proper Worldline Frame)</strong></td>
+<td style="text-align: left;"><code>proper_worldline_tau</code></td>
+<td style="text-align: left;">Paper 1.3 Sec. II</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynamic-causal-horizon-radius">Dynamic Causal Horizon Radius</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>coordinate_time_t</code></p>
+<p>Continuous causal expansion horizon scale R(t) = c * t in metric coordinate time t.</p>
+<p>$$R{\left(t \right)} = c t$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 1.4 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(R(t), c*t)</code></li>
+</ul>
+<h3 id="dynamic-expansion-rate-temporal">Dynamic Expansion Rate (Temporal)</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>coordinate_time_t</code></p>
+<p>Continuous cosmological expansion rate H(t) = 1 / t as a function of metric time.</p>
+<p>$$H{\left(t \right)} = \frac{1}{t}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 1.2 Sec. III</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(H(t), 1/t)</code></li>
+</ul>
+<h3 id="dynamic-expansion-rate-geometric">Dynamic Expansion Rate (Geometric)</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>spatial_horizon_radius_R</code></p>
+<p>Continuous expansion rate expressed in horizon radius H(R) = c / R.</p>
+<p>$$H{\left(R \right)} = \frac{c}{R}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(H(R), c/R)</code></li>
+</ul>
+<h3 id="dynamic-critical-acceleration-scale-temporal">Dynamic Critical Acceleration Scale (Temporal)</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>coordinate_time_t</code></p>
+<p>Fundamental horizon acceleration scale in metric time: a_c(t) = (c * n) / t.</p>
+<p>$$a_{c}{\left(t \right)} = \frac{c n}{t}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 1.3 Sec. II; Paper 2.1 Sec. III</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(a_c(t), c*n/t)</code></li>
+</ul>
+<h3 id="dynamic-critical-acceleration-scale-geometric">Dynamic Critical Acceleration Scale (Geometric)</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>spatial_horizon_radius_R</code></p>
+<p>Fundamental horizon acceleration scale in horizon radius: a_c(R) = (c^2 / R) * n.</p>
+<p>$$a_{c}{\left(R \right)} = \frac{c^{2} n}{R}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 2.5 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(a_c(R), c**2*n/R)</code></li>
+</ul>
+<h3 id="dynamic-metric-clock-lapse">Dynamic Metric Clock Lapse</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>proper_worldline_tau_to_coordinate_t</code></p>
+<p>Differential conversion rate between proper time tau and coordinate time t: eta(t) = (t / t_ref)^(n/2).</p>
+<p>$$\eta{\left(t \right)} = \left(\frac{t}{t_{\text{ref}}}\right)^{\frac{n}{2}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 1.2 Sec. II; Paper 1.6 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\eta(t), (t/t_{\text{ref}})**(n/2))</code></li>
+</ul>
+<h3 id="worldline-proper-time-metric-relation">Worldline Proper-Time Metric Relation</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>worldline_differential</code></p>
+<p>Exact relativistic line element differential connecting clock proper time tau to coordinate time t.</p>
+<p>$$\mathrm{d}\tau = \eta_{\text{dyn}} \mathrm{d}t$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.2 Sec. II; Paper 1.3 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\mathrm{d}\tau, \eta_{\text{dyn}}*\mathrm{d}t)</code></li>
+</ul>
+<h3 id="worldline-derivative-transformation-operator">Worldline Derivative Transformation Operator</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>operator_transformation</code></p>
+<p>Formal operator relation preventing derivative skew between proper time and coordinate time.</p>
+<p>$$\frac{\mathrm{d}}{\mathrm{d}\tau} = \frac{\mathrm{d}}{\mathrm{d}t} \gamma_{\text{dyn}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.3 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\frac{\mathrm{d}}{\mathrm{d}\tau}, \frac{\mathrm{d}}{\mathrm{d}t}*\gamma_{\text{dyn}})</code></li>
+</ul>
+<h3 id="root-gravity-algebraic-constraint">Root Gravity Algebraic Constraint</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>algebraic_field_constraint</code></p>
+<p>The fundamental quadratic field constraint g_eff^2 - g_N * g_eff - g_N * a_c = 0.</p>
+<p>$$- a_{c} g_{N} - g_{N} g_{\text{eff}} + g_{\text{eff}}^{2} = 0$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (13); Paper 2.5 Eq. (2)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(-a_c*g_N - g_N*g_{\text{eff}} + g_{\text{eff}}**2, 0)</code></li>
+</ul>
+<h3 id="dynamic-non-linear-root-gravity-solution">Dynamic Non-Linear Root Gravity Solution</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>spatial_radius_r_and_time_t</code></p>
+<p>First-principles algebraic solution for effective acceleration at epoch t, derived from the quadratic constraint.</p>
+<p>$$g_{\text{eff}}{\left(g_{N},t \right)} = \frac{\sqrt{g_{N}} \sqrt{\frac{4 c n}{t} + g_{N}}}{2} + \frac{g_{N}}{2}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (14); Paper 2.2 Eq. (2); Paper 2.5 Eq. (3)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(g_{\text{eff}}(g_N, t), sqrt(g_N)*sqrt(4*c*n/t + g_N)/2 + g_N/2)</code></li>
+</ul>
+<h3 id="dynamic-vacuum-relaxation-timescale">Dynamic Vacuum Relaxation Timescale</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>coordinate_time_t</code></p>
+<p>Screened vacuum healing timescale tau(t, g_N) derived from base timescale, stiffness, and critical acceleration.</p>
+<p>$$\tau{\left(t,g_{N} \right)} = \frac{\sqrt{2} t e^{- \frac{\sqrt{2} g_{N} t}{2 c}}}{n}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.3 Sec. II; Paper 2.2 Eq. (4)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\tau(t, g_N), sqrt(2)*t*exp(-sqrt(2)*g_N*t/(2*c))/n)</code></li>
+</ul>
+<h3 id="dynamic-vacuum-relaxation-ode-coordinate-frame">Dynamic Vacuum Relaxation ODE (Coordinate Frame)</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>coordinate_time_t</code></p>
+<p>Dissipation equation for dynamic metric lapse in observer laboratory frame coordinate time t.</p>
+<p>$$\frac{\mathrm{d}\eta_{\text{dyn}}}{\mathrm{d}t} = - \frac{\eta_{\text{dyn}} - \sqrt{1 - \frac{v^{2}}{c^{2}}}}{\tau_{\text{eff}}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.3 Eq. (83); Paper 2.2 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\frac{\mathrm{d}\eta_{\text{dyn}}}{\mathrm{d}t}, -(\eta_{\text{dyn}} - sqrt(1 - v**2/c**2))/\tau_{\text{eff}})</code></li>
+</ul>
+<h3 id="dynamic-vacuum-relaxation-ode-proper-worldline-frame">Dynamic Vacuum Relaxation ODE (Proper Worldline Frame)</h3>
+<p><strong>Classification:</strong> Tier 1: Dynamic Continuous Variable | <strong>Frame:</strong> <code>proper_worldline_tau</code></p>
+<p>Dissipation equation for dynamic metric lapse derived via worldline transformation operator d/d tau.</p>
+<p>$$\frac{\mathrm{d}\eta_{\text{dyn}}}{\mathrm{d}\tau} = - \frac{\gamma_{\text{dyn}} \left(\eta_{\text{dyn}} - \sqrt{1 - \frac{v^{2}}{c^{2}}}\right)}{\tau_{\text{eff}}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.3 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\frac{\mathrm{d}\eta_{\text{dyn}}}{\mathrm{d}\tau}, -\gamma_{\text{dyn}}*(\eta_{\text{dyn}} - sqrt(1 - v**2/c**2))/\tau_{\text{eff}})</code></li>
+</ul>
+<hr />
+<h2 id="tier-2-present-epoch-boundary-evaluations-cr_math_inline_66">Tier 2: Present-Epoch Boundary Evaluations ($t \to t_0, R \to R_0$)</h2>
+<p>Subscript-0 parameters are <strong>not starting assumptions</strong>. They are derived boundary evaluations obtained by evaluating the continuous Tier 1 equations at the present cosmological epoch $t = t_0$ (corresponding to horizon scale $R_0 = c \cdot t_0$).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Equation</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Derivative Frame</th>
+<th style="text-align: left;">Paper Cross-Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$H_{0} = \frac{1}{t_{0}}$</td>
+<td style="text-align: left;"><strong>Present Hubble Rate Boundary Evaluation</strong></td>
+<td style="text-align: left;"><code>epoch_boundary_evaluation</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 2.3 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$R_{0} = \frac{c}{H_{0}}$</td>
+<td style="text-align: left;"><strong>Present Causal Horizon Scale</strong></td>
+<td style="text-align: left;"><code>epoch_boundary_evaluation</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$a_{0} = H_{0} c n$</td>
+<td style="text-align: left;"><strong>Present Critical Acceleration Scale</strong></td>
+<td style="text-align: left;"><code>epoch_boundary_evaluation</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 2.5 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\tau_{0} = \frac{\sqrt{2} t_{0}}{n}$</td>
+<td style="text-align: left;"><strong>Present Unscreened Relaxation Timescale</strong></td>
+<td style="text-align: left;"><code>epoch_boundary_evaluation</code></td>
+<td style="text-align: left;">Paper 2.2 Sec. II</td>
+</tr>
+</tbody>
+</table>
+<h3 id="present-hubble-rate-boundary-evaluation">Present Hubble Rate Boundary Evaluation</h3>
+<p><strong>Classification:</strong> Tier 2: Present-Epoch Boundary Evaluation | <strong>Frame:</strong> <code>epoch_boundary_evaluation</code></p>
+<p>Boundary evaluation of continuous H(t) at present cosmological observation epoch t = t_0: H_0 = 1 / t_0.</p>
+<p>$$H_{0} = \frac{1}{t_{0}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 2.3 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(H_0, 1/t_0)</code></li>
+</ul>
+<h3 id="present-causal-horizon-scale">Present Causal Horizon Scale</h3>
+<p><strong>Classification:</strong> Tier 2: Present-Epoch Boundary Evaluation | <strong>Frame:</strong> <code>epoch_boundary_evaluation</code></p>
+<p>Boundary evaluation of continuous R(t) at present epoch: R_0 = c * t_0 = c / H_0.</p>
+<p>$$R_{0} = \frac{c}{H_{0}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(R_0, c/H_0)</code></li>
+</ul>
+<h3 id="present-critical-acceleration-scale">Present Critical Acceleration Scale</h3>
+<p><strong>Classification:</strong> Tier 2: Present-Epoch Boundary Evaluation | <strong>Frame:</strong> <code>epoch_boundary_evaluation</code></p>
+<p>Boundary evaluation of continuous a_c(t) at present epoch: a_0 = c * H_0 * n.</p>
+<p>$$a_{0} = H_{0} c n$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 2.5 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(a_0, H_0*c*n)</code></li>
+</ul>
+<h3 id="present-unscreened-relaxation-timescale">Present Unscreened Relaxation Timescale</h3>
+<p><strong>Classification:</strong> Tier 2: Present-Epoch Boundary Evaluation | <strong>Frame:</strong> <code>epoch_boundary_evaluation</code></p>
+<p>Boundary evaluation of continuous unscreened vacuum memory timescale tau(t_0, 0) at present epoch.</p>
+<p>$$\tau_{0} = \frac{\sqrt{2} t_{0}}{n}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 2.2 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\tau_0, sqrt(2)*t_0/n)</code></li>
+</ul>
+<hr />
+<h2 id="tier-3-geometric-first-principles-derivations-cr_math_inline_73">Tier 3: Geometric First-Principles Derivations ($n = \frac{3}{4\pi}$)</h2>
+<p>Chronodynamic Relativity contains zero manual tunable exponents. The dilution exponent $n$ and dynamic relaxation stiffness $k$ are derived analytically from 3D Euclidean spatial geometry and spherical horizon topology.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Equation</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Derivative Frame</th>
+<th style="text-align: left;">Paper Cross-Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$n = \frac{3}{4 \pi}$</td>
+<td style="text-align: left;"><strong>Geometric Dilution Exponent Derivation</strong></td>
+<td style="text-align: left;"><code>geometric_invariant</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. I; Paper 2.3 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$k = \frac{3 \sqrt{2}}{8 \pi}$</td>
+<td style="text-align: left;"><strong>Geometric Relaxation Stiffness Factor</strong></td>
+<td style="text-align: left;"><code>geometric_invariant</code></td>
+<td style="text-align: left;">Paper 2.2 Sec. II</td>
+</tr>
+</tbody>
+</table>
+<h3 id="geometric-dilution-exponent-derivation">Geometric Dilution Exponent Derivation</h3>
+<p><strong>Classification:</strong> Tier 3: Geometric First-Principles Derivation | <strong>Frame:</strong> <code>geometric_invariant</code></p>
+<p>Analytic derivation of n from the dimensional ratio of 3D Euclidean volume to 2D spherical horizon: n = 3 / (4 * pi).</p>
+<p>$$n = \frac{3}{4 \pi}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. I; Paper 2.3 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(n, 3/(4*pi))</code></li>
+</ul>
+<h3 id="geometric-relaxation-stiffness-factor">Geometric Relaxation Stiffness Factor</h3>
+<p><strong>Classification:</strong> Tier 3: Geometric First-Principles Derivation | <strong>Frame:</strong> <code>geometric_invariant</code></p>
+<p>Analytic derivation of dynamic relaxation stiffness: k = n / sqrt(2) = 3 / (4 * pi * sqrt(2)).</p>
+<p>$$k = \frac{3 \sqrt{2}}{8 \pi}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 2.2 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(k, 3*sqrt(2)/(8*pi))</code></li>
+</ul>
+<hr />
+<h2 id="tier-4-derived-zero-parameter-observables-asymptotic-limits">Tier 4: Derived Zero-Parameter Observables &amp; Asymptotic Limits</h2>
+<p>By substituting the Tier 3 geometric invariants into the Tier 1 and Tier 2 relations, the framework yields certified, zero-parameter closed-form expressions for all astrophysical and cosmological observables across the 11 manuscripts.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Equation</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Derivative Frame</th>
+<th style="text-align: left;">Paper Cross-Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$a_{0} = \frac{3 H_{0} c}{4 \pi}$</td>
+<td style="text-align: left;"><strong>Zero-Parameter Boundary Acceleration Scale</strong></td>
+<td style="text-align: left;"><code>dimensionless_geometric_evaluation</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (4); Paper 2.5 Eq. (2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\tau_{0} = \frac{4 \sqrt{2} \pi}{3 H_{0}}$</td>
+<td style="text-align: left;"><strong>Zero-Parameter Base Relaxation Timescale</strong></td>
+<td style="text-align: left;"><code>dimensionless_geometric_evaluation</code></td>
+<td style="text-align: left;">Paper 2.2 Eq. (3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$a_{c}{\left(z \right)} = a_{0} \left(z + 1\right)^{\frac{3}{2 \pi}}$</td>
+<td style="text-align: left;"><strong>Zero-Parameter Redshift Critical Acceleration</strong></td>
+<td style="text-align: left;"><code>cosmological_redshift_z</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 2.1 Sec. III</td>
+</tr>
+<tr>
+<td style="text-align: left;">$g_{\text{eff, high}} = - \frac{a_{0}^{2}}{g_{N}} + a_{0} + g_{N}$</td>
+<td style="text-align: left;"><strong>Asymptotic Keplerian Screening Series</strong></td>
+<td style="text-align: left;"><code>asymptotic_series_expansion</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 2.5 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$g_{\text{eff, low}} = \sqrt{a_{0}} \sqrt{g_{N}} + \frac{g_{N}}{2}$</td>
+<td style="text-align: left;"><strong>Asymptotic Deep-Field MOND Limit</strong></td>
+<td style="text-align: left;"><code>asymptotic_series_expansion</code></td>
+<td style="text-align: left;">Paper 1.1 Sec. II; Paper 2.5 Sec. II</td>
+</tr>
+<tr>
+<td style="text-align: left;">$v_{\text{flat}}^{4} = \frac{3 G H_{0} M c}{4 \pi}$</td>
+<td style="text-align: left;"><strong>Baryonic Tully-Fisher Relation</strong></td>
+<td style="text-align: left;"><code>galactic_kinematics</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (16); Paper 2.5 Sec. III</td>
+</tr>
+<tr>
+<td style="text-align: left;">$D_{C}{\left(z \right)} = \frac{c \log{\left(z + 1 \right)}}{H_{0}}$</td>
+<td style="text-align: left;"><strong>Cosmological Comoving Distance</strong></td>
+<td style="text-align: left;"><code>cosmological_redshift_z</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (6); Paper 2.3 Eq. (2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$d_{L}{\left(z \right)} = \frac{c \left(z + 1\right) \left(z + 1\right)^{\frac{3}{8 \pi}} \log{\left(z + 1 \right)}}{H_{0}}$</td>
+<td style="text-align: left;"><strong>Zero-Parameter Luminosity Distance</strong></td>
+<td style="text-align: left;"><code>cosmological_redshift_z</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (8); Paper 2.3 Eq. (4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mu{\left(z \right)} = \frac{5 \log{\left(d_{L}{\left(z \right)} \right)}}{\log{\left(10 \right)}} + 25$</td>
+<td style="text-align: left;"><strong>Zero-Parameter Distance Modulus</strong></td>
+<td style="text-align: left;"><code>cosmological_redshift_z</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (9); Paper 2.3 Eq. (5)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\Delta t_{\text{obs}} = \frac{\Delta t_{\text{emit}} \left(z + 1\right)}{\left(z + 1\right)^{\frac{3}{8 \pi}}}$</td>
+<td style="text-align: left;"><strong>Supernova Duration Redshift Stretching</strong></td>
+<td style="text-align: left;"><code>cosmological_redshift_z</code></td>
+<td style="text-align: left;">Paper 1.1 Eq. (10); Paper 1.2 Sec. III; Paper 2.3 Sec. III</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\Delta r = \tau_{\text{eff}} v_{\text{rel}} \left(1 - e^{- \frac{t_{\text{stop}}}{\tau_{\text{eff}}}}\right)$</td>
+<td style="text-align: left;"><strong>Cluster Decoupling Displacement Offset</strong></td>
+<td style="text-align: left;"><code>kinematic_offset</code></td>
+<td style="text-align: left;">Paper 2.2 Eq. (5)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\gamma_{\text{wb}} = \sqrt{\frac{\sqrt{\frac{3 H_{0} c}{\pi g_{N}} + 1}}{2} + \frac{1}{2}}$</td>
+<td style="text-align: left;"><strong>Zero-Parameter Wide Binary Velocity Boost</strong></td>
+<td style="text-align: left;"><code>binary_kinematics</code></td>
+<td style="text-align: left;">Paper 2.5 Eq. (6)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zero-parameter-boundary-acceleration-scale">Zero-Parameter Boundary Acceleration Scale</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>dimensionless_geometric_evaluation</code></p>
+<p>Derived by substituting n = 3 / (4*pi) into epoch acceleration: a_0 = (3 * c * H_0) / (4 * pi).</p>
+<p>$$a_{0} = \frac{3 H_{0} c}{4 \pi}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (4); Paper 2.5 Eq. (2)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(a_0, 3*H_0*c/(4*pi))</code></li>
+</ul>
+<h3 id="zero-parameter-base-relaxation-timescale">Zero-Parameter Base Relaxation Timescale</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>dimensionless_geometric_evaluation</code></p>
+<p>Derived by substituting n = 3 / (4*pi) into epoch relaxation: tau_0 = (4 * pi * sqrt(2)) / (3 * H_0).</p>
+<p>$$\tau_{0} = \frac{4 \sqrt{2} \pi}{3 H_{0}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 2.2 Eq. (3)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\tau_0, 4*sqrt(2)*pi/(3*H_0))</code></li>
+</ul>
+<h3 id="zero-parameter-redshift-critical-acceleration">Zero-Parameter Redshift Critical Acceleration</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>cosmological_redshift_z</code></p>
+<p>Derived by substituting n = 3 / (4<em>pi) into redshift-scaled critical acceleration: a_c(z) = a_0 * (1+z)^(3 / (2</em>pi)).</p>
+<p>$$a_{c}{\left(z \right)} = a_{0} \left(z + 1\right)^{\frac{3}{2 \pi}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 2.1 Sec. III</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(a_c(z), a_0*(z + 1)**(3/(2*pi)))</code></li>
+</ul>
+<h3 id="asymptotic-keplerian-screening-series">Asymptotic Keplerian Screening Series</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>asymptotic_series_expansion</code></p>
+<p>Taylor series expansion of root gravity in high-acceleration regime (g_N &gt;&gt; a_0), recovering standard General Relativity.</p>
+<p>$$g_{\text{eff, high}} = - \frac{a_{0}^{2}}{g_{N}} + a_{0} + g_{N}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 2.5 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(g_{\text{eff, high}}, -a_0**2/g_N + a_0 + g_N)</code></li>
+</ul>
+<h3 id="asymptotic-deep-field-mond-limit">Asymptotic Deep-Field MOND Limit</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>asymptotic_series_expansion</code></p>
+<p>Puiseux series expansion of root gravity in low-acceleration regime (g_N &lt;&lt; a_0), yielding deep MOND scaling.</p>
+<p>$$g_{\text{eff, low}} = \sqrt{a_{0}} \sqrt{g_{N}} + \frac{g_{N}}{2}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Sec. II; Paper 2.5 Sec. II</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(g_{\text{eff, low}}, sqrt(a_0)*sqrt(g_N) + g_N/2)</code></li>
+</ul>
+<h3 id="baryonic-tully-fisher-relation">Baryonic Tully-Fisher Relation</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>galactic_kinematics</code></p>
+<p>Zero-parameter analytical proof of the flat rotation curve relation v^4 = G * M * a_0.</p>
+<p>$$v_{\text{flat}}^{4} = \frac{3 G H_{0} M c}{4 \pi}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (16); Paper 2.5 Sec. III</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(v_{\text{flat}}**4, 3*G*H_0*M*c/(4*pi))</code></li>
+</ul>
+<h3 id="cosmological-comoving-distance">Cosmological Comoving Distance</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>cosmological_redshift_z</code></p>
+<p>Exact first-principles integral of coordinate distance: D_C(z) = (c / H_0) * ln(1+z).</p>
+<p>$$D_{C}{\left(z \right)} = \frac{c \log{\left(z + 1 \right)}}{H_{0}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (6); Paper 2.3 Eq. (2)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(D_C(z), c*log(z + 1)/H_0)</code></li>
+</ul>
+<h3 id="zero-parameter-luminosity-distance">Zero-Parameter Luminosity Distance</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>cosmological_redshift_z</code></p>
+<p>Derived by substituting n = 3 / (4<em>pi) into parametric luminosity distance: d_L(z) = (c / H_0) * (1+z)^(1 + 3/(8</em>pi)) * ln(1+z).</p>
+<p>$$d_{L}{\left(z \right)} = \frac{c \left(z + 1\right) \left(z + 1\right)^{\frac{3}{8 \pi}} \log{\left(z + 1 \right)}}{H_{0}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (8); Paper 2.3 Eq. (4)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(d_L(z), c*(z + 1)*(z + 1)**(3/(8*pi))*log(z + 1)/H_0)</code></li>
+</ul>
+<h3 id="zero-parameter-distance-modulus">Zero-Parameter Distance Modulus</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>cosmological_redshift_z</code></p>
+<p>Hubble diagram distance modulus mu(z) evaluated from zero-parameter luminosity distance.</p>
+<p>$$\mu{\left(z \right)} = \frac{5 \log{\left(d_{L}{\left(z \right)} \right)}}{\log{\left(10 \right)}} + 25$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (9); Paper 2.3 Eq. (5)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\mu(z), 5*log(d_L(z))/log(10) + 25)</code></li>
+</ul>
+<h3 id="supernova-duration-redshift-stretching">Supernova Duration Redshift Stretching</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>cosmological_redshift_z</code></p>
+<p>Derived by substituting n = 3 / (4<em>pi) into light-curve duration stretching: Delta t_obs = Delta t_emit * (1+z)^(1 - 3/(8</em>pi)).</p>
+<p>$$\Delta t_{\text{obs}} = \frac{\Delta t_{\text{emit}} \left(z + 1\right)}{\left(z + 1\right)^{\frac{3}{8 \pi}}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 1.1 Eq. (10); Paper 1.2 Sec. III; Paper 2.3 Sec. III</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\Delta t_{\text{obs}}, \Delta t_{\text{emit}}*(z + 1)/(z + 1)**(3/(8*pi)))</code></li>
+</ul>
+<h3 id="cluster-decoupling-displacement-offset">Cluster Decoupling Displacement Offset</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>kinematic_offset</code></p>
+<p>Kinematic lag offset Delta r for colliding cluster mergers under screened vacuum relaxation.</p>
+<p>$$\Delta r = \tau_{\text{eff}} v_{\text{rel}} \left(1 - e^{- \frac{t_{\text{stop}}}{\tau_{\text{eff}}}}\right)$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 2.2 Eq. (5)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\Delta r, \tau_{\text{eff}}*v_{\text{rel}}*(1 - exp(-t_{\text{stop}}/\tau_{\text{eff}})))</code></li>
+</ul>
+<h3 id="zero-parameter-wide-binary-velocity-boost">Zero-Parameter Wide Binary Velocity Boost</h3>
+<p><strong>Classification:</strong> Tier 4: Derived Zero-Parameter Observable | <strong>Frame:</strong> <code>binary_kinematics</code></p>
+<p>Orbital velocity boost ratio gamma = v_rel / v_N derived from root gravity with zero-parameter acceleration scale a_0.</p>
+<p>$$\gamma_{\text{wb}} = \sqrt{\frac{\sqrt{\frac{3 H_{0} c}{\pi g_{N}} + 1}}{2} + \frac{1}{2}}$$</p>
+<ul>
+<li><strong>Paper Citation &amp; Reference:</strong> Paper 2.5 Eq. (6)</li>
+<li><strong>SymPy Formulation:</strong> <code>Eq(\gamma_{\text{wb}}, sqrt(sqrt(3*H_0*c/(pi*g_N) + 1)/2 + 1/2))</code></li>
+</ul>
+<hr />
+<h2 id="verification-reproducibility">Verification &amp; Reproducibility</h2>
+<p>All equations cataloged above are validated automatically by the test suite <a href="../tests/test_symbolic_engine.py"><code>official/tests/test_symbolic_engine.py</code></a>:
+1. <strong>Continuity &amp; Limit Verification:</strong> Exact algebraic verification of asymptotic limits ($g_N \gg a_0 \implies g_{\text{eff}} \to g_N + a_0$; $g_N \ll a_0 \implies g_{\text{eff}} \to \sqrt{g_N a_0}$).
+2. <strong>Tully-Fisher Invariance:</strong> Exact verification that the velocity exponent $\mathrm{d}\ln v / \mathrm{d}\ln M = 1/4$ holds identically.
+3. <strong>Numerical Precision:</strong> Floating-point evaluation of lambdified symbolic formulas matches the numerical <code>ChronodynamicModel</code> to within $< 10^{-12}$.
+4. <strong>Export Automation:</strong> The catalog can be regenerated at any time via <code>python scripts/export_symbolic_mathjax.py</code>.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        Chronodynamic Relativity Research Suite &bull; Rigorous Open-Source Theoretical Physics &bull; Rochester Institute of Technology Alumni Research Initiative
+    </div>
+
+</body>
+</html>

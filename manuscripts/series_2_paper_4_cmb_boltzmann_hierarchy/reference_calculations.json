@@ -1,0 +1,72 @@
+{
+  "paper": "series_2_paper_4_cmb_boltzmann_hierarchy",
+  "cosmology": {
+    "H0_km_s_mpc": 70.5,
+    "omega_b": 0.02237,
+    "geometric_n": 0.238732414637843,
+    "a0_ms2": 1.6351991977899337e-10,
+    "dynamic_tension_decoupling_ms2": 4.925272623377247e-09,
+    "z_decoupling": 1250.17,
+    "tau_today_mpc": 88124.7,
+    "tau_decoupling_mpc": 57796.9,
+    "delta_tau_comoving_mpc": 30327.799999999996,
+    "sound_horizon_decoupling_mpc": 305.37,
+    "silk_damping_scale_decoupling_mpc": 11.94,
+    "acoustic_angular_scale_theta_star_rad": 0.010068979616061832,
+    "acoustic_multipole_scale_l_A": 312.00705268867443
+  },
+  "acoustic_peaks": {
+    "peak_1": {
+      "ell": 224.0,
+      "D_ell_muk2": 5950.30044
+    },
+    "trough_1": {
+      "ell": 391.0,
+      "D_ell_muk2": 1526.32077
+    },
+    "peak_2": {
+      "ell": 513.0,
+      "D_ell_muk2": 3253.13404
+    },
+    "trough_2": {
+      "ell": 665.0,
+      "D_ell_muk2": 1206.1577
+    },
+    "peak_3": {
+      "ell": 817.0,
+      "D_ell_muk2": 2370.17948
+    },
+    "trough_3": {
+      "ell": 973.0,
+      "D_ell_muk2": 883.93987
+    },
+    "peak_4": {
+      "ell": 1074.0,
+      "D_ell_muk2": 1368.87213
+    }
+  },
+  "peak_amplitude_ratios": {
+    "A1_over_A2": 1.8290978382188028,
+    "A1_over_A3": 2.5104851722030777,
+    "A2_over_A3": 1.3725264552539287
+  },
+  "polarization": {
+    "max_D_ell_EE_muk2": 69.68108,
+    "max_D_ell_TE_muk2": 319.58455,
+    "min_D_ell_TE_muk2": -280.53088
+  },
+  "goodness_of_fit_planck_2018_pr3": {
+    "multipole_min": 2,
+    "multipole_max": 2499,
+    "ndof_bins": 111,
+    "chi2_chronodynamic": 20663.097381153377,
+    "reduced_chi2_chronodynamic": 186.15403046084123,
+    "chi2_lcdm_baseline": 98.4720902285502,
+    "reduced_chi2_lcdm_baseline": 0.8871359480049568
+  },
+  "goodness_of_fit_act_dr6": {
+    "ndof_bins": 39,
+    "chi2_chronodynamic": 10753.383377566843,
+    "reduced_chi2_chronodynamic": 316.27598169314246
+  }
+}

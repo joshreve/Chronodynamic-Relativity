@@ -70,5 +70,48 @@ class TestCosmologyEngine(unittest.TestCase):
         with self.assertRaises(PhysicsError):
             model_bad.hubble_parameter(0.0)
 
+    def test_lambdacdm_cosmic_age(self):
+        """Test LambdaCDM cosmic age integration."""
+        model = LambdaCDM(h0=67.4, omega_m=0.315, omega_l=0.685)
+        # Age at z=0 should be ~13.8 Gyr (~13,800 Myr)
+        age_z0 = model.cosmic_age(0.0, unit='myr')
+        self.assertAlmostEqual(age_z0, 13787.0, delta=150.0)
+        # Age at z=14.32 should be ~286 Myr
+        age_z14 = model.cosmic_age(14.32, unit='myr')
+        self.assertAlmostEqual(age_z14, 286.0, delta=15.0)
+
+    def test_chronodynamic_time_and_acceleration(self):
+        """Test ChronodynamicModel time dilation, coordinate time, proper time, and effective acceleration."""
+        from src.models.chronodynamic_model import ChronodynamicModel
+        cr = ChronodynamicModel(h0=70.50)
+        
+        # Time dilation at z=0 should be 1.0
+        self.assertAlmostEqual(cr.time_dilation(0.0), 1.0)
+        # Time dilation at z=1 should be approximately (1+1)^(n/2) with slight n_eff radiation term
+        n = 3.0 / (4.0 * np.pi)
+        self.assertAlmostEqual(cr.time_dilation(1.0), 2.0 ** (n / 2.0), delta=0.001)
+        
+        # Coordinate time at z=0 should be t0
+        self.assertAlmostEqual(cr.coordinate_time(0.0), cr.t0_myr)
+        
+        # Proper time at z=14.32 should match ~1424 Myr
+        tau_z14 = cr.proper_time(14.32, unit='myr')
+        self.assertAlmostEqual(tau_z14, 1424.0, delta=20.0)
+        
+        # Effective acceleration in high-acceleration regime: g_eff -> g_N
+        g_high = 1.0
+        g_eff_high = cr.effective_acceleration(g_high, z=0.0)
+        self.assertAlmostEqual(g_eff_high, g_high, delta=cr.a0 * 2)
+        
+        # Effective acceleration in deep field limit: g_eff -> sqrt(g_N * a0)
+        g_low = 1.0e-12
+        g_eff_low = cr.effective_acceleration(g_low, z=0.0)
+        self.assertAlmostEqual(g_eff_low, np.sqrt(g_low * cr.a0), delta=1.0e-12)
+
+        # Observed time dilation ratio
+        obs_dilation = cr.observed_time_dilation(1.0)
+        expected_ratio = 2.0 / cr.time_dilation(1.0)
+        self.assertAlmostEqual(obs_dilation, expected_ratio, places=6)
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "Chronodynamic Relativity Empirical Evaluation Manifest",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Scientific provenance mapping linking raw empirical inputs, evaluation routines, computed results, and published artifacts.",
   "analyses": {
     "cosmic_expansion_pantheon": {
@@ -16,7 +16,7 @@
       ],
       "results": [],
       "figures": [
-        "manuscripts/paper_1_foundations/figures/cdm_duality.pdf"
+        "manuscripts/series_1_paper_1_foundations/figures/cdm_duality.pdf"
       ],
       "documentation": [
         "docs/analyses/cosmic_expansion/cosmic_expansion_overview.html",
@@ -39,7 +39,7 @@
       ],
       "results": [],
       "figures": [
-        "manuscripts/paper_1_foundations/figures/cmb_spectrum.pdf"
+        "manuscripts/series_1_paper_1_foundations/figures/cmb_spectrum.pdf"
       ],
       "documentation": [
         "docs/analyses/early_universe/early_universe_overview.html"
@@ -57,7 +57,7 @@
       ],
       "results": [],
       "figures": [
-        "manuscripts/paper_1_foundations/figures/sparc_rar.pdf"
+        "manuscripts/series_1_paper_1_foundations/figures/sparc_rar.pdf"
       ],
       "documentation": [
         "docs/analyses/galactic_rotation/galactic_rotation_overview.html",
@@ -98,7 +98,9 @@
         "results/investigations/gaia_decline_fit.json"
       ],
       "figures": [],
-      "documentation": []
+      "documentation": [
+        "docs/investigations/gaia_decline_report.html"
+      ]
     },
     "quantum_bounds": {
       "pillar": "Laboratory & Quantum Precision Bounds",
@@ -173,6 +175,138 @@
       "documentation": [
         "docs/textbook_foundations_space_time_gravity.md",
         "docs/textbook_foundations_space_time_gravity.html"
+      ]
+    },
+    "temporal_dissipation_arrow_of_time": {
+      "pillar": "Series 1 Paper 2: Temporal Dissipation & Arrow of Time",
+      "scope": "official",
+      "description": "Thermodynamic derivation of the cosmological arrow of time from space density dilution.",
+      "inputs": [],
+      "scripts": [
+        "manuscripts/series_1_paper_2_temporal_dissipation/verify_calculations.py"
+      ],
+      "results": [
+        "results/investigations/special_relativity_temporal_relaxation_results.json"
+      ],
+      "figures": [
+        "manuscripts/series_1_paper_2_temporal_dissipation/figures/optical_lattice_clock_test.pdf",
+        "manuscripts/series_1_paper_2_temporal_dissipation/figures/deep_space_and_wide_binary_tests.pdf"
+      ],
+      "documentation": [
+        "docs/investigations/special_relativity_temporal_relaxation.md",
+        "docs/investigations/special_relativity_temporal_relaxation.html"
+      ]
+    },
+    "jwst_early_galaxies": {
+      "pillar": "Series 2 Paper 1: JWST Early Galaxies & Cosmic Dawn",
+      "scope": "official",
+      "description": "Resolution of the JWST high-z galaxy overdensity tension via metric clock dilation.",
+      "inputs": [],
+      "scripts": [
+        "manuscripts/series_2_paper_1_jwst_early_galaxies/verify_calculations.py",
+        "manuscripts/series_2_paper_1_jwst_early_galaxies/generate_jwst_figures.py"
+      ],
+      "results": [],
+      "figures": [
+        "manuscripts/series_2_paper_1_jwst_early_galaxies/figures/fig1_cosmic_timeline_and_sfr_efficiency.pdf",
+        "manuscripts/series_2_paper_1_jwst_early_galaxies/figures/fig2_smbh_accretion_and_bondi_boost.pdf"
+      ],
+      "documentation": []
+    },
+    "cluster_collision_hydrodynamics": {
+      "pillar": "Series 2 Paper 2: Cluster Collision Hydrodynamics (Bullet Cluster)",
+      "scope": "official",
+      "description": "3D RAMSES-CR AMR hydrodynamics and Lagrangian semi-analytical relaxation modeling of colliding galaxy clusters (1E 0657-56, El Gordo, Abell 520, MACS J0025.4-1222).",
+      "inputs": [],
+      "scripts": [
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/verify_calculations.py",
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/generate_bullet_figures.py",
+        "src/evaluations/bullet_recovery_semianalytical.py"
+      ],
+      "results": [
+        "results/investigations/bullet_summary.json",
+        "results/investigations/el_gordo_summary.json",
+        "results/investigations/abell520_summary.json",
+        "results/investigations/bullet_recovery_semianalytical_summary.json"
+      ],
+      "figures": [
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/figures/fig1_bullet_decoupling_evolution.pdf",
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/figures/fig2_bullet_offset_evolution.pdf",
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/figures/fig3_bullet_1d_profile.pdf",
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/figures/fig4_bullet_semianalytical_recovery.pdf",
+        "manuscripts/series_2_paper_2_cluster_collision_hydrodynamics/figures/fig5_bullet_semianalytical_spacetime.pdf"
+      ],
+      "documentation": []
+    },
+    "hubble_tension_expansion": {
+      "pillar": "Series 2 Paper 3: Hubble Tension & Cosmic Expansion",
+      "scope": "official",
+      "description": "Unified resolution of the Hubble tension across Pantheon+ SNe Ia and DESI BAO.",
+      "inputs": [
+        "data/pantheon_plus/Pantheon+SH0ES.dat",
+        "data/desi/desi_2024_bao.csv"
+      ],
+      "scripts": [
+        "manuscripts/series_2_paper_3_hubble_tension_expansion/verify_calculations.py",
+        "manuscripts/series_2_paper_3_hubble_tension_expansion/generate_hubble_expansion_figures.py"
+      ],
+      "results": [],
+      "figures": [
+        "manuscripts/series_2_paper_3_hubble_tension_expansion/figures/fig1_pantheon_plus_hubble_diagram_and_residuals.pdf",
+        "manuscripts/series_2_paper_3_hubble_tension_expansion/figures/fig2_hubble_tension_resolution.pdf",
+        "manuscripts/series_2_paper_3_hubble_tension_expansion/figures/fig3_desi_bao_multitier_audit.pdf"
+      ],
+      "documentation": []
+    },
+    "cmb_boltzmann_hierarchy": {
+      "pillar": "Series 2 Paper 4: CMB Boltzmann Hierarchy (CLASS-CR)",
+      "scope": "official",
+      "description": "Production Boltzmann hierarchy code (CLASS-CR) reproducing the 5-peak acoustic power spectrum.",
+      "inputs": [
+        "data/planck/planck_2018_tt_binned.csv"
+      ],
+      "scripts": [
+        "manuscripts/series_2_paper_4_cmb_boltzmann_hierarchy/verify_calculations.py",
+        "manuscripts/series_2_paper_4_cmb_boltzmann_hierarchy/generate_cmb_figures.py"
+      ],
+      "results": [
+        "results/investigations/class_cr_optimization_results.json",
+        "results/investigations/cmb_model_comparison_summary.json"
+      ],
+      "figures": [
+        "manuscripts/series_2_paper_4_cmb_boltzmann_hierarchy/figures/fig1_class_cr_planck_spectrum.pdf",
+        "manuscripts/series_2_paper_4_cmb_boltzmann_hierarchy/figures/fig2_cmb_model_comparison_multipanel.pdf"
+      ],
+      "documentation": [
+        "docs/investigations/cmb_boltzmann_calculation_process.md",
+        "docs/investigations/cr_boltzmann_cmb_spectrum.html",
+        "docs/investigations/class_cr_planck_spectrum.html"
+      ]
+    },
+    "wide_binary_kinematics": {
+      "pillar": "Series 2 Paper 5: Wide Binary Kinematics & L1 Saddle Point",
+      "scope": "official",
+      "description": "Evaluation of Gaia DR3 wide binary kinematics and Sun-Earth L1 saddle point dynamics.",
+      "inputs": [],
+      "scripts": [
+        "manuscripts/series_2_paper_5_wide_binary_kinematics/verify_calculations.py",
+        "manuscripts/series_2_paper_5_wide_binary_kinematics/generate_wide_binary_figures.py"
+      ],
+      "results": [
+        "results/investigations/wide_binary_cr_kinematic_results.json",
+        "results/investigations/wide_binary_comprehensive_audit_results.json",
+        "results/investigations/wide_binary_parameter_fit_investigation.json",
+        "results/investigations/wide_binary_binning_options_results.json"
+      ],
+      "figures": [
+        "manuscripts/series_2_paper_5_wide_binary_kinematics/figures/fig1_gaia_wide_binaries_and_saddle_point.pdf",
+        "manuscripts/series_2_paper_5_wide_binary_kinematics/figures/fig2_velocity_boost_ratio_and_efe.pdf",
+        "manuscripts/series_2_paper_5_wide_binary_kinematics/figures/fig3_comprehensive_efe_and_bias_audit.pdf"
+      ],
+      "documentation": [
+        "docs/investigations/wide_binary_binning_options_report.md",
+        "docs/investigations/wide_binary_parameter_fit_investigation_report.md",
+        "docs/investigations/wide_binary_cr_kinematics.md"
       ]
     }
   }

@@ -1,0 +1,73 @@
+{
+  "investigation": "Gaia DR3 Wide Binary Kinematics & Relativistic Corrections",
+  "parameters": {
+    "M_tot_solar": 1.5,
+    "a_c_ms2": 1.2e-10,
+    "rho_DM_solar_neighborhood_Msun_pc3": 0.01,
+    "g_galactic_background_ms2": 1.9128502150498154e-10
+  },
+  "statistical_fit": {
+    "degrees_of_freedom": 6,
+    "standard_gr_chi2": 43.226965575737495,
+    "standard_gr_reduced_chi2": 7.204494262622916,
+    "chronodynamic_relativity_chi2": 3.828151817932944,
+    "chronodynamic_relativity_reduced_chi2": 0.638025302988824,
+    "delta_chi2_preference_for_cr": 39.398813757804554
+  },
+  "dark_matter_assessment": {
+    "enclosed_DM_mass_at_20000_AU_Msun": 0.0001509430808470945,
+    "enclosed_DM_fraction_of_binary_mass": 0.00010062872056472966,
+    "conclusion": "Enclosed dark matter in standard LambdaCDM halo is 5 orders of magnitude too small to explain the wide binary velocity boost, ruling out dark matter halos as the physical cause."
+  },
+  "binned_data": [
+    {
+      "s_AU": 200.0,
+      "v_obs_kms": 2.57,
+      "v_err_kms": 0.1,
+      "v_gr_pred_kms": 2.5794689773876547,
+      "v_cr_pred_kms": 2.5801644557895136
+    },
+    {
+      "s_AU": 500.0,
+      "v_obs_kms": 1.62,
+      "v_err_kms": 0.07,
+      "v_gr_pred_kms": 1.631399424458071,
+      "v_cr_pred_kms": 1.6341388819273492
+    },
+    {
+      "s_AU": 1000.0,
+      "v_obs_kms": 1.16,
+      "v_err_kms": 0.05,
+      "v_gr_pred_kms": 1.1535735958581328,
+      "v_cr_pred_kms": 1.161226909659229
+    },
+    {
+      "s_AU": 2500.0,
+      "v_obs_kms": 0.79,
+      "v_err_kms": 0.04,
+      "v_gr_pred_kms": 0.729584002308456,
+      "v_cr_pred_kms": 0.7575732435478988
+    },
+    {
+      "s_AU": 5000.0,
+      "v_obs_kms": 0.63,
+      "v_err_kms": 0.04,
+      "v_gr_pred_kms": 0.5158937954775309,
+      "v_cr_pred_kms": 0.5805408744838587
+    },
+    {
+      "s_AU": 10000.0,
+      "v_obs_kms": 0.53,
+      "v_err_kms": 0.04,
+      "v_gr_pred_kms": 0.364792001154228,
+      "v_cr_pred_kms": 0.4845724192121744
+    },
+    {
+      "s_AU": 18000.0,
+      "v_obs_kms": 0.47,
+      "v_err_kms": 0.05,
+      "v_gr_pred_kms": 0.2718999040763452,
+      "v_cr_pred_kms": 0.442587978136068
+    }
+  ]
+}

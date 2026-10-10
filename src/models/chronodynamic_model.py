@@ -113,6 +113,11 @@ class ChronodynamicModel(CosmologyModel, GravityModel):
         return C_M_S * self.h0_si * self.n
 
     @property
+    def a_0(self):
+        """Standard alias for fundamental critical acceleration scale a_0 [m/s^2]."""
+        return self.a0
+
+    @property
     def tau0_seconds(self):
         """
         Unscreened background vacuum relaxation timescale:
@@ -157,6 +162,71 @@ class ChronodynamicModel(CosmologyModel, GravityModel):
         ne = self.get_n_eff(z_obs, n)
         z_exp = (1.0 + z_obs) ** (1.0 / (1.0 + ne / 2.0)) - 1.0
         return z_exp if len(z_exp) > 1 else z_exp[0]
+
+    def time_dilation(self, z_obs, **kwargs):
+        """
+        Relativistic metric clock lapse / time dilation factor eta(z):
+        eta(z) = (1 + z_obs)^(n_eff / 2)
+        """
+        params = {**self.parameters, **kwargs}
+        n = float(params.get('n', self.n))
+        z_obs_arr = np.atleast_1d(z_obs)
+        ne = self.get_n_eff(z_obs_arr, n)
+        eta = (1.0 + z_obs_arr) ** (ne / 2.0)
+        return eta if len(eta) > 1 else eta[0]
+
+    def clock_rate(self, z_obs, **kwargs):
+        """Standard alias for relativistic time dilation eta(z)."""
+        return self.time_dilation(z_obs, **kwargs)
+
+    def observed_time_dilation(self, z_obs, **kwargs):
+        """
+        Apparent observed time dilation ratio of cosmic transient events:
+        Delta t_obs / Delta t_emit = (1 + z_obs) / eta(z_obs) = (1 + z_obs)^(1 - n_eff / 2)
+        """
+        z_obs_arr = np.atleast_1d(z_obs)
+        eta = self.time_dilation(z_obs_arr, **kwargs)
+        ratio = (1.0 + z_obs_arr) / eta
+        return ratio if len(ratio) > 1 else ratio[0]
+
+    def coordinate_time(self, z, unit='myr'):
+        """
+        Linear cosmic coordinate time: t(z) = t_0 / (1 + z).
+        
+        Args:
+            z: Redshift (scalar or array-like).
+            unit: 'myr' (default) or 's'/'seconds'.
+        """
+        z_arr = np.atleast_1d(z)
+        t0_base = self.t0_myr if unit.lower() == 'myr' else self.t0_seconds
+        t = t0_base / (1.0 + z_arr)
+        return t if len(t) > 1 else t[0]
+
+    def proper_time(self, z, z_seed=None, unit='myr'):
+        """
+        Chronodynamic experienced relational proper time tau(z).
+        
+        If z_seed is provided, returns elapsed proper time Delta tau from z_seed to z:
+        Delta tau(z) = [t0 / (1 - n/2)] * [ (1+z)^(-(1 - n/2)) - (1+z_seed)^(-(1 - n/2)) ]
+        
+        If z_seed is None, returns total accumulated proper time from t=0 to z:
+        tau_total(z) = [t0 / (1 - n/2)] * (1+z)^(-(1 - n/2))
+        
+        Args:
+            z: Redshift (scalar or array-like).
+            z_seed: Optional initial seed redshift.
+            unit: 'myr' (default) or 's'/'seconds'.
+        """
+        z_arr = np.atleast_1d(z)
+        p = 1.0 - self.n / 2.0
+        t0_base = self.t0_myr if unit.lower() == 'myr' else self.t0_seconds
+        if z_seed is not None:
+            z_seed_val = float(z_seed)
+            tau = (t0_base / p) * ((1.0 + z_arr)**(-p) - (1.0 + z_seed_val)**(-p))
+            tau = np.maximum(tau, 0.0)
+        else:
+            tau = (t0_base / p) * ((1.0 + z_arr)**(-p))
+        return tau if len(tau) > 1 else tau[0]
 
     # -----------------------------------------------------------------------
     # Cosmic Expansion & Distance Engine
@@ -289,6 +359,25 @@ class ChronodynamicModel(CosmologyModel, GravityModel):
         h_local = self.h0 * ((1.0 + z_arr) ** (ne / 2.0))
 
         return self.validate_result(g_actual), h_local
+
+    def effective_acceleration(self, g_newton, z=0.0, **kwargs):
+        """
+        Computes non-linear algebraic root gravity g_eff directly from Newtonian acceleration g_N.
+        
+        Formula:
+        g_eff = 0.5 * (g_N + sqrt(g_N^2 + 4 * g_N * a_c(z)))   [m / s^2]
+        where a_c(z) = a_0 * (1 + z)^(2n)
+        """
+        params = {**self.parameters, **kwargs}
+        n = float(params.get('n', self.n))
+        a0 = float(params.get('a_0', self.a0))
+        g_n = np.atleast_1d(g_newton)
+        z_arr = np.atleast_1d(z)
+        ne = self.get_n_eff(z_arr, n)
+        a_c = a0 * ((1.0 + z_arr) ** (2.0 * ne))
+        g_eff = 0.5 * (g_n + np.sqrt(g_n ** 2 + 4.0 * g_n * a_c))
+        res = self.validate_result(g_eff, "g_eff")
+        return res if len(res) > 1 else res[0]
 
     def reset_state(self):
         """Reset dynamic relaxation state memory between simulation runs."""

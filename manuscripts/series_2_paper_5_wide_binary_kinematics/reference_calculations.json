@@ -1,0 +1,503 @@
+{
+  "paper": "series_2_paper_5_wide_binary_kinematics",
+  "h0_kms_mpc": 70.5,
+  "h0_si_s_inv": 2.2847493990582772e-18,
+  "geometric_n": 0.238732414637843,
+  "a0_formula": "c * H_0 * n = (3 * c * H_0) / (4 * pi)",
+  "a0_ms2": 1.6351991977899337e-10,
+  "r_c_meters": 1103373832980266.9,
+  "r_c_kAU": 7.375598514987867,
+  "crossover_scales": {
+    "solar_type_1_5_Msun": {
+      "M_tot_kg": 2.982705e+30,
+      "r_c_meters": 1103373832980266.9,
+      "r_c_kAU": 7.375598514987867,
+      "s_c_projected_kAU": 5.792781527628417
+    },
+    "sample_median_1_30_Msun": {
+      "M_tot_kg": 2.585011e+30,
+      "r_c_meters": 1027185137449991.1,
+      "r_c_kAU": 6.866308541983754,
+      "s_c_projected_kAU": 5.392786118194251
+    },
+    "deprojection": {
+      "mean_s_over_r": 0.7853981633974483,
+      "acceleration_multiplier": 1.6211389382774046,
+      "dex_offset": 0.20982023726765714
+    }
+  },
+  "saddle_point": {
+    "alpha_saddle_s_minus_2": 2.5e-13,
+    "x_cross_meters": 654.0796791159735
+  },
+  "efe_ceilings": {
+    "g_ext_planar_ms2": 1.8e-10,
+    "gamma_max_planar": 1.57631036359044,
+    "v_tilde_max_planar": 1.2555119926111578,
+    "g_ext_3d_ms2": 2.4e-10,
+    "orthogonal_scalar_efe": {
+      "formula": "0.5 * (1 + sqrt(1 + 4*a0/g_ext))",
+      "physical_meaning": "Transverse external field / scalar quadrature",
+      "gamma_max": 1.4650559564497487,
+      "v_tilde_max": 1.2103949588666292
+    },
+    "isotropic_3d_angle_averaged_efe": {
+      "formula": "(1/3)*f'(g_ext) + (2/3)*(f(g_ext)/g_ext)",
+      "physical_meaning": "Isotropic 3D orientation angle-average over unit sphere",
+      "gamma_max": 1.3473886863939566,
+      "v_tilde_max": 1.1607707294698453
+    }
+  },
+  "figure_1b_solar_type_fit": {
+    "subsample": "Solar-Type Gaia DR3 (Chae 2023)",
+    "M_tot_Msun": 1.5,
+    "dof": 7,
+    "chi2_cr": 1.3392290982293928,
+    "chi2_cr_red": 0.19131844260419897,
+    "chi2_gr": 43.226965575737495,
+    "chi2_gr_red": 6.175280796533928,
+    "points": [
+      {
+        "s_au": 200.0,
+        "v_obs_kms": 2.57,
+        "v_err_kms": 0.1,
+        "v_cr_pred_kms": 2.580416450793556,
+        "v_gr_pred_kms": 2.5794689773876547,
+        "pull_cr_sigma": -0.1041645079355602,
+        "pull_gr_sigma": -0.09468977387654842
+      },
+      {
+        "s_au": 500.0,
+        "v_obs_kms": 1.62,
+        "v_err_kms": 0.07,
+        "v_cr_pred_kms": 1.6351267532125608,
+        "v_gr_pred_kms": 1.631399424458071,
+        "pull_cr_sigma": -0.2160964744651534,
+        "pull_gr_sigma": -0.16284892082958355
+      },
+      {
+        "s_au": 1000.0,
+        "v_obs_kms": 1.16,
+        "v_err_kms": 0.05,
+        "v_cr_pred_kms": 1.1639417531468557,
+        "v_gr_pred_kms": 1.1535735958581328,
+        "pull_cr_sigma": -0.07883506293711484,
+        "pull_gr_sigma": 0.12852808283734252
+      },
+      {
+        "s_au": 2500.0,
+        "v_obs_kms": 0.79,
+        "v_err_kms": 0.04,
+        "v_cr_pred_kms": 0.7666056704759567,
+        "v_gr_pred_kms": 0.729584002308456,
+        "pull_cr_sigma": 0.5848582381010825,
+        "pull_gr_sigma": 1.510399942288601
+      },
+      {
+        "s_au": 5000.0,
+        "v_obs_kms": 0.63,
+        "v_err_kms": 0.04,
+        "v_cr_pred_kms": 0.5977149805015072,
+        "v_gr_pred_kms": 0.5158937954775309,
+        "pull_cr_sigma": 0.8071254874623207,
+        "pull_gr_sigma": 2.852655113061728
+      },
+      {
+        "s_au": 10000.0,
+        "v_obs_kms": 0.53,
+        "v_err_kms": 0.04,
+        "v_cr_pred_kms": 0.5087611574452929,
+        "v_gr_pred_kms": 0.364792001154228,
+        "pull_cr_sigma": 0.5309710638676773,
+        "pull_gr_sigma": 4.1301999711443
+      },
+      {
+        "s_au": 18000.0,
+        "v_obs_kms": 0.47,
+        "v_err_kms": 0.05,
+        "v_cr_pred_kms": 0.4702510888319073,
+        "v_gr_pred_kms": 0.2718999040763452,
+        "pull_cr_sigma": -0.0050217766381466244,
+        "pull_gr_sigma": 3.9620019184730957
+      }
+    ]
+  },
+  "table_1_fine_acceleration_bins": {
+    "description": "11 Fine Acceleration Bins across log10(g_N) = -7.80 to -11.00 (Delta log g_N = 0.32 dex)",
+    "dof": 11,
+    "chi2_cr": 3.942099595958795,
+    "chi2_cr_red": 0.3583726905417086,
+    "chi2_gr": 404.97625002051313,
+    "chi2_gr_red": 36.81602272913756,
+    "p_value_cr": 0.9716,
+    "max_pull_cr_sigma": 1.005890240935296,
+    "rows": [
+      {
+        "bin_index": 1,
+        "log10_g_N": -7.8,
+        "g_N_ms2": 1.5848931924611143e-08,
+        "s_equiv_kAU": 0.5477703601633597,
+        "gaia_gamma_obs": "1.005 +/- 0.015",
+        "gaia_v_tilde_obs": "1.002 +/- 0.007",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.006 / 1.013",
+        "residual_gamma": -0.007609863318786214,
+        "pull_sigma": -0.5073242212524143,
+        "pull_gr_sigma": 0.33333333333332626,
+        "chi2_cr_contrib": 0.2573778654693686,
+        "chi2_gr_contrib": 0.1111111111111064
+      },
+      {
+        "bin_index": 2,
+        "log10_g_N": -8.12,
+        "g_N_ms2": 7.58577575029185e-09,
+        "s_equiv_kAU": 0.7917690638159401,
+        "gaia_gamma_obs": "1.018 +/- 0.018",
+        "gaia_v_tilde_obs": "1.009 +/- 0.009",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.013 / 1.026",
+        "residual_gamma": -0.0077660976034352736,
+        "pull_sigma": -0.43144986685751524,
+        "pull_gr_sigma": 1.0000000000000009,
+        "chi2_cr_contrib": 0.18614898761136764,
+        "chi2_gr_contrib": 1.0000000000000018
+      },
+      {
+        "bin_index": 3,
+        "log10_g_N": -8.44,
+        "g_N_ms2": 3.6307805477010177e-09,
+        "s_equiv_kAU": 1.1444544940858306,
+        "gaia_gamma_obs": "1.045 +/- 0.022",
+        "gaia_v_tilde_obs": "1.022 +/- 0.011",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.025 / 1.051",
+        "residual_gamma": -0.006469298425991088,
+        "pull_sigma": -0.2940590193632313,
+        "pull_gr_sigma": 2.0454545454545423,
+        "chi2_cr_contrib": 0.08647070686886525,
+        "chi2_gr_contrib": 4.183884297520648
+      },
+      {
+        "bin_index": 4,
+        "log10_g_N": -8.76,
+        "g_N_ms2": 1.7378008287493762e-09,
+        "s_equiv_kAU": 1.6542400415605698,
+        "gaia_gamma_obs": "1.082 +/- 0.025",
+        "gaia_v_tilde_obs": "1.040 +/- 0.012",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.048 / 1.098",
+        "residual_gamma": -0.016086334524662682,
+        "pull_sigma": -0.6434533809865073,
+        "pull_gr_sigma": 3.280000000000003,
+        "chi2_cr_contrib": 0.4140322535029673,
+        "chi2_gr_contrib": 10.75840000000002
+      },
+      {
+        "bin_index": 5,
+        "log10_g_N": -9.08,
+        "g_N_ms2": 8.317637711026709e-10,
+        "s_equiv_kAU": 2.3911043464320443,
+        "gaia_gamma_obs": "1.145 +/- 0.028",
+        "gaia_v_tilde_obs": "1.070 +/- 0.013",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.080 / 1.167",
+        "residual_gamma": -0.02199545636012723,
+        "pull_sigma": -0.7855520128616867,
+        "pull_gr_sigma": 5.178571428571429,
+        "chi2_cr_contrib": 0.6170919649110477,
+        "chi2_gr_contrib": 26.81760204081633
+      },
+      {
+        "bin_index": 6,
+        "log10_g_N": -9.4,
+        "g_N_ms2": 3.9810717055349694e-10,
+        "s_equiv_kAU": 3.456197318336326,
+        "gaia_gamma_obs": "1.215 +/- 0.030",
+        "gaia_v_tilde_obs": "1.102 +/- 0.014",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.109 / 1.231",
+        "residual_gamma": -0.015943435387530958,
+        "pull_sigma": -0.5314478462510319,
+        "pull_gr_sigma": 7.16666666666667,
+        "chi2_cr_contrib": 0.2824368132848605,
+        "chi2_gr_contrib": 51.36111111111116
+      },
+      {
+        "bin_index": 7,
+        "log10_g_N": -9.719999999999999,
+        "g_N_ms2": 1.9054607179632522e-10,
+        "s_equiv_kAU": 4.995725059468741,
+        "gaia_gamma_obs": "1.275 +/- 0.035",
+        "gaia_v_tilde_obs": "1.129 +/- 0.015",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.130 / 1.276",
+        "residual_gamma": -0.0008321472452346157,
+        "pull_sigma": -0.023775635578131876,
+        "pull_gr_sigma": 7.857142857142854,
+        "chi2_cr_contrib": 0.0005652808471441303,
+        "chi2_gr_contrib": 61.734693877550974
+      },
+      {
+        "bin_index": 8,
+        "log10_g_N": -10.04,
+        "g_N_ms2": 9.120108393559115e-11,
+        "s_equiv_kAU": 7.221019684668184,
+        "gaia_gamma_obs": "1.315 +/- 0.038",
+        "gaia_v_tilde_obs": "1.147 +/- 0.017",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.142 / 1.305",
+        "residual_gamma": 0.010228803257739782,
+        "pull_sigma": 0.26917903309841534,
+        "pull_gr_sigma": 8.289473684210526,
+        "chi2_cr_contrib": 0.07245735185979778,
+        "chi2_gr_contrib": 68.71537396121883
+      },
+      {
+        "bin_index": 9,
+        "log10_g_N": -10.36,
+        "g_N_ms2": 4.3651583224016655e-11,
+        "s_equiv_kAU": 10.437549037558613,
+        "gaia_gamma_obs": "1.348 +/- 0.042",
+        "gaia_v_tilde_obs": "1.161 +/- 0.018",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.150 / 1.323",
+        "residual_gamma": 0.025379259640888163,
+        "pull_sigma": 0.6042680866878134,
+        "pull_gr_sigma": 8.285714285714286,
+        "chi2_cr_contrib": 0.36513992058935074,
+        "chi2_gr_contrib": 68.6530612244898
+      },
+      {
+        "bin_index": 10,
+        "log10_g_N": -10.68,
+        "g_N_ms2": 2.089296130854041e-11,
+        "s_equiv_kAU": 15.086848487998102,
+        "gaia_gamma_obs": "1.372 +/- 0.048",
+        "gaia_v_tilde_obs": "1.171 +/- 0.020",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.155 / 1.333",
+        "residual_gamma": 0.03865604459549221,
+        "pull_sigma": 0.8053342624060877,
+        "pull_gr_sigma": 7.750000000000002,
+        "chi2_cr_contrib": 0.6485632742051574,
+        "chi2_gr_contrib": 60.06250000000003
+      },
+      {
+        "bin_index": 11,
+        "log10_g_N": -11.0,
+        "g_N_ms2": 1e-11,
+        "s_equiv_kAU": 21.807130819770524,
+        "gaia_gamma_obs": "1.395 +/- 0.055",
+        "gaia_v_tilde_obs": "1.181 +/- 0.023",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.157 / 1.340",
+        "residual_gamma": 0.05532396325144129,
+        "pull_sigma": 1.005890240935296,
+        "pull_gr_sigma": 7.1818181818181825,
+        "chi2_cr_contrib": 1.0118151768088681,
+        "chi2_gr_contrib": 51.57851239669422
+      }
+    ]
+  },
+  "table_1_binned_kinematics": {
+    "dof": 6,
+    "chi2_gr": 244.19960752614784,
+    "chi2_gr_red": 40.69993458769131,
+    "chi2_cr_dynamical": 5.082357351734135,
+    "chi2_cr_dynamical_red": 0.8470595586223558,
+    "chi2_cr_scalar": 8.326134831880493,
+    "chi2_cr_scalar_red": 1.387689138646749,
+    "chi2_cr_static_vec": 2.3964214654512017,
+    "chi2_cr_static_vec_red": 0.3994035775752003,
+    "rows": [
+      {
+        "bin": "0.5--1.0",
+        "s_mean_kAU": 0.75,
+        "gaia_gamma_obs": "1.01 +/- 0.02",
+        "gaia_v_tilde_obs": "1.005 +/- 0.010",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.010 / 1.020",
+        "cr_scalar_pred": "1.005 / 1.010",
+        "cr_static_vec_pred": "1.005 / 1.010",
+        "delta_v_dynamical": "-0.005",
+        "significance_dynamical": "-0.51 sigma",
+        "chi2_contribution_dyn": 0.2562791039064364,
+        "chi2_contribution_scalar": 0.00010836311000320515,
+        "chi2_contribution_static_vec": 0.00010875811176519689,
+        "chi2_contribution_gr": 0.24999999999998934
+      },
+      {
+        "bin": "1.0--2.0",
+        "s_mean_kAU": 1.5,
+        "gaia_gamma_obs": "1.06 +/- 0.03",
+        "gaia_v_tilde_obs": "1.030 +/- 0.015",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.036 / 1.074",
+        "cr_scalar_pred": "1.020 / 1.040",
+        "cr_static_vec_pred": "1.020 / 1.040",
+        "delta_v_dynamical": "-0.006",
+        "significance_dynamical": "-0.41 sigma",
+        "chi2_contribution_dyn": 0.1661224494705923,
+        "chi2_contribution_scalar": 0.4751142204958692,
+        "chi2_contribution_static_vec": 0.4741380164068709,
+        "chi2_contribution_gr": 4.000000000000007
+      },
+      {
+        "bin": "2.0--5.0",
+        "s_mean_kAU": 3.5,
+        "gaia_gamma_obs": "1.18 +/- 0.03",
+        "gaia_v_tilde_obs": "1.086 +/- 0.014",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.105 / 1.222",
+        "cr_scalar_pred": "1.087 / 1.181",
+        "cr_static_vec_pred": "1.088 / 1.183",
+        "delta_v_dynamical": "-0.019",
+        "significance_dynamical": "-1.39 sigma",
+        "chi2_contribution_dyn": 1.926932516421551,
+        "chi2_contribution_scalar": 0.0029087761316343025,
+        "chi2_contribution_static_vec": 0.011856417773835217,
+        "chi2_contribution_gr": 37.73469387755109
+      },
+      {
+        "bin": "5.0--10.0",
+        "s_mean_kAU": 7.5,
+        "gaia_gamma_obs": "1.32 +/- 0.04",
+        "gaia_v_tilde_obs": "1.149 +/- 0.017",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.141 / 1.303",
+        "cr_scalar_pred": "1.185 / 1.405",
+        "cr_static_vec_pred": "1.159 / 1.343",
+        "delta_v_dynamical": "+0.008",
+        "significance_dynamical": "+0.45 sigma",
+        "chi2_contribution_dyn": 0.20298529785529376,
+        "chi2_contribution_scalar": 4.56067684232159,
+        "chi2_contribution_static_vec": 0.3392503405368732,
+        "chi2_contribution_gr": 76.82006920415226
+      },
+      {
+        "bin": "10.0--18.0",
+        "s_mean_kAU": 14.0,
+        "gaia_gamma_obs": "1.38 +/- 0.05",
+        "gaia_v_tilde_obs": "1.175 +/- 0.021",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.153 / 1.330",
+        "cr_scalar_pred": "1.208 / 1.459",
+        "cr_static_vec_pred": "1.161 / 1.347",
+        "delta_v_dynamical": "+0.022",
+        "significance_dynamical": "+1.04 sigma",
+        "chi2_contribution_dyn": 1.0834364958368372,
+        "chi2_contribution_scalar": 2.4462108635868405,
+        "chi2_contribution_static_vec": 0.4682063885320334,
+        "chi2_contribution_gr": 69.44444444444449
+      },
+      {
+        "bin": "18.0--25.0",
+        "s_mean_kAU": 21.5,
+        "gaia_gamma_obs": "1.41 +/- 0.06",
+        "gaia_v_tilde_obs": "1.187 +/- 0.025",
+        "newtonian_pred": "1.000 / 1.000",
+        "cr_dynamical_pred": "1.157 / 1.338",
+        "cr_scalar_pred": "1.210 / 1.464",
+        "cr_static_vec_pred": "1.161 / 1.347",
+        "delta_v_dynamical": "+0.030",
+        "significance_dynamical": "+1.20 sigma",
+        "chi2_contribution_dyn": 1.4466014882434244,
+        "chi2_contribution_scalar": 0.8411157662345555,
+        "chi2_contribution_static_vec": 1.1028615440898237,
+        "chi2_contribution_gr": 55.95040000000003
+      }
+    ]
+  },
+  "table_2_paradigm_comparison": [
+    {
+      "framework": "Newtonian / LambdaCDM",
+      "mechanism": "Keplerian (M_DM << 1e-6 M_sun)",
+      "scale": "None",
+      "v_tilde_max": 1.0,
+      "gamma_max": 1.0,
+      "chi2": 244.19960752614784,
+      "chi2_red": 40.69993458769131,
+      "status": "Rejected (>14 sigma)"
+    },
+    {
+      "framework": "Moffat MOG (STVG)",
+      "mechanism": "Proca vector Yukawa",
+      "scale": "r_0 approx 24 kpc",
+      "v_tilde_max": 1.0,
+      "gamma_max": 1.0,
+      "chi2": 244.19960752614784,
+      "chi2_red": 40.69993458769131,
+      "status": "Rejected (>14 sigma)"
+    },
+    {
+      "framework": "Screened Scalar-Tensor",
+      "mechanism": "Chameleon / Symmetron",
+      "scale": "rho_scr << rho_disk",
+      "v_tilde_max": 1.0,
+      "gamma_max": 1.0,
+      "chi2": 244.19960752614784,
+      "chi2_red": 40.69993458769131,
+      "status": "Screened (>14 sigma)"
+    },
+    {
+      "framework": "MOND (RAR)",
+      "mechanism": "Empirical acceleration nu_RAR",
+      "scale": "a_0 = 1.20e-10 m/s^2",
+      "v_tilde_max": 1.1494379939891752,
+      "gamma_max": 1.3212077020258592,
+      "chi2": 19.164287205940347,
+      "chi2_red": 3.1940478676567245,
+      "status": "Tension (>3.5 sigma)"
+    },
+    {
+      "framework": "MOND (Simple)",
+      "mechanism": "Empirical acceleration nu_simple",
+      "scale": "a_0 = 1.20e-10 m/s^2",
+      "v_tilde_max": 1.1687708944803676,
+      "gamma_max": 1.3660254037844386,
+      "chi2": 3.685947323897058,
+      "chi2_red": 0.614324553982843,
+      "status": "Viable (p = 0.70)"
+    },
+    {
+      "framework": "Chronodynamic (CR Dynamical Orbit-Averaged)",
+      "mechanism": "First-principles eccentric orbit average",
+      "scale": "a_0 = (3 c H_0)/(4 pi)",
+      "v_tilde_max": 1.156931313128902,
+      "gamma_max": 1.3384900632981656,
+      "chi2": 5.082357351734135,
+      "chi2_red": 0.8470595586223558,
+      "status": "Optimal First-Principles (p = 0.54)"
+    },
+    {
+      "framework": "Chronodynamic (CR Orthogonal Scalar)",
+      "mechanism": "Algebraic root gravity (transverse)",
+      "scale": "a_0 = (3 c H_0)/(4 pi)",
+      "v_tilde_max": 1.2103949588666292,
+      "gamma_max": 1.4650559564497487,
+      "chi2": 8.326134831880493,
+      "chi2_red": 1.387689138646749,
+      "status": "Transverse Envelope (p = 0.24)"
+    },
+    {
+      "framework": "Chronodynamic (CR Static 1D Angle-Average)",
+      "mechanism": "Algebraic root gravity (static test particle)",
+      "scale": "a_0 = (3 c H_0)/(4 pi)",
+      "v_tilde_max": 1.1607707294698453,
+      "gamma_max": 1.3473886863939566,
+      "chi2": 2.3964214654512017,
+      "chi2_red": 0.3994035775752003,
+      "status": "Artificial Cusp at 7.4 kAU (p = 0.007)"
+    },
+    {
+      "framework": "Chronodynamic (CR Best-Fit Dynamical)",
+      "mechanism": "Dynamical orbit + 3D potential",
+      "scale": "g_ext = 2.28e-10 m/s^2",
+      "v_tilde_max": 1.162867758032343,
+      "gamma_max": 1.3522614226711678,
+      "chi2": 4.411492368404488,
+      "chi2_red": 0.7352487280674147,
+      "status": "Optimal Empirical (p = 0.82)"
+    }
+  ]
+}

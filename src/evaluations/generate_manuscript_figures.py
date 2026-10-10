@@ -74,18 +74,12 @@ def generate_cdm_duality_figure(output_dir):
 
     # Panel (b): Temporal Duality
     z = np.linspace(0.001, 2.0, 200)
-    h0 = 70.5
-    n = 0.23873
-    c_km_s = 299792.458
-    lcdm = LambdaCDM(h0=h0, omega_m=0.3, omega_l=0.7)
-    eds = LambdaCDM(h0=h0, omega_m=1.0, omega_l=0.0)
+    cr_cosmo = LatestChronodynamicModel(h0=70.5, n=0.23873)
+    lcdm = LambdaCDM(h0=70.5, omega_m=0.3, omega_l=0.7)
+    eds = LambdaCDM(h0=70.5, omega_m=1.0, omega_l=0.0)
 
-    # Canonical CR distance modulus from Paper I (Eq. 18):
-    # d_L(z) = (1+z)^(1 + n/2) * (c/H0) * ln(1+z)
-    dc_cr = (c_km_s / h0) * np.log(1.0 + z)
-    dl_cr = (1.0 + z)**(1.0 + n / 2.0) * dc_cr
-    mu_cr = 5.0 * np.log10(dl_cr) + 25.0
-
+    # Compute distance moduli using official model engines
+    mu_cr = np.array([cr_cosmo.luminosity_modulus(zi) for zi in z])
     mu_lcdm = np.array([lcdm.luminosity_modulus(zi) for zi in z])
     mu_eds = np.array([eds.luminosity_modulus(zi) for zi in z])
 
@@ -158,7 +152,7 @@ def generate_sparc_rar_figure(output_dir):
     cr_model = LatestChronodynamicModel()
     a0 = cr_model.a0
     g_grid = np.logspace(-14, -8, 200)
-    g_eff_cr = 0.5 * (g_grid + np.sqrt(g_grid**2 + 4 * g_grid * a0))
+    g_eff_cr = cr_model.effective_acceleration(g_grid, z=0.0)
     g_mond = g_grid / (1.0 - np.exp(-np.sqrt(np.maximum(g_grid, 1e-20) / a0)))
 
     ax.plot(g_grid, g_eff_cr, 'r-', lw=2.2, label=r'CR $g_{\rm eff} = \frac{1}{2}(g_N + \sqrt{g_N^2 + 4 g_N a_c})$')
@@ -175,7 +169,7 @@ def generate_sparc_rar_figure(output_dir):
     ax.grid(True, which='both', ls=':', alpha=0.5)
 
     # Residuals
-    g_pred_points = 0.5 * (g_b + np.sqrt(g_b**2 + 4 * g_b * a0))
+    g_pred_points = cr_model.effective_acceleration(g_b, z=0.0)
     log_res = np.log10(g_o) - np.log10(g_pred_points)
     ax_res.scatter(g_b, log_res, s=5, color='red', alpha=0.3, edgecolors='none')
     ax_res.axhline(0, color='black', ls='--', lw=1)
@@ -269,14 +263,14 @@ def generate_cmb_spectrum_figure(output_dir):
     print(f"Saved: {pdf_path}")
 
 def main():
-    figures_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../manuscripts/paper_1_foundations/figures'))
+    figures_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../manuscripts/series_1_paper_1_foundations/figures'))
     os.makedirs(figures_dir, exist_ok=True)
 
     print("Generating publication-quality figures for manuscript...")
     generate_cdm_duality_figure(figures_dir)
     generate_sparc_rar_figure(figures_dir)
     generate_cmb_spectrum_figure(figures_dir)
-    print("All manuscript figures generated successfully in manuscripts/paper_1_foundations/figures/!")
+    print("All manuscript figures generated successfully in manuscripts/series_1_paper_1_foundations/figures/!")
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,351 @@
+{
+  "tier_1_dynamic_continuous_equations": {
+    "dynamic_horizon_radius": {
+      "name": "Dynamic Causal Horizon Radius",
+      "description": "Continuous causal expansion horizon scale R(t) = c * t in metric coordinate time t.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "coordinate_time_t",
+      "sympy_repr": "Eq(R(t), c*t)",
+      "latex": "R{\\left(t \\right)} = c t",
+      "mathjax_display": "$$R{\\left(t \\right)} = c t$$",
+      "mathjax_inline": "$R{\\left(t \\right)} = c t$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 1.4 Sec. II"
+    },
+    "dynamic_expansion_rate_temporal": {
+      "name": "Dynamic Expansion Rate (Temporal)",
+      "description": "Continuous cosmological expansion rate H(t) = 1 / t as a function of metric time.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "coordinate_time_t",
+      "sympy_repr": "Eq(H(t), 1/t)",
+      "latex": "H{\\left(t \\right)} = \\frac{1}{t}",
+      "mathjax_display": "$$H{\\left(t \\right)} = \\frac{1}{t}$$",
+      "mathjax_inline": "$H{\\left(t \\right)} = \\frac{1}{t}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 1.2 Sec. III"
+    },
+    "dynamic_expansion_rate_geometric": {
+      "name": "Dynamic Expansion Rate (Geometric)",
+      "description": "Continuous expansion rate expressed in horizon radius H(R) = c / R.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "spatial_horizon_radius_R",
+      "sympy_repr": "Eq(H(R), c/R)",
+      "latex": "H{\\left(R \\right)} = \\frac{c}{R}",
+      "mathjax_display": "$$H{\\left(R \\right)} = \\frac{c}{R}$$",
+      "mathjax_inline": "$H{\\left(R \\right)} = \\frac{c}{R}$",
+      "paper_refs": "Paper 1.1 Sec. II"
+    },
+    "dynamic_critical_acceleration_temporal": {
+      "name": "Dynamic Critical Acceleration Scale (Temporal)",
+      "description": "Fundamental horizon acceleration scale in metric time: a_c(t) = (c * n) / t.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "coordinate_time_t",
+      "sympy_repr": "Eq(a_c(t), c*n/t)",
+      "latex": "a_{c}{\\left(t \\right)} = \\frac{c n}{t}",
+      "mathjax_display": "$$a_{c}{\\left(t \\right)} = \\frac{c n}{t}$$",
+      "mathjax_inline": "$a_{c}{\\left(t \\right)} = \\frac{c n}{t}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 1.3 Sec. II; Paper 2.1 Sec. III"
+    },
+    "dynamic_critical_acceleration_geometric": {
+      "name": "Dynamic Critical Acceleration Scale (Geometric)",
+      "description": "Fundamental horizon acceleration scale in horizon radius: a_c(R) = (c^2 / R) * n.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "spatial_horizon_radius_R",
+      "sympy_repr": "Eq(a_c(R), c**2*n/R)",
+      "latex": "a_{c}{\\left(R \\right)} = \\frac{c^{2} n}{R}",
+      "mathjax_display": "$$a_{c}{\\left(R \\right)} = \\frac{c^{2} n}{R}$$",
+      "mathjax_inline": "$a_{c}{\\left(R \\right)} = \\frac{c^{2} n}{R}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 2.5 Sec. II"
+    },
+    "dynamic_metric_clock_lapse": {
+      "name": "Dynamic Metric Clock Lapse",
+      "description": "Differential conversion rate between proper time tau and coordinate time t: eta(t) = (t / t_ref)^(n/2).",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "proper_worldline_tau_to_coordinate_t",
+      "sympy_repr": "Eq(\\eta(t), (t/t_{\\text{ref}})**(n/2))",
+      "latex": "\\eta{\\left(t \\right)} = \\left(\\frac{t}{t_{\\text{ref}}}\\right)^{\\frac{n}{2}}",
+      "mathjax_display": "$$\\eta{\\left(t \\right)} = \\left(\\frac{t}{t_{\\text{ref}}}\\right)^{\\frac{n}{2}}$$",
+      "mathjax_inline": "$\\eta{\\left(t \\right)} = \\left(\\frac{t}{t_{\\text{ref}}}\\right)^{\\frac{n}{2}}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 1.2 Sec. II; Paper 1.6 Sec. II"
+    },
+    "worldline_differential_relation": {
+      "name": "Worldline Proper-Time Metric Relation",
+      "description": "Exact relativistic line element differential connecting clock proper time tau to coordinate time t.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "worldline_differential",
+      "sympy_repr": "Eq(\\mathrm{d}\\tau, \\eta_{\\text{dyn}}*\\mathrm{d}t)",
+      "latex": "\\mathrm{d}\\tau = \\eta_{\\text{dyn}} \\mathrm{d}t",
+      "mathjax_display": "$$\\mathrm{d}\\tau = \\eta_{\\text{dyn}} \\mathrm{d}t$$",
+      "mathjax_inline": "$\\mathrm{d}\\tau = \\eta_{\\text{dyn}} \\mathrm{d}t$",
+      "paper_refs": "Paper 1.2 Sec. II; Paper 1.3 Sec. II"
+    },
+    "proper_to_coordinate_derivative_operator": {
+      "name": "Worldline Derivative Transformation Operator",
+      "description": "Formal operator relation preventing derivative skew between proper time and coordinate time.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "operator_transformation",
+      "sympy_repr": "Eq(\\frac{\\mathrm{d}}{\\mathrm{d}\\tau}, \\frac{\\mathrm{d}}{\\mathrm{d}t}*\\gamma_{\\text{dyn}})",
+      "latex": "\\frac{\\mathrm{d}}{\\mathrm{d}\\tau} = \\frac{\\mathrm{d}}{\\mathrm{d}t} \\gamma_{\\text{dyn}}",
+      "mathjax_display": "$$\\frac{\\mathrm{d}}{\\mathrm{d}\\tau} = \\frac{\\mathrm{d}}{\\mathrm{d}t} \\gamma_{\\text{dyn}}$$",
+      "mathjax_inline": "$\\frac{\\mathrm{d}}{\\mathrm{d}\\tau} = \\frac{\\mathrm{d}}{\\mathrm{d}t} \\gamma_{\\text{dyn}}$",
+      "paper_refs": "Paper 1.3 Sec. II"
+    },
+    "dynamic_root_gravity_algebraic_constraint": {
+      "name": "Root Gravity Algebraic Constraint",
+      "description": "The fundamental quadratic field constraint g_eff^2 - g_N * g_eff - g_N * a_c = 0.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "algebraic_field_constraint",
+      "sympy_repr": "Eq(-a_c*g_N - g_N*g_{\\text{eff}} + g_{\\text{eff}}**2, 0)",
+      "latex": "- a_{c} g_{N} - g_{N} g_{\\text{eff}} + g_{\\text{eff}}^{2} = 0",
+      "mathjax_display": "$$- a_{c} g_{N} - g_{N} g_{\\text{eff}} + g_{\\text{eff}}^{2} = 0$$",
+      "mathjax_inline": "$- a_{c} g_{N} - g_{N} g_{\\text{eff}} + g_{\\text{eff}}^{2} = 0$",
+      "paper_refs": "Paper 1.1 Eq. (13); Paper 2.5 Eq. (2)"
+    },
+    "dynamic_root_gravity": {
+      "name": "Dynamic Non-Linear Root Gravity Solution",
+      "description": "First-principles algebraic solution for effective acceleration at epoch t, derived from the quadratic constraint.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "spatial_radius_r_and_time_t",
+      "sympy_repr": "Eq(g_{\\text{eff}}(g_N, t), sqrt(g_N)*sqrt(4*c*n/t + g_N)/2 + g_N/2)",
+      "latex": "g_{\\text{eff}}{\\left(g_{N},t \\right)} = \\frac{\\sqrt{g_{N}} \\sqrt{\\frac{4 c n}{t} + g_{N}}}{2} + \\frac{g_{N}}{2}",
+      "mathjax_display": "$$g_{\\text{eff}}{\\left(g_{N},t \\right)} = \\frac{\\sqrt{g_{N}} \\sqrt{\\frac{4 c n}{t} + g_{N}}}{2} + \\frac{g_{N}}{2}$$",
+      "mathjax_inline": "$g_{\\text{eff}}{\\left(g_{N},t \\right)} = \\frac{\\sqrt{g_{N}} \\sqrt{\\frac{4 c n}{t} + g_{N}}}{2} + \\frac{g_{N}}{2}$",
+      "paper_refs": "Paper 1.1 Eq. (14); Paper 2.2 Eq. (2); Paper 2.5 Eq. (3)"
+    },
+    "dynamic_vacuum_relaxation_timescale": {
+      "name": "Dynamic Vacuum Relaxation Timescale",
+      "description": "Screened vacuum healing timescale tau(t, g_N) derived from base timescale, stiffness, and critical acceleration.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "coordinate_time_t",
+      "sympy_repr": "Eq(\\tau(t, g_N), sqrt(2)*t*exp(-sqrt(2)*g_N*t/(2*c))/n)",
+      "latex": "\\tau{\\left(t,g_{N} \\right)} = \\frac{\\sqrt{2} t e^{- \\frac{\\sqrt{2} g_{N} t}{2 c}}}{n}",
+      "mathjax_display": "$$\\tau{\\left(t,g_{N} \\right)} = \\frac{\\sqrt{2} t e^{- \\frac{\\sqrt{2} g_{N} t}{2 c}}}{n}$$",
+      "mathjax_inline": "$\\tau{\\left(t,g_{N} \\right)} = \\frac{\\sqrt{2} t e^{- \\frac{\\sqrt{2} g_{N} t}{2 c}}}{n}$",
+      "paper_refs": "Paper 1.3 Sec. II; Paper 2.2 Eq. (4)"
+    },
+    "dynamic_relaxation_ode_coordinate_time": {
+      "name": "Dynamic Vacuum Relaxation ODE (Coordinate Frame)",
+      "description": "Dissipation equation for dynamic metric lapse in observer laboratory frame coordinate time t.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "coordinate_time_t",
+      "sympy_repr": "Eq(\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}t}, -(\\eta_{\\text{dyn}} - sqrt(1 - v**2/c**2))/\\tau_{\\text{eff}})",
+      "latex": "\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}t} = - \\frac{\\eta_{\\text{dyn}} - \\sqrt{1 - \\frac{v^{2}}{c^{2}}}}{\\tau_{\\text{eff}}}",
+      "mathjax_display": "$$\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}t} = - \\frac{\\eta_{\\text{dyn}} - \\sqrt{1 - \\frac{v^{2}}{c^{2}}}}{\\tau_{\\text{eff}}}$$",
+      "mathjax_inline": "$\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}t} = - \\frac{\\eta_{\\text{dyn}} - \\sqrt{1 - \\frac{v^{2}}{c^{2}}}}{\\tau_{\\text{eff}}}$",
+      "paper_refs": "Paper 1.3 Eq. (83); Paper 2.2 Sec. II"
+    },
+    "dynamic_relaxation_ode_proper_time": {
+      "name": "Dynamic Vacuum Relaxation ODE (Proper Worldline Frame)",
+      "description": "Dissipation equation for dynamic metric lapse derived via worldline transformation operator d/d tau.",
+      "tier": "Tier 1: Dynamic Continuous Variable",
+      "derivative_frame": "proper_worldline_tau",
+      "sympy_repr": "Eq(\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}\\tau}, -\\gamma_{\\text{dyn}}*(\\eta_{\\text{dyn}} - sqrt(1 - v**2/c**2))/\\tau_{\\text{eff}})",
+      "latex": "\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}\\tau} = - \\frac{\\gamma_{\\text{dyn}} \\left(\\eta_{\\text{dyn}} - \\sqrt{1 - \\frac{v^{2}}{c^{2}}}\\right)}{\\tau_{\\text{eff}}}",
+      "mathjax_display": "$$\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}\\tau} = - \\frac{\\gamma_{\\text{dyn}} \\left(\\eta_{\\text{dyn}} - \\sqrt{1 - \\frac{v^{2}}{c^{2}}}\\right)}{\\tau_{\\text{eff}}}$$",
+      "mathjax_inline": "$\\frac{\\mathrm{d}\\eta_{\\text{dyn}}}{\\mathrm{d}\\tau} = - \\frac{\\gamma_{\\text{dyn}} \\left(\\eta_{\\text{dyn}} - \\sqrt{1 - \\frac{v^{2}}{c^{2}}}\\right)}{\\tau_{\\text{eff}}}$",
+      "paper_refs": "Paper 1.3 Sec. II"
+    }
+  },
+  "tier_2_epoch_boundary_derivations": {
+    "derive_epoch_hubble_constant": {
+      "name": "Present Hubble Rate Boundary Evaluation",
+      "description": "Boundary evaluation of continuous H(t) at present cosmological observation epoch t = t_0: H_0 = 1 / t_0.",
+      "tier": "Tier 2: Present-Epoch Boundary Evaluation",
+      "derivative_frame": "epoch_boundary_evaluation",
+      "sympy_repr": "Eq(H_0, 1/t_0)",
+      "latex": "H_{0} = \\frac{1}{t_{0}}",
+      "mathjax_display": "$$H_{0} = \\frac{1}{t_{0}}$$",
+      "mathjax_inline": "$H_{0} = \\frac{1}{t_{0}}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 2.3 Sec. II"
+    },
+    "derive_epoch_horizon_scale": {
+      "name": "Present Causal Horizon Scale",
+      "description": "Boundary evaluation of continuous R(t) at present epoch: R_0 = c * t_0 = c / H_0.",
+      "tier": "Tier 2: Present-Epoch Boundary Evaluation",
+      "derivative_frame": "epoch_boundary_evaluation",
+      "sympy_repr": "Eq(R_0, c/H_0)",
+      "latex": "R_{0} = \\frac{c}{H_{0}}",
+      "mathjax_display": "$$R_{0} = \\frac{c}{H_{0}}$$",
+      "mathjax_inline": "$R_{0} = \\frac{c}{H_{0}}$",
+      "paper_refs": "Paper 1.1 Sec. II"
+    },
+    "derive_epoch_critical_acceleration": {
+      "name": "Present Critical Acceleration Scale",
+      "description": "Boundary evaluation of continuous a_c(t) at present epoch: a_0 = c * H_0 * n.",
+      "tier": "Tier 2: Present-Epoch Boundary Evaluation",
+      "derivative_frame": "epoch_boundary_evaluation",
+      "sympy_repr": "Eq(a_0, H_0*c*n)",
+      "latex": "a_{0} = H_{0} c n",
+      "mathjax_display": "$$a_{0} = H_{0} c n$$",
+      "mathjax_inline": "$a_{0} = H_{0} c n$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 2.5 Sec. II"
+    },
+    "derive_epoch_relaxation_timescale": {
+      "name": "Present Unscreened Relaxation Timescale",
+      "description": "Boundary evaluation of continuous unscreened vacuum memory timescale tau(t_0, 0) at present epoch.",
+      "tier": "Tier 2: Present-Epoch Boundary Evaluation",
+      "derivative_frame": "epoch_boundary_evaluation",
+      "sympy_repr": "Eq(\\tau_0, sqrt(2)*t_0/n)",
+      "latex": "\\tau_{0} = \\frac{\\sqrt{2} t_{0}}{n}",
+      "mathjax_display": "$$\\tau_{0} = \\frac{\\sqrt{2} t_{0}}{n}$$",
+      "mathjax_inline": "$\\tau_{0} = \\frac{\\sqrt{2} t_{0}}{n}$",
+      "paper_refs": "Paper 2.2 Sec. II"
+    }
+  },
+  "tier_3_geometric_exponent_derivations": {
+    "derive_geometric_dilution_exponent": {
+      "name": "Geometric Dilution Exponent Derivation",
+      "description": "Analytic derivation of n from the dimensional ratio of 3D Euclidean volume to 2D spherical horizon: n = 3 / (4 * pi).",
+      "tier": "Tier 3: Geometric First-Principles Derivation",
+      "derivative_frame": "geometric_invariant",
+      "sympy_repr": "Eq(n, 3/(4*pi))",
+      "latex": "n = \\frac{3}{4 \\pi}",
+      "mathjax_display": "$$n = \\frac{3}{4 \\pi}$$",
+      "mathjax_inline": "$n = \\frac{3}{4 \\pi}$",
+      "paper_refs": "Paper 1.1 Sec. I; Paper 2.3 Sec. II"
+    },
+    "derive_geometric_stiffness_factor": {
+      "name": "Geometric Relaxation Stiffness Factor",
+      "description": "Analytic derivation of dynamic relaxation stiffness: k = n / sqrt(2) = 3 / (4 * pi * sqrt(2)).",
+      "tier": "Tier 3: Geometric First-Principles Derivation",
+      "derivative_frame": "geometric_invariant",
+      "sympy_repr": "Eq(k, 3*sqrt(2)/(8*pi))",
+      "latex": "k = \\frac{3 \\sqrt{2}}{8 \\pi}",
+      "mathjax_display": "$$k = \\frac{3 \\sqrt{2}}{8 \\pi}$$",
+      "mathjax_inline": "$k = \\frac{3 \\sqrt{2}}{8 \\pi}$",
+      "paper_refs": "Paper 2.2 Sec. II"
+    }
+  },
+  "tier_4_derived_zero_parameter_observables": {
+    "derive_zero_parameter_critical_acceleration": {
+      "name": "Zero-Parameter Boundary Acceleration Scale",
+      "description": "Derived by substituting n = 3 / (4*pi) into epoch acceleration: a_0 = (3 * c * H_0) / (4 * pi).",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "dimensionless_geometric_evaluation",
+      "sympy_repr": "Eq(a_0, 3*H_0*c/(4*pi))",
+      "latex": "a_{0} = \\frac{3 H_{0} c}{4 \\pi}",
+      "mathjax_display": "$$a_{0} = \\frac{3 H_{0} c}{4 \\pi}$$",
+      "mathjax_inline": "$a_{0} = \\frac{3 H_{0} c}{4 \\pi}$",
+      "paper_refs": "Paper 1.1 Eq. (4); Paper 2.5 Eq. (2)"
+    },
+    "derive_zero_parameter_relaxation_timescale": {
+      "name": "Zero-Parameter Base Relaxation Timescale",
+      "description": "Derived by substituting n = 3 / (4*pi) into epoch relaxation: tau_0 = (4 * pi * sqrt(2)) / (3 * H_0).",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "dimensionless_geometric_evaluation",
+      "sympy_repr": "Eq(\\tau_0, 4*sqrt(2)*pi/(3*H_0))",
+      "latex": "\\tau_{0} = \\frac{4 \\sqrt{2} \\pi}{3 H_{0}}",
+      "mathjax_display": "$$\\tau_{0} = \\frac{4 \\sqrt{2} \\pi}{3 H_{0}}$$",
+      "mathjax_inline": "$\\tau_{0} = \\frac{4 \\sqrt{2} \\pi}{3 H_{0}}$",
+      "paper_refs": "Paper 2.2 Eq. (3)"
+    },
+    "derive_redshift_critical_acceleration_zero_parameter": {
+      "name": "Zero-Parameter Redshift Critical Acceleration",
+      "description": "Derived by substituting n = 3 / (4*pi) into redshift-scaled critical acceleration: a_c(z) = a_0 * (1+z)^(3 / (2*pi)).",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "cosmological_redshift_z",
+      "sympy_repr": "Eq(a_c(z), a_0*(z + 1)**(3/(2*pi)))",
+      "latex": "a_{c}{\\left(z \\right)} = a_{0} \\left(z + 1\\right)^{\\frac{3}{2 \\pi}}",
+      "mathjax_display": "$$a_{c}{\\left(z \\right)} = a_{0} \\left(z + 1\\right)^{\\frac{3}{2 \\pi}}$$",
+      "mathjax_inline": "$a_{c}{\\left(z \\right)} = a_{0} \\left(z + 1\\right)^{\\frac{3}{2 \\pi}}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 2.1 Sec. III"
+    },
+    "derive_keplerian_asymptotic_series": {
+      "name": "Asymptotic Keplerian Screening Series",
+      "description": "Taylor series expansion of root gravity in high-acceleration regime (g_N >> a_0), recovering standard General Relativity.",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "asymptotic_series_expansion",
+      "sympy_repr": "Eq(g_{\\text{eff, high}}, -a_0**2/g_N + a_0 + g_N)",
+      "latex": "g_{\\text{eff, high}} = - \\frac{a_{0}^{2}}{g_{N}} + a_{0} + g_{N}",
+      "mathjax_display": "$$g_{\\text{eff, high}} = - \\frac{a_{0}^{2}}{g_{N}} + a_{0} + g_{N}$$",
+      "mathjax_inline": "$g_{\\text{eff, high}} = - \\frac{a_{0}^{2}}{g_{N}} + a_{0} + g_{N}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 2.5 Sec. II"
+    },
+    "derive_mond_asymptotic_series": {
+      "name": "Asymptotic Deep-Field MOND Limit",
+      "description": "Puiseux series expansion of root gravity in low-acceleration regime (g_N << a_0), yielding deep MOND scaling.",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "asymptotic_series_expansion",
+      "sympy_repr": "Eq(g_{\\text{eff, low}}, sqrt(a_0)*sqrt(g_N) + g_N/2)",
+      "latex": "g_{\\text{eff, low}} = \\sqrt{a_{0}} \\sqrt{g_{N}} + \\frac{g_{N}}{2}",
+      "mathjax_display": "$$g_{\\text{eff, low}} = \\sqrt{a_{0}} \\sqrt{g_{N}} + \\frac{g_{N}}{2}$$",
+      "mathjax_inline": "$g_{\\text{eff, low}} = \\sqrt{a_{0}} \\sqrt{g_{N}} + \\frac{g_{N}}{2}$",
+      "paper_refs": "Paper 1.1 Sec. II; Paper 2.5 Sec. II"
+    },
+    "derive_tully_fisher_relation": {
+      "name": "Baryonic Tully-Fisher Relation",
+      "description": "Zero-parameter analytical proof of the flat rotation curve relation v^4 = G * M * a_0.",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "galactic_kinematics",
+      "sympy_repr": "Eq(v_{\\text{flat}}**4, 3*G*H_0*M*c/(4*pi))",
+      "latex": "v_{\\text{flat}}^{4} = \\frac{3 G H_{0} M c}{4 \\pi}",
+      "mathjax_display": "$$v_{\\text{flat}}^{4} = \\frac{3 G H_{0} M c}{4 \\pi}$$",
+      "mathjax_inline": "$v_{\\text{flat}}^{4} = \\frac{3 G H_{0} M c}{4 \\pi}$",
+      "paper_refs": "Paper 1.1 Eq. (16); Paper 2.5 Sec. III"
+    },
+    "derive_comoving_distance": {
+      "name": "Cosmological Comoving Distance",
+      "description": "Exact first-principles integral of coordinate distance: D_C(z) = (c / H_0) * ln(1+z).",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "cosmological_redshift_z",
+      "sympy_repr": "Eq(D_C(z), c*log(z + 1)/H_0)",
+      "latex": "D_{C}{\\left(z \\right)} = \\frac{c \\log{\\left(z + 1 \\right)}}{H_{0}}",
+      "mathjax_display": "$$D_{C}{\\left(z \\right)} = \\frac{c \\log{\\left(z + 1 \\right)}}{H_{0}}$$",
+      "mathjax_inline": "$D_{C}{\\left(z \\right)} = \\frac{c \\log{\\left(z + 1 \\right)}}{H_{0}}$",
+      "paper_refs": "Paper 1.1 Eq. (6); Paper 2.3 Eq. (2)"
+    },
+    "derive_luminosity_distance_zero_parameter": {
+      "name": "Zero-Parameter Luminosity Distance",
+      "description": "Derived by substituting n = 3 / (4*pi) into parametric luminosity distance: d_L(z) = (c / H_0) * (1+z)^(1 + 3/(8*pi)) * ln(1+z).",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "cosmological_redshift_z",
+      "sympy_repr": "Eq(d_L(z), c*(z + 1)*(z + 1)**(3/(8*pi))*log(z + 1)/H_0)",
+      "latex": "d_{L}{\\left(z \\right)} = \\frac{c \\left(z + 1\\right) \\left(z + 1\\right)^{\\frac{3}{8 \\pi}} \\log{\\left(z + 1 \\right)}}{H_{0}}",
+      "mathjax_display": "$$d_{L}{\\left(z \\right)} = \\frac{c \\left(z + 1\\right) \\left(z + 1\\right)^{\\frac{3}{8 \\pi}} \\log{\\left(z + 1 \\right)}}{H_{0}}$$",
+      "mathjax_inline": "$d_{L}{\\left(z \\right)} = \\frac{c \\left(z + 1\\right) \\left(z + 1\\right)^{\\frac{3}{8 \\pi}} \\log{\\left(z + 1 \\right)}}{H_{0}}$",
+      "paper_refs": "Paper 1.1 Eq. (8); Paper 2.3 Eq. (4)"
+    },
+    "derive_distance_modulus_zero_parameter": {
+      "name": "Zero-Parameter Distance Modulus",
+      "description": "Hubble diagram distance modulus mu(z) evaluated from zero-parameter luminosity distance.",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "cosmological_redshift_z",
+      "sympy_repr": "Eq(\\mu(z), 5*log(d_L(z))/log(10) + 25)",
+      "latex": "\\mu{\\left(z \\right)} = \\frac{5 \\log{\\left(d_{L}{\\left(z \\right)} \\right)}}{\\log{\\left(10 \\right)}} + 25",
+      "mathjax_display": "$$\\mu{\\left(z \\right)} = \\frac{5 \\log{\\left(d_{L}{\\left(z \\right)} \\right)}}{\\log{\\left(10 \\right)}} + 25$$",
+      "mathjax_inline": "$\\mu{\\left(z \\right)} = \\frac{5 \\log{\\left(d_{L}{\\left(z \\right)} \\right)}}{\\log{\\left(10 \\right)}} + 25$",
+      "paper_refs": "Paper 1.1 Eq. (9); Paper 2.3 Eq. (5)"
+    },
+    "derive_supernova_time_dilation_zero_parameter": {
+      "name": "Supernova Duration Redshift Stretching",
+      "description": "Derived by substituting n = 3 / (4*pi) into light-curve duration stretching: Delta t_obs = Delta t_emit * (1+z)^(1 - 3/(8*pi)).",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "cosmological_redshift_z",
+      "sympy_repr": "Eq(\\Delta t_{\\text{obs}}, \\Delta t_{\\text{emit}}*(z + 1)/(z + 1)**(3/(8*pi)))",
+      "latex": "\\Delta t_{\\text{obs}} = \\frac{\\Delta t_{\\text{emit}} \\left(z + 1\\right)}{\\left(z + 1\\right)^{\\frac{3}{8 \\pi}}}",
+      "mathjax_display": "$$\\Delta t_{\\text{obs}} = \\frac{\\Delta t_{\\text{emit}} \\left(z + 1\\right)}{\\left(z + 1\\right)^{\\frac{3}{8 \\pi}}}$$",
+      "mathjax_inline": "$\\Delta t_{\\text{obs}} = \\frac{\\Delta t_{\\text{emit}} \\left(z + 1\\right)}{\\left(z + 1\\right)^{\\frac{3}{8 \\pi}}}$",
+      "paper_refs": "Paper 1.1 Eq. (10); Paper 1.2 Sec. III; Paper 2.3 Sec. III"
+    },
+    "derive_cluster_decoupling_displacement": {
+      "name": "Cluster Decoupling Displacement Offset",
+      "description": "Kinematic lag offset Delta r for colliding cluster mergers under screened vacuum relaxation.",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "kinematic_offset",
+      "sympy_repr": "Eq(\\Delta r, \\tau_{\\text{eff}}*v_{\\text{rel}}*(1 - exp(-t_{\\text{stop}}/\\tau_{\\text{eff}})))",
+      "latex": "\\Delta r = \\tau_{\\text{eff}} v_{\\text{rel}} \\left(1 - e^{- \\frac{t_{\\text{stop}}}{\\tau_{\\text{eff}}}}\\right)",
+      "mathjax_display": "$$\\Delta r = \\tau_{\\text{eff}} v_{\\text{rel}} \\left(1 - e^{- \\frac{t_{\\text{stop}}}{\\tau_{\\text{eff}}}}\\right)$$",
+      "mathjax_inline": "$\\Delta r = \\tau_{\\text{eff}} v_{\\text{rel}} \\left(1 - e^{- \\frac{t_{\\text{stop}}}{\\tau_{\\text{eff}}}}\\right)$",
+      "paper_refs": "Paper 2.2 Eq. (5)"
+    },
+    "derive_wide_binary_velocity_boost_zero_parameter": {
+      "name": "Zero-Parameter Wide Binary Velocity Boost",
+      "description": "Orbital velocity boost ratio gamma = v_rel / v_N derived from root gravity with zero-parameter acceleration scale a_0.",
+      "tier": "Tier 4: Derived Zero-Parameter Observable",
+      "derivative_frame": "binary_kinematics",
+      "sympy_repr": "Eq(\\gamma_{\\text{wb}}, sqrt(sqrt(3*H_0*c/(pi*g_N) + 1)/2 + 1/2))",
+      "latex": "\\gamma_{\\text{wb}} = \\sqrt{\\frac{\\sqrt{\\frac{3 H_{0} c}{\\pi g_{N}} + 1}}{2} + \\frac{1}{2}}",
+      "mathjax_display": "$$\\gamma_{\\text{wb}} = \\sqrt{\\frac{\\sqrt{\\frac{3 H_{0} c}{\\pi g_{N}} + 1}}{2} + \\frac{1}{2}}$$",
+      "mathjax_inline": "$\\gamma_{\\text{wb}} = \\sqrt{\\frac{\\sqrt{\\frac{3 H_{0} c}{\\pi g_{N}} + 1}}{2} + \\frac{1}{2}}$",
+      "paper_refs": "Paper 2.5 Eq. (6)"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "title": "Special Relativity & Dynamic Metric Clock Relaxation",
+  "author": "Joshua A. Shreve",
+  "invariants": {
+    "a0": 1.6351991977899337e-10,
+    "tau0_myr": 82160.12063866746,
+    "tau0_seconds": 2.5927762230668124e+18,
+    "c": 299792458.0
+  },
+  "regime_1_quasistatic": {
+    "tau_eff": 0.01,
+    "force_N": 10000000.0,
+    "final_v_c": 0.06656631772958564,
+    "gamma_dyn": 1.0022008324791079,
+    "gamma_sr": 1.0022229275303487,
+    "max_rel_error_pct": 0.0022046044481631145,
+    "status": "recovers_standard_sr"
+  },
+  "regime_2_out_acceleration": {
+    "tau_eff": 1.0,
+    "force_pulse_N": 20000000000.0,
+    "pulse_duration_s": 0.01,
+    "xi_at_pulse_end": 59.65799335534072,
+    "v_c_at_pulse_end": 0.6665936255810413,
+    "gamma_dyn_at_pulse_end": 1.0008019951315503,
+    "gamma_sr_at_pulse_end": 1.3415232145188647,
+    "kinetic_work_J": 1.99937585025744e+16,
+    "gamma_dyn_late": 1.0443294129056877,
+    "gamma_sr_late": 1.2997741917902497,
+    "clock_dilation_suppression_pct": 0.3147759420265831,
+    "status": "out_accelerates_field"
+  },
+  "regime_3_oscillating": {
+    "frequency_hz": 50.0,
+    "omega_tau": 314.1592653589793,
+    "eta_dyn_min": 0.9999919351259077,
+    "eta_dyn_max": 1.0,
+    "status": "smooth_phase_decoupling"
+  },
+  "regime_4_environmental_screening": {
+    "canonical_tau0_gyr": 82.16012063866746,
+    "canonical_a0_ms2": 1.6351991977899337e-10,
+    "screening_constant_k": 0.16880930927945736,
+    "scale_hierarchy": [
+      {
+        "environment": "Deep Cosmic Void",
+        "g_ms2": 1e-15,
+        "g_over_a0": 6.115462882758002e-06,
+        "tau_eff_s": 2.5927735464232694e+18,
+        "tau_eff_myr": 82160.03582095183,
+        "description": "Intergalactic space far from matter"
+      },
+      {
+        "environment": "Intergalactic Filament",
+        "g_ms2": 1e-12,
+        "g_over_a0": 0.006115462882758002,
+        "tau_eff_s": 2.59010095928026e+18,
+        "tau_eff_myr": 82075.3466448735,
+        "description": "Cosmic web filamentary structure"
+      },
+      {
+        "environment": "Galaxy Outskirts (MOND scale)",
+        "g_ms2": 1.6351991977899337e-10,
+        "g_over_a0": 1.0,
+        "tau_eff_s": 2.1900401853928765e+18,
+        "tau_eff_myr": 69398.18571098172,
+        "description": "Galactic edge where g = a0"
+      },
+      {
+        "environment": "Bullet Cluster Subcluster Core",
+        "g_ms2": 1e-09,
+        "g_over_a0": 6.115462882758003,
+        "tau_eff_s": 9.234691709578849e+17,
+        "tau_eff_myr": 29262.97218286197,
+        "description": "Colliding galaxy cluster core"
+      },
+      {
+        "environment": "Solar System (1 AU)",
+        "g_ms2": 0.00593,
+        "g_over_a0": 36264694.89475495,
+        "tau_eff_s": 0.0,
+        "tau_eff_myr": 0.0,
+        "description": "Earth orbit around Sun"
+      },
+      {
+        "environment": "Earth Surface (Laboratory)",
+        "g_ms2": 9.81,
+        "g_over_a0": 59992690879.856,
+        "tau_eff_s": 0.0,
+        "tau_eff_myr": 0.0,
+        "description": "Terrestrial accelerator & clock tests"
+      },
+      {
+        "environment": "SLAC Electron Linac Cavity",
+        "g_ms2": 3.5e+18,
+        "g_over_a0": 2.1404120089653007e+28,
+        "tau_eff_s": 0.0,
+        "tau_eff_myr": 0.0,
+        "description": "RF electric acceleration gradient"
+      },
+      {
+        "environment": "Laser-Plasma Wakefield",
+        "g_ms2": 1e+22,
+        "g_over_a0": 6.115462882758002e+31,
+        "tau_eff_s": 0.0,
+        "tau_eff_myr": 0.0,
+        "description": "Ultra-intense laser plasma wakefield"
+      }
+    ]
+  },
+  "empirical_contradiction_audit": {
+    "terrestrial_accelerators": {
+      "environment": "Earth Surface / SLAC / LHC",
+      "screening_factor": "exp(-1.01e10) -> 0.0",
+      "effective_tau_s": 0.0,
+      "out_acceleration_xi": 0.0,
+      "contradiction_found": false,
+      "mechanism": "Environmental screening by Earth gravity and applied EM gradient suppresses tau_eff to zero, guaranteeing exact textbook Special Relativity recovery."
+    },
+    "atomic_clocks_gps": {
+      "environment": "Earth Orbit / Laboratory",
+      "screening_factor": "exp(-1e8 to -1e10) -> 0.0",
+      "effective_tau_s": 0.0,
+      "contradiction_found": false,
+      "mechanism": "Hafele-Keating and optical clock experiments operate in deep screening regime where metric clocks track instantaneous velocity without measurable lag."
+    },
+    "colliding_galaxy_clusters": {
+      "environment": "Bullet Cluster / El Gordo",
+      "screening_factor": "exp(-1.03) -> 0.356",
+      "effective_tau_myr": 29262.97218286197,
+      "contradiction_found": false,
+      "mechanism": "Low gravitational acceleration (g ~ a0) prevents screening; macroscopic relaxation lag produces observed 330 kpc lensing-gas spatial decoupling."
+    },
+    "ultra_high_energy_cosmic_rays": {
+      "environment": "Intergalactic Voids into Atmosphere",
+      "acceleration_in_voids_ms2": 0.0,
+      "out_acceleration_xi": 0.0,
+      "contradiction_found": false,
+      "mechanism": "Propagating protons experience zero acceleration (|v * a| = 0), so Xi = 0. Upon atmospheric deceleration, local Earth environment screens tau_eff to zero, ensuring standard muon dilation."
+    }
+  }
+}

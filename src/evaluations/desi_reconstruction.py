@@ -147,7 +147,17 @@ class DESINativeReconstruction:
                 'pred_lcdm': p_lcdm,
                 'pull_pre_cr': (p_cr - val_pre) / err_pre,
                 'pull_post_lcdm': (p_lcdm - val_post_lcdm) / err_post,
-                'pull_post_cr': (p_cr - val_post_cr) / err_post
+                'pull_post_cr': (p_cr - val_post_cr) / err_post,
+                # Compatibility aliases for 4-tier audit plotting
+                'val_t1': val_pre,
+                'err_t1': err_pre,
+                'val_t3': val_post_cr,
+                'err_t3': err_post,
+                'val_t4': val_post_lcdm,
+                'err_t4': err_post,
+                'pull_cr_t1': (p_cr - val_pre) / err_pre,
+                'pull_cr_t3': (p_cr - val_post_cr) / err_post,
+                'pull_lcdm_t4': (p_lcdm - val_post_lcdm) / err_post,
             })
 
         rdf = pd.DataFrame(results)
@@ -169,6 +179,10 @@ class DESINativeReconstruction:
         rdf.to_json(out_json, indent=2)
         print(f"Saved DESI native reconstruction results to: {out_json}\n")
         return rdf
+
+    def run_investigation(self):
+        """Alias for run() to match investigation interface."""
+        return self.run()
 
 if __name__ == '__main__':
     recon = DESINativeReconstruction()

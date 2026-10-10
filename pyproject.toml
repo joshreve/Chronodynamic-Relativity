@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chronodynamic"
+version = "1.1.0"
+description = "Chronodynamic Relativity: Unified Relativistic & Cosmological Empirical Evaluation Framework"
+readme = "README.md"
+authors = [
+    { name = "Joshua A. Shreve", email = "joshreve@users.noreply.github.com" }
+]
+maintainers = [
+    { name = "Joshua A. Shreve", email = "joshreve@users.noreply.github.com" }
+]
+license = { text = "MIT" }
+keywords = [
+    "cosmology",
+    "chronodynamic relativity",
+    "joshua a shreve",
+    "dark matter",
+    "dark energy",
+    "cmb",
+    "astrophysics",
+    "gravity",
+    "relativity"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "astropy>=5.3.0",
+    "sympy>=1.12",
+    "plotly>=5.15.0",
+    "h5py>=3.8.0",
+    "emcee>=3.1.4",
+    "dynesty>=2.1.0",
+    "markdown>=3.5.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/joshreve/Chronodynamic-Relativity"
+"Documentation" = "https://github.com/joshreve/Chronodynamic-Relativity#readme"
+"Source Code" = "https://github.com/joshreve/Chronodynamic-Relativity"
+"Bug Tracker" = "https://github.com/joshreve/Chronodynamic-Relativity/issues"
+"Zenodo DOI" = "https://doi.org/10.5281/zenodo.22697449"
+"Author ORCID" = "https://orcid.org/0009-0000-5942-5351"

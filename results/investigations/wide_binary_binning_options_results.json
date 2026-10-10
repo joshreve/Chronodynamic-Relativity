@@ -1,0 +1,59 @@
+{
+  "investigation": "wide_binary_binning_options_investigation",
+  "timestamp": "2026-09-18",
+  "model_parameters": {
+    "H0_kms_mpc": 70.5,
+    "a0_ms2": 1.6351991977899337e-10,
+    "n_geometric": 0.238732414637843,
+    "g_ext_nom_ms2": 2.4e-10
+  },
+  "options_evaluated": {
+    "option_1_fine_acceleration_bins": {
+      "name": "Fine Acceleration Binning in log10(g_N)",
+      "variable": "log10(g_N [m/s^2])",
+      "n_bins": 11,
+      "bin_width_dex": 0.32,
+      "chi2_gamma": 3.942099595958795,
+      "chi2_gamma_red": 0.3583726905417086,
+      "chi2_v_tilde": 3.9630492695278434,
+      "chi2_v_tilde_red": 0.36027720632071303,
+      "p_value_gamma": 0.971580200438003,
+      "p_value_v_tilde": 0.9709854618849079,
+      "physical_interpretation": "Pure universal force law. Eliminates stellar mass scatter completely.",
+      "recommendation_rank": 1
+    },
+    "option_2_fine_separation_mass_sliced": {
+      "name": "Fine Separation Binning with Mass Slicing",
+      "variable": "Projected separation s (kAU)",
+      "n_bins": 13,
+      "bin_width_dex": 0.16,
+      "slices": [
+        {
+          "slice_name": "Solar-Type Binaries (1.50 M_sun)",
+          "chi2": 9.90701234955221,
+          "chi2_red": 0.7620778730424776,
+          "p_value": 0.7015200508981463
+        },
+        {
+          "slice_name": "Low-Mass Binaries (1.00 M_sun)",
+          "chi2": 2.1032672477241108,
+          "chi2_red": 0.16178978828647006,
+          "p_value": 0.999699660592911
+        }
+      ],
+      "physical_interpretation": "Preserves intuitive separation variable s while avoiding mass mixing.",
+      "recommendation_rank": 2
+    },
+    "option_3_2d_density_hexbin": {
+      "name": "2D Density Distribution + Fine Medians",
+      "variable": "Hexbin cloud of 25,000 pairs + 11 fine median points",
+      "physical_interpretation": "Shows the full observational scatter and selection function while highlighting the median trend.",
+      "recommendation_rank": 3
+    },
+    "option_4_integrated_dual_panel": {
+      "name": "Integrated Dual-Panel (Force Law + Separation Boost)",
+      "description": "Panel (a) Option 1 force law; Panel (b) Option 2 separation curves.",
+      "recommendation_rank": 1
+    }
+  }
+}

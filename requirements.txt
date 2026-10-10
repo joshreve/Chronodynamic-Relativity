@@ -8,4 +8,5 @@ h5py>=3.8.0
 emcee>=3.1.4
 dynesty>=2.1.0
 markdown>=3.5.0
+sympy>=1.12
 pytest>=7.0.0

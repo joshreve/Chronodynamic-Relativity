@@ -1,0 +1,51 @@
+{
+  "paper": "series_2_paper_1_jwst_early_galaxies",
+  "geometric_n": 0.2387324,
+  "t0_myr": 13869.393215330345,
+  "z_obs": 14.32,
+  "z_seed": 25.0,
+  "delta_tau_experienced_myr": 5132.676998045202,
+  "t_flrw_z14_myr": 286.0,
+  "time_expansion_factor": 17.94642307008812,
+  "bondi_boost_z14": 3.6806060810468946,
+  "sfr_continuous_msun_yr": 1.25,
+  "epsilon_star_efficiency": 0.08,
+  "table_1_comparison_jades": [
+    {
+      "galaxy_quasar": "GN-z11",
+      "z_obs": 10.6,
+      "t_lcdm_myr": 430.0,
+      "t_cr_coord_myr": 1196,
+      "tau_cr_proper_total_myr": 1819,
+      "tau_cr_experienced_since_seed_myr": 7965,
+      "time_boost_factor": 4.23
+    },
+    {
+      "galaxy_quasar": "UHZ1",
+      "z_obs": 10.1,
+      "t_lcdm_myr": 460.0,
+      "t_cr_coord_myr": 1249,
+      "tau_cr_proper_total_myr": 1891,
+      "tau_cr_experienced_since_seed_myr": 8422,
+      "time_boost_factor": 4.11
+    },
+    {
+      "galaxy_quasar": "GHZ2 / GLASS-z12",
+      "z_obs": 12.3,
+      "t_lcdm_myr": 360.0,
+      "t_cr_coord_myr": 1043,
+      "tau_cr_proper_total_myr": 1613,
+      "tau_cr_experienced_since_seed_myr": 6561,
+      "time_boost_factor": 4.48
+    },
+    {
+      "galaxy_quasar": "JADES-GS-z14-0",
+      "z_obs": 14.32,
+      "t_lcdm_myr": 286.0,
+      "t_cr_coord_myr": 905,
+      "tau_cr_proper_total_myr": 1424,
+      "tau_cr_experienced_since_seed_myr": 5133,
+      "time_boost_factor": 4.98
+    }
+  ]
+}

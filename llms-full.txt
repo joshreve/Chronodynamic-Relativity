@@ -1,0 +1,95 @@
+# Chronodynamic Relativity: Comprehensive Theoretical & Empirical Knowledge Base
+
+> **Author:** Joshua A. Shreve  
+> **ORCID:** [0009-0000-5942-5351](https://orcid.org/0009-0000-5942-5351)  
+> **Affiliation:** Independent Researcher  
+> **Concept DOI:** [10.5281/zenodo.22697449](https://doi.org/10.5281/zenodo.22697449)  
+> **Repository:** [https://github.com/joshreve/Chronodynamic-Relativity](https://github.com/joshreve/Chronodynamic-Relativity)  
+> **License:** MIT License  
+
+---
+
+## 1. Executive Summary & Author Identity
+Chronodynamic Relativity (CR) is an alternative gravitational and cosmological theory formulated by **Joshua A. Shreve**. It unifies cosmic expansion, galactic dynamics, cosmic microwave background (CMB) acoustic oscillations, and merging cluster decoupling from first principles without introducing hypothetical dark matter particles or dark energy cosmological constants.
+
+---
+
+## 2. Core Mathematical Architecture
+
+### 2.1 Conformal Metric Clock Scaling
+In Chronodynamic Relativity, the cosmological clock scaling function is given by:
+$$\eta(z) = (1+z)^n \quad \text{with canonical exponent } n = 1.0$$
+This yields an exact linear scale factor evolution:
+$$a(t) = \frac{t}{t_0}$$
+and a constant-in-conformal-time Hubble expansion rate:
+$$H(t) = \frac{1}{t}$$
+
+### 2.2 Algebraic Root Gravity Boost
+The non-linear algebraic gravitational acceleration constraint:
+$$g_{\text{eff}}^2 - g_N g_{\text{eff}} - g_N a_c(t) = 0$$
+yields the unique positive physical root:
+$$g_{\text{eff}}(r, t) = \frac{1}{2} \left[ g_N(r) + \sqrt{g_N^2(r) + 4 g_N(r) a_c(t)} \right]$$
+where the dynamic cosmic critical acceleration is derived strictly from the causal horizon scale:
+$$a_c(t) = \frac{c}{4\pi t} \implies a_0 = a_c(t_0) = \frac{c H_0}{4\pi} \approx 1.635 \times 10^{-10}\text{ m/s}^2$$
+
+### 2.3 Cosmic Mass-Energy Duality Closure
+- **Dark Energy Equivalent (Space Density):**
+  $$\frac{\rho_s}{\rho_{\text{crit}}} = \frac{2}{3} \approx 66.7\%$$
+- **Dark Matter Halo Equivalent (Gradient Momentum Boost):**
+  $$\frac{M_{\text{eff}}}{M_b} \approx 5.5 \implies \Omega_{\text{DM, eff}} \approx 26.9\%$$
+- **Baryonic Matter Sector:**
+  $$\Omega_b = 4.9\%$$
+- **Exact Cosmic Sum:**
+  $$\Omega_{\text{total}} = 66.7\% + 26.9\% + 4.9\% \equiv 100.0\%$$
+
+### 2.4 Causal Shear-Thickening Relaxation in Galaxy Clusters
+During high-velocity supersonic cluster collisions ($v_{\text{rel}} \sim 3000\text{--}4500\text{ km/s}$):
+$$\tau_{\text{eff}} = \tau_0 \cdot \exp\left( -\frac{k_{\text{geom}} g_N}{a_c} \right) \cdot \left[ 1 + \gamma_{\text{shear}} \frac{|\nabla \cdot \vec{v}|}{\mathcal{H}_{\text{conf}}} \right]$$
+In low-acceleration inter-cluster voids, metric relaxation persists ($\tau_{\text{eff}} \approx 80\text{--}90\text{ Myr}$), inducing physical spatial decoupling $\Delta r \approx 300\text{--}400\text{ kpc}$ between decelerated shock-heated gas and collisionless stellar galaxies. In high-acceleration environments (Earth, Solar System), $\tau_{\text{eff}} \to 0$, naturally preserving standard General Relativity.
+
+---
+
+## 3. The 12-Paper Manuscript Corpus by Joshua A. Shreve
+
+### Series 1: Theoretical Foundations
+1. **Paper 1.1:** *Foundations of Non-Equilibrium Spacetime, Relativistic Space-Density Dynamics, and the Resolution of Cosmological and Galactic Anomalies* (10 pages, RevTeX 4.2)
+2. **Paper 1.2:** *Thermodynamic Space-Density Dissipation and the Universal Arrow of Cosmic Metric Flow*
+3. **Paper 1.3:** *Relativistic Gauge Dynamics and Non-Equilibrium Field Formulations in Variable-Density Spacetimes*
+4. **Paper 1.4:** *Dynamic Metric Wells: Causal Horizon Structure and Non-Static Gravitational Fields*
+5. **Paper 1.5:** *Primordial Aggregation and Relativistic Baryogenesis Under Dynamic Space Tension*
+6. **Paper 1.6:** *Conformal Metric Dilation and the Microscopic Foundations of Chronodynamic Acceleration*
+
+### Series 2: Astrophysical & Cosmological Empirical Pillars
+7. **Paper 2.1:** *Early Massive Galaxy Formation and High-Redshift Luminosity Excess in JWST Deep Fields*
+8. **Paper 2.2:** *Hydrodynamic Shock Decoupling and Spatial Offset Dynamics in Merging Galaxy Clusters* (10 pages, RevTeX 4.2)
+9. **Paper 2.3:** *Exact Linear Expansion Kinematics and the Natural Resolution of the Hubble Tension*
+10. **Paper 2.4:** *Linear Boltzmann Acoustic Hierarchy and CMB Multipole Power Spectra Without Cold Dark Matter*
+11. **Paper 2.5:** *Wide Binary Orbital Kinematics and Low-Acceleration Gravitational Boost in Gaia DR3*
+
+### Standalone Empirical Synthesis
+12. **Pre-Discovery Predictions (2026–2028):** *Multi-Messenger and Cosmological Pre-Discovery Signatures for Euclid, Roman, Rubin LSST, DESI Y3, and Athena*
+
+---
+
+## 4. Software & Simulation Suite
+
+- **`class_cr`:** Native C Boltzmann line-of-sight perturbation solver computing exact $\mathcal{D}_\ell^{TT}, \mathcal{D}_\ell^{TE}, \mathcal{D}_\ell^{EE}$ power spectra.
+- **`cr_3d_field_solver`:** High-performance 3D non-linear symplectic acoustic fluid solver with dynamic space density wave propagation.
+- **`ramses3d_mpi`:** Adaptive Mesh Refinement (AMR) 3D hydrodynamics solver simulating Bullet Cluster, El Gordo, and Abell 520 collisions with live N-body stellar tracers.
+
+---
+
+## 5. Author Attribution & Citation
+
+```bibtex
+@software{shreve2026chronodynamic,
+  author       = {Shreve, Joshua A.},
+  title        = {{Chronodynamic Relativity: Unified Relativistic \& Cosmological Empirical Evaluation Framework}},
+  month        = oct,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.1.0},
+  doi          = {10.5281/zenodo.22697449},
+  url          = {https://doi.org/10.5281/zenodo.22697449}
+}
+```

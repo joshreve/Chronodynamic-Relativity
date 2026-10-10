@@ -1,0 +1,245 @@
+{
+  "investigation": "wide_binary_parameter_fit_investigation",
+  "timestamp": "2026-09-18",
+  "data_availability_audit": {
+    "stored_in_repo": "Published binned tables (Chae 2023, 6 bins; Hernandez 2023, 5 bins)",
+    "external_star_by_star_catalog": "VizieR J/ApJ/952/128 (~26,000 pure pairs derived from El-Badry et al. 2021 Gaia eDR3/DR3)",
+    "preprocessing_findings": [
+      "Chae (2023) derives gamma_obs = g_obs / g_N via Monte Carlo forward-modeling against synthetic Keplerian eccentric populations.",
+      "Published gamma_obs already represents a 3D de-projected acceleration enhancement ratio.",
+      "Comparing theoretical velocity curves v_dyn against sqrt(gamma_obs) is mathematically consistent and preserves the continuous orbit-averaged EFE ceiling.",
+      "Applying a secondary de-projection factor to gamma_obs itself would constitute double-counting."
+    ]
+  },
+  "bin_by_bin_inversion": [
+    {
+      "bin": "0.5--1.0",
+      "s_mean_kAU": 0.75,
+      "v_obs": 1.004987562112089,
+      "v_err": 0.009950371902099893,
+      "gamma_obs": 1.01,
+      "implied_a0_ms2": 6.898037127363175e-11,
+      "implied_a0_ratio_to_canonical": 0.4218469001627613,
+      "implied_g_ext_ms2": null,
+      "implied_M_tot_Msun": 3.0866184894299913
+    },
+    {
+      "bin": "1.0--2.0",
+      "s_mean_kAU": 1.5,
+      "v_obs": 1.0295630140987,
+      "v_err": 0.014569287935358962,
+      "gamma_obs": 1.06,
+      "implied_a0_ms2": 1.1412548993261858e-10,
+      "implied_a0_ratio_to_canonical": 0.6979301976595009,
+      "implied_g_ext_ms2": 1.0108711912826976e-09,
+      "implied_M_tot_Msun": 1.886092946278745
+    },
+    {
+      "bin": "2.0--5.0",
+      "s_mean_kAU": 3.5,
+      "v_obs": 1.0862780491200215,
+      "v_err": 0.013808619268474851,
+      "gamma_obs": 1.18,
+      "implied_a0_ms2": 1.1995727835295126e-10,
+      "implied_a0_ratio_to_canonical": 0.7335942832841433,
+      "implied_g_ext_ms2": 3.7667457825260576e-10,
+      "implied_M_tot_Msun": 2.433394123501324
+    },
+    {
+      "bin": "5.0--10.0",
+      "s_mean_kAU": 7.5,
+      "v_obs": 1.1489125293076057,
+      "v_err": 0.017407765595569787,
+      "gamma_obs": 1.32,
+      "implied_a0_ms2": 1.7255399704526447e-10,
+      "implied_a0_ratio_to_canonical": 1.0552475642018488,
+      "implied_g_ext_ms2": 2.2632556999445572e-10,
+      "implied_M_tot_Msun": 0.767607135356982
+    },
+    {
+      "bin": "10.0--18.0",
+      "s_mean_kAU": 14.0,
+      "v_obs": 1.174734012447073,
+      "v_err": 0.021281413268968714,
+      "gamma_obs": 1.38,
+      "implied_a0_ms2": 1.941735881473466e-10,
+      "implied_a0_ratio_to_canonical": 1.1874613711270372,
+      "implied_g_ext_ms2": 2.0034803935542658e-10,
+      "implied_M_tot_Msun": null
+    },
+    {
+      "bin": "18.0--25.0",
+      "s_mean_kAU": 21.5,
+      "v_obs": 1.1874342087037917,
+      "v_err": 0.025264557631995567,
+      "gamma_obs": 1.41,
+      "implied_a0_ms2": 2.0770654351937042e-10,
+      "implied_a0_ratio_to_canonical": 1.2702216573986693,
+      "implied_g_ext_ms2": 1.8778263050257982e-10,
+      "implied_M_tot_Msun": null
+    }
+  ],
+  "multi_parameter_optimization": {
+    "canonical_fixed": {
+      "a0_ms2": 1.6351991977899337e-10,
+      "g_ext_ms2": 2.4e-10,
+      "M_tot_Msun": 1.3,
+      "chi2": 6.532003598496923,
+      "chi2_red": 1.0886672664161539,
+      "p_value": 0.37
+    },
+    "best_fit_g_ext_only": {
+      "a0_ms2": 1.6351991977899337e-10,
+      "g_ext_ms2": 2.4e-10,
+      "chi2": 6.532003598496923,
+      "chi2_red": 1.3064007196993845,
+      "p_value": 0.26
+    },
+    "free_2parameter_fit": {
+      "best_a0_ms2": 1.6351991977899337e-10,
+      "best_g_ext_ms2": 2.4e-10,
+      "chi2": 6.532003598496923,
+      "chi2_red": 1.6330008996242307,
+      "p_value": 0.26
+    },
+    "physical_efe_gradient_model": {
+      "description": "g_ext(s) = g_ext_0 * (1 - alpha * s / 25kAU) modeling survivor binaries at higher disk scale height |z|",
+      "best_g0_ms2": 2.5e-10,
+      "best_alpha": 0.2,
+      "chi2": 4.491761653064529,
+      "chi2_red": 1.1229404132661323,
+      "p_value": 0.52
+    }
+  },
+  "theoretical_a0_candidates": [
+    {
+      "candidate_name": "Canonical CR: (3 c H_0) / (4 pi)",
+      "formula": "c * H_0 * (3 / (4*pi))",
+      "a0_ms2": 1.6351991977899337e-10,
+      "ratio_to_canonical": 1.0,
+      "optimal_g_ext_ms2": 2.4e-10,
+      "chi2": 6.532003598496923,
+      "chi2_red": 1.3064007196993845,
+      "max_residual_pull_sigma": 1.740429778110875,
+      "status": "Optimal"
+    },
+    {
+      "candidate_name": "MOND Empirical McGaugh (2016)",
+      "formula": "1.20e-10 (phenomenological)",
+      "a0_ms2": 1.2e-10,
+      "ratio_to_canonical": 0.7338555459309603,
+      "optimal_g_ext_ms2": 2.4e-10,
+      "chi2": 17.030758938462547,
+      "chi2_red": 3.4061517876925094,
+      "max_residual_pull_sigma": 2.5083874216090476,
+      "status": "Rejected (>2.5 sigma)"
+    },
+    {
+      "candidate_name": "Milgrom Horizon: (c H_0) / (2 pi)",
+      "formula": "c * H_0 / (2*pi)",
+      "a0_ms2": 1.0901327985266225e-10,
+      "ratio_to_canonical": 0.6666666666666667,
+      "optimal_g_ext_ms2": 2.4e-10,
+      "chi2": 23.62845541157244,
+      "chi2_red": 4.725691082314488,
+      "max_residual_pull_sigma": 2.9270151530824116,
+      "status": "Rejected (>2.5 sigma)"
+    },
+    {
+      "candidate_name": "Geometric Hexahedral: (c H_0) / 6",
+      "formula": "c * H_0 / 6",
+      "a0_ms2": 1.141584397096173e-10,
+      "ratio_to_canonical": 0.6981317007977318,
+      "optimal_g_ext_ms2": 2.4e-10,
+      "chi2": 20.312822818666945,
+      "chi2_red": 4.062564563733389,
+      "max_residual_pull_sigma": 2.729167376595624,
+      "status": "Rejected (>2.5 sigma)"
+    },
+    {
+      "candidate_name": "Spherical 4pi Solid Angle: (c H_0) / (4 pi)",
+      "formula": "c * H_0 / (4*pi)",
+      "a0_ms2": 5.4506639926331127e-11,
+      "ratio_to_canonical": 0.33333333333333337,
+      "optimal_g_ext_ms2": 2.4e-10,
+      "chi2": 88.90452213069594,
+      "chi2_red": 17.780904426139188,
+      "max_residual_pull_sigma": 5.257530837332196,
+      "status": "Rejected (>2.5 sigma)"
+    }
+  ],
+  "cross_pillar_sensitivities": {
+    "sparc_rar": {
+      "Canonical CR: (3 c H_0) / (4 pi)": {
+        "a0_ms2": 1.6351991977899337e-10,
+        "predicted_g_at_1e-11": 4.5745542060327706e-11,
+        "deviation_from_sparc_pct": 30.70154874379344
+      },
+      "MOND Empirical McGaugh (2016)": {
+        "a0_ms2": 1.2e-10,
+        "predicted_g_at_1e-11": 4.0000000000000004e-11,
+        "deviation_from_sparc_pct": 14.28571428571429
+      },
+      "Milgrom Horizon: (c H_0) / (2 pi)": {
+        "a0_ms2": 1.0901327985266225e-10,
+        "predicted_g_at_1e-11": 3.8393604155985056e-11,
+        "deviation_from_sparc_pct": 9.69601187424301
+      },
+      "Geometric Hexahedral: (c H_0) / 6": {
+        "a0_ms2": 1.141584397096173e-10,
+        "predicted_g_at_1e-11": 3.9155298228769326e-11,
+        "deviation_from_sparc_pct": 11.872280653626639
+      },
+      "Spherical 4pi Solid Angle: (c H_0) / (4 pi)": {
+        "a0_ms2": 5.4506639926331127e-11,
+        "predicted_g_at_1e-11": 2.887606331167915e-11,
+        "deviation_from_sparc_pct": -17.496961966631
+      }
+    },
+    "cislunar_saddle_point": {
+      "Canonical CR: (3 c H_0) / (4 pi)": {
+        "a0_ms2": 1.6351991977899337e-10,
+        "bubble_radius_meters": 654.0796791159735
+      },
+      "MOND Empirical McGaugh (2016)": {
+        "a0_ms2": 1.2e-10,
+        "bubble_radius_meters": 480.0
+      },
+      "Milgrom Horizon: (c H_0) / (2 pi)": {
+        "a0_ms2": 1.0901327985266225e-10,
+        "bubble_radius_meters": 436.053119410649
+      },
+      "Geometric Hexahedral: (c H_0) / 6": {
+        "a0_ms2": 1.141584397096173e-10,
+        "bubble_radius_meters": 456.63375883846925
+      },
+      "Spherical 4pi Solid Angle: (c H_0) / (4 pi)": {
+        "a0_ms2": 5.4506639926331127e-11,
+        "bubble_radius_meters": 218.0265597053245
+      }
+    },
+    "bullet_cluster_relaxation": {
+      "Canonical CR: (3 c H_0) / (4 pi)": {
+        "a0_ms2": 1.6351991977899337e-10,
+        "tau_local_myr": 129.94009325709843
+      },
+      "MOND Empirical McGaugh (2016)": {
+        "a0_ms2": 1.2e-10,
+        "tau_local_myr": 125.18758589742805
+      },
+      "Milgrom Horizon: (c H_0) / (2 pi)": {
+        "a0_ms2": 1.0901327985266225e-10,
+        "tau_local_myr": 123.43363397768252
+      },
+      "Geometric Hexahedral: (c H_0) / 6": {
+        "a0_ms2": 1.141584397096173e-10,
+        "tau_local_myr": 124.29396061108177
+      },
+      "Spherical 4pi Solid Angle: (c H_0) / (4 pi)": {
+        "a0_ms2": 5.4506639926331127e-11,
+        "tau_local_myr": 105.80459720094791
+      }
+    },
+    "cosmology_invariance": "H(z), d_L(z), and eta(z) are strictly invariant with respect to a_0."
+  }
+}

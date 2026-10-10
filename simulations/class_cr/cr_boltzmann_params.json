@@ -1,0 +1,321 @@
+{
+  "description": "Chronodynamic Relativity Boltzmann Hierarchy Parameter Configuration and Physics Taxonomy",
+  "version": "1.3",
+  "notes": "Controls parameters for CLASS-CR and optimization scripts. Includes Option A (Physically bounded calibration & Silk damping) and Option B (Early ISW potential decay & Relativistic space-density lensing/refraction). Seeded from latest optimization basin.",
+  "cosmological_parameters": {
+    "H0": {
+      "value": 70.5,
+      "bounds": [
+        67.0,
+        74.0
+      ],
+      "fit": false,
+      "tier": "known_empirical_range",
+      "description": "Hubble constant today in km/s/Mpc (Constrained by local distance ladder and SNe Ia: 70.5 ± 1.5 km/s/Mpc)"
+    },
+    "omega_b": {
+      "value": 0.02237,
+      "bounds": [
+        0.0210,
+        0.0240
+      ],
+      "fit": false,
+      "tier": "known_empirical_range",
+      "description": "Physical baryon density omega_b = Omega_b * h^2 (Constrained by Big Bang Nucleosynthesis AlterBBN D/H and 4He yields: 0.02237 ± 0.0005)"
+    },
+    "omega_cdm": {
+      "value": 0.0,
+      "bounds": [
+        0.0,
+        0.0
+      ],
+      "fit": false,
+      "tier": "core_physics",
+      "description": "Physical cold dark matter density (Strictly 0.0 in pure Chronodynamic Relativity from first principles)"
+    },
+    "n_space": {
+      "value": 0.238732,
+      "bounds": [
+        0.2387,
+        0.2388
+      ],
+      "fit": false,
+      "tier": "core_physics",
+      "description": "Chronodynamic space density scaling exponent n = 3/(2*pi) in rho_s(t) propto a(t)^(-n)"
+    },
+    "A_s": {
+      "value": 2.1e-09,
+      "bounds": [
+        1.8e-09,
+        2.5e-09
+      ],
+      "fit": false,
+      "tier": "known_empirical_range",
+      "description": "Primordial scalar perturbation curvature amplitude at pivot scale k = 0.05 Mpc^-1"
+    },
+    "n_s": {
+      "value": 0.9649,
+      "bounds": [
+        0.940,
+        0.990
+      ],
+      "fit": false,
+      "tier": "known_empirical_range",
+      "description": "Primordial scalar spectral tilt index (Scale invariance with slow-roll inflationary tilt)"
+    },
+    "z_reio": {
+      "value": 7.82,
+      "bounds": [
+        6.0,
+        9.5
+      ],
+      "fit": false,
+      "tier": "known_empirical_range",
+      "description": "Optical depth reionization redshift (Constrained by Planck low-ell EE polarization)"
+    },
+    "Y_p": {
+      "value": 0.245,
+      "bounds": [
+        0.235,
+        0.255
+      ],
+      "fit": false,
+      "tier": "known_empirical_range",
+      "description": "Primordial helium mass fraction from AlterBBN CR nucleosynthesis"
+    },
+    "N_ur": {
+      "value": 3.044,
+      "bounds": [
+        2.8,
+        3.3
+      ],
+      "fit": false,
+      "tier": "core_physics",
+      "description": "Standard Model ultra-relativistic neutrino species effective degrees of freedom"
+    },
+    "has_neutrino_hierarchy": {
+      "value": 0,
+      "bounds": [
+        0,
+        1
+      ],
+      "fit": false,
+      "tier": "core_physics",
+      "description": "Flag for neutrino phase shift inclusion (1: enabled, 0: disabled)"
+    },
+    "sigma_lens": {
+      "value": 115.0,
+      "bounds": [
+        20.0,
+        200.0
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "CMB gravitational/refractive lensing dispersion smoothing scale in multipole space"
+    },
+    "refract_amp": {
+      "value": 1.0,
+      "bounds": [
+        0.0,
+        3.0
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Chronodynamic spatial refraction / lensing power fraction (Option B)"
+    }
+  },
+  "acoustic_and_potential_parameters": {
+    "psi_0": {
+      "value": 0.3475,
+      "bounds": [
+        0.10,
+        1.50
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Primordial gravitational potential amplitude scale driving acoustic oscillations: Phi_init = - 2.42 * psi_0 * g_drive"
+    },
+    "beta_boost": {
+      "value": 98.5778,
+      "bounds": [
+        20.0,
+        500.0
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Chronodynamic non-linear algebraic root acceleration boost mu_CR in early plasma"
+    },
+    "phi_0": {
+      "value": 0.1419,
+      "bounds": [
+        0.05,
+        0.40
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Relativistic gravitational phase shift advancing acoustic peaks (delta_phi / pi)"
+    },
+    "l_drag": {
+      "value": 1047.5,
+      "bounds": [
+        400.0,
+        3500.0
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Baryon drag decoupling multipole scale controlling radiation-drag offset cutoff"
+    },
+    "gamma_d": {
+      "value": 2.30,
+      "bounds": [
+        1.70,
+        3.20
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Silk diffusion damping power exponent: silk = exp(-0.5 * (k/k_silk)^gamma_d)"
+    },
+    "c_dipole": {
+      "value": 1.2688,
+      "bounds": [
+        0.80,
+        2.50
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Doppler velocity coupling amplitude for baryon-photon dipole (Fills acoustic troughs in quadrature with monopole)"
+    },
+    "c_drag": {
+      "value": 0.8562,
+      "bounds": [
+        0.10,
+        2.00
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Baryon drag zero-point displacement coupling amplitude (Sets odd-to-even peak amplitude modulation)"
+    },
+    "sw_norm": {
+      "value": 687.55,
+      "bounds": [
+        200.0,
+        950.0
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Superhorizon Sachs-Wolfe plateau normalization (ell < 30)"
+    },
+    "y_cal": {
+      "value": 0.95,
+      "bounds": [
+        0.85,
+        1.05
+      ],
+      "fit": true,
+      "tier": "known_empirical_range",
+      "description": "Planck instrument absolute calibration factor (Physically restricted to 1.00 ± 0.05, Option A)"
+    },
+    "A_ps": {
+      "value": 0.0,
+      "bounds": [
+        0.0,
+        80.0
+      ],
+      "fit": true,
+      "tier": "known_empirical_range",
+      "description": "High-ell unresolved point source foreground amplitude in muK^2 (Planck PR3 empirical residual: 0 to 50 muK^2)"
+    }
+  },
+  "additional_parameters": {
+    "A_ISW": {
+      "value": 0.0,
+      "bounds": [
+        0.0,
+        3.5
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Early Integrated Sachs-Wolfe decay amplitude modifier (Directly boosts baseline across ell ~ 200 - 600, Option B)"
+    },
+    "ell_ISW": {
+      "value": 175.42,
+      "bounds": [
+        40.0,
+        650.0
+      ],
+      "fit": true,
+      "tier": "effective_coupling",
+      "description": "Multipole transition cutoff scale for Early ISW potential decay (Option B)"
+    },
+    "A_0": {
+      "value": 1.0,
+      "bounds": [
+        0.1,
+        3.0
+      ],
+      "fit": false,
+      "tier": "effective_coupling",
+      "description": "Base acoustic oscillation amplitude scale factor"
+    },
+    "A_base": {
+      "value": 1.0,
+      "bounds": [
+        0.1,
+        3.0
+      ],
+      "fit": false,
+      "tier": "effective_coupling",
+      "description": "Base potential amplitude factor"
+    },
+    "l_A_0": {
+      "value": 300.0,
+      "bounds": [
+        100.0,
+        600.0
+      ],
+      "fit": false,
+      "tier": "effective_coupling",
+      "description": "Acoustic scale parameter"
+    },
+    "delta_1": {
+      "value": 0.0,
+      "bounds": [
+        -1.0,
+        1.0
+      ],
+      "fit": false,
+      "tier": "effective_coupling",
+      "description": "First peak adjustment factor"
+    },
+    "ell_0": {
+      "value": 220.0,
+      "bounds": [
+        180.0,
+        260.0
+      ],
+      "fit": false,
+      "tier": "core_physics",
+      "description": "First acoustic peak target multipole from sound horizon theta_s = r_s / D_A"
+    },
+    "alpha_1": {
+      "value": 0.0,
+      "bounds": [
+        -1.0,
+        1.0
+      ],
+      "fit": false,
+      "tier": "effective_coupling",
+      "description": "Acoustic tilt adjustment parameter"
+    }
+  },
+  "hierarchy_settings": {
+    "cosmology": "cr",
+    "perturbations_method": "template",
+    "transfer_method": "exact",
+    "fast_bessel": 0,
+    "l_max_scalars": 2500,
+    "l_max_pert": 17,
+    "n_k_modes": 1500,
+    "output": "tCl,pCl,lCl"
+  }
+}

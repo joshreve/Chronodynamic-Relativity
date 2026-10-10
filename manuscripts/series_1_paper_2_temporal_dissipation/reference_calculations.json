@@ -1,0 +1,22 @@
+{
+  "paper": "series_1_paper_2_temporal_dissipation",
+  "h0_kms_mpc": 70.5,
+  "h0_si_s_inv": 2.2847493990582772e-18,
+  "t0_seconds": 4.3768476333210886e+17,
+  "t0_gyr": 13.869393215330344,
+  "geometric_n": 0.238732414637843,
+  "a0_formula": "c * H_0 * n = (3 * c * H_0) / (4 * pi)",
+  "a0_ms2": 1.6351991977899337e-10,
+  "saddle_point": {
+    "alpha_saddle_s_minus_2": 2.5e-13,
+    "crossover_formula": "a0 / alpha_saddle",
+    "delta_x_c_meters": 654.0796791159735,
+    "legacy_mond_delta_x_c_meters": 480.0
+  },
+  "wide_binaries": {
+    "m_tot_solar": 1.5,
+    "s_c_meters": 1103373832980266.9,
+    "s_c_au": 7375.598514987867,
+    "v_flat_kms": 0.42476299350952607
+  }
+}

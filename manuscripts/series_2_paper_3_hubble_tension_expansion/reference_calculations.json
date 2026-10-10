@@ -1,0 +1,211 @@
+{
+  "paper": "series_2_paper_3_hubble_tension_expansion",
+  "unified_h0_kms_mpc": 70.5,
+  "geometric_n": 0.2387324,
+  "conformal_r_d_mpc": 141.42,
+  "standard_r_d_mpc": 147.09,
+  "table_1_pantheon_comparison": [
+    {
+      "model": "Chronodynamic Relativity",
+      "k_free_params": 1,
+      "chi2_official_red": 0.503,
+      "chi2_clean_red": 0.53,
+      "delta_aic": 0.0,
+      "delta_bic": 0.0,
+      "status": "Favored Reference Model"
+    },
+    {
+      "model": "Flat LambdaCDM",
+      "k_free_params": 2,
+      "chi2_official_red": 0.612,
+      "chi2_clean_red": 0.535,
+      "delta_aic": 3.4,
+      "delta_bic": 8.8,
+      "status": "Disfavored by BIC (Delta BIC > 8)"
+    },
+    {
+      "model": "Empty Milne (No Lapse)",
+      "k_free_params": 1,
+      "chi2_official_red": 4.18,
+      "chi2_clean_red": 4.18,
+      "delta_aic": 48.2,
+      "delta_bic": 48.2,
+      "status": "Catastrophically Ruled Out"
+    }
+  ],
+  "table_2_desi_measurements": [
+    {
+      "tracer": "BGS",
+      "z_eff": 0.295,
+      "observable": "DV / rd",
+      "tier_1_raw": "7.84 +/- 0.22",
+      "tier_2_euclid_ap": "7.84 +/- 0.22",
+      "tier_3_cr_recon": "7.95 +/- 0.15",
+      "tier_4_official_lcdm": "7.93 +/- 0.15",
+      "cr_pred": "7.52",
+      "lcdm_pred": "7.70"
+    },
+    {
+      "tracer": "LRG 1",
+      "z_eff": 0.51,
+      "observable": "DM / rd",
+      "tier_1_raw": "13.52 +/- 0.38",
+      "tier_2_euclid_ap": "12.49 +/- 0.38",
+      "tier_3_cr_recon": "12.59 +/- 0.25",
+      "tier_4_official_lcdm": "13.62 +/- 0.25",
+      "cr_pred": "12.39",
+      "lcdm_pred": "12.90"
+    },
+    {
+      "tracer": "LRG 1",
+      "z_eff": 0.51,
+      "observable": "DH / rd",
+      "tier_1_raw": "20.75 +/- 0.85",
+      "tier_2_euclid_ap": "19.11 +/- 0.85",
+      "tier_3_cr_recon": "19.34 +/- 0.61",
+      "tier_4_official_lcdm": "20.98 +/- 0.61",
+      "cr_pred": "20.81",
+      "lcdm_pred": "21.73"
+    },
+    {
+      "tracer": "LRG 2",
+      "z_eff": 0.706,
+      "observable": "DM / rd",
+      "tier_1_raw": "16.71 +/- 0.45",
+      "tier_2_euclid_ap": "15.26 +/- 0.45",
+      "tier_3_cr_recon": "15.39 +/- 0.32",
+      "tier_4_official_lcdm": "16.85 +/- 0.32",
+      "cr_pred": "16.06",
+      "lcdm_pred": "16.91"
+    },
+    {
+      "tracer": "LRG 2",
+      "z_eff": 0.706,
+      "observable": "DH / rd",
+      "tier_1_raw": "19.82 +/- 0.82",
+      "tier_2_euclid_ap": "18.45 +/- 0.82",
+      "tier_3_cr_recon": "18.70 +/- 0.60",
+      "tier_4_official_lcdm": "20.08 +/- 0.60",
+      "cr_pred": "18.66",
+      "lcdm_pred": "19.27"
+    },
+    {
+      "tracer": "LRG 3 + ELG 1",
+      "z_eff": 0.93,
+      "observable": "DM / rd",
+      "tier_1_raw": "21.55 +/- 0.42",
+      "tier_2_euclid_ap": "19.55 +/- 0.42",
+      "tier_3_cr_recon": "19.70 +/- 0.28",
+      "tier_4_official_lcdm": "21.71 +/- 0.28",
+      "cr_pred": "19.77",
+      "lcdm_pred": "20.95"
+    },
+    {
+      "tracer": "LRG 3 + ELG 1",
+      "z_eff": 0.93,
+      "observable": "DH / rd",
+      "tier_1_raw": "17.65 +/- 0.52",
+      "tier_2_euclid_ap": "16.85 +/- 0.52",
+      "tier_3_cr_recon": "17.07 +/- 0.35",
+      "tier_4_official_lcdm": "17.88 +/- 0.35",
+      "cr_pred": "16.72",
+      "lcdm_pred": "16.83"
+    },
+    {
+      "tracer": "ELG 2",
+      "z_eff": 1.317,
+      "observable": "DM / rd",
+      "tier_1_raw": "27.52 +/- 0.95",
+      "tier_2_euclid_ap": "24.96 +/- 0.95",
+      "tier_3_cr_recon": "25.19 +/- 0.69",
+      "tier_4_official_lcdm": "27.79 +/- 0.69",
+      "cr_pred": "25.27",
+      "lcdm_pred": "26.78"
+    },
+    {
+      "tracer": "ELG 2",
+      "z_eff": 1.317,
+      "observable": "DH / rd",
+      "tier_1_raw": "13.60 +/- 0.58",
+      "tier_2_euclid_ap": "13.78 +/- 0.58",
+      "tier_3_cr_recon": "13.99 +/- 0.42",
+      "tier_4_official_lcdm": "13.82 +/- 0.42",
+      "cr_pred": "14.20",
+      "lcdm_pred": "13.47"
+    },
+    {
+      "tracer": "QSO",
+      "z_eff": 1.491,
+      "observable": "DM / rd",
+      "tier_1_raw": "30.12 +/- 1.10",
+      "tier_2_euclid_ap": "27.39 +/- 1.10",
+      "tier_3_cr_recon": "27.57 +/- 0.79",
+      "tier_4_official_lcdm": "30.34 +/- 0.79",
+      "cr_pred": "27.44",
+      "lcdm_pred": "29.02"
+    },
+    {
+      "tracer": "QSO",
+      "z_eff": 1.491,
+      "observable": "DH / rd",
+      "tier_1_raw": "13.05 +/- 0.65",
+      "tier_2_euclid_ap": "13.62 +/- 0.65",
+      "tier_3_cr_recon": "13.79 +/- 0.47",
+      "tier_4_official_lcdm": "13.23 +/- 0.47",
+      "cr_pred": "13.31",
+      "lcdm_pred": "12.26"
+    },
+    {
+      "tracer": "Lyman-alpha",
+      "z_eff": 2.33,
+      "observable": "DM / rd",
+      "tier_1_raw": "39.50 +/- 1.20",
+      "tier_2_euclid_ap": "36.69 +/- 1.20",
+      "tier_3_cr_recon": "36.86 +/- 0.94",
+      "tier_4_official_lcdm": "39.71 +/- 0.94",
+      "cr_pred": "36.17",
+      "lcdm_pred": "37.44"
+    },
+    {
+      "tracer": "Lyman-alpha",
+      "z_eff": 2.33,
+      "observable": "DH / rd",
+      "tier_1_raw": "8.48 +/- 0.22",
+      "tier_2_euclid_ap": "10.17 +/- 0.22",
+      "tier_3_cr_recon": "10.21 +/- 0.17",
+      "tier_4_official_lcdm": "8.52 +/- 0.17",
+      "cr_pred": "10.27",
+      "lcdm_pred": "8.23"
+    }
+  ],
+  "table_3_tier_summary": [
+    {
+      "tier": "Tier 1 (Raw Un-Reconstructed)",
+      "chi2_cr": 123.1,
+      "chi2_cr_red": 9.47,
+      "chi2_lcdm": 16.9,
+      "chi2_lcdm_red": 1.3
+    },
+    {
+      "tier": "Tier 2 (Euclidean AP Grid)",
+      "chi2_cr": 11.0,
+      "chi2_cr_red": 0.85,
+      "chi2_lcdm": 125.3,
+      "chi2_lcdm_red": 9.64
+    },
+    {
+      "tier": "Tier 3 (CR Native Reconstruction)",
+      "chi2_cr": 22.2,
+      "chi2_cr_red": 1.7,
+      "chi2_lcdm": 220.8,
+      "chi2_lcdm_red": 16.98
+    },
+    {
+      "tier": "Tier 4 (Official LambdaCDM Recon)",
+      "chi2_cr": 250.5,
+      "chi2_cr_red": 19.27,
+      "chi2_lcdm": 48.9,
+      "chi2_lcdm_red": 3.76
+    }
+  ]
+}

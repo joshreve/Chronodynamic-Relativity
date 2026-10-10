@@ -1,0 +1,58 @@
+{
+  "Option_B_Calibrated_Template": {
+    "planck_111_bins": {
+      "chi2": 19101.526184555518,
+      "reduced_chi2": 172.08582148248215,
+      "median_pull": 3.8118096373156503,
+      "max_pull": 35.81369236402801
+    },
+    "act_dr6_39_bins": {
+      "chi2": 13123.849123961001,
+      "reduced_chi2": 385.9955624694412,
+      "median_pull": 10.441687857969713,
+      "max_pull": 60.20705461056402
+    }
+  },
+  "Option_B_13Moment_Fluid_ODE": {
+    "planck_111_bins": {
+      "chi2": 175251.25625003185,
+      "reduced_chi2": 1578.8401463966834,
+      "median_pull": 13.70237237482464,
+      "max_pull": 92.72531774074075
+    },
+    "act_dr6_39_bins": {
+      "chi2": 68058.41498670398,
+      "reduced_chi2": 2001.7180878442348,
+      "median_pull": 41.01765142445646,
+      "max_pull": 89.59227709190671
+    }
+  },
+  "Pure_First_Principles_Uncalibrated": {
+    "planck_111_bins": {
+      "chi2": 152716.33245533993,
+      "reduced_chi2": 1375.8228149129723,
+      "median_pull": 9.39062242961865,
+      "max_pull": 135.3370090533559
+    },
+    "act_dr6_39_bins": {
+      "chi2": 44059.116669129704,
+      "reduced_chi2": 1295.8563726214618,
+      "median_pull": 35.879371283456834,
+      "max_pull": 56.27403459140805
+    }
+  },
+  "Canonical_LambdaCDM_Baseline": {
+    "planck_111_bins": {
+      "chi2": 98.4720902285502,
+      "reduced_chi2": 0.8871359480049568,
+      "median_pull": 0.6382796510082052,
+      "max_pull": 2.783186533052027
+    },
+    "act_dr6_39_bins": {
+      "chi2": 92.08629241525234,
+      "reduced_chi2": 2.7084203651544807,
+      "median_pull": 0.876659047287739,
+      "max_pull": 3.710832587287386
+    }
+  }
+}

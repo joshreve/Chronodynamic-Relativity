@@ -35,7 +35,12 @@ G = 6.67430e-11 # m^3 / (kg s^2)
 M_sun = 1.98847e30 # kg
 AU = 1.495978707e11 # m
 kpc = 3.085677581e19 # m
-a_c0 = 1.07e-10 # m/s^2
+
+sys.path.insert(0, os.path.abspath(os.path.join(SCRIPT_DIR, '..', '..')))
+from src.models import LatestChronodynamicModel
+
+cr_model = LatestChronodynamicModel()
+a_c0 = cr_model.a_0
 
 # -----------------------------------------------------------------------------
 # Figure 1: Pedagogical 4-Tier Concept Ladder
@@ -215,7 +220,7 @@ def generate_gravity_crossover():
     ax.set_facecolor('#131b2e')
     
     g_N = np.logspace(-14, 2, 500)
-    g_eff_cr = 0.5 * (g_N + np.sqrt(g_N**2 + 4.0 * g_N * a_c0))
+    g_eff_cr = cr_model.effective_acceleration(g_N, z=0.0)
     g_mond_deep = np.sqrt(g_N * a_c0)
     
     ax.loglog(g_N, g_N, label='Newtonian / General Relativity (g_eff = g_N)', color='#94a3b8', linestyle='--', linewidth=2)
@@ -266,10 +271,10 @@ def generate_clock_dilation_figure():
     fig.patch.set_facecolor('#0b0f19')
     
     z = np.linspace(0, 15, 300)
-    n_exp = 3.0 / (4.0 * np.pi)
+    n_exp = cr_model.n
     
     rho_ratio = (1.0 + z)**n_exp
-    eta_z = (1.0 + z)**(-n_exp / 2.0)
+    eta_z = 1.0 / np.array([cr_model.time_dilation(zi) for zi in z])
     
     ax1.set_facecolor('#131b2e')
     ax1.plot(z, rho_ratio, label='Space-Energy Density ρ_s(z) / ρ₀ = (1+z)^(3/4π)', color='#38bdf8', linewidth=2.5)
@@ -284,7 +289,7 @@ def generate_clock_dilation_figure():
     ax1.legend(facecolor='#0b0f19', edgecolor='#475569', labelcolor='#ffffff', fontsize=9)
     
     dilation_std = (1.0 + z)**1.0
-    dilation_cr = (1.0 + z)**(1.0 - n_exp / 2.0)
+    dilation_cr = np.array([cr_model.observed_time_dilation(zi) for zi in z])
     
     ax2.set_facecolor('#131b2e')
     ax2.plot(z, dilation_std, label='Standard General Relativity: Δt_obs / Δt_emit = (1+z)¹', color='#f43f5e', linestyle='--', linewidth=2.5)
@@ -342,7 +347,7 @@ def generate_sphere_systems_figure():
     g_N_tot = g_N1 + g_N2 # Vector sum (+ points right, - points left)
     
     mag_g_N = np.abs(g_N_tot)
-    g_eff_tot = 0.5 * (mag_g_N + np.sqrt(mag_g_N**2 + 4.0 * mag_g_N * a_c0)) * np.sign(g_N_tot)
+    g_eff_tot = cr_model.effective_acceleration(mag_g_N, z=0.0) * np.sign(g_N_tot)
     mag_g_eff = np.abs(g_eff_tot)
     
     # Top Schematic A0
@@ -432,7 +437,7 @@ def generate_sphere_systems_figure():
     g3_N_tot = g3_1 + g3_2 + g3_3
     
     mag_g3 = np.abs(g3_N_tot)
-    g3_eff_tot = 0.5 * (mag_g3 + np.sqrt(mag_g3**2 + 4.0 * mag_g3 * a_c0)) * np.sign(g3_N_tot)
+    g3_eff_tot = cr_model.effective_acceleration(mag_g3, z=0.0) * np.sign(g3_N_tot)
     mag_g3_eff = np.abs(g3_eff_tot)
     
     # Top Schematic B0

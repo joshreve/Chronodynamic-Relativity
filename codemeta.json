@@ -1,0 +1,71 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "chronodynamic-relativity",
+  "name": "Chronodynamic Relativity: Unified Relativistic & Cosmological Empirical Evaluation Framework",
+  "version": "1.1.0",
+  "description": "A first-principles relativistic framework unifying cosmic expansion, galactic rotation curves, CMB acoustic hierarchies, and cluster collision dynamics without dark matter particles or fine-tuned cosmological constants.",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Joshua",
+      "additionalName": "A.",
+      "familyName": "Shreve",
+      "@id": "https://orcid.org/0009-0000-5942-5351",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Independent Researcher"
+      }
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Joshua",
+      "additionalName": "A.",
+      "familyName": "Shreve",
+      "@id": "https://orcid.org/0009-0000-5942-5351"
+    }
+  ],
+  "dateCreated": "2026-01-01",
+  "dateModified": "2026-10-02",
+  "datePublished": "2026-10-01",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/joshreve/Chronodynamic-Relativity",
+  "issueTracker": "https://github.com/joshreve/Chronodynamic-Relativity/issues",
+  "programmingLanguage": [
+    "Python",
+    "C",
+    "Fortran"
+  ],
+  "runtimePlatform": [
+    "Python >= 3.10",
+    "Open MPI",
+    "Linux / WSL / Windows"
+  ],
+  "keywords": [
+    "Chronodynamic Relativity",
+    "Joshua A. Shreve",
+    "Cosmology",
+    "Dark Matter Alternative",
+    "Dark Energy",
+    "Cosmic Microwave Background",
+    "Boltzmann Hierarchy",
+    "SPARC Galaxies",
+    "Bullet Cluster",
+    "Modified Gravity",
+    "Relativistic Hydrodynamics"
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Chronodynamic Relativity: Foundations of Non-Equilibrium Spacetime, Relativistic Space-Density Dynamics, and the Resolution of Cosmological and Galactic Anomalies",
+      "author": {
+        "@type": "Person",
+        "name": "Joshua A. Shreve",
+        "@id": "https://orcid.org/0009-0000-5942-5351"
+      }
+    }
+  ],
+  "sameAs": "https://doi.org/10.5281/zenodo.22697449"
+}
