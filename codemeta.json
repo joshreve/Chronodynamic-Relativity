@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "identifier": "chronodynamic-relativity",
   "name": "Chronodynamic Relativity: Unified Relativistic & Cosmological Empirical Evaluation Framework",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A first-principles relativistic framework unifying cosmic expansion, galactic rotation curves, CMB acoustic hierarchies, and cluster collision dynamics without dark matter particles or fine-tuned cosmological constants.",
   "author": [
     {

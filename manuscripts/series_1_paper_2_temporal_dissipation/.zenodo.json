@@ -1,0 +1,43 @@
+{
+  "title": "The Thermodynamic Arrow of Time and Quantum Relational Clocks in Chronodynamic Relativity: Unifying Cosmic Expansion, Total Field Energy Dissipation, and the Dynamic Acceleration Horizon",
+  "upload_type": "publication",
+  "publication_date": "2026-10-11",
+  "description": "The nature of time presents two fundamental unresolved problems in theoretical physics: the thermodynamic arrow of time (the microscopic time-reversibility of physical laws versus macroscopic entropy increase) and the quantum problem of time (the absence of a dynamical time operator in quantum mechanics). In Chronodynamic Relativity, physical time is an emergent, non-equilibrium relational parameter governed by the local space density rho_s(x,t). We derive the cosmological arrow of time from first-principles field dynamics: cosmic space expansion represents an irreversible non-unitary dilution of space density, generating a strictly monotonic cosmic entropy production rate sigma_cosmic > 0. On quantum scales, relational clock rates scale with local space density via d tau / dt = (rho_s / rho_0)^(n/2), where n = 4 is the universal geometric coupling exponent. We show that microscopic quantum phase evolution naturally tracks cosmic time through Hamiltonian dissipation into the cosmological metric background, resolving the measurement problem's preferred temporal direction. The framework establishes a unified relation between total cosmic field energy dissipation, the linear expansion rate H(t) = 1/t, and the dynamic acceleration scale a_c(t) = (c / 4 pi) * H(t). We provide concrete empirical bounds from ultra-stable optical lattice atomic clocks, cold-neutron interferometry, and deep-space telemetry (Pioneer and Voyager) confirming zero anomalous drift within current experimental precision.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Chronodynamic Relativity Research Initiative",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "arrow of time",
+    "thermodynamics",
+    "quantum foundations",
+    "relational quantum mechanics",
+    "problem of time",
+    "atomic clocks",
+    "optical lattice",
+    "entropy production",
+    "scalar field cosmology"
+  ],
+  "version": "v1.0.1",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://doi.org/10.5281/zenodo.22697449",
+      "scheme": "doi"
+    }
+  ],
+  "publication_type": "preprint",
+  "doi": "10.5281/zenodo.23149338",
+  "notes": "Version 1.0.1 Revision Notes: Certified RevTeX-4.2 publication candidate for Physical Review D; verified thermodynamic arrow and relational clock derivations; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+}

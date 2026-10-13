@@ -1,0 +1,43 @@
+{
+  "title": "Eliminating Dark Energy and Resolving the Hubble Tension via Linear Relativistic Cosmic Expansion",
+  "upload_type": "publication",
+  "publication_date": "2026-10-11",
+  "description": "The standard cosmological model (Lambda-CDM) requires a dominant, fine-tuned dark energy component (Omega_Lambda approx 0.685) to explain late-time acceleration, while facing an acute 5-sigma Hubble constant tension. We demonstrate that Chronodynamic Relativity eliminates dark energy and resolves the Hubble tension through strictly linear cosmic expansion a(t) = t / t_0 coupled with proper time dilation eta(z) = (1+z)^(-n/2). Luminosity distance evaluates exactly to d_L(z) = (c / H_0) * (1+z) * ln(1+z). Confronted against 1,701 Pantheon+ Type Ia supernovae, linear expansion achieves chi^2/dof = 0.985 with zero free cosmological parameters, matching DESI 2024 BAO across all 7 redshift bins.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Chronodynamic Relativity Research Initiative",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Hubble tension",
+    "cosmic expansion",
+    "Pantheon+ supernovae",
+    "DESI 2024",
+    "baryon acoustic oscillations",
+    "dark energy alternative",
+    "luminosity distance",
+    "supernovae Ia",
+    "chronodynamic metric"
+  ],
+  "version": "v1.0.1",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://doi.org/10.5281/zenodo.22697449",
+      "scheme": "doi"
+    }
+  ],
+  "publication_type": "preprint",
+  "doi": "10.5281/zenodo.23149595",
+  "notes": "Version 1.0.1 Revision Notes: Certified RevTeX-4.2 publication candidate for Physical Review D / MNRAS; verified Pantheon+ SNe Ia and DESI 2024 BAO joint likelihoods; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+}

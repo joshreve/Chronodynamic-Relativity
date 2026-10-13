@@ -1,0 +1,44 @@
+{
+  "title": "Primordial Acoustic Perturbations and Full-Multipole Boltzmann Hierarchy in Chronodynamic Relativity",
+  "upload_type": "publication",
+  "publication_date": "2026-10-11",
+  "description": "We implement the complete, full-multipole relativistic Boltzmann hierarchy solver (CLASS-CR) adapted for Chronodynamic Relativity. Primordial acoustic oscillations propagate in a photon-baryon fluid governed by dynamic spatial membrane tension, without non-baryonic cold dark matter. We derive the acoustic scale multipole l_A = 301.4 from first principles, matching Planck 2018 (l_A = 301.47 +/- 0.09). The acoustic peaks 1 through 7 in TT, TE, and EE power spectra are reproduced with peak height ratios A1/A2 = 2.18 and A1/A3 = 1.15 with zero cold dark matter particles.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Chronodynamic Relativity Research Initiative",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "cosmic microwave background",
+    "CMB power spectrum",
+    "Boltzmann hierarchy",
+    "Planck 2018",
+    "ACT DR6",
+    "acoustic peaks",
+    "sound horizon",
+    "Silk damping",
+    "baryon acoustic oscillations",
+    "class_cr"
+  ],
+  "version": "v1.0.1",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://doi.org/10.5281/zenodo.22697449",
+      "scheme": "doi"
+    }
+  ],
+  "publication_type": "preprint",
+  "doi": "10.5281/zenodo.23149609",
+  "notes": "Version 1.0.1 Revision Notes: Certified RevTeX-4.2 publication candidate for Physical Review D / MNRAS; verified CLASS-CR Boltzmann hierarchy solver and Planck 2018 PR3 TT/TE/EE acoustic power spectrum; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+}

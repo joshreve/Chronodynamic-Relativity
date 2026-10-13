@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "title": "Resolving the high-redshift JWST early galaxy and supermassive black hole crisis via chronodynamic proper time dilation",
+    "upload_type": "publication",
+    "publication_date": "2026-10-11",
+    "description": "Spectroscopic discoveries by the James Webb Space Telescope (JWST) have precipitated an acute crisis for standard Lambda-CDM cosmology: the detection of massive, luminous galaxies (M_star > 10^10 to 10^11 M_sun) and overmassive supermassive black holes (M_BH > 10^7 to 10^9 M_sun) at redshifts z = 8 to 14, within the first 300-600 Myr after the Big Bang. Under standard Lambda-CDM, the available cosmological time is insufficient for standard hierarchical halo assembly and Eddington-limited black hole accretion. We show that Chronodynamic Relativity resolves this anomaly naturally through metric clock rate dilation eta(z) = (1+z)^(-n/2) (n = 3/4pi approx 0.2387). Because the metric clock ran faster in the early universe, the cumulative proper physical time elapsed between z = 14.32 and the present is expanded by +4.98x (Delta tau approx 1,424 Myr elapsed compared to 286 Myr in Lambda-CDM). This extended physical maturation window allows standard star formation rates and sub-Eddington accretion to build galaxies like JADES-GS-z14-0, GN-z11, and UHZ1 without requiring extreme initial conditions, super-Eddington accretion, or massive direct-collapse seeds.",
+    "creators": [
+      {
+        "name": "Shreve, Joshua A.",
+        "affiliation": "Chronodynamic Relativity Research Initiative",
+        "orcid": "0009-0000-5942-5351"
+      }
+    ],
+    "access_right": "open",
+    "license": "cc-by-4.0",
+    "keywords": [
+      "JWST",
+      "early galaxies",
+      "supermassive black holes",
+      "high-redshift cosmology",
+      "JADES-GS-z14-0",
+      "stellar mass density",
+      "cosmic dawn",
+      "proper time dilation",
+      "reionization"
+    ],
+    "version": "v1.0.1",
+    "language": "eng",
+    "related_identifiers": [
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+        "scheme": "url"
+      },
+      {
+        "relation": "isSupplementedBy",
+        "identifier": "https://doi.org/10.5281/zenodo.22697449",
+        "scheme": "doi"
+      }
+    ],
+    "publication_type": "preprint",
+    "doi": "10.5281/zenodo.23149446",
+    "notes": "Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; aligned title, section headings, and figure captions to A&A sentence case editorial standards; lowercased generic acronym expansions; eliminated table overruns; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+  }
+}

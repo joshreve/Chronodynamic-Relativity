@@ -1,0 +1,44 @@
+{
+  "title": "Three-dimensional relativistic shock hydrodynamics and multi-cluster decoupling without non-baryonic dark matter",
+  "upload_type": "publication",
+  "publication_date": "2026-10-11",
+  "description": "The observed spatial decoupling between collisional, X-ray-emitting intracluster plasma and reconstructed gravitational lensing potential centroids in merging galaxy clusters\u2014most prominently in the Bullet Cluster (1E 0657-56)\u2014is widely considered unambiguous empirical proof of non-baryonic collisionless dark matter. We present first-principles 3D relativistic adaptive mesh refinement (AMR) hydrodynamic simulations and Lagrangian kinetic relaxation calculations demonstrating that this spatial separation is a natural consequence of dynamic metric latency in Chronodynamic Relativity. In this framework, the effective gravitational potential Phi(x,t) is a dynamic environmental metric field governed by the non-linear algebraic root law g_eff = 0.5 * [g_N + sqrt(g_N^2 + 4 * g_N * a_c)] with a finite screened relaxation timescale tau_eff approx 80-90 Myr. Across three major cluster mergers, our model reproduces: (1) the Bullet Cluster lensing-gas offset delta r = 331.4 kpc (empirical: 250-350 kpc) and post-shock temperature T_post = 15.22 keV; (2) the El Gordo twin offsets; and (3) the enigmatic Abell 520 dark core via shock stagnation without non-baryonic dark matter particles.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Chronodynamic Relativity Research Initiative",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Bullet Cluster",
+    "1E 0657-56",
+    "El Gordo",
+    "Abell 520",
+    "galaxy clusters",
+    "hydrodynamic simulations",
+    "adaptive mesh refinement",
+    "gravitational lensing",
+    "ram pressure stripping",
+    "dark matter alternative"
+  ],
+  "version": "v1.0.1",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://doi.org/10.5281/zenodo.22697449",
+      "scheme": "doi"
+    }
+  ],
+  "publication_type": "preprint",
+  "doi": "10.5281/zenodo.23149512",
+  "notes": "Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; eliminated leading acronym/numeral from title; aligned section headings to A&A sentence case editorial standards; balanced multi-cluster table column widths; lowercased generic acronym expansions; fixed adverb hyphenation; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+}

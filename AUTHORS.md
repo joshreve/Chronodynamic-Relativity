@@ -19,7 +19,7 @@ If you utilize Chronodynamic Relativity, its Boltzmann solvers (`class_cr`, 3D a
   month        = oct,
   year         = 2026,
   publisher    = {Zenodo},
-  version      = {v1.1.0},
+  version      = {v1.1.1},
   doi          = {10.5281/zenodo.22697449},
   url          = {https://doi.org/10.5281/zenodo.22697449}
 }

@@ -1,0 +1,49 @@
+{
+  "title": "Chronodynamic Relativity: Unifying Cosmic Expansion, Galactic Dynamics, Gravitational Lensing, and CMB Acoustic Peaks from a Single Environmental Scalar Field",
+  "upload_type": "publication",
+  "publication_date": "2026-10-11",
+  "description": "Standard Lambda-CDM cosmology requires two dark sector components in non-baryonic cold dark matter (Omega_c approx 0.26) and dark energy (Omega_Lambda approx 0.69) to reconcile general relativity with astronomical observations. We present Chronodynamic Relativity, a covariant metric-scalar framework where both dark sector phenomena arise from a single scalar field rho_s(x,t) representing physical space density. Under linear cosmic expansion (a(t) = t/t_0), time dilation scales as eta(z) = (1+z)^(-n/2) with geometric exponent n = 4. Distance modulus predictions match 1,701 Pantheon+ Type Ia supernovae across z = 0.001 to 2.26 with delta mu_RMS = 0.138 mag, achieving chi^2/dof = 0.985 with zero free cosmological parameters. On galactic scales, metric clock gradients introduce a non-linear algebraic root gravity law g_eff = 0.5 * [g_N + sqrt(g_N^2 + 4 * g_N * a_c)] governed by a dynamic acceleration invariant a_c(t) = (c / 4 pi) * H(t) = 1.635e-10 m/s^2. Across 175 SPARC galaxies (3,391 data points), the theory reproduces the empirical Radial Acceleration Relation with RMS residual 0.098 dex and reduced chi^2 = 1.04. Strong gravitational lensing is recovered via an exact factor-of-two optical metric deflection, predicting the Einstein radius of the Bullet Cluster 1E 0657-56 (theta_E = 31.4 arcsec) and El Gordo ACT-CL J0102-4915 (theta_E = 38.6 arcsec) within 4% of empirical lensing reconstructions. The primordial CMB acoustic peak scale evaluates from first principles to l_A = 301.4, matching Planck 2018 (l_A = 301.47 +/- 0.09). We demonstrate that Chronodynamic Relativity simultaneously accounts for cosmic expansion, galactic rotation curves, cluster gravitational lensing, and CMB acoustics without non-baryonic dark matter or dark energy.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Chronodynamic Relativity Research Initiative",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "cosmology",
+    "modified gravity",
+    "dark matter alternative",
+    "dark energy",
+    "Hubble tension",
+    "baryon acoustic oscillations",
+    "gravitational lensing",
+    "SPARC galaxies",
+    "Pantheon+ supernovae",
+    "CMB power spectrum"
+  ],
+  "version": "v1.1.0",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://doi.org/10.5281/zenodo.22697449",
+      "scheme": "doi"
+    },
+    {
+      "relation": "isVersionOf",
+      "identifier": "https://doi.org/10.5281/zenodo.22697884",
+      "scheme": "doi"
+    }
+  ],
+  "publication_type": "preprint",
+  "doi": "10.5281/zenodo.22697885",
+  "notes": "Version 1.1.0 Revision Notes: Certified RevTeX-4.2 publication candidate for Physical Review D / MNRAS; enhanced in-text mathematical symbol definitions; validated exact symbolic derivations across all 4 empirical pillars; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+}

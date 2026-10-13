@@ -2,12 +2,23 @@
 
 **Eliminating Dark Energy and Resolving the Hubble Tension via Linear Relativistic Cosmic Expansion**
 
-* **Status:** Frozen Official Release Candidate (Version 1.0.0)
+* **Status:** Official Submission Candidate (Version 1.0.1)
 * **Author:** Joshua A. Shreve ([ORCID: 0009-0000-5942-5351](https://orcid.org/0009-0000-5942-5351))
 * **Target Journal:** *Physical Review D* / *MNRAS*
+
+---
+
+## Zenodo Deposit & Revision Metadata (v1.0.1)
+
+* **Deposit Title:** Eliminating Dark Energy and Resolving the Hubble Tension via Linear Relativistic Cosmic Expansion
+* **Version:** `v1.0.1` (Preprint Revision)
+* **Publication Date:** `2026-10-11`
 * **Zenodo Record ID:** [`23149595`](https://zenodo.org/records/23149595)
-* **Zenodo Preprint DOI:** [`10.5281/zenodo.23149595`](https://doi.org/10.5281/zenodo.23149595)
-* **Codebase & Framework DOI:** [`10.5281/zenodo.22697449`](https://doi.org/10.5281/zenodo.22697449)
+* **Preprint DOI:** [`10.5281/zenodo.23149595`](https://doi.org/10.5281/zenodo.23149595)
+* **Software Companion DOI:** [`10.5281/zenodo.22697449`](https://doi.org/10.5281/zenodo.22697449)
+* **License:** Creative Commons Attribution 4.0 International (CC-BY-4.0)
+* **Metadata Schema File:** [`.zenodo.json`](.zenodo.json)
+* **Revision Notes:** Certified RevTeX-4.2 publication candidate for Physical Review D / MNRAS; verified Pantheon+ SNe Ia and DESI 2024 BAO joint likelihoods; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
 
 ---
 

@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{microtype}
 
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -245,15 +246,15 @@ To avoid conflation with earlier alternative theories, we delineate the exact st
     \item \textbf{Distinction from Milne Empty-Universe Kinematics:} The linear cosmic expansion $R(t) = ct$ resembles the kinematic Milne universe \cite{Milne1935}, but differs fundamentally in its dynamical content. The Milne model assumes an empty universe ($\rho = 0$) where linear expansion is an artifact of Minkowski coordinates. In Chronodynamic Relativity, space is filled with the dynamical density field $\rho_s(t) = E_{\text{total}} / (4\pi c^3 t)$, whose gradient perturbation generates gravitational wells, galactic rotation curves, gravitational lensing, and cosmic acoustic horizons.
 \end{enumerate}
 
-\section{Empirical Falsification: Direct Observational Formulas and Tests}
+\section{Empirical Predictions and Laboratory Falsification Tests}
 \label{sec:experiments}
 
-The direct coupling between local space density $\rho_s$ and cosmic dissipation $a_0 \approx 1.635 \times 10^{-10}\text{ m/s}^2$ provides distinct, high-signal falsification signatures in macroscopic low-acceleration regimes ($g \le a_0$) (Fig.~\ref{fig:falsification_tests}).
+The direct coupling between local space density $\rho_s$ and cosmic dissipation $a_0 \approx 1.635 \times 10^{-10}\text{ m/s}^2$ yields distinct, high-signal observational signatures and explicit falsification criteria in macroscopic low-acceleration regimes ($g \le a_0$) (Fig.~\ref{fig:falsification_tests}).
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/deep_space_and_wide_binary_tests.pdf}
-\caption{Empirical falsification tests of the Chronodynamic Relativity acceleration crossover: (a) Gravitational acceleration across an interplanetary saddle point (e.g., Sun-Earth $L_1$), comparing linear General Relativity ($g_N = \alpha_{\text{saddle}} \Delta x$) against Chronodynamic Relativity ($g_{\text{eff}} \to \sqrt{\alpha_{\text{saddle}} \Delta x \cdot a_0}$), exposing an anomalous $+68\%$ to $+400\%$ restoring boost within $|\Delta x| \le 654\text{ m}$; (b) Relative orbital velocity $v_{\text{rel}}$ vs. projected separation $s$ for solar-type wide binary stars ($M_{\text{tot}} = 1.5\,M_\odot$), showing the non-Keplerian velocity plateau $v_{\text{rel}} \to (G M_{\text{tot}} a_0)^{1/4}$ for $s > 2,000\text{ AU}$ ($g_N \le a_0$) matching binned Gaia DR3 empirical observations (Chae 2023) at $\chi^2/\text{dof} = 0.64$ vs. GR $\chi^2/\text{dof} = 7.20$.}
+\includegraphics[width=0.95\textwidth]{deep_space_and_wide_binary_tests.pdf}
+\caption{Empirical predictions and laboratory falsification tests of the Chronodynamic Relativity acceleration crossover: (a) Gravitational acceleration across an interplanetary saddle point (e.g., Sun-Earth $L_1$), comparing linear General Relativity ($g_N = \alpha_{\text{saddle}} \Delta x$) against Chronodynamic Relativity ($g_{\text{eff}} \to \sqrt{\alpha_{\text{saddle}} \Delta x \cdot a_0}$), exposing an anomalous $+68\%$ to $+400\%$ restoring boost within $|\Delta x| \le 654\text{ m}$; (b) Relative orbital velocity $v_{\text{rel}}$ vs. projected separation $s$ for solar-type wide binary stars ($M_{\text{tot}} = 1.5\,M_\odot$), showing the non-Keplerian velocity plateau $v_{\text{rel}} \to (G M_{\text{tot}} a_0)^{1/4}$ for $s > 2,000\text{ AU}$ ($g_N \le a_0$) matching binned Gaia DR3 empirical observations (Chae 2023) at $\chi^2/\text{dof} = 0.64$ vs. GR $\chi^2/\text{dof} = 7.20$.}
 \label{fig:falsification_tests}
 \end{figure*}
 
@@ -263,9 +264,9 @@ g_{\text{GR}}(\Delta x) &= \alpha_{\text{saddle}} \cdot \Delta x, \label{eq:sadd
 g_{\text{eff}}(\Delta x) &= \frac{1}{2} \Bigl[ \alpha_{\text{saddle}} \Delta x \nonumber \\
 &\quad + \sqrt{(\alpha_{\text{saddle}} \Delta x)^2 + 4 \alpha_{\text{saddle}} \Delta x \cdot a_0} \Bigr]. \label{eq:saddle_cr}
 \end{align}
-The root gravity regime begins at $\Delta x_c = a_0 / \alpha_{\text{saddle}} \approx 654\text{ meters}$. Within $|\Delta x| \le 654\text{ m}$, Chronodynamic Relativity predicts an anomalous square-root restoring acceleration ($g_{\text{eff}} \approx \sqrt{\alpha_{\text{saddle}} \Delta x \cdot a_0}$), producing a $+68\%$ to $+400\%$ boost above Newtonian levels testable by CubeSat cold atom interferometry.
+The root gravity regime begins at $\Delta x_c = a_0 / \alpha_{\text{saddle}} \approx 654\text{ meters}$. Within $|\Delta x| \le 654\text{ m}$, Chronodynamic Relativity predicts an anomalous square-root restoring acceleration ($g_{\text{eff}} \approx \sqrt{\alpha_{\text{saddle}} \Delta x \cdot a_0}$), producing a $+68\%$ to $+400\%$ boost above Newtonian levels testable by CubeSat cold atom interferometry. Detection of this anomalous restoring force would definitively rule out linear General Relativity, whereas a confirmed null measurement demonstrating pure linear Newtonian cancellation ($g_N = \alpha_{\text{saddle}} \Delta x$) across $|\Delta x| \le 654\text{ m}$ would definitively falsify the Chronodynamic root gravity relation.
 
-\textbf{2. Gaia DR3 Wide Binary Star Kinematics (Panel b):} For a binary system of total mass $M_{\text{tot}} = 1.5\,M_\odot$ at projected separation $s$, the Newtonian acceleration is $g_N(s) = G M_{\text{tot}} / s^2$. The direct orbital velocity formulas are:
+\textbf{2. Gaia Wide Binary Star Kinematics (Panel b):} For a binary system of total mass $M_{\text{tot}} = 1.5\,M_\odot$ at projected separation $s$, the Newtonian acceleration is $g_N(s) = G M_{\text{tot}} / s^2$. The direct orbital velocity formulas are:
 \begin{align}
 v_{\text{GR}}(s) &= \sqrt{g_N(s) \cdot s} = \sqrt{\frac{G M_{\text{tot}}}{s}}, \label{eq:v_gr_direct} \\
 v_{\text{CR}}(s) &= \sqrt{g_{\text{eff}}(s) \cdot s} \nonumber \\
@@ -276,7 +277,7 @@ Beyond the crossover separation $s_c = \sqrt{G M_{\text{tot}} / a_0} \approx 7,0
 v_{\text{CR}}(s) \xrightarrow{s \gg s_c} \left( G M_{\text{tot}} a_0 \right)^{1/4} \approx 0.45 - 0.53\text{ km/s},
 \label{eq:v_asymptote}
 \end{equation}
-yielding a $+30\%$ to $+40\%$ non-Keplerian velocity boost. As shown in Fig.~\ref{fig:falsification_tests}(b), this direct formula matches the binned Gaia DR3 catalog observations ($\chi^2/\text{dof} = 0.64$), whereas standard Keplerian dynamics yields $\chi^2/\text{dof} = 7.20$, disfavored at high significance.
+yielding a $+30\%$ to $+40\%$ non-Keplerian velocity boost. As shown in Fig.~\ref{fig:falsification_tests}(b), this direct formula matches the binned Gaia DR3 catalog observations ($\chi^2/\text{dof} = 0.64$), whereas standard Keplerian dynamics yields $\chi^2/\text{dof} = 7.20$, disfavored at high significance. In forthcoming Gaia DR4 epoch astrometry, the theory would be decisively falsified if wide binaries across the unshielded separation range $s \in [5, 20]\text{ kAU}$ display Keplerian fall-off $v \propto s^{-1/2}$ without an asymptotic velocity floor.
 
 \section{Conclusion}
 \label{sec:conclusion}

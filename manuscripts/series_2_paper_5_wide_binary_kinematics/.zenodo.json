@@ -1,0 +1,43 @@
+{
+  "title": "Gaia DR3 wide binary star kinematics and the low-acceleration velocity plateau in Chronodynamic Relativity",
+  "upload_type": "publication",
+  "publication_date": "2026-10-11",
+  "description": "Wide binary star systems with projected separations s > 2 to 5 kAU probe gravitational accelerations below the critical cosmic scale a_0 approx 1.635e-10 m/s^2. Evaluating over 26,000 high-purity wide binary pairs from Gaia DR3 under the non-linear algebraic root law g_eff = 0.5 * [g_N + sqrt(g_N^2 + 4 * g_N * a_0)] with Galactic background screening, the model predicts an asymptotic velocity boost gamma_v approx 1.14 to 1.18, exactly matching the empirical velocity plateau observed in Gaia DR3 with reduced chi^2/dof = 0.36.",
+  "creators": [
+    {
+      "name": "Shreve, Joshua A.",
+      "affiliation": "Chronodynamic Relativity Research Initiative",
+      "orcid": "0009-0000-5942-5351"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "wide binaries",
+    "Gaia DR3",
+    "modified gravity",
+    "low acceleration",
+    "radial acceleration relation",
+    "stellar kinematics",
+    "binary stars",
+    "gravitational boost",
+    "Milky Way"
+  ],
+  "version": "v1.0.1",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/joshreve/Chronodynamic-Relativity",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://doi.org/10.5281/zenodo.22697449",
+      "scheme": "doi"
+    }
+  ],
+  "publication_type": "preprint",
+  "doi": "10.5281/zenodo.23149642",
+  "notes": "Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; aligned title and section headings to A&A sentence case editorial standards; lowercased generic acronym expansions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+}

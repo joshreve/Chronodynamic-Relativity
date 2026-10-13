@@ -12,7 +12,7 @@ __title__ = "chronodynamic"
 __author__ = "Joshua A. Shreve"
 __orcid__ = "0009-0000-5942-5351"
 __doi__ = "10.5281/zenodo.22697449"
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 __license__ = "MIT"
 __copyright__ = "Copyright (c) 2026 Joshua A. Shreve"
 
