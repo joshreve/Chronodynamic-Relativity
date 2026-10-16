@@ -2,23 +2,23 @@
 
 **Resolving the high-redshift JWST early galaxy and supermassive black hole crisis via chronodynamic proper time dilation**
 
-* **Status:** Official Submission Candidate (Version 1.0.1)
+* **Status:** Official Submission Candidate (Version 1.0.2)
 * **Author:** Joshua A. Shreve ([ORCID: 0009-0000-5942-5351](https://orcid.org/0009-0000-5942-5351))
 * **Target Journal:** *Astronomy & Astrophysics* (A&A, S2O, 0 USD)
 
 ---
 
-## Zenodo Deposit & Revision Metadata (v1.0.1)
+## Zenodo Deposit & Revision Metadata (v1.0.2)
 
 * **Deposit Title:** Resolving the high-redshift JWST early galaxy and supermassive black hole crisis via chronodynamic proper time dilation
-* **Version:** `v1.0.1` (Preprint Revision)
-* **Publication Date:** `2026-10-11`
+* **Version:** `v1.0.2` (Preprint Revision)
+* **Publication Date:** `2026-10-13`
 * **Zenodo Record ID:** [`23149446`](https://zenodo.org/records/23149446)
 * **Preprint DOI:** [`10.5281/zenodo.23149446`](https://doi.org/10.5281/zenodo.23149446)
 * **Software Companion DOI:** [`10.5281/zenodo.22697449`](https://doi.org/10.5281/zenodo.22697449)
 * **License:** Creative Commons Attribution 4.0 International (CC-BY-4.0)
 * **Metadata Schema File:** [`.zenodo.json`](.zenodo.json)
-* **Revision Notes:** Formatted into official Astronomy & Astrophysics (A&A) two-column layout using `aa.cls` (v9.2) and `aa.bst`; aligned title, section headings, and figure captions to A&A sentence case editorial standards; lowercased generic acronym expansions; eliminated table overruns; updated software companion framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
+* **Revision Notes:** Restored missing `\maketitle` enabling full title page (title, author, affiliation, structured abstract, keywords) per Astronomy & Astrophysics (A&A) editorial notification (aa63573-26); enabled `[letter]` documentclass option for Letter to the Editor; harmonized single-author affiliation and corresponding author markup per `aa.cls` v9.4 conventions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
 
 ---
 

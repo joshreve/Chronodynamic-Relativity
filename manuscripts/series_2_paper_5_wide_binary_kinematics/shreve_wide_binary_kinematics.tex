@@ -1,34 +1,36 @@
-\documentclass{aa}
+\documentclass[aps,prd,reprint,superscriptaddress,nofootinbib,floatfix,amsmath,amssymb]{revtex4-2}
 
 \usepackage{graphicx}
-\usepackage{txfonts}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{microtype}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
 
 \begin{document}
 
 \title{Gaia DR3 wide binary star kinematics and the low-acceleration velocity plateau in Chronodynamic Relativity}
-\titlerunning{Gaia DR3 wide binaries and low-acceleration velocity plateau}
 
-\author{Joshua A. Shreve\inst{1}\fnmsep\corrauth{j.a.shreve@gmail.com}}
-\authorrunning{J. A. Shreve}
-\institute{Chronodynamic Relativity Research Initiative, Acton, MA 01720, USA\\\email{j.a.shreve@gmail.com}}
+\author{Joshua A. Shreve}
+\email{j.a.shreve@gmail.com}
+\homepage{https://orcid.org/0009-0000-5942-5351}
+\affiliation{Chronodynamic Relativity Research Initiative, Acton, MA, USA}
 
-\date{Received October 11, 2026; accepted ---}
+\date{\today}
 
-\abstract
-% Context
-{Wide binary star systems with projected separations $s > 2\text{--}5\text{ kAU}$ probe gravitational accelerations below the critical cosmic threshold $a_0 \approx 1.2\text{--}1.6 \times 10^{-10}\text{ m s}^{-2}$ in local environments where non-baryonic dark matter is dynamically negligible. Astrometric analyses of high-purity Gaia DR3 catalogs reveal an anomalous $+35\%$ to $+40\%$ velocity boost ($\tilde{v} \approx 1.35\text{--}1.40$) above Newtonian predictions, generating severe tension with General Relativity ($>14\sigma$ across separation bins; $>19\sigma$ across acceleration bins).}
-% Aims
-{We evaluate the low-acceleration regime within Chronodynamic Relativity (CR), where gravitational dynamics emerge from the spatial gradient of the vacuum space density field $\rho_s(\vec{x}, t)$.}
-% Methods
-{In CR, non-linear metric relaxation yields the algebraic root gravity law, $g_{\text{eff}} = \frac{1}{2}[g_N + \sqrt{g_N^2 + 4 g_N a_0}]$, where $a_0 = 3 c H_0 / (4\pi)$ is fixed by cosmic boundary conditions without free parameters ($k_{\text{internal}} = 0$). Incorporating the vector external field effect (EFE) screened by the background Galactic potential ($g_{\text{ext,3D}} \approx 2.4 \times 10^{-10}\text{ m s}^{-2}$ at the Solar Circle) into eccentric orbit integrations convolved with the empirical eccentricity distribution $f(e) = 2e$, we compute the orbit-averaged kinematics.}
-% Results
-{In the deep-acceleration regime ($g_N \ll a_0$), CR predicts an asymptotic velocity plateau $v_{\text{flat}} = (G M_{\text{tot}} a_0)^{1/4}$. Chronodynamic Relativity matches binned Gaia DR3 catalogs with reduced $\chi^2/\text{dof} = 0.85$ ($p = 0.54$) across six separation bins and $\chi^2/\text{dof} = 0.36$ ($p = 0.97$) across eleven fine acceleration bins ($\Delta\log g_N = 0.32\text{ dex}$), with residual pulls within $\le 1.01\sigma$. We delineate solar-system empirical tests and falsification criteria at the Sun-Earth L1/L2 saddle points ($|\Delta x| \le 654\text{ m}$) accessible to cold-atom gradiometers.}
-% Conclusions
-{The Gaia DR3 wide binary velocity plateau is an empirical signature of Chronodynamic root gravity, ruling out Newtonian dynamics while unifying stellar and cosmological scales.}
+\begin{abstract}
+Wide binary star systems with projected separations $s > 2\text{--}5\text{ kAU}$ probe gravitational accelerations below the critical cosmic threshold $a_0 \approx 1.2\text{--}1.6 \times 10^{-10}\text{ m s}^{-2}$ in local environments where non-baryonic dark matter is dynamically negligible. Astrometric analyses of high-purity Gaia DR3 catalogs reveal an anomalous $+35\%$ to $+43\%$ gravitational acceleration enhancement ($\gamma \equiv g_{\text{obs}}/g_N \approx 1.35\text{--}1.43$, corresponding to a $+16\%$ to $+20\%$ velocity boost $\tilde{v} \equiv v_{\text{obs}}/v_N \approx 1.16\text{--}1.20$) above Newtonian predictions, generating severe tension with General Relativity ($>14\sigma$ across separation bins; $>19\sigma$ across acceleration bins). We evaluate the low-acceleration regime within Chronodynamic Relativity (CR), where gravitational dynamics emerge from the spatial gradient of the vacuum space density field $\rho_s(\vec{x}, t)$. In CR, non-linear metric relaxation yields the algebraic root gravity law, $g_{\text{eff}} = \frac{1}{2}[g_N + \sqrt{g_N^2 + 4 g_N a_0}]$, where $a_0 = 3 c H_0 / (4\pi)$ is fixed by cosmic boundary conditions without free parameters ($k_{\text{internal}} = 0$). Incorporating the vector external field effect (EFE) screened by the background Galactic potential ($g_{\text{ext,3D}} \approx 2.4 \times 10^{-10}\text{ m s}^{-2}$ at the Solar Circle) into eccentric orbit integrations convolved with the empirical eccentricity distribution $f(e) = 2e$, we compute the orbit-averaged kinematics. In the deep-acceleration regime ($g_N \ll a_0$), CR predicts an asymptotic velocity plateau $v_{\text{flat}} = (G M_{\text{tot}} a_0)^{1/4}$. Chronodynamic Relativity matches binned Gaia DR3 catalogs with reduced $\chi^2/\text{dof} = 0.85$ ($p = 0.54$) across six separation bins and $\chi^2/\text{dof} = 0.36$ ($p = 0.97$) across eleven fine acceleration bins ($\Delta\log g_N = 0.32\text{ dex}$), with residual pulls within $\le 1.01\sigma$. We delineate solar-system empirical tests and falsification criteria at the Sun-Earth L1/L2 saddle points ($|\Delta x| \le 654\text{ m}$) accessible to cold-atom gradiometers. The Gaia DR3 wide binary velocity plateau is an empirical signature of Chronodynamic root gravity, ruling out Newtonian dynamics while unifying stellar and cosmological scales.
+\end{abstract}
 
-\keywords{binaries: visual -- stars: kinematics and dynamics -- gravitation -- Galaxy: kinematics and dynamics -- dark matter -- methods: statistical}
+\keywords{binaries: visual, stars: kinematics and dynamics, gravitation, Galaxy: kinematics and dynamics, dark matter, methods: statistical}
 
 \maketitle
 
@@ -39,7 +41,7 @@ The nature of gravitational dynamics in the ultra-weak field regime ($g \lesssim
 
 However, galactic-scale dynamics inevitably suffer from astrophysical degeneracies between dark matter distribution, baryonic mass-to-light ratios ($\Upsilon_*$), and non-circular gas motions. Wide binary star systems located in the solar neighborhood ($\lesssim 200\text{ pc}$) offer a completely independent, pristine testing ground~\cite{pittordis2023testing,banik2024strong}. In a wide binary with stellar masses $M_1 \sim M_2 \sim 0.75 M_\odot$ and separation $s \sim 5\text{--}20\text{ kAU}$, the local Galactic dark matter halo density ($\rho_{\text{DM}} \approx 0.01 M_\odot/\text{pc}^3 \approx 0.4\text{ GeV/cm}^3$) contributes a total enclosed dark matter mass of at most $M_{\text{DM}} \sim 10^{-7} M_\odot$. This is eight orders of magnitude smaller than the baryonic stellar mass ($M_{\text{DM}} / M_{\text{tot}} \ll 10^{-7}$), precluding standard dark matter particles from exerting any measurable dynamical influence~\cite{milgrom1983modification,bekenstein2004relativistic}.
 
-With the release of the European Space Agency's Gaia Data Release 3 (DR3)~\cite{gaia2023dr3}, high-precision astrometry, parallaxes, and proper motions have enabled the statistical assembly of over 26,000 high-purity wide binary pairs. Rigorous analyses of these samples by Chae~\cite{chae2023breakdown,chae2024robust} and Hernandez et al.~\cite{hernandez2023internal} have revealed a systematic departure from standard Newtonian Keplerian velocities. For projected separations $s > 2\text{ kAU}$, where the Newtonian acceleration drops below $a_0 \approx 1.2\text{--}1.6 \times 10^{-10}\text{ m/s}^2$, the observed 1D and 2D relative velocity dispersions flatten into a persistent plateau, exhibiting an anomalous $+35\%$ to $+40\%$ boost over standard Newtonian mechanics ($\tilde{v} \approx 1.35\text{--}1.40$). Standard Newtonian gravity is formally rejected at over $5\sigma$ confidence ($\chi^2/\text{dof} \approx 7.20$)~\cite{chae2023breakdown}.
+With the release of the European Space Agency's Gaia Data Release 3 (DR3)~\cite{gaia2023dr3}, high-precision astrometry, parallaxes, and proper motions have enabled the statistical assembly of over 26,000 high-purity wide binary pairs. Rigorous analyses of these samples by Chae~\cite{chae2023breakdown,chae2024robust} and Hernandez et al.~\cite{hernandez2023internal} have revealed a systematic departure from standard Newtonian Keplerian velocities. For projected separations $s > 2\text{ kAU}$, where the Newtonian acceleration drops below $a_0 \approx 1.2\text{--}1.6 \times 10^{-10}\text{ m/s}^2$, the observed 1D and 2D relative velocity dispersions flatten into a persistent plateau, exhibiting an anomalous $+35\%$ to $+43\%$ acceleration enhancement ($\gamma \approx 1.35\text{--}1.43$, corresponding to a kinematic velocity boost $\tilde{v} \equiv v_{\text{obs}}/v_N \approx 1.16\text{--}1.20$) over standard Newtonian mechanics. Standard Newtonian gravity is formally rejected at over $5\sigma$ confidence ($\chi^2/\text{dof} \approx 7.20$)~\cite{chae2023breakdown}. While relaxed samples without strict astrometric vetting can artificially inflate raw relative velocity dispersions to $\tilde{v} \sim 1.35\text{--}1.40$ due to unmodeled hierarchical tertiaries and quadruples~\cite{pittordis2023testing,banik2024strong}, physical EFE screening mathematically caps any genuine gravitational velocity boost at $\tilde{v} \le 1.21$ in the solar neighborhood.
 
 In this work, we demonstrate that this observed low-acceleration kinematic boost is a direct, parameter-free consequence of Chronodynamic Relativity (CR)~\cite{shreve2026foundations,shreve2026temporal}. Because CR reformulates gravitational coupling through spatial gradients of the physical space density field $\rho_s$, two-body orbital dynamics naturally transition from Newtonian fall-off ($g_N \propto r^{-2}$) to an algebraic root gravity regime ($g_{\text{eff}} \to \sqrt{g_N a_0} \propto r^{-1}$), where $a_0 = c H_0 \cdot \frac{3}{4\pi}$ is the critical acceleration scale determined by the cosmic Hubble constant $H_0$, yielding an asymptotic velocity plateau $v_{\text{flat}} = (G M_{\text{tot}} a_0)^{1/4}$. We derive the complete orbit-averaged kinematics, quantify the external field effect (EFE) screening imposed by the Milky Way background field, and compare the theoretical predictions against Gaia DR3 observational catalogs.
 
@@ -218,14 +220,69 @@ Because this spatial EFE dispersion ($\pm 0.88\%$, or $\sigma_{\tilde{v},\text{E
 
 As illustrated in Fig.~\ref{fig:velocity_boost_and_efe}, the Galactic EFE naturally caps the velocity boost at $\tilde{v} \approx 1.19\text{--}1.21$ and the acceleration enhancement at $\gamma \approx 1.41\text{--}1.46$, explaining why the empirical Gaia DR3 wide binary measurements plateau rather than diverging along the unshielded power law $\tilde{v} \propto s^{1/4}$.
 
+\subsection{The Galactocentric kinematic quadrupole: The definitive observational discriminant}
+\label{subsec:quadrupole_signature}
+
+The Galactic External Field Effect does not merely impose a finite saturation ceiling on the velocity boost; it fundamentally breaks spherical symmetry. In standard General Relativity, the Strong Equivalence Principle (SEP) guarantees that a uniform external gravitational field accelerates both stars identically and can be transformed away locally, exerting zero tidal force on sub-parsec scales and preserving exact spherical symmetry ($\tilde{v} = 1.000$ independent of sky orientation).
+
+In both Modified Newtonian Dynamics (MOND) and Chronodynamic Relativity (CR), the SEP is explicitly broken because the underlying gravitational field equations are non-linear:
+\begin{equation}
+\vec{\nabla} \cdot \left[ \left(1 + \frac{|\vec{\nabla}\rho_{s,\text{tot}}|}{\rho_0 \kappa_c}\right) \vec{\nabla}\rho_{s,\text{tot}} \right] = 4\pi G \rho_{\text{baryon}},
+\end{equation}
+where the total space density gradient is the vector sum of internal binary and background Galactic gradients, $\vec{\nabla}\rho_{s,\text{tot}} = \vec{\nabla}\rho_{s,\text{bin}} + \vec{\nabla}\rho_{s,\text{MW}}$. In the solar neighborhood ($R_0 \approx 8.2\text{ kpc}$), combining the radial centripetal acceleration ($V_0^2/R_0 \approx 1.8 \times 10^{-10}\text{ m/s}^2$) and the vertical disk restoring force ($K_z \approx 1.0 \times 10^{-10}\text{ m/s}^2$) yields a total 3D background field:
+\begin{align}
+g_{\text{ext,3D}} &= \sqrt{g_R^2 + K_z^2} \approx 2.2\text{--}2.6 \times 10^{-10}\text{ m/s}^2 \nonumber \\
+&\approx (1.3\text{--}1.6)\,a_0.
+\end{align}
+
+\subsubsection{Theoretical saturation versus unmodeled multiplicity}
+This background field establishes an immutable mathematical ceiling on the gravitational velocity boost. In the asymptotic limit of wide separations ($g_N \ll g_{\text{ext}}$), the effective acceleration enhancement saturates at:
+\begin{equation}
+\gamma_{\text{max}} \equiv \lim_{g_N \to 0} \frac{g_{\text{eff}}}{g_N} = \frac{1}{2} \left[ 1 + \sqrt{1 + \frac{4 a_0}{g_{\text{ext}}}} \right] \approx 1.34\text{--}1.46.
+\end{equation}
+Because relative orbital speed scales as $v \propto \sqrt{g}$, the kinematic velocity boost ratio $\tilde{v} \equiv v_{\text{obs}} / v_N$ is strictly capped at:
+\begin{equation}
+\tilde{v}_{\text{max}} = \sqrt{\gamma_{\text{max}}} \approx 1.16\text{--}1.21,
+\end{equation}
+corresponding to an asymptotic $+16\%$ to $+21\%$ velocity boost.
+
+This physical ceiling provides a crucial diagnostic for interpreting observational disputes in the literature:
+\begin{itemize}
+\item If raw observational selections yield an apparent velocity boost of $+35\%$ to $+40\%$ ($\tilde{v} \sim 1.35\text{--}1.40$, corresponding to $\gamma \sim 1.8\text{--}2.0$), such a signal cannot be attributed to EFE-screened modified gravity. If genuine, an unshielded $+40\%$ velocity boost would rule out both standard MOND and Chronodynamic Relativity.
+\item In reality, an unshielded boost exceeding $+21\%$ is the direct signature of unmodeled stellar multiplicity (unresolved hierarchical triples and quadruples) inflating the measured velocity dispersion without physical screening limits~\cite{pittordis2023testing,banik2024strong}.
+\item At the opposite extreme, asserting that hidden multiplicity accounts for the entirety of the observed non-Newtonian signal represents an over-correction, requiring an extraordinarily high companion fraction ($\sim 50\text{--}60\%$) with fine-tuned orbital distributions specifically configured to force the kinematics back down to Newtonian Keplerian fall-off.
+\item Conversely, assuming that wide systems are strictly pure binaries represents an under-correction, overlooking the intrinsic $\sim 15\text{--}25\%$ tertiary and quadruple fraction present in galactic field stars. At the widest separations ($s > 10\text{--}15\text{ kAU}$), where binary binding energy is at its minimum, this modest residual multiplicity injects extra orbital dispersion, explaining why raw data points sit slightly above pure two-body EFE predictions and yield mild positive residuals in those bins.
+\item Chronodynamic Relativity implies that the system does not return to Newtonian dynamics. Rather, the theory implies that the same multiplicity phenomenon operating at a realistic, lesser degree will naturally absorb these large-separation residuals and align the highest separation stars with the theoretical EFE ceiling.
+\item When rigorous astrometric cuts (e.g., strict RUWE, radial velocity consistency, and color-magnitude filtering) purge close companions, the empirical boost factor converges toward $\tilde{v} \approx 1.18\text{--}1.20$, precisely matching the Chronodynamic EFE saturation ceiling.
+\end{itemize}
+
+\subsubsection{Triaxial potential and the angular quadrupole signature}
+Beyond the saturation ceiling, the directed nature of $\vec{g}_{\text{ext}}$ breaks rotational invariance. Because $\vec{g}_{\text{ext}}$ points toward the Galactic Center ($\ell \approx 0^\circ, b \approx 0^\circ$, with a slight vertical component toward the midplane), the effective potential of a wide binary is triaxial:
+\begin{equation}
+\tilde{v}(\theta) = \left\{ \frac{1}{2} \left[ 1 + \sqrt{1 + \frac{4 a_0}{|\vec{g}_N(\vec{r}) + \vec{g}_{\text{ext}}|}} \right] \right\}^{1/2},
+\end{equation}
+where $\theta$ is the angle between the binary separation vector $\vec{r}$ and the Galactic acceleration vector $\vec{g}_{\text{ext}}$. Orbits oriented parallel to $\vec{g}_{\text{ext}}$ experience a different effective potential stiffness than orbits oriented perpendicular to it. This directional dependence produces a coherent kinematic quadrupole asymmetry on the celestial sphere.
+
+This anisotropy provides the single most robust observational discriminant in stellar dynamics:
+\begin{enumerate}
+\item \textbf{Standard Newtonian Gravity ($\Lambda$CDM):} Predicts $\tilde{v} = 1.000$ with zero directional correlation to the Galactic Center (exact spherical symmetry).
+\item \textbf{Unresolved Hierarchical Multiplicity:} Hidden third stars inject random kinematic kicks whose orbital planes are distributed isotropically on the sky, producing an inflated velocity dispersion with zero angular correlation to the Galactic Center.
+\item \textbf{Modified Gravity with EFE (MOND / CR):} Predicts $\tilde{v} \approx 1.16\text{--}1.21$ accompanied by a statistically significant quadrupole alignment oriented along the Galactocentric axis ($\ell \approx 0^\circ, b \approx 0^\circ$).
+\end{enumerate}
+
+\subsubsection{Definitive Gaia DR4 benchmark and falsification protocol}
+Scheduled for release in late 2026, Gaia Data Release 4 (DR4) will publish epoch astrometry and comprehensive non-single-star (NSS) orbital solutions based on 66 months of observations. This dataset will eliminate photocentric wobbles and unresolved tertiaries down to sub-AU scales, establishing an absolute empirical benchmark:
+\begin{itemize}
+\item If the velocity boost collapses to $\tilde{v} = 1.000 \pm 0.015$ with isotropic orientation across all separation bins, both MOND and Chronodynamic Relativity are definitively falsified at $>5\sigma$.
+\item If the velocity boost plateaus at $\tilde{v} \approx 1.18 \pm 0.03$ and exhibits the predicted Galactocentric angular quadrupole asymmetry, standard Newtonian General Relativity is definitively falsified, and the physical breakdown of the Strong Equivalence Principle is empirically established.
+\end{itemize}
+
 \begin{table*}[t]
-\centering
-\begin{minipage}{0.96\textwidth}
 \caption{\textbf{Quantitative empirical comparison of Gaia DR3 wide binary kinematics against theoretical models across fine acceleration and separation representations.} 
 \textbf{Panel A:} Primary universal force law benchmark across 11 fine internal Newtonian acceleration bins ($\Delta\log_{10} g_N = 0.32\text{ dex}$, $\log_{10} g_N \in [-7.80, -11.00]$), equivalent projected separation $s_{\text{equiv}}$ for sample median mass ($1.30 M_\odot$), empirical gravitational acceleration boost $\gamma_{\text{obs}} \equiv g_{\text{obs}} / g_N$ (Chae 2023), empirical kinematic velocity boost $\tilde{v}_{\text{obs}} \equiv \sqrt{\gamma_{\text{obs}}}$, baseline General Relativity / MOG / $\Lambda$CDM expectation ($\tilde{v} = 1.000, \gamma = 1.000$), Chronodynamic Relativity dynamical eccentric orbit-averaged predictions with local 3D Galactic EFE screening ($g_{\text{ext,3D}} = 2.4 \times 10^{-10}\text{ m/s}^2$), force law residual $\Delta\gamma = \gamma_{\text{obs}} - \gamma_{\text{CR,dyn}}$, and standardized pull $(\gamma_{\text{obs}} - \gamma_{\text{CR,dyn}}) / \sigma_\gamma$.
 \textbf{Panel B:} Complementary projected physical separation bins ($s \in [0.5, 25.0]\text{ kAU}$), mean projected separation $\langle s \rangle$, velocity residuals $\Delta\tilde{v}$, and residual significance $\sigma_{\tilde{v}}$.}
 \label{tab:wide_binaries}
-
+\begin{ruledtabular}
 \footnotesize
 \setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{ccccccccc}
@@ -261,8 +318,7 @@ $18.0\text{--}25.0$ & $21.50$ & & $1.41 \pm 0.06$ & $1.187 \pm 0.025$ & $1.000 \
 \hline
 \multicolumn{3}{l}{\textbf{Fit Metric} (6 Separation Bins):} & \multicolumn{2}{l}{GR: $\chi^2 = 244.2$ ($40.70/\text{dof}, >14\sigma$)} & \multicolumn{4}{l}{CR (Dyn): $\chi^2 = \mathbf{5.08}$ ($0.85/\text{dof}$, $p = 0.54$)} \\
 \end{tabular}
-
-\end{minipage}
+\end{ruledtabular}
 \end{table*}
 
 \section{Quantitative empirical benchmark against Gaia DR3}
@@ -398,11 +454,10 @@ Milgromian MOND~\cite{milgrom1983modification} successfully predicts an asymptot
 \end{enumerate}
 
 \begin{table*}[t]
-\centering
 \caption{\textbf{Comprehensive theoretical comparison across alternative gravitational paradigms evaluated on Gaia DR3 wide binary kinematics.} 
 Theoretical paradigm, fundamental physical mechanism modifying two-body gravity, characteristic scale parameter, predicted asymptotic velocity boost $\tilde{v}_{\text{max}} \equiv \lim_{s \to \infty} v_{\text{obs}}/v_N$ and acceleration boost $\gamma_{\text{max}}$ under the local 3D Galactic background field ($g_{\text{ext}} \approx 2.4 \times 10^{-10}\text{ m/s}^2$), total goodness-of-fit $\chi^2$ across the 6 separation bins, reduced $\chi^2/\text{dof}$, and observational viability status against Gaia DR3 astrometry.}
 \label{tab:theory_comparison}
-
+\begin{ruledtabular}
 \footnotesize
 \setlength{\tabcolsep}{3.0pt}
 \begin{tabular}{lcccccc}
@@ -418,7 +473,7 @@ MOND (Simple)~\cite{famaey2005modified} & Empirical acceleration $\nu_{\text{sim
 \textbf{CR (Static 1D)} & \textbf{Algebraic root (static test)} & $a_0 = \frac{3 c H_0}{4\pi}$ & $\mathbf{1.16}$ & $\mathbf{1.35}$ & $\mathbf{0.40}$ & \textbf{Static Cusp ($p = 0.88$)} \\
 \textbf{CR (Best-Fit)} & \textbf{Dynamical + 3D potential} & $g_{\text{ext}} = 2.28 \times 10^{-10}$ & $\mathbf{1.16}$ & $\mathbf{1.35}$ & $\mathbf{0.74}$ & \textbf{Empirical ($p = 0.82$)} \\
 \end{tabular}
-
+\end{ruledtabular}
 \end{table*}
 
 
@@ -449,7 +504,7 @@ Modern spaceborne cold-atom interferometers and quantum gradiometers (e.g., aboa
 \section{Conclusion}
 \label{sec:conclusion}
 
-The statistical detection of an anomalous $+35\%$ to $+40\%$ relative velocity enhancement in Gaia DR3 wide binary star systems represents one of the most significant challenges to standard Newtonian General Relativity. Because wide binaries reside in environments completely devoid of non-baryonic dark matter particles, this anomaly cannot be accommodated within standard $\Lambda$CDM without invoking extreme, unphysical fine-tuning of stellar triples.
+The empirical detection of an anomalous $+35\%$ to $+43\%$ gravitational acceleration enhancement ($\gamma \approx 1.35\text{--}1.43$, corresponding to a $+16\%$ to $+20\%$ relative velocity boost $\tilde{v} \approx 1.16\text{--}1.20$) in Gaia DR3 wide binary star systems represents one of the most significant challenges to standard Newtonian General Relativity. Because wide binaries reside in environments completely devoid of non-baryonic dark matter particles, this anomaly cannot be accommodated within standard $\Lambda$CDM without invoking unresolved stellar multiplicity.
 
 In this work, we have demonstrated that Chronodynamic Relativity resolves the wide binary anomaly from first principles:
 \begin{enumerate}
@@ -457,19 +512,19 @@ In this work, we have demonstrated that Chronodynamic Relativity resolves the wi
 \item In the deep-acceleration regime ($s > 2\text{ kAU}$), CR predicts an asymptotic orbital velocity plateau $v_{\text{flat}} = (G M a_0)^{1/4}$, matching the observed flattening.
 \item Vector addition of the Milky Way Galactic background gradient ($g_{\text{ext,3D}} \approx 2.4 \times 10^{-10}\text{ m/s}^2$) provides natural External Field Effect screening, capping the velocity boost at $\tilde{v}_{\text{max}} \approx 1.16\text{--}1.21$ and eliminating unphysical divergence.
 \item First-principles dynamical eccentric orbit integration convolved with empirical eccentricity distributions eliminates the artificial static test-particle cusp at $7.4\text{ kAU}$, achieving a reduced $\chi^2/\text{dof} = 0.36$ ($p = 0.97$) across eleven fine acceleration bins with all standardized residual pulls bounded within $\le 1.01\sigma$, and $\chi^2/\text{dof} = 0.85$ ($p = 0.54$) across six separation bins (compared to $\chi^2/\text{dof} = 36.82$, $>19\sigma$ and $\chi^2/\text{dof} = 40.70$, $>14\sigma$ for Newtonian GR).
+\item The Galactocentric kinematic quadrupole asymmetry induced by the directed 3D background vector $\vec{g}_{\text{ext}}$ establishes an unambiguous mathematical signature distinguishing genuine Strong Equivalence Principle breakdown ($\tilde{v} \approx 1.18$ with Galactocentric alignment) from isotropic velocity kicks injected by hidden stellar tertiaries.
 \item We have outlined a direct solar-system empirical test utilizing cold-atom gradiometry across the $654\text{ m}$ Sun-Earth L1 gravitational saddle point, where a confirmed null detection of the predicted root gravity anomaly would definitively falsify the theory.
 \end{enumerate}
 
 Together with galactic rotation curves (SPARC RAR, Pillar 2)~\cite{shreve2026foundations}, cosmic expansion (Pantheon+ SNe Ia and DESI BAO, Pillar 1)~\cite{shreve2026hubble}, and early-universe structure growth (JWST, Paper 2.1)~\cite{shreve2026jwst}, the empirical success of Chronodynamic Relativity in wide binary stars establishes a single, unified, parameter-free gravitational paradigm spanning stellar, galactic, and cosmological scales.
 
-\begin{acknowledgements}
+\begin{acknowledgments}
 The author acknowledges the Chronodynamic Relativity Research Initiative for institutional computing support. This work made extensive use of data from the European Space Agency (ESA) mission \textit{Gaia}, processed by the \textit{Gaia} Data Processing and Analysis Consortium (DPAC).
-\end{acknowledgements}
+\end{acknowledgments}
 
 \section*{Data and code availability}
 The complete source code, physics engine, Monte Carlo orbital integrator, and data processing scripts supporting this study are openly available in the companion repository at \url{https://github.com/joshreve/Chronodynamic-Relativity}. A permanent, immutable version of record for the software framework is archived on Zenodo under Concept DOI: \href{https://doi.org/10.5281/zenodo.22697449}{10.5281/zenodo.22697449}. This manuscript and its associated reproduction assets are permanently archived on Zenodo under DOI: \href{https://doi.org/10.5281/zenodo.23149642}{10.5281/zenodo.23149642}.
 
-\bibliographystyle{aa}
 \bibliography{references}
 
 \end{document}

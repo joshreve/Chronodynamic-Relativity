@@ -1,35 +1,36 @@
-\documentclass{aa}
+\documentclass[aps,prd,reprint,superscriptaddress,nofootinbib,floatfix,amsmath,amssymb]{revtex4-2}
 
 \usepackage{graphicx}
-\usepackage{txfonts}
-\usepackage{array}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{microtype}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
 
 \begin{document}
 
 \title{Three-dimensional relativistic shock hydrodynamics and multi-cluster decoupling without non-baryonic dark matter}
-\titlerunning{3D cluster shock hydrodynamics and multi-cluster decoupling}
 
-\author{Joshua A. Shreve\inst{1}\fnmsep\corrauth{j.a.shreve@gmail.com}}
-\authorrunning{J. A. Shreve}
-\institute{Chronodynamic Relativity Research Initiative, Acton, MA 01720, USA\\\email{j.a.shreve@gmail.com}}
+\author{Joshua A. Shreve}
+\email{j.a.shreve@gmail.com}
+\homepage{https://orcid.org/0009-0000-5942-5351}
+\affiliation{Chronodynamic Relativity Research Initiative, Acton, MA, USA}
 
-\date{Received October 11, 2026; accepted ---}
+\date{\today}
 
-\abstract
-% Context
-{The observed spatial decoupling between collisional, X-ray-emitting intracluster plasma and reconstructed gravitational lensing potential centroids in merging galaxy clusters (exemplified by the Bullet Cluster 1E~0657--56 and ACT-CL~J0102--4915) is widely regarded as direct empirical evidence of collisionless non-baryonic dark matter particles.}
-% Aims
-{We demonstrate that this macroscopic physical separation arises as a natural consequence of non-equilibrium dynamic vacuum relaxation within Chronodynamic Relativity (CR), without requiring non-baryonic dark matter or phenomenological cutoffs.}
-% Methods
-{In CR, the effective gravitational acceleration field $\vec{g}(\vec{x}, t)$ is a stateful metric field governed by a covariant relaxation partial differential equation toward an algebraic equilibrium target $\vec{g}_{\text{target}} = \frac{1}{2}\vec{g}_N [1 + \sqrt{1 + 4a_0/g_N}]$, characterized by the first-principles cosmological acceleration invariant $a_0 = 3 c H_0 / (4\pi) = 1.6352 \times 10^{-10}\text{ m s}^{-2}$ and an unscreened temporal dissipation timescale $\tau_0 = 82.16\text{ Gyr}$. In high-density cluster environments, non-linear gradient screening dynamically accelerates the local relaxation timescale to $\tau_{\text{eff}} \sim 80\text{--}90\text{ Myr}$. Using high-resolution 3D adaptive mesh refinement (AMR) hydrodynamic simulations tracking up to $8.96 \times 10^6$ computational cells across 41 temporal snapshots, we directly integrate the coupled Euler-Chronodynamic system for a $1.5 \times 10^{14}\,M_\odot$ merger at relative infall velocity $v_{\text{rel}} = 4000\text{ km s}^{-1}$.}
-% Results
-{The simulation reproduces the observed macroscopic detachment between the baryonic gas shock and the gravitational potential minimum, reaching $\Delta r = 331.4\text{ kpc}$ at $t = 935.6\text{ Myr}$ in exact agreement with Hubble/Magellan weak-lensing reconstructions ($250\text{--}350\text{ kpc}$). Furthermore, the Rankine-Hugoniot shock jump conditions yield a post-shock plasma temperature of $T_{\text{post}} = 15.22\text{ keV}$ ($\mathcal{M} = 2.07$), consistent with Chandra X-ray spectroscopy ($14.8 \pm 1.2\text{ keV}$). Finally, we extend our numerical analysis to an empirical ensemble of colliding clusters, demonstrating that dynamic metric lag quantitatively explains the observed offsets in El Gordo ($\Delta r \approx 620\text{ kpc}$), MACS~J0025.4--1222 ($\Delta r \approx 255\text{ kpc}$), and Abell~520 ($\Delta r \approx 15\text{ kpc}$).}
-% Conclusions
-{Cluster shock decoupling is direct empirical proof of the finite dynamic relaxation timescale of relativistic spacetime geometry rather than collisionless dark matter particles.}
+\begin{abstract}
+The observed spatial decoupling between collisional, X-ray-emitting intracluster plasma and reconstructed gravitational lensing potential centroids in merging galaxy clusters (exemplified by the Bullet Cluster 1E~0657--56 and ACT-CL~J0102--4915) is widely regarded as direct empirical evidence of collisionless non-baryonic dark matter particles. We demonstrate that this macroscopic physical separation arises as a natural consequence of non-equilibrium dynamic vacuum relaxation within Chronodynamic Relativity (CR), without requiring non-baryonic dark matter or phenomenological cutoffs. In CR, the effective gravitational acceleration field $\vec{g}(\vec{x}, t)$ is a stateful metric field governed by a covariant relaxation partial differential equation toward an algebraic equilibrium target $\vec{g}_{\text{target}} = \frac{1}{2}\vec{g}_N [1 + \sqrt{1 + 4a_0/g_N}]$, characterized by the first-principles cosmological acceleration invariant $a_0 = 3 c H_0 / (4\pi) = 1.6352 \times 10^{-10}\text{ m s}^{-2}$ and an unscreened temporal dissipation timescale $\tau_0 = 82.16\text{ Gyr}$. In high-density cluster environments, non-linear gradient screening dynamically accelerates the local relaxation timescale to $\tau_{\text{eff}} \sim 80\text{--}90\text{ Myr}$. Using high-resolution 3D adaptive mesh refinement (AMR) hydrodynamic simulations tracking up to $8.96 \times 10^6$ computational cells across 41 temporal snapshots, we directly integrate the coupled Euler-Chronodynamic system for a $1.5 \times 10^{14}\,M_\odot$ merger at relative infall velocity $v_{\text{rel}} = 4000\text{ km s}^{-1}$. The simulation reproduces the observed macroscopic detachment between the baryonic gas shock and the gravitational potential minimum, reaching $\Delta r = 331.4\text{ kpc}$ at $t = 935.6\text{ Myr}$ in exact agreement with Hubble/Magellan weak-lensing reconstructions ($250\text{--}350\text{ kpc}$). Furthermore, the Rankine-Hugoniot shock jump conditions yield a post-shock plasma temperature of $T_{\text{post}} = 15.22\text{ keV}$ ($\mathcal{M} = 2.07$), consistent with Chandra X-ray spectroscopy ($14.8 \pm 1.2\text{ keV}$). Finally, we extend our numerical analysis to an empirical ensemble of colliding clusters, demonstrating that dynamic metric lag quantitatively explains the observed offsets in El Gordo ($\Delta r \approx 620\text{ kpc}$), MACS~J0025.4--1222 ($\Delta r \approx 255\text{ kpc}$), and Abell~520 ($\Delta r \approx 15\text{ kpc}$). Cluster shock decoupling is direct empirical proof of the finite dynamic relaxation timescale of relativistic spacetime geometry rather than collisionless dark matter particles.
+\end{abstract}
 
-\keywords{galaxies: clusters: general -- galaxies: clusters: intracluster medium -- gravitational lensing: weak -- hydrodynamics -- shock waves -- cosmology: theory}
+\keywords{galaxies: clusters: general, galaxies: clusters: intracluster medium, gravitational lensing: weak, hydrodynamics, shock waves, cosmology: theory}
 
 \maketitle
 
@@ -177,10 +178,10 @@ The simulation was integrated over a physical baseline of $1552\text{ Myr}$, pro
 \end{enumerate}
 
 \begin{table*}[t]
-\centering
-
+\caption{Selected dynamical snapshots from the 3D RAMSES Chronodynamic simulation of the 1E~0657--56 cluster collision, tracking simulation epoch, active AMR grid refinement, baryonic gas peak coordinate $(x, y)$, gravitational potential minimum coordinate $(x, y)$, and physical decoupling offset $\Delta r$.}
+\label{tab:snapshots}
+\begin{ruledtabular}
 \footnotesize
-\setlength{\tabcolsep}{4pt}
 \begin{tabular}{ccccccc}
 Snapshot & Time [Myr] & AMR Cells & Gas Peak [kpc] & Potential Min [kpc] & $\Delta r$ [kpc] & Dynamical Regime \\
 \hline
@@ -194,9 +195,7 @@ Snap 29 & 1087.0 & 7,492,472 & $(1805, 2165)$ & $(2225, 1955)$ & 469.6 & Maximum
 Snap 32 & 1202.9 & 8,004,473 & $(1775, 2195)$ & $(2315, 2195)$ & 540.0 & Late Expansion \& Metric Relaxation \\
 Snap 41 & 1552.0 & 8,955,353 & $(1625, 2225)$ & $(3335, 935)$ & 2142.0 & Boundary Escape / Remnant Dissipation \\
 \end{tabular}
-
-\caption{Selected dynamical snapshots from the 3D RAMSES Chronodynamic simulation of the 1E~0657--56 cluster collision, tracking simulation epoch, active AMR grid refinement, baryonic gas peak coordinate $(x, y)$, gravitational potential minimum coordinate $(x, y)$, and physical decoupling offset $\Delta r$.}
-\label{tab:snapshots}
+\end{ruledtabular}
 \end{table*}
 
 Table~\ref{tab:snapshots} documents the numerical trajectory of the merger across the full snapshot sequence. The maximum refinement level generates over $6.29 \times 10^6$ AMR cells at the peak decoupling epoch, resolving the complex filamentary shock boundaries without numerical diffusion.
@@ -328,8 +327,9 @@ The Chronodynamic prediction of $15.22\text{ keV}$ matches the Chandra spectrosc
 \label{sec:multicluster}
 
 \begin{table*}[t]
-\centering
-
+\caption{Multi-cluster empirical benchmark across four major colliding cluster systems. Observational redshifts $z$, cluster masses $M_{200}$, relative velocities $v_{\text{rel}}$, observed spatial offsets $\Delta r_{\text{obs}}$, and observed shock temperatures $T_{\text{shock}}$ are compared against 3D AMR RAMSES-CR simulations and semi-analytical Chronodynamic Relativity predictions evaluated from canonical model invariants ($a_0 = 1.6352 \times 10^{-10}\text{ m s}^{-2}$, $\tau_0 = 82.16\text{ Gyr}$).}
+\label{tab:multicluster}
+\begin{ruledtabular}
 \footnotesize
 \setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{lcccccccc}
@@ -340,9 +340,7 @@ Cluster System & $z$ & $M_{200}$ [$10^{14}\,M_\odot$] & $v_{\text{rel}}$ [km/s] 
 \textbf{Abell 520} (``Train Wreck'') & 0.203 & 10.0 & 2200 & $0\text{--}50$ & \textbf{807.6}$\to$\textbf{0.0} & \textbf{15.0} & $7.5 \pm 0.8$ & \textbf{7.80} \\
 \textbf{MACS J0025.4--1222} & 0.584 & 2.5 & 3000 & $200\text{--}300$ & --- & \textbf{255.0} & $10.2 \pm 0.9$ & \textbf{10.60} \\
 \end{tabular}
-
-\caption{Multi-cluster empirical benchmark across four major colliding cluster systems. Observational redshifts $z$, cluster masses $M_{200}$, relative velocities $v_{\text{rel}}$, observed spatial offsets $\Delta r_{\text{obs}}$, and observed shock temperatures $T_{\text{shock}}$ are compared against 3D AMR RAMSES-CR simulations and semi-analytical Chronodynamic Relativity predictions evaluated from canonical model invariants ($a_0 = 1.6352 \times 10^{-10}\text{ m s}^{-2}$, $\tau_0 = 82.16\text{ Gyr}$).}
-\label{tab:multicluster}
+\end{ruledtabular}
 \end{table*}
 
 To ensure that the success of Chronodynamic Relativity in 1E~0657--56 is not the result of fine-tuning to a single atypical system, we examine an empirical ensemble of colliding clusters with diverse merger geometries, masses, and dynamical evolutionary stages.
@@ -413,11 +411,10 @@ Because the non-linear algebraic root acceleration (Eq.~\eqref{eq:g_target}) enh
 \begin{table*}[t]
 \caption{Comparative evaluation of competing cosmological and gravitational paradigms across key cluster collision empirical constraints. Chronodynamic Relativity achieves full consistency without auxiliary dark particles, fine-tuned cross-sections, or phenomenological piecewise thresholds.}
 \label{tab:comparison}
-\centering
-\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.20\textwidth}}
-\hline\hline
+\begin{ruledtabular}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllll}
 Merger Phenomenon & $\Lambda\text{CDM}$ (WIMP/SIDM) & Standard MOND & MOG / STVG & Chronodynamic Relativity \\
 \hline
 Bullet Offset ($\sim 300\text{ kpc}$) & Consistent ($\sigma/m < 1.25$) & \textbf{Fails} ($\Delta r \equiv 0$) & Requires vector $\phi_\mu$ & \textbf{Consistent} ($331.4\text{ kpc}$) \\
@@ -427,8 +424,8 @@ Abell 520 Core Alignment & \textbf{Tension} (Cannot trap DM) & Unexplained & Une
 Dark Matter Auxiliary & WIMPs / Axions & $\sim 2\text{ eV}$ Neutrinos & None & \textbf{None} (Strictly Baryonic) \\
 Mathematical Formulation & Continuous & Continuous & Continuous & \textbf{Continuous Field PDE} \\
 Acceleration Invariant & Free fit parameters & Empirical $a_0$ & Empirical $\mu, \alpha$ & \textbf{Exact} ($a_0 = 3 c H_0 / 4\pi$) \\
-\hline
 \end{tabular}
+\end{ruledtabular}
 \end{table*}
 
 Table~\ref{tab:comparison} summarizes the comparative performance of Chronodynamic Relativity against competing cosmological and gravitational frameworks:
@@ -495,18 +492,17 @@ Using a high-resolution 3D adaptive mesh refinement simulation within the modifi
 
 These results demonstrate that the spatial decoupling observed in cluster collisions is not evidence for collisionless dark matter particles, but direct empirical proof of the finite dynamic relaxation timescale of relativistic spacetime geometry.
 
-\begin{acknowledgements}
+\begin{acknowledgments}
 The author expresses gratitude to the global observational astrophysics community; without the openly shared public datasets from the Chandra X-ray Observatory, the Hubble Space Telescope, the Magellan Telescopes, and the Atacama Cosmology Telescope, the empirical testing of this theory would not have been possible.
 
 The author acknowledges the assistance of Google's Antigravity AI coding assistant for software engineering support, automated benchmark suite construction, AMR simulation pipeline execution, and \LaTeX{} document typesetting. The author conceived the theoretical paradigm, prescribed all underlying physical principles and mathematical constraints, defined all fundamental equations, verified all empirical evaluations, and retains sole intellectual and scientific responsibility for the contents, methodology, and conclusions of this manuscript.
 
 This research made use of \textsc{RAMSES} \cite{Teyssier2002_RAMSES}, NumPy \cite{numpy2020}, SciPy \cite{scipy2020}, and Matplotlib \cite{matplotlib2007}.
-\end{acknowledgements}
+\end{acknowledgments}
 
 \section*{Data and code availability}
 The complete source code, physics engine, simulation reproduction pipelines, and analysis scripts supporting this study are openly available in the companion repository \cite{shreve_chronodynamic_2026} at \url{https://github.com/joshreve/Chronodynamic-Relativity}. A permanent, immutable version of record for the software framework is archived on Zenodo under Concept DOI: \href{https://doi.org/10.5281/zenodo.22697449}{10.5281/zenodo.22697449}. This manuscript and its associated simulation reproduction assets are permanently archived on Zenodo under DOI: \href{https://doi.org/10.5281/zenodo.23149512}{10.5281/zenodo.23149512}. The 3D AMR simulation output snapshots, spatial slice data arrays, and extraction logs are permanently indexed in the machine-readable provenance manifest (\texttt{manifest.json}).
 
-\bibliographystyle{aa}
 \bibliography{paper_cluster_references}
 
 \end{document}

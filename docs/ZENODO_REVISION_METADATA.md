@@ -75,31 +75,31 @@ Packaged release tarballs and PDFs are located in:
 
 ---
 
-### Deposit 3: Series 2, Paper 1 (`v1.0.1`)
-* **Version:** `v1.0.1`
-* **Publication Date:** `2026-10-11`
+### Deposit 3: Series 2, Paper 1 (`v1.0.2`)
+* **Version:** `v1.0.2`
+* **Publication Date:** `2026-10-13`
 * **Title:** Resolving the high-redshift JWST early galaxy and supermassive black hole crisis via chronodynamic proper time dilation
 * **Additional Notes:**
   ```text
-  Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; aligned title, section headings, and figure captions to A&A sentence case editorial standards; lowercased generic acronym expansions; eliminated table overruns; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
+  Version 1.0.2 Revision Notes: Restored missing \maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) per Astronomy & Astrophysics (A&A) editorial notification (aa63573-26); enabled [letter] documentclass option for Letter to the Editor; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
   ```
 * **Files:**
   * `dist/zenodo/series_2_paper_1_jwst_early_galaxies/shreve_jwst_early_galaxies.pdf`
-  * `dist/zenodo/series_2_paper_1_jwst_early_galaxies/submission_series_2_paper_1_jwst_early_galaxies_v1.0.1.tar.gz`
+  * `dist/zenodo/series_2_paper_1_jwst_early_galaxies/submission_series_2_paper_1_jwst_early_galaxies_v1.0.2.tar.gz`
 
 ---
 
-### Deposit 4: Series 2, Paper 2 (`v1.0.1`)
-* **Version:** `v1.0.1`
-* **Publication Date:** `2026-10-11`
+### Deposit 4: Series 2, Paper 2 (`v1.0.2`)
+* **Version:** `v1.0.2`
+* **Publication Date:** `2026-10-13`
 * **Title:** Three-dimensional relativistic shock hydrodynamics and multi-cluster decoupling without non-baryonic dark matter
 * **Additional Notes:**
   ```text
-  Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; eliminated leading acronym/numeral from title; aligned section headings to A&A sentence case editorial standards; balanced multi-cluster table column widths; lowercased generic acronym expansions; fixed adverb hyphenation; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
+  Version 1.0.2 Revision Notes: Restored missing \maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) per Astronomy & Astrophysics (A&A) editorial conventions; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
   ```
 * **Files:**
   * `dist/zenodo/series_2_paper_2_cluster_collision_hydrodynamics/shreve_cluster_collision_hydrodynamics.pdf`
-  * `dist/zenodo/series_2_paper_2_cluster_collision_hydrodynamics/submission_series_2_paper_2_cluster_collision_hydrodynamics_v1.0.1.tar.gz`
+  * `dist/zenodo/series_2_paper_2_cluster_collision_hydrodynamics/submission_series_2_paper_2_cluster_collision_hydrodynamics_v1.0.2.tar.gz`
 
 ---
 
@@ -131,14 +131,14 @@ Packaged release tarballs and PDFs are located in:
 
 ---
 
-### Deposit 7: Series 2, Paper 5 (`v1.0.1`)
-* **Version:** `v1.0.1`
-* **Publication Date:** `2026-10-11`
+### Deposit 7: Series 2, Paper 5 (`v1.0.2`)
+* **Version:** `v1.0.2`
+* **Publication Date:** `2026-10-13`
 * **Title:** Gaia DR3 wide binary star kinematics and the low-acceleration velocity plateau in Chronodynamic Relativity
 * **Additional Notes:**
   ```text
-  Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; aligned title and section headings to A&A sentence case editorial standards; lowercased generic acronym expansions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
+  Version 1.0.2 Revision Notes: Restored missing \maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) per Astronomy & Astrophysics (A&A) editorial conventions; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449).
   ```
 * **Files:**
   * `dist/zenodo/series_2_paper_5_wide_binary_kinematics/shreve_wide_binary_kinematics.pdf`
-  * `dist/zenodo/series_2_paper_5_wide_binary_kinematics/submission_series_2_paper_5_wide_binary_kinematics_v1.0.1.tar.gz`
+  * `dist/zenodo/series_2_paper_5_wide_binary_kinematics/submission_series_2_paper_5_wide_binary_kinematics_v1.0.2.tar.gz`

@@ -1,0 +1,127 @@
+{
+  "constants": {
+    "h0_kms_mpc": 70.5,
+    "h0_si_s_inv": 2.2847493990582772e-18,
+    "t0_gyr": 13.869393215330344,
+    "n_space": 0.238732414637843,
+    "a0_si_m_s2": 1.6351991977899337e-10,
+    "omega_b": 0.045,
+    "omega_b_h2": 0.022366124999999997,
+    "c_si_m_s": 299792458.0,
+    "G_si_m3_kg_s2": 6.6743e-11,
+    "hbar_si_J_s": 1.054571817e-34
+  },
+  "gaia_dr4_wide_binaries": {
+    "v_floor_1p0_ms": 383.81669199452324,
+    "v_floor_1p0_kms": 0.38381669199452323,
+    "v_floor_1p5_ms": 424.76299350952604,
+    "v_floor_1p5_kms": 0.42476299350952607,
+    "v_floor_2p0_ms": 456.437540976695,
+    "v_floor_2p0_kms": 0.456437540976695,
+    "r_c_1p5_kAU": 7.375598514987867,
+    "s_c_1p5_kAU": 5.792781527628417,
+    "boost_factor_10kAU": 1.3558221722181756
+  },
+  "jwst_early_galaxies": {
+    "alpha_clock": 1.1193662073189214,
+    "z_obs_jades": 14.32,
+    "z_exp_jades": 10.451594267911117,
+    "z_exp_mapping": {
+      "z_obs_8.0": 6.120076338295034,
+      "z_obs_10.0": 7.518073142258169,
+      "z_obs_12.0": 8.889069376612056,
+      "z_obs_14.0": 10.237664044422248,
+      "z_obs_16.0": 11.567160210221395,
+      "z_obs_18.0": 12.880041028441818,
+      "z_obs_20.0": 14.178238710090165
+    }
+  },
+  "desi_year_5_dark_energy": {
+    "w0_eff": -0.852,
+    "wa_eff": -0.395,
+    "w_static_lcdm": -1.0
+  },
+  "euclid_matter_clustering": {
+    "sigma8_eff": 0.745,
+    "omega_m_eff": 0.315,
+    "S8_cr": 0.7633978320639901,
+    "S8_planck_lcdm": 0.832
+  },
+  "cmb_acoustic_structure": {
+    "peak_1_ell": 221.38,
+    "peak_1_D_ell_smooth": 5756.88,
+    "peak_1_planck_target": 5742.0,
+    "peak_1_amplitude_error_pct": 0.2591431556948817,
+    "peak_2_ell": 535.75,
+    "peak_2_D_ell_smooth": 2440.01,
+    "peak_2_planck_target": 2580.0,
+    "peak_3_ell": 812.04,
+    "peak_3_D_ell_smooth": 2263.01,
+    "peak_3_planck_target": 2540.0,
+    "delta_ell_23": 276.29,
+    "delta_ell_23_planck_target": 272.5,
+    "delta_ell_23_error_pct": 1.390825688073402,
+    "ratio_h3_h2": 0.9643,
+    "ratio_h3_h2_planck_target": 0.9845,
+    "ratio_h3_h2_error_pct": -2.051802945657694,
+    "ratio_h2_h1": 0.4107,
+    "ratio_h2_h1_planck_target": 0.4495,
+    "ratio_h2_h1_error_pct": -8.631813125695217,
+    "A_s": 1.445e-09,
+    "n_s": 0.9665,
+    "tau_star_mpc": 680.0,
+    "delta_tau_star_mpc": 18.0,
+    "alpha_relational": 0.87
+  },
+  "simons_observatory": {
+    "tensor_to_scalar_r_ceiling": 0.005
+  },
+  "rubin_lsst_supernovae": {
+    "duality_break_z0p5": 0.9527537224712055,
+    "duality_break_z1p0": 0.9205919885517962,
+    "duality_break_z1p5": 0.8963949690498552,
+    "duality_break_z2p0": 0.8770974439698933,
+    "sne_host_age_mag_drift": 0.26
+  },
+  "quasar_dipole": {
+    "dipole_kinematic_cmb_kms": 369.82,
+    "dipole_cr_multiplier": 2.45,
+    "dipole_cr_predicted_kms": 906.0590000000001
+  },
+  "bmv_gravitational_entanglement": {
+    "benchmark_10pg": {
+      "mass_kg": 1e-14,
+      "separation_m": 0.0002,
+      "superposition_width_m": 1e-05,
+      "g_N_ms2": 1.6685749999999998e-17,
+      "a0_over_gN": 9799974.216261983,
+      "g_eff_ms2": 5.224293458447832e-14,
+      "acceleration_boost": 3130.99109027034,
+      "qg_entanglement_phase_rate_rad_s": 0.015822298425788483,
+      "cr_classical_dephasing_rate_s_inv": 49.53947539874216,
+      "cr_coherence_lifetime_s": 0.020185922276144866,
+      "cr_dephasing_to_qg_phase_ratio": 3130.9910902703396,
+      "entanglement_witness_cr_bound": 1.0
+    },
+    "benchmark_1pg": {
+      "mass_kg": 1e-15,
+      "separation_m": 0.0001,
+      "superposition_width_m": 1e-06,
+      "g_N_ms2": 6.6743e-18,
+      "g_eff_ms2": 3.3039393387352325e-14,
+      "acceleration_boost": 4950.240982178255,
+      "qg_entanglement_phase_rate_rad_s": 6.328919370315392e-05,
+      "cr_classical_dephasing_rate_s_inv": 0.31329676039837057,
+      "cr_coherence_lifetime_s": 3.1918619226335316,
+      "cr_dephasing_to_qg_phase_ratio": 4950.240982178256
+    }
+  },
+  "tabletop_optomechanics": {
+    "mass_nano_kg": 1e-14,
+    "gamma_cr_dephasing_hz": 49.53947539874216
+  },
+  "fine_structure_drift": {
+    "alpha_drift_z1": -0.15251039061424942,
+    "alpha_drift_z3": -0.2817613619831879
+  }
+}

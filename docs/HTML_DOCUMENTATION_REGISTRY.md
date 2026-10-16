@@ -1,7 +1,7 @@
 # Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker
 
-> **Auto-Generated on:** `2026-10-13 08:27:47`  
-> **Total Tracked HTML Documents:** `49`  
+> **Auto-Generated on:** `2026-10-16 00:14:04`  
+> **Total Tracked HTML Documents:** `153`  
 > **Auditing Tool:** `scripts/audit_html_registry.py`
 
 ---
@@ -10,108 +10,217 @@
 
 | Release Status | Count | Description |
 | :--- | :---: | :--- |
-| **Active Public Release** | 36 | Canonical production pages and recategorized public-ready analyses published to `Chronodynamic-Relativity`. |
-| **Dev Repository Only (Paper II)** | 3 | In-progress CLASS-CR Boltzmann solvers and high-$\ell$ polarization suites reserved for companion papers. |
-| **Dev Repository Only** | 10 | Intermediate research scripts, exploratory parameter sweeps, and 3D simulation sandboxes. |
+| **Active Public Release** | 40 | Canonical production pages and recategorized public-ready analyses published to `Chronodynamic-Relativity`. |
+| **Dev Repository Only (Paper II)** | 7 | In-progress CLASS-CR Boltzmann solvers and high-$\ell$ polarization suites reserved for companion papers. |
+| **Dev Repository Only** | 106 | Intermediate research scripts, exploratory parameter sweeps, and 3D simulation sandboxes. |
 
 ---
 
 ## 2. Complete HTML Document Catalog
 
 
+### Development: 3D Simulation Sandboxes
+
+| HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
+| :--- | :---: | :---: | :---: | :--- |
+| **`bullet_3d_gas_density.html`**<br><sub>`development/simulations/analysis/bullet_3d_gas_density.html`</sub> | `2026-06-19 21:30:15` | 7.71 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Bullet 3D Gas Density |
+| **`bullet_3d_offset_analysis.html`**<br><sub>`development/simulations/analysis/bullet_3d_offset_analysis.html`</sub> | `2026-09-18 21:47:56` | 5.30 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Bullet 3D Offset Analysis |
+| **`bullet_3d_volume.html`**<br><sub>`development/simulations/analysis/bullet_3d_volume.html`</sub> | `2026-09-18 21:47:56` | 460.8 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Bullet 3D Volume |
+| **`collapse_3d_density_comparison.html`**<br><sub>`development/simulations/analysis/collapse_3d_density_comparison.html`</sub> | `2026-06-21 11:40:44` | 2.34 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: 2D Density Evolution Comparison |
+| **`collapse_3d_volume_comparison.html`**<br><sub>`development/simulations/analysis/collapse_3d_volume_comparison.html`</sub> | `2026-06-21 11:40:43` | 7.35 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: 3D Volumetric Structure Comparison |
+| **`comparison_galaxy_3d_final.html`**<br><sub>`development/simulations/analysis/comparison_galaxy_3d_final.html`</sub> | `2026-08-30 21:40:53` | 1.72 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Comparison Galaxy 3D Final |
+| **`cr_galaxy_3d_density.html`**<br><sub>`development/simulations/analysis/cr_galaxy_3d_density.html`</sub> | `2026-08-30 21:40:52` | 3.86 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cr Galaxy 3D Density |
+| **`cr_galaxy_3d_particle_cloud.html`**<br><sub>`development/simulations/analysis/cr_galaxy_3d_particle_cloud.html`</sub> | `2026-08-30 21:40:50` | 6.71 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cr Galaxy 3D Particle Cloud |
+| **`cr_galaxy_3d_radial_density.html`**<br><sub>`development/simulations/analysis/cr_galaxy_3d_radial_density.html`</sub> | `2026-08-30 21:40:50` | 40.9 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cr Galaxy 3D Radial Density |
+| **`jades_z14_lightcone_3d.html`**<br><sub>`development/simulations/analysis/jades_z14_lightcone_3d.html`</sub> | `2026-08-26 19:00:06` | 4.63 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Jades Z14 Lightcone 3D |
+| **`newton_galaxy_3d_density.html`**<br><sub>`development/simulations/analysis/newton_galaxy_3d_density.html`</sub> | `2026-08-30 21:40:52` | 3.87 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Newton Galaxy 3D Density |
+| **`newton_galaxy_3d_particle_cloud.html`**<br><sub>`development/simulations/analysis/newton_galaxy_3d_particle_cloud.html`</sub> | `2026-08-30 21:40:50` | 6.72 MB | `Dev Repository Only` | 3D simulation sandbox visualizer: Newton Galaxy 3D Particle Cloud |
+| **`newton_galaxy_3d_radial_density.html`**<br><sub>`development/simulations/analysis/newton_galaxy_3d_radial_density.html`</sub> | `2026-08-30 21:40:50` | 40.6 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Newton Galaxy 3D Radial Density |
+| **`AlreadySimulatedModal.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/AlreadySimulatedModal.html`</sub> | `2026-09-21 11:59:35` | 0.8 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Alreadysimulatedmodal |
+| **`ExceptionModal.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/ExceptionModal.html`</sub> | `2026-09-21 11:59:35` | 0.7 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Exceptionmodal |
+| **`GifExportModal.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/GifExportModal.html`</sub> | `2026-09-21 11:59:35` | 3.2 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Gifexportmodal |
+| **`Header.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/Header.html`</sub> | `2026-09-21 11:59:35` | 8.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Real Space Interface |
+| **`ImageExportModal.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/ImageExportModal.html`</sub> | `2026-09-21 11:59:35` | 2.0 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Imageexportmodal |
+| **`ProgressModal.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/ProgressModal.html`</sub> | `2026-09-21 11:59:35` | 0.9 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Progressmodal |
+| **`RSI.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/RSI.html`</sub> | `2026-09-21 11:59:35` | 7.1 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Rsi |
+| **`RedshiftModal.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/RedshiftModal.html`</sub> | `2026-09-21 11:59:35` | 2.2 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Redshiftmodal |
+| **`SimulationList.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/SimulationList.html`</sub> | `2026-09-21 11:59:35` | 0.7 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Simulationlist |
+| **`index.html`**<br><sub>`development/simulations/class_public/external/RealSpaceInterface/templates/index.html`</sub> | `2026-09-21 11:59:35` | 0.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: three.js webgl - geometry - dynamic |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_3d_fast_128/cmb_3d_time_evolution.html`</sub> | `2026-09-25 23:32:49` | 271.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_3d_study_256/cmb_3d_time_evolution.html`</sub> | `2026-09-27 15:53:16` | 355.9 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`interactive_visibility_designer.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_3d_study_256/interactive_visibility_designer.html`</sub> | `2026-09-27 16:48:39` | 180.6 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Chronodynamic Relativity | Interactive Visibility Profile Designer |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_calibrated_best_128/cmb_3d_time_evolution.html`</sub> | `2026-10-01 11:02:48` | 370.7 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_calibrated_best_256/cmb_3d_time_evolution.html`</sub> | `2026-10-01 12:18:08` | 531.8 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_production_256_highres/cmb_3d_time_evolution.html`</sub> | `2026-09-30 23:33:23` | 535.1 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128/cmb_3d_time_evolution.html`</sub> | `2026-09-27 19:22:58` | 161.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_calibrated/cmb_3d_time_evolution.html`</sub> | `2026-09-30 19:21:38` | 281.1 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_canonical/cmb_3d_time_evolution.html`</sub> | `2026-09-29 23:21:55` | 281.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_full_isw/cmb_3d_time_evolution.html`</sub> | `2026-09-30 15:09:41` | 281.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_lss_primary/cmb_3d_time_evolution.html`</sub> | `2026-09-30 16:56:46` | 281.3 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_production/cmb_3d_time_evolution.html`</sub> | `2026-09-30 21:29:40` | 373.2 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_refined/cmb_3d_time_evolution.html`</sub> | `2026-09-28 14:57:04` | 281.8 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_128_windowed_isw/cmb_3d_time_evolution.html`</sub> | `2026-09-30 16:21:52` | 281.3 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_256_acoustic/cmb_3d_time_evolution.html`</sub> | `2026-09-29 17:17:05` | 344.4 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+| **`interactive_visibility_designer.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/cr_test_256_acoustic/interactive_visibility_designer.html`</sub> | `2026-09-28 21:59:28` | 178.1 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Chronodynamic Relativity | Interactive Visibility Profile Designer |
+| **`cmb_3d_time_evolution.html`**<br><sub>`development/simulations/cr_3d_field_solver/results/test_stage_b_verified_128/cmb_3d_time_evolution.html`</sub> | `2026-09-25 22:52:26` | 86.0 KB | `Dev Repository Only` | 3D simulation sandbox visualizer: Cmb 3D Time Evolution |
+
 ### Development: Paper II Boltzmann Investigations
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`class_cr_planck_spectrum.html`**<br><sub>`docs/investigations/class_cr_planck_spectrum.html`</sub> | `2026-09-21 11:11:08` | 229.2 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Class Cr Planck Spectrum |
-| **`cmb_perturbations.html`**<br><sub>`docs/investigations/cmb_perturbations.html`</sub> | `2026-09-16 08:12:15` | 141.7 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Cmb Perturbations |
-| **`cr_boltzmann_cmb_spectrum.html`**<br><sub>`docs/investigations/cr_boltzmann_cmb_spectrum.html`</sub> | `2026-09-14 21:49:46` | 84.5 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: CR-CLASS Boltzmann Solver — CMB Angular Power Spectrum |
+| **`class_cr_full_spectrum.html`**<br><sub>`development/docs/investigations/class_cr_full_spectrum.html`</sub> | `2026-09-14 21:49:46` | 15.9 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Class Cr Full Spectrum |
+| **`class_cr_planck_spectrum.html`**<br><sub>`development/docs/investigations/class_cr_planck_spectrum.html`</sub> | `2026-09-21 11:11:08` | 229.2 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Class Cr Planck Spectrum |
+| **`cmb_perturbations.html`**<br><sub>`development/docs/investigations/cmb_perturbations.html`</sub> | `2026-09-14 21:49:46` | 141.7 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Cmb Perturbations |
+| **`cr_boltzmann_cmb_spectrum.html`**<br><sub>`development/docs/investigations/cr_boltzmann_cmb_spectrum.html`</sub> | `2026-09-14 21:49:46` | 84.5 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: CR-CLASS Boltzmann Solver — CMB Angular Power Spectrum |
+| **`class_cr_planck_spectrum.html`**<br><sub>`official/docs/investigations/class_cr_planck_spectrum.html`</sub> | `2026-09-21 11:11:08` | 229.2 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Class Cr Planck Spectrum |
+| **`cmb_perturbations.html`**<br><sub>`official/docs/investigations/cmb_perturbations.html`</sub> | `2026-09-16 08:12:15` | 141.7 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: Cmb Perturbations |
+| **`cr_boltzmann_cmb_spectrum.html`**<br><sub>`official/docs/investigations/cr_boltzmann_cmb_spectrum.html`</sub> | `2026-10-15 10:12:58` | 84.5 KB | `Dev Repository Only (Paper II)` | In-progress Boltzmann solver test: CR-CLASS Boltzmann Solver - CMB Angular Power Spectrum |
 
 ### Development: Research Investigations & Sweeps
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`gaia_decline_report.html`**<br><sub>`docs/investigations/gaia_decline_report.html`</sub> | `2026-09-14 21:49:46` | 17.2 KB | `Dev Repository Only` | Diagnostic investigation: Investigation: Gaia Decline |
-| **`special_relativity_temporal_relaxation.html`**<br><sub>`docs/investigations/special_relativity_temporal_relaxation.html`</sub> | `2026-09-19 20:47:58` | 26.5 KB | `Dev Repository Only` | Diagnostic investigation: Special Relativity & Dynamic Metric Clock Relaxation | Chronodynamic Relativity |
+| **`alpha_drift.html`**<br><sub>`development/docs/investigations/alpha_drift.html`</sub> | `2026-09-14 21:49:45` | 38.4 KB | `Dev Repository Only` | Diagnostic investigation: Fine-Structure Constant Drift Investigation |
+| **`astrophysical_space_field_effects.html`**<br><sub>`development/docs/investigations/astrophysical_space_field_effects.html`</sub> | `2026-09-14 21:49:45` | 82.7 KB | `Dev Repository Only` | Diagnostic investigation: Astrophysical Space Field Effects Investigation |
+| **`bayesian_posteriors.html`**<br><sub>`development/docs/investigations/bayesian_posteriors.html`</sub> | `2026-09-14 21:49:45` | 560.0 KB | `Dev Repository Only` | Diagnostic investigation: Bayesian Evidence & Posteriors - Chronodynamic Relativity |
+| **`black_hole_cosmological_coupling_investigation.html`**<br><sub>`development/docs/investigations/black_hole_cosmological_coupling_investigation.html`</sub> | `2026-09-14 21:49:46` | 4.73 MB | `Dev Repository Only` | Diagnostic investigation: Black Hole Cosmological Coupling Investigation |
+| **`bullet_3d_ramses_results.html`**<br><sub>`development/docs/investigations/bullet_3d_ramses_results.html`</sub> | `2026-09-18 21:47:56` | 17.3 KB | `Dev Repository Only` | Diagnostic investigation: 3D RAMSES Bullet Cluster Simulation: Dynamic Gravitational Decoupling |
+| **`bullet_cluster_static_test.html`**<br><sub>`development/docs/investigations/bullet_cluster_static_test.html`</sub> | `2026-09-14 21:49:46` | 45.8 KB | `Dev Repository Only` | Diagnostic investigation: Static Non-Linear Lensing |
+| **`chronon_quantization.html`**<br><sub>`development/docs/investigations/chronon_quantization.html`</sub> | `2026-09-14 21:49:46` | 6.4 KB | `Dev Repository Only` | Diagnostic investigation: Discrete Chronon Quantization & Empirical Bounds |
+| **`cluster_mergers_overview.html`**<br><sub>`development/docs/investigations/cluster_mergers_overview.html`</sub> | `2026-09-14 21:49:46` | 43.2 KB | `Dev Repository Only` | Diagnostic investigation: Cluster Mergers | Chronodynamic Relativity |
+| **`cosmic_expansion_chronology.html`**<br><sub>`development/docs/investigations/cosmic_expansion_chronology.html`</sub> | `2026-09-14 21:49:46` | 105.7 KB | `Dev Repository Only` | Diagnostic investigation: Cosmic Expansion & Chronology Deep-Dive |
+| **`cosmology_energy_investigation_report.html`**<br><sub>`development/docs/investigations/cosmology_energy_investigation_report.html`</sub> | `2026-09-14 21:49:46` | 46.7 KB | `Dev Repository Only` | Diagnostic investigation: Cosmology Energy Investigation |
+| **`cr_aggressive_low_l_nodes.html`**<br><sub>`development/docs/investigations/cr_aggressive_low_l_nodes.html`</sub> | `2026-09-14 21:49:46` | 102.2 KB | `Dev Repository Only` | Diagnostic investigation: Cr Aggressive Low L Nodes |
+| **`cr_coupled_early_peaks.html`**<br><sub>`development/docs/investigations/cr_coupled_early_peaks.html`</sub> | `2026-09-14 21:49:46` | 102.1 KB | `Dev Repository Only` | Diagnostic investigation: Cr Coupled Early Peaks |
+| **`cr_coupled_oscillator_cmb.html`**<br><sub>`development/docs/investigations/cr_coupled_oscillator_cmb.html`</sub> | `2026-09-14 21:49:46` | 102.2 KB | `Dev Repository Only` | Diagnostic investigation: Cr Coupled Oscillator Cmb |
+| **`cr_unconstrained_best_fit.html`**<br><sub>`development/docs/investigations/cr_unconstrained_best_fit.html`</sub> | `2026-09-14 21:49:46` | 102.3 KB | `Dev Repository Only` | Diagnostic investigation: Cr Unconstrained Best Fit |
+| **`demonstrative_impact_report.html`**<br><sub>`development/docs/investigations/demonstrative_impact_report.html`</sub> | `2026-09-14 21:49:46` | 181.8 KB | `Dev Repository Only` | Diagnostic investigation: Demonstrative Impact |
+| **`desi_bao.html`**<br><sub>`development/docs/investigations/desi_bao.html`</sub> | `2026-09-14 21:49:46` | 51.8 KB | `Dev Repository Only` | Diagnostic investigation: Desi Bao |
+| **`desi_unreconstructed_bao.html`**<br><sub>`development/docs/investigations/desi_unreconstructed_bao.html`</sub> | `2026-10-04 21:48:44` | 53.3 KB | `Dev Repository Only` | Diagnostic investigation: DESI 2024 DR1 Multi-Tier BAO Audit |
+| **`early_universe_energy_report.html`**<br><sub>`development/docs/investigations/early_universe_energy_report.html`</sub> | `2026-09-14 21:49:46` | 17.4 KB | `Dev Repository Only` | Diagnostic investigation: Early Universe Energy Investigation |
+| **`energy_repulsion_kinematics.html`**<br><sub>`development/docs/investigations/energy_repulsion_kinematics.html`</sub> | `2026-09-14 21:49:46` | 7.7 KB | `Dev Repository Only` | Diagnostic investigation: Deriving Special Relativity from Energy Repulsion |
+| **`energy_time_dilation.html`**<br><sub>`development/docs/investigations/energy_time_dilation.html`</sub> | `2026-09-14 21:49:46` | 9.1 KB | `Dev Repository Only` | Diagnostic investigation: Energy-Driven Space Field Repulsion & Time Dilation |
+| **`ensemble_viscosity_report.html`**<br><sub>`development/docs/investigations/ensemble_viscosity_report.html`</sub> | `2026-09-14 21:49:46` | 20.8 KB | `Dev Repository Only` | Diagnostic investigation: Investigation: Zero-Parameter Geometric Vacuum Lag |
+| **`experiment_subharmonic_hierarchy.html`**<br><sub>`development/docs/investigations/experiment_subharmonic_hierarchy.html`</sub> | `2026-09-14 21:49:46` | 102.2 KB | `Dev Repository Only` | Diagnostic investigation: Experiment Subharmonic Hierarchy |
+| **`experiment_suppressed_low_l_peak.html`**<br><sub>`development/docs/investigations/experiment_suppressed_low_l_peak.html`</sub> | `2026-09-14 21:49:46` | 102.2 KB | `Dev Repository Only` | Diagnostic investigation: Experiment Suppressed Low L Peak |
+| **`gaia_decline_report.html`**<br><sub>`development/docs/investigations/gaia_decline_report.html`</sub> | `2026-09-14 21:49:46` | 17.2 KB | `Dev Repository Only` | Diagnostic investigation: Investigation: Gaia Decline |
+| **`gravity_duality_report.html`**<br><sub>`development/docs/investigations/gravity_duality_report.html`</sub> | `2026-09-14 21:49:46` | 204.6 KB | `Dev Repository Only` | Diagnostic investigation: Investigation: Gravity Duality (Geodesics vs Field Force) |
+| **`gw170817_constraint_report.html`**<br><sub>`development/docs/investigations/gw170817_constraint_report.html`</sub> | `2026-09-14 21:49:46` | 4.5 KB | `Dev Repository Only` | Diagnostic investigation: Defense Plan: GW170817 Speed of Gravity |
+| **`hawking_radiation.html`**<br><sub>`development/docs/investigations/hawking_radiation.html`</sub> | `2026-09-14 21:49:46` | 74.0 KB | `Dev Repository Only` | Diagnostic investigation: Hawking Radiation | Chronodynamic Relativity |
+| **`laboratory_qed_bounds.html`**<br><sub>`development/docs/investigations/laboratory_qed_bounds.html`</sub> | `2026-09-14 21:49:46` | 28.0 KB | `Dev Repository Only` | Diagnostic investigation: Laboratory QED Bounds & Space-Density Gradients |
+| **`lensing_consistency_report.html`**<br><sub>`development/docs/investigations/lensing_consistency_report.html`</sub> | `2026-09-14 21:49:46` | 11.5 KB | `Dev Repository Only` | Diagnostic investigation: Investigation: Phase 4 Lensing |
+| **`lyman_alpha.html`**<br><sub>`development/docs/investigations/lyman_alpha.html`</sub> | `2026-09-14 21:49:46` | 25.9 KB | `Dev Repository Only` | Diagnostic investigation: Lyman-Alpha Heating | Chronodynamic Relativity |
+| **`master_distance_modulus.html`**<br><sub>`development/docs/investigations/master_distance_modulus.html`</sub> | `2026-09-14 21:49:46` | 103.8 KB | `Dev Repository Only` | Diagnostic investigation: Master Omnibus Distance Modulus Investigation |
+| **`memory_well_comparison.html`**<br><sub>`development/docs/investigations/memory_well_comparison.html`</sub> | `2026-09-14 21:49:46` | 170.3 KB | `Dev Repository Only` | Diagnostic investigation: Mechanism Comparison: Memory Wells |
+| **`neutrino_shift.html`**<br><sub>`development/docs/investigations/neutrino_shift.html`</sub> | `2026-09-14 21:49:46` | 28.6 KB | `Dev Repository Only` | Diagnostic investigation: Solar Neutrino QFT Density Matrix Investigation |
+| **`pk_spectrum.html`**<br><sub>`development/docs/investigations/pk_spectrum.html`</sub> | `2026-09-14 21:49:46` | 25.5 KB | `Dev Repository Only` | Diagnostic investigation: Matter Power Spectrum | Chronodynamic Relativity |
+| **`qft_framework.html`**<br><sub>`development/docs/investigations/qft_framework.html`</sub> | `2026-09-14 21:49:46` | 5.6 KB | `Dev Repository Only` | Diagnostic investigation: Quantum Field Theory (QFT) Framework & Precision Bounds |
+| **`quantum_data_audit.html`**<br><sub>`development/docs/investigations/quantum_data_audit.html`</sub> | `2026-09-14 21:49:46` | 7.9 KB | `Dev Repository Only` | Diagnostic investigation: Chronodynamic Relativity: Empirical Audit of Quantum Couplings |
+| **`quantum_empirical_benchmarks.html`**<br><sub>`development/docs/investigations/quantum_empirical_benchmarks.html`</sub> | `2026-09-14 21:49:46` | 80.5 KB | `Dev Repository Only` | Diagnostic investigation: Quantum Empirical Benchmark Suite — Model Comparison |
+| **`quantum_intersection_report.html`**<br><sub>`development/docs/investigations/quantum_intersection_report.html`</sub> | `2026-09-14 21:49:46` | 7.6 KB | `Dev Repository Only` | Diagnostic investigation: Chronodynamic Relativity: Quantum Intersection & Experimental Prospects |
+| **`quantum_schrodinger_simulation.html`**<br><sub>`development/docs/investigations/quantum_schrodinger_simulation.html`</sub> | `2026-09-14 21:49:46` | 894.7 KB | `Dev Repository Only` | Diagnostic investigation: Quantum Schrodinger Simulation |
+| **`quasar_dipole.html`**<br><sub>`development/docs/investigations/quasar_dipole.html`</sub> | `2026-09-14 21:49:46` | 190.0 KB | `Dev Repository Only` | Diagnostic investigation: Quasar Dipole | Chronodynamic Relativity |
+| **`scale_invariance_quantum_refraction.html`**<br><sub>`development/docs/investigations/scale_invariance_quantum_refraction.html`</sub> | `2026-09-14 21:49:46` | 119.6 KB | `Dev Repository Only` | Diagnostic investigation: Scale Invariance Quantum Refraction |
+| **`special_relativity.html`**<br><sub>`development/docs/investigations/special_relativity.html`</sub> | `2026-09-14 21:49:46` | 8.2 KB | `Dev Repository Only` | Diagnostic investigation: Special Relativity & Kinematic Time Dilation |
+| **`special_relativity_temporal_relaxation.html`**<br><sub>`development/docs/investigations/special_relativity_temporal_relaxation.html`</sub> | `2026-09-19 20:47:58` | 26.5 KB | `Dev Repository Only` | Diagnostic investigation: Special Relativity & Dynamic Metric Clock Relaxation | Chronodynamic Relativity |
+| **`supernova_raw_vs_conditioned.html`**<br><sub>`development/docs/investigations/supernova_raw_vs_conditioned.html`</sub> | `2026-09-16 20:13:16` | 351.2 KB | `Dev Repository Only` | Diagnostic investigation: Supernova Raw Vs Conditioned |
+| **`uhecr_anisotropy.html`**<br><sub>`development/docs/investigations/uhecr_anisotropy.html`</sub> | `2026-09-14 21:49:46` | 272.9 KB | `Dev Repository Only` | Diagnostic investigation: UHECR Directional Anisotropy & Space Density Refraction |
+| **`unified_4pillar_benchmark_overview.html`**<br><sub>`development/docs/investigations/unified_4pillar_benchmark_overview.html`</sub> | `2026-09-14 21:49:47` | 4.83 MB | `Dev Repository Only` | Diagnostic investigation: Unified 4Pillar Benchmark Overview |
+| **`v8_dynamic_lag_test.html`**<br><sub>`development/docs/investigations/v8_dynamic_lag_test.html`</sub> | `2026-09-14 21:49:48` | 4.64 MB | `Dev Repository Only` | Diagnostic investigation: V8 Dynamic Lag Test |
+| **`vacuum_resonance_report.html`**<br><sub>`development/docs/investigations/vacuum_resonance_report.html`</sub> | `2026-09-14 21:49:48` | 140.2 KB | `Dev Repository Only` | Diagnostic investigation: Chronodynamic Relativity: Vacuum Resonance & DCE Benchmarks |
+| **`viscosity_displacement_report.html`**<br><sub>`development/docs/investigations/viscosity_displacement_report.html`</sub> | `2026-09-14 21:49:48` | 4.63 MB | `Dev Repository Only` | Diagnostic investigation: Viscosity Displacement Report |
+| **`gaia_decline_report.html`**<br><sub>`official/docs/investigations/gaia_decline_report.html`</sub> | `2026-09-14 21:49:46` | 17.2 KB | `Dev Repository Only` | Diagnostic investigation: Investigation: Gaia Decline |
+| **`special_relativity_temporal_relaxation.html`**<br><sub>`official/docs/investigations/special_relativity_temporal_relaxation.html`</sub> | `2026-09-19 20:47:58` | 26.5 KB | `Dev Repository Only` | Diagnostic investigation: Special Relativity & Dynamic Metric Clock Relaxation | Chronodynamic Relativity |
 
 ### Miscellaneous Documentation
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`CANONICAL_EQUATIONS_AND_DERIVATIONS.html`**<br><sub>`docs/CANONICAL_EQUATIONS_AND_DERIVATIONS.html`</sub> | `2026-09-20 14:26:11` | 43.3 KB | `Dev Repository Only` | Canonical Equations, Derivation Processes, and Derived Physical Observables | Chronodynamic Relativity Documentation |
-| **`HTML_DOCUMENTATION_REGISTRY.html`**<br><sub>`docs/HTML_DOCUMENTATION_REGISTRY.html`</sub> | `2026-09-16 08:12:10` | 67.5 KB | `Dev Repository Only` | Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker | Chronodynamic Relativity Documentation |
-| **`MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`**<br><sub>`docs/MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`</sub> | `2026-09-16 08:12:10` | 41.2 KB | `Dev Repository Only` | Mathematical Foundations and Symbology Reference Guide | Chronodynamic Relativity Documentation |
-| **`PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`**<br><sub>`docs/PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`</sub> | `2026-09-16 08:12:10` | 40.8 KB | `Dev Repository Only` | Comprehensive Parameter Dictionary, Definitions, and Domain Application Guide | Chronodynamic Relativity Documentation |
-| **`REFERENCES.html`**<br><sub>`docs/REFERENCES.html`</sub> | `2026-09-16 08:12:10` | 14.8 KB | `Dev Repository Only` | Scientific References and Accepted Parameters | Chronodynamic Relativity Documentation |
-| **`THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`**<br><sub>`docs/THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`</sub> | `2026-09-16 08:12:10` | 34.4 KB | `Dev Repository Only` | Theoretical Paradigm Niche and Observational Data Conditioning Methodology | Chronodynamic Relativity Documentation |
-| **`index.html`**<br><sub>`docs/index.html`</sub> | `2026-10-02 22:04:16` | 19.2 KB | `Dev Repository Only` | Official documentation, empirical evaluations, and cosmological research portal for Chronodynamic Relativity by Joshua A. Shreve. |
-| **`textbook_foundations_space_time_gravity.html`**<br><sub>`docs/textbook_foundations_space_time_gravity.html`</sub> | `2026-09-16 08:12:10` | 35.2 KB | `Dev Repository Only` | Understanding Space, Time, and Gravity • Chronodynamic Relativity |
+| **`index.html`**<br><sub>`development/comparisons/publication_benchmark_dossier/index.html`</sub> | `2026-08-28 23:11:07` | 6.8 KB | `Dev Repository Only` | Direct Empirical Comparison Dossier |
+| **`CANONICAL_EQUATIONS_AND_DERIVATIONS.html`**<br><sub>`development/docs/CANONICAL_EQUATIONS_AND_DERIVATIONS.html`</sub> | `2026-09-20 14:26:11` | 43.3 KB | `Dev Repository Only` | Canonical Equations, Derivation Processes, and Derived Physical Observables | Chronodynamic Relativity Documentation |
+| **`HTML_DOCUMENTATION_REGISTRY.html`**<br><sub>`development/docs/HTML_DOCUMENTATION_REGISTRY.html`</sub> | `2026-09-14 21:49:45` | 67.5 KB | `Dev Repository Only` | Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker | Chronodynamic Relativity Documentation |
+| **`MANUSCRIPT_VOCABULARY_AND_TONAL_ASSESSMENT.html`**<br><sub>`development/docs/MANUSCRIPT_VOCABULARY_AND_TONAL_ASSESSMENT.html`</sub> | `2026-09-14 21:49:45` | 26.1 KB | `Dev Repository Only` | Manuscript Vocabulary, Term, and Tonal Outlier Assessment | Chronodynamic Relativity Documentation |
+| **`desi_unreconstructed_bao.html`**<br><sub>`development/docs/analyses/investigations/desi_unreconstructed_bao.html`</sub> | `2026-10-04 21:48:44` | 53.3 KB | `Dev Repository Only` | DESI 2024 DR1: 4-Tier BAO Audit (Raw Unfit Data vs. Model-Conditioned Tiers) |
+| **`index.html`**<br><sub>`development/docs/index.html`</sub> | `2026-09-14 21:49:45` | 17.9 KB | `Dev Repository Only` | Chronodynamic Relativity | Development & Active Research Index |
+| **`CANONICAL_EQUATIONS_AND_DERIVATIONS.html`**<br><sub>`official/docs/CANONICAL_EQUATIONS_AND_DERIVATIONS.html`</sub> | `2026-09-20 14:26:11` | 43.3 KB | `Dev Repository Only` | Canonical Equations, Derivation Processes, and Derived Physical Observables | Chronodynamic Relativity Documentation |
+| **`HTML_DOCUMENTATION_REGISTRY.html`**<br><sub>`official/docs/HTML_DOCUMENTATION_REGISTRY.html`</sub> | `2026-10-15 10:13:18` | 68.1 KB | `Dev Repository Only` | Chronodynamic Relativity: HTML Documentation Registry & Purpose Tracker | Chronodynamic Relativity Documentation |
+| **`MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`**<br><sub>`official/docs/MATHEMATICAL_FOUNDATIONS_AND_SYMBOLOGY.html`</sub> | `2026-09-16 08:12:10` | 41.2 KB | `Dev Repository Only` | Mathematical Foundations and Symbology Reference Guide | Chronodynamic Relativity Documentation |
+| **`PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`**<br><sub>`official/docs/PARAMETER_DEFINITIONS_AND_APPLICATIONS.html`</sub> | `2026-09-16 08:12:10` | 40.8 KB | `Dev Repository Only` | Comprehensive Parameter Dictionary, Definitions, and Domain Application Guide | Chronodynamic Relativity Documentation |
+| **`REFERENCES.html`**<br><sub>`official/docs/REFERENCES.html`</sub> | `2026-09-16 08:12:10` | 14.8 KB | `Dev Repository Only` | Scientific References and Accepted Parameters | Chronodynamic Relativity Documentation |
+| **`THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`**<br><sub>`official/docs/THEORETICAL_NICHE_AND_OBSERVATIONAL_METHODOLOGY.html`</sub> | `2026-10-15 10:12:42` | 34.4 KB | `Dev Repository Only` | Theoretical Paradigm Niche and Observational Data Conditioning Methodology | Chronodynamic Relativity Documentation |
+| **`index.html`**<br><sub>`official/docs/index.html`</sub> | `2026-10-15 11:06:35` | 23.1 KB | `Dev Repository Only` | Official documentation, empirical evaluations, and cosmological research portal for Chronodynamic Relativity by Joshua A. Shreve. |
+| **`textbook_foundations_space_time_gravity.html`**<br><sub>`official/docs/textbook_foundations_space_time_gravity.html`</sub> | `2026-10-15 10:12:50` | 35.2 KB | `Dev Repository Only` | Understanding Space, Time, and Gravity • Chronodynamic Relativity |
+| **`COVARIANT_4D_ACTION_AND_CONSERVATION.html`**<br><sub>`official/docs/theory/COVARIANT_4D_ACTION_AND_CONSERVATION.html`</sub> | `2026-10-15 10:23:26` | 22.3 KB | `Dev Repository Only` | Covariant 4D Action & Conservation | Chronodynamic Relativity |
 
 ### Official Analysis: Cosmic Expansion & SNe Ia
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`cosmic_expansion_chronology.html`**<br><sub>`docs/analyses/cosmic_expansion/cosmic_expansion_chronology.html`</sub> | `2026-09-16 08:12:11` | 105.7 KB | `Active Public Release` | Pillar I canonical analysis: Cosmic Expansion & Chronology Deep-Dive |
-| **`cosmic_expansion_overview.html`**<br><sub>`docs/analyses/cosmic_expansion/cosmic_expansion_overview.html`</sub> | `2026-09-16 08:12:11` | 222.2 KB | `Active Public Release` | Pillar I canonical analysis: Cosmic Expansion | Chronodynamic Relativity |
-| **`master_distance_modulus.html`**<br><sub>`docs/analyses/cosmic_expansion/master_distance_modulus.html`</sub> | `2026-09-16 08:12:11` | 103.8 KB | `Active Public Release` | Pillar I canonical analysis: Master Omnibus Distance Modulus Investigation |
-| **`supernova_raw_vs_conditioned.html`**<br><sub>`docs/analyses/cosmic_expansion/supernova_raw_vs_conditioned.html`</sub> | `2026-09-16 20:11:16` | 351.2 KB | `Active Public Release` | Pillar I canonical analysis: Supernova Raw Vs Conditioned |
+| **`cosmic_expansion_chronology.html`**<br><sub>`official/docs/analyses/cosmic_expansion/cosmic_expansion_chronology.html`</sub> | `2026-09-16 08:12:11` | 105.7 KB | `Active Public Release` | Pillar I canonical analysis: Cosmic Expansion & Chronology Deep-Dive |
+| **`cosmic_expansion_overview.html`**<br><sub>`official/docs/analyses/cosmic_expansion/cosmic_expansion_overview.html`</sub> | `2026-10-15 23:08:11` | 220.7 KB | `Active Public Release` | Pillar I canonical analysis: Cosmic Expansion | Chronodynamic Relativity |
+| **`master_distance_modulus.html`**<br><sub>`official/docs/analyses/cosmic_expansion/master_distance_modulus.html`</sub> | `2026-09-16 08:12:11` | 103.8 KB | `Active Public Release` | Pillar I canonical analysis: Master Omnibus Distance Modulus Investigation |
+| **`supernova_raw_vs_conditioned.html`**<br><sub>`official/docs/analyses/cosmic_expansion/supernova_raw_vs_conditioned.html`</sub> | `2026-10-15 10:12:26` | 351.2 KB | `Active Public Release` | Pillar I canonical analysis: Supernova Raw Vs Conditioned |
 
 ### Official Analysis: Early Universe, CMB & DESI BAO
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`desi_bao.html`**<br><sub>`docs/analyses/early_universe/desi_bao.html`</sub> | `2026-09-16 08:12:11` | 51.8 KB | `Active Public Release` | Pillar IV canonical analysis: Desi Bao |
-| **`desi_unreconstructed_bao.html`**<br><sub>`docs/analyses/early_universe/desi_unreconstructed_bao.html`</sub> | `2026-09-16 08:12:11` | 54.9 KB | `Active Public Release` | Pillar IV canonical analysis: DESI 2024 DR1 Multi-Tier BAO Audit |
-| **`early_universe_overview.html`**<br><sub>`docs/analyses/early_universe/early_universe_overview.html`</sub> | `2026-09-16 08:12:11` | 7.8 KB | `Active Public Release` | Pillar IV canonical analysis: Early Universe | Chronodynamic Relativity |
-| **`jades_z14.html`**<br><sub>`docs/analyses/early_universe/jades_z14.html`</sub> | `2026-09-16 08:12:11` | 46.2 KB | `Active Public Release` | Pillar IV canonical analysis: Early Galaxies Anomaly | Chronodynamic Relativity |
+| **`cr_3d_field_solver_methodology.html`**<br><sub>`official/docs/analyses/early_universe/cr_3d_field_solver_methodology.html`</sub> | `2026-10-15 11:00:54` | 31.0 KB | `Active Public Release` | Pillar IV canonical analysis: Methodology of the 3D Chronodynamic Acoustic Field Solver | Chronodynamic Relativity |
+| **`desi_bao.html`**<br><sub>`official/docs/analyses/early_universe/desi_bao.html`</sub> | `2026-10-15 10:11:47` | 52.9 KB | `Active Public Release` | Pillar IV canonical analysis: Desi Bao |
+| **`desi_unreconstructed_bao.html`**<br><sub>`official/docs/analyses/early_universe/desi_unreconstructed_bao.html`</sub> | `2026-10-15 08:53:27` | 55.0 KB | `Active Public Release` | Pillar IV canonical analysis: DESI 2024 DR1 Multi-Tier BAO Audit |
+| **`early_universe_overview.html`**<br><sub>`official/docs/analyses/early_universe/early_universe_overview.html`</sub> | `2026-10-15 23:08:11` | 8.5 KB | `Active Public Release` | Pillar IV canonical analysis: Early Universe | Chronodynamic Relativity |
+| **`jades_z14.html`**<br><sub>`official/docs/analyses/early_universe/jades_z14.html`</sub> | `2026-10-15 23:08:11` | 44.8 KB | `Active Public Release` | Pillar IV canonical analysis: Early Galaxies Anomaly | Chronodynamic Relativity |
 
 ### Official Analysis: Galactic Kinematics & SPARC
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`atlas.html`**<br><sub>`docs/analyses/galactic_rotation/atlas.html`</sub> | `2026-09-16 08:12:14` | 2.46 MB | `Active Public Release` | Pillar II canonical analysis: SPARC Atlas | Chronodynamic Relativity |
-| **`comparison_galaxy_3d_final.html`**<br><sub>`docs/analyses/galactic_rotation/comparison_galaxy_3d_final.html`</sub> | `2026-09-16 08:12:14` | 1.72 MB | `Active Public Release` | Pillar II canonical analysis: Comparison Galaxy 3D Final |
-| **`cr_galaxy_3d_particle_cloud.html`**<br><sub>`docs/analyses/galactic_rotation/cr_galaxy_3d_particle_cloud.html`</sub> | `2026-09-16 08:12:14` | 6.71 MB | `Active Public Release` | Pillar II canonical analysis: Cr Galaxy 3D Particle Cloud |
-| **`galactic_rotation_overview.html`**<br><sub>`docs/analyses/galactic_rotation/galactic_rotation_overview.html`</sub> | `2026-09-16 08:12:15` | 58.1 KB | `Active Public Release` | Pillar II canonical analysis: Galactic Dynamics | Chronodynamic Relativity |
+| **`atlas.html`**<br><sub>`official/docs/analyses/galactic_rotation/atlas.html`</sub> | `2026-09-16 08:12:14` | 2.46 MB | `Active Public Release` | Pillar II canonical analysis: SPARC Atlas | Chronodynamic Relativity |
+| **`comparison_galaxy_3d_final.html`**<br><sub>`official/docs/analyses/galactic_rotation/comparison_galaxy_3d_final.html`</sub> | `2026-09-16 08:12:14` | 1.72 MB | `Active Public Release` | Pillar II canonical analysis: Comparison Galaxy 3D Final |
+| **`cr_galaxy_3d_particle_cloud.html`**<br><sub>`official/docs/analyses/galactic_rotation/cr_galaxy_3d_particle_cloud.html`</sub> | `2026-09-16 08:12:14` | 6.71 MB | `Active Public Release` | Pillar II canonical analysis: Cr Galaxy 3D Particle Cloud |
+| **`galactic_rotation_overview.html`**<br><sub>`official/docs/analyses/galactic_rotation/galactic_rotation_overview.html`</sub> | `2026-10-15 23:08:11` | 56.7 KB | `Active Public Release` | Pillar II canonical analysis: Galactic Dynamics | Chronodynamic Relativity |
 
 ### Official Analysis: Master Portals & Dashboards
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`analyses_overview.html`**<br><sub>`docs/analyses/analyses_overview.html`</sub> | `2026-09-16 08:12:10` | 246.8 KB | `Active Public Release` | Primary portal dashboard: Omnibus Summary | Chronodynamic Relativity |
-| **`metrics.html`**<br><sub>`docs/analyses/black_holes/metrics.html`</sub> | `2026-09-16 08:12:11` | 26.3 KB | `Active Public Release` | Primary portal dashboard: EHT Shadow Metrics | Chronodynamic Relativity |
-| **`demonstrative_impact.html`**<br><sub>`docs/analyses/demonstrative_impact.html`</sub> | `2026-09-16 08:12:10` | 121.1 KB | `Active Public Release` | Primary portal dashboard: Demonstrative Impact | Chronodynamic Relativity |
-| **`cmb_perturbations.html`**<br><sub>`docs/analyses/investigations/cmb_perturbations.html`</sub> | `2026-09-16 08:12:15` | 141.7 KB | `Active Public Release` | Primary portal dashboard: Cmb Perturbations |
-| **`energy_time_dilation.html`**<br><sub>`docs/analyses/investigations/energy_time_dilation.html`</sub> | `2026-09-16 08:12:15` | 11.7 KB | `Active Public Release` | Primary portal dashboard: Energy-Driven Time Dilation | Chronodynamic Relativity |
-| **`unified_4pillar_benchmark_overview.html`**<br><sub>`docs/analyses/unified_4pillar_benchmark_overview.html`</sub> | `2026-09-16 08:12:11` | 4.79 MB | `Active Public Release` | Primary portal dashboard: Unified 4Pillar Benchmark Overview |
+| **`acceptance_testing_status.html`**<br><sub>`official/docs/analyses/acceptance_testing_status.html`</sub> | `2026-10-15 23:08:11` | 68.9 KB | `Active Public Release` | Primary portal dashboard: Acceptance Testing Status | Chronodynamic Relativity |
+| **`analyses_overview.html`**<br><sub>`official/docs/analyses/analyses_overview.html`</sub> | `2026-10-15 23:08:11` | 294.7 KB | `Active Public Release` | Primary portal dashboard: Omnibus Summary | Chronodynamic Relativity |
+| **`metrics.html`**<br><sub>`official/docs/analyses/black_holes/metrics.html`</sub> | `2026-10-15 23:08:11` | 24.9 KB | `Active Public Release` | Primary portal dashboard: EHT Shadow Metrics | Chronodynamic Relativity |
+| **`demonstrative_impact.html`**<br><sub>`official/docs/analyses/demonstrative_impact.html`</sub> | `2026-10-15 23:08:11` | 119.7 KB | `Active Public Release` | Primary portal dashboard: Demonstrative Impact | Chronodynamic Relativity |
+| **`cmb_perturbations.html`**<br><sub>`official/docs/analyses/investigations/cmb_perturbations.html`</sub> | `2026-09-16 08:12:15` | 141.7 KB | `Active Public Release` | Primary portal dashboard: Cmb Perturbations |
+| **`energy_time_dilation.html`**<br><sub>`official/docs/analyses/investigations/energy_time_dilation.html`</sub> | `2026-10-15 23:08:11` | 10.3 KB | `Active Public Release` | Primary portal dashboard: Energy-Driven Time Dilation | Chronodynamic Relativity |
+| **`unified_4pillar_benchmark_overview.html`**<br><sub>`official/docs/analyses/unified_4pillar_benchmark_overview.html`</sub> | `2026-09-16 08:12:11` | 4.79 MB | `Active Public Release` | Primary portal dashboard: Unified 4Pillar Benchmark Overview |
 
 ### Official Analysis: Strong Lensing & Bullet Cluster
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`strong_lensing_overview.html`**<br><sub>`docs/analyses/strong_lensing/strong_lensing_overview.html`</sub> | `2026-09-16 08:12:15` | 16.4 KB | `Active Public Release` | Pillar III canonical analysis: Strong Lensing | Chronodynamic Relativity |
+| **`distributed_3d_strong_lensing.html`**<br><sub>`official/docs/analyses/strong_lensing/distributed_3d_strong_lensing.html`</sub> | `2026-10-15 11:00:54` | 21.1 KB | `Active Public Release` | Pillar III canonical analysis: Distributed 3D Strong Lensing: Elimination of Point-Mass Factor | Chronodynamic Relativity |
+| **`strong_lensing_overview.html`**<br><sub>`official/docs/analyses/strong_lensing/strong_lensing_overview.html`</sub> | `2026-10-15 23:08:11` | 15.3 KB | `Active Public Release` | Pillar III canonical analysis: Strong Lensing | Chronodynamic Relativity |
 
 ### Official Analysis: Theoretical Foundations & QFT
 
 | HTML Document / Path | Last Modified | Size | Release Status | Purpose / Topic |
 | :--- | :---: | :---: | :---: | :--- |
-| **`bayesian_posteriors.html`**<br><sub>`docs/analyses/theory/bayesian_posteriors.html`</sub> | `2026-09-16 08:12:15` | 230.7 KB | `Active Public Release` | Theoretical foundations: Bayesian Model Selection across Data Processing Tiers - Chronodynamic Relativity |
-| **`cdm_unification_duality.html`**<br><sub>`docs/analyses/theory/cdm_unification_duality.html`</sub> | `2026-09-16 08:12:15` | 15.0 KB | `Active Public Release` | Theoretical foundations: CDM Inverse-Poisson Duality | Chronodynamic Relativity |
-| **`chronon_quantization.html`**<br><sub>`docs/analyses/theory/chronon_quantization.html`</sub> | `2026-09-16 08:12:15` | 8.8 KB | `Active Public Release` | Theoretical foundations: Chronon Quantization Bounds | Chronodynamic Relativity |
-| **`comparison.html`**<br><sub>`docs/analyses/theory/comparison.html`</sub> | `2026-09-16 08:12:15` | 18.8 KB | `Active Public Release` | Theoretical foundations: Theory Comparison | Chronodynamic Relativity |
-| **`energy_repulsion_kinematics.html`**<br><sub>`docs/analyses/theory/energy_repulsion_kinematics.html`</sub> | `2026-09-16 08:12:15` | 11.3 KB | `Active Public Release` | Theoretical foundations: Energy Repulsion Kinematics | Chronodynamic Relativity |
-| **`fundamental_equations.html`**<br><sub>`docs/analyses/theory/fundamental_equations.html`</sub> | `2026-09-16 08:12:15` | 17.7 KB | `Active Public Release` | Theoretical foundations: Fundamental Equations | Chronodynamic Relativity |
-| **`future_horizons.html`**<br><sub>`docs/analyses/theory/future_horizons.html`</sub> | `2026-09-16 08:12:15` | 10.6 KB | `Active Public Release` | Theoretical foundations: Future Horizons | Chronodynamic Relativity |
-| **`gravity_duality_report.html`**<br><sub>`docs/analyses/theory/gravity_duality_report.html`</sub> | `2026-09-16 08:12:15` | 204.6 KB | `Active Public Release` | Theoretical foundations: Investigation: Gravity Duality (Geodesics vs Field Force) |
-| **`gw170817_constraint_report.html`**<br><sub>`docs/analyses/theory/gw170817_constraint_report.html`</sub> | `2026-09-16 08:12:15` | 4.5 KB | `Active Public Release` | Theoretical foundations: Defense Plan: GW170817 Speed of Gravity |
-| **`laboratory_qed_bounds.html`**<br><sub>`docs/analyses/theory/laboratory_qed_bounds.html`</sub> | `2026-09-16 08:12:15` | 28.0 KB | `Active Public Release` | Theoretical foundations: Laboratory QED Bounds & Space-Density Gradients |
-| **`methodology.html`**<br><sub>`docs/analyses/theory/methodology.html`</sub> | `2026-09-16 08:12:15` | 10.6 KB | `Active Public Release` | Theoretical foundations: Methodology | Chronodynamic Relativity |
-| **`qft_framework.html`**<br><sub>`docs/analyses/theory/qft_framework.html`</sub> | `2026-09-16 08:12:15` | 8.9 KB | `Active Public Release` | Theoretical foundations: Quantum Field Theory (QFT) | Chronodynamic Relativity |
-| **`quantum_kinematics.html`**<br><sub>`docs/analyses/theory/quantum_kinematics.html`</sub> | `2026-09-16 08:12:15` | 7.2 KB | `Active Public Release` | Theoretical foundations: Quantum Kinematics | Chronodynamic Relativity |
-| **`quantum_schrodinger_simulation.html`**<br><sub>`docs/analyses/theory/quantum_schrodinger_simulation.html`</sub> | `2026-09-16 08:12:15` | 894.7 KB | `Active Public Release` | Theoretical foundations: Quantum Schrodinger Simulation |
-| **`refraction_vs_curvature.html`**<br><sub>`docs/analyses/theory/refraction_vs_curvature.html`</sub> | `2026-09-16 08:12:15` | 9.7 KB | `Active Public Release` | Theoretical foundations: Refraction vs. Curvature | Chronodynamic Relativity |
-| **`scale_invariance_quantum_refraction.html`**<br><sub>`docs/analyses/theory/scale_invariance_quantum_refraction.html`</sub> | `2026-09-16 08:12:15` | 119.7 KB | `Active Public Release` | Theoretical foundations: Scale Invariance Quantum Refraction |
-| **`special_relativity.html`**<br><sub>`docs/analyses/theory/special_relativity.html`</sub> | `2026-09-16 08:12:15` | 11.2 KB | `Active Public Release` | Theoretical foundations: Special Relativity & Kinematics | Chronodynamic Relativity |
+| **`COVARIANT_4D_ACTION_AND_CONSERVATION.html`**<br><sub>`official/docs/analyses/theory/COVARIANT_4D_ACTION_AND_CONSERVATION.html`</sub> | `2026-10-15 10:23:26` | 22.3 KB | `Active Public Release` | Theoretical foundations: Covariant 4D Action & Conservation | Chronodynamic Relativity |
+| **`bayesian_posteriors.html`**<br><sub>`official/docs/analyses/theory/bayesian_posteriors.html`</sub> | `2026-09-16 08:12:15` | 230.7 KB | `Active Public Release` | Theoretical foundations: Bayesian Model Selection across Data Processing Tiers - Chronodynamic Relativity |
+| **`cdm_unification_duality.html`**<br><sub>`official/docs/analyses/theory/cdm_unification_duality.html`</sub> | `2026-10-15 23:08:11` | 13.5 KB | `Active Public Release` | Theoretical foundations: CDM Inverse-Poisson Duality | Chronodynamic Relativity |
+| **`chronon_quantization.html`**<br><sub>`official/docs/analyses/theory/chronon_quantization.html`</sub> | `2026-10-15 23:08:11` | 7.4 KB | `Active Public Release` | Theoretical foundations: Chronon Quantization Bounds | Chronodynamic Relativity |
+| **`comparison.html`**<br><sub>`official/docs/analyses/theory/comparison.html`</sub> | `2026-10-15 23:08:11` | 18.4 KB | `Active Public Release` | Theoretical foundations: Theory Comparison | Chronodynamic Relativity |
+| **`energy_repulsion_kinematics.html`**<br><sub>`official/docs/analyses/theory/energy_repulsion_kinematics.html`</sub> | `2026-10-15 23:08:11` | 9.9 KB | `Active Public Release` | Theoretical foundations: Energy Repulsion Kinematics | Chronodynamic Relativity |
+| **`fundamental_equations.html`**<br><sub>`official/docs/analyses/theory/fundamental_equations.html`</sub> | `2026-10-15 23:08:11` | 16.3 KB | `Active Public Release` | Theoretical foundations: Fundamental Equations | Chronodynamic Relativity |
+| **`future_horizons.html`**<br><sub>`official/docs/analyses/theory/future_horizons.html`</sub> | `2026-10-15 23:08:11` | 9.2 KB | `Active Public Release` | Theoretical foundations: Future Horizons | Chronodynamic Relativity |
+| **`gravity_duality_report.html`**<br><sub>`official/docs/analyses/theory/gravity_duality_report.html`</sub> | `2026-09-16 08:12:15` | 204.6 KB | `Active Public Release` | Theoretical foundations: Investigation: Gravity Duality (Geodesics vs Field Force) |
+| **`gw170817_constraint_report.html`**<br><sub>`official/docs/analyses/theory/gw170817_constraint_report.html`</sub> | `2026-09-16 08:12:15` | 4.5 KB | `Active Public Release` | Theoretical foundations: Defense Plan: GW170817 Speed of Gravity |
+| **`laboratory_qed_bounds.html`**<br><sub>`official/docs/analyses/theory/laboratory_qed_bounds.html`</sub> | `2026-10-15 10:12:17` | 28.0 KB | `Active Public Release` | Theoretical foundations: Laboratory QED Bounds & Space-Density Gradients |
+| **`methodology.html`**<br><sub>`official/docs/analyses/theory/methodology.html`</sub> | `2026-10-15 23:08:11` | 9.2 KB | `Active Public Release` | Theoretical foundations: Methodology | Chronodynamic Relativity |
+| **`qft_framework.html`**<br><sub>`official/docs/analyses/theory/qft_framework.html`</sub> | `2026-10-15 23:08:11` | 7.5 KB | `Active Public Release` | Theoretical foundations: Quantum Field Theory (QFT) | Chronodynamic Relativity |
+| **`quantum_kinematics.html`**<br><sub>`official/docs/analyses/theory/quantum_kinematics.html`</sub> | `2026-10-15 23:08:11` | 5.8 KB | `Active Public Release` | Theoretical foundations: Quantum Kinematics | Chronodynamic Relativity |
+| **`quantum_schrodinger_simulation.html`**<br><sub>`official/docs/analyses/theory/quantum_schrodinger_simulation.html`</sub> | `2026-09-16 08:12:15` | 894.7 KB | `Active Public Release` | Theoretical foundations: Quantum Schrodinger Simulation |
+| **`refraction_vs_curvature.html`**<br><sub>`official/docs/analyses/theory/refraction_vs_curvature.html`</sub> | `2026-10-15 23:08:11` | 8.3 KB | `Active Public Release` | Theoretical foundations: Refraction vs. Curvature | Chronodynamic Relativity |
+| **`scale_invariance_quantum_refraction.html`**<br><sub>`official/docs/analyses/theory/scale_invariance_quantum_refraction.html`</sub> | `2026-09-16 08:12:15` | 119.7 KB | `Active Public Release` | Theoretical foundations: Scale Invariance Quantum Refraction |
+| **`special_relativity.html`**<br><sub>`official/docs/analyses/theory/special_relativity.html`</sub> | `2026-10-15 23:08:11` | 9.8 KB | `Active Public Release` | Theoretical foundations: Special Relativity & Kinematics | Chronodynamic Relativity |
 
 ---
 

@@ -1,34 +1,36 @@
-\documentclass{aa}
+\documentclass[aps,prd,reprint,superscriptaddress,nofootinbib,floatfix,amsmath,amssymb]{revtex4-2}
 
 \usepackage{graphicx}
-\usepackage{txfonts}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{microtype}
 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
 
 \begin{document}
 
-\title{Resolving the high-redshift JWST early galaxy and supermassive black hole crisis via chronodynamic proper time dilation}
-\titlerunning{Early galaxy and black hole assembly via proper time dilation}
+\title{Resolving the High-Redshift JWST Early Galaxy and Supermassive Black Hole Crisis via Chronodynamic Proper Time Dilation}
 
-\author{Joshua A. Shreve\inst{1}\fnmsep\corrauth{j.a.shreve@gmail.com}}
-\authorrunning{J. A. Shreve}
-\institute{Chronodynamic Relativity Research Initiative, Acton, MA 01720, USA\\\email{j.a.shreve@gmail.com}}
+\author{Joshua A. Shreve}
+\email{j.a.shreve@gmail.com}
+\homepage{https://orcid.org/0009-0000-5942-5351}
+\affiliation{Chronodynamic Relativity Research Initiative, Acton, MA, USA}
 
-\date{Received October 11, 2026; accepted ---}
+\date{\today}
 
-\abstract
-% Context
-{Spectroscopic discoveries by the James Webb Space Telescope (JWST) have precipitated an acute crisis for standard $\Lambda\text{CDM}$ cosmology: the detection of luminous, chemically mature galaxies ($M_* \sim 10^9\text{--}10^{10}\,M_\odot$) and overmassive supermassive black holes ($M_{\text{BH}} \sim 10^7\text{--}10^9\,M_\odot$) at $z = 10\text{--}14.32$ (e.g., JADES-GS-z14-0, UHZ1, GN-z11, GHZ2). Under standard FLRW cosmology, the cosmic age at $z \approx 14.32$ is only $\sim 286\text{ Myr}$, requiring unphysically high star-formation efficiencies ($\epsilon_* > 0.30$) and continuous super-Eddington accretion ($f_{\text{Edd}} > 2.4$).}
-% Aims
-{We examine whether relational proper time dilation and dynamic horizon acceleration in Chronodynamic Relativity (CR) naturally resolve this assembly and accretion anomaly under standard astrophysical limits without empirical free parameters ($k_{\text{internal}} = 0$).}
-% Methods
-{In Chronodynamic Relativity, the relational metric clock lapse scales with background space-density dilution as $\eta(z) = (1+z)^{-n/2}$ ($n = 3/4\pi \approx 0.2387$). We integrate the experienced rest-frame proper time baseline $\Delta\tau$ from seed collapse ($z \sim 25$) to observation, and model black hole seed growth with dynamic Bondi-Hoyle capture cross-section scaling $(1+z)^{2n} \approx 3.8\times$ under standard sub-Eddington accretion.}
-% Results
-{The local rest-frame proper time elapsed to $z = 14.32$ expands to $\Delta\tau \approx 1,424\text{ Myr}$ (a $+4.98\times$ expansion in experienced evolutionary time). Standard stellar population synthesis under realistic efficiencies ($\epsilon_* \approx 0.08$) fully accounts for the stellar mass, UV luminosity, and oxygen metallicity of JADES-GS-z14-0. Furthermore, standard sub-Eddington accretion ($f_{\text{Edd}} = 0.70\text{--}1.00$) from standard light seeds ($M_{\text{seed}} \sim 10^4\,M_\odot$) reproduces the observed masses of UHZ1 ($M_{\text{BH}} \approx 4 \times 10^7\,M_\odot$ at $z=10.1$) and GN-z11 without heavy direct-collapse seeds.}
-% Conclusions
-{The impossible early galaxy anomaly is an artifact of static-clock FLRW coordinates. Key observational predictions for JWST Cycles 3--4 include a sustained metallicity floor ($Z \gtrsim 10^{-3}\,Z_\odot$) at $z > 15$ and standard sub-critical AGN spectral energy distributions.}
+\begin{abstract}
+Spectroscopic discoveries by the James Webb Space Telescope (JWST) have precipitated an acute crisis for standard $\Lambda\text{CDM}$ cosmology: the detection of luminous, chemically mature galaxies ($M_* \sim 10^9\text{--}10^{10}\,M_\odot$) and overmassive supermassive black holes ($M_{\text{BH}} \sim 10^7\text{--}10^9\,M_\odot$) at $z = 10\text{--}14.32$ (e.g., JADES-GS-z14-0, UHZ1, GN-z11, GHZ2). Under standard FLRW cosmology, the cosmic age at $z \approx 14.32$ is only $\sim 286\text{ Myr}$, requiring unphysically high star-formation efficiencies ($\epsilon_* > 0.30$) and continuous super-Eddington accretion ($f_{\text{Edd}} > 2.4$). In Chronodynamic Relativity (CR), the relational metric clock lapse scales with background space-density dilution as $\eta(z) = (1+z)^{-n/2}$ ($n = 3/4\pi \approx 0.2387$), expanding the local rest-frame proper time elapsed between seed formation ($z \sim 25$) and observation ($z = 14.32$) to $\Delta\tau \approx 1,424\text{ Myr}$ (a $+4.98\times$ expansion in experienced evolutionary time). Furthermore, the dynamic acceleration horizon $a_c(z) = a_0(1+z)^{2n}$ compactifies primordial potential wells, boosting effective Bondi-Hoyle gas capture cross-sections by a factor of $(1+z)^{2n} \approx 3.8\times$. Here we demonstrate that: (1) standard stellar population synthesis under realistic star-formation efficiencies ($\epsilon_* \approx 0.08$) fully accounts for the stellar mass, UV luminosity, and oxygen metallicity of JADES-GS-z14-0; and (2) standard sub-Eddington accretion ($f_{\text{Edd}} = 0.70\text{--}1.00$) from standard light seeds ($M_{\text{seed}} \sim 10^4\,M_\odot$) reproduces the observed masses of UHZ1 ($M_{\text{BH}} \approx 4 \times 10^7\,M_\odot$ at $z=10.1$) and GN-z11 without requiring fine-tuned heavy direct-collapse seeds or exotic feedback physics.
+\end{abstract}
 
-\keywords{galaxies: high-redshift -- galaxies: formation -- galaxies: evolution -- quasars: supermassive black holes -- dark ages, reionization, first stars -- galaxies: nuclei}
+\keywords{galaxies: high-redshift, galaxies: formation, quasars: supermassive black holes, cosmology: theory}
 
 \maketitle
 
@@ -87,7 +89,8 @@ t_{\text{CR}}(z) = \frac{t_0}{1+z}, \quad t_0 = \frac{1}{H_0} \approx 13.87\text
 Specifically, the physical proper time $\Delta\tau$ experienced by local physical processes (atomic transitions, nuclear fusion in stellar interiors, cooling flows, and black hole accretion disks) between a seed formation epoch $z_{\text{seed}}$ and observation epoch $z_{\text{obs}}$ is given by the integral of the metric lapse:
 \begin{align}
 \Delta\tau(z_{\text{obs}}) &= \int_{t(z_{\text{seed}})}^{t(z_{\text{obs}})} \eta(t') \mathrm{d}t' \nonumber \\
-&= \frac{t_0}{1 - n/2} \left[ (1+z_{\text{obs}})^{-(1 - n/2)} - (1+z_{\text{seed}})^{-(1 - n/2)} \right].
+&= \frac{t_0}{1 - n/2} \big[ (1+z_{\text{obs}})^{-(1 - n/2)} \nonumber \\
+&\quad - (1+z_{\text{seed}})^{-(1 - n/2)} \big].
 \label{eq:proper_time_integral}
 \end{align}
 With $n = 3/4\pi \approx 0.2387$, the power exponent is $p = 1 - n/2 \approx 0.8806$.
@@ -100,23 +103,21 @@ The total experienced proper time from the origin ($t=0$) to epoch $z$ is:
 
 Table~\ref{tab:comparison_jades} presents the explicit quantitative comparison for the primary JWST benchmark sample.
 
-\begin{table}[ht]
+\begin{table}[h]
 \caption{Cosmological timescales for key high-redshift JWST discoveries.}
 \label{tab:comparison_jades}
-\centering
-\setlength{\tabcolsep}{3.5pt}
+\begin{ruledtabular}
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
 \begin{tabular}{lcccc}
-\hline\hline
-Object & $z_{\text{obs}}$ & $t_{\Lambda\text{CDM}}$ & $t_{\text{CR}}$ & $\tau_{\text{CR}}$ \\
- & & [Myr] & [Myr] & [Myr] \\
+Galaxy / Quasar & $z_{\text{obs}}$ & $t_{\Lambda\text{CDM}}$ [Myr] & $t_{\text{CR}}$ [Myr] & $\tau_{\text{CR}}$ [Myr] \\
 \hline
-GN-z11 & 10.60 & 430 & 1\,196 & 1\,832 \\
-UHZ1 & 10.10 & 460 & 1\,250 & 1\,908 \\
-GHZ2 & 12.30 & 360 & 1\,043 & 1\,618 \\
-JADES-GS-z14-0 & 14.32 & 286 & 905 & 1\,424 \\
-\hline
+GN-z11 & $10.60$ & $430$ & $1,196$ & $1,832$ \\
+UHZ1 & $10.10$ & $460$ & $1,250$ & $1,908$ \\
+GHZ2 / GLASS-z12 & $12.30$ & $360$ & $1,043$ & $1,618$ \\
+JADES-GS-z14-0 & $14.32$ & $286$ & $905$ & $1,424$ \\
 \end{tabular}
-\tablefoot{$t_{\text{CR}}$ denotes coordinate time, while $\tau_{\text{CR}}$ is experienced proper time.}
+\end{ruledtabular}
 \end{table}
 
 At $z = 14.32$, the experienced proper time is $\tau \approx 1,424\text{ Myr}$ ($\approx 1.4\text{ Gyr}$ of physical evolutionary time), providing a factor of \textbf{$4.98\times$ more time} for stellar evolution and dust generation than standard $\Lambda\text{CDM}$ (Fig.~\ref{fig:timeline_and_efficiency}(a)).
@@ -183,10 +184,11 @@ M_{\Lambda\text{CDM}}(z=10.1) = 10^4 \exp\left(\frac{330}{45}\right) \approx 1.5
 falling substantially short of UHZ1's observed mass and requiring continuous super-Eddington accretion ($f_{\text{Edd}} = 2.40$ with $\lambda_{\text{duty}} = 1.0$) (Fig.~\ref{fig:smbh_tracks}(a)).
 
 In Chronodynamic Relativity, the elapsed proper time over the identical epoch is:
-\begin{equation}
-\Delta\tau(z=10.1) = \tau(10.1) - \tau(25) = 1,908 - 894 = 1,014\text{ Myr}.
+\begin{align}
+\Delta\tau(z=10.1) &= \tau(10.1) - \tau(25) \nonumber \\
+&= 1,908 - 894 = 1,014\text{ Myr}.
 \label{eq:cr_smbh_proper_time}
-\end{equation}
+\end{align}
 
 Under standard Eddington-limited accretion ($f_{\text{Edd}} = 1.0$), the required duty cycle to grow a $10^4\,M_\odot$ seed into target mass $M_{\text{target}}$ is:
 \begin{equation}
@@ -215,14 +217,13 @@ The ``impossible early galaxy'' and supermassive black hole crises in high-redsh
     \item \textbf{Sub-Eddington early AGN accretion:} Spectral energy distribution fitting of early AGN (UHZ1, GN-z11) will reveal standard thin-disk or advection-dominated sub-Eddington accretion ($f_{\text{Edd}} \le 1.0$) rather than sustained super-critical radiation outflows. The model's light-seed accretion pathway would be falsified if observations demonstrate ubiquitous, continuous super-Eddington accretion ($f_{\text{Edd}} \gg 1$) across the early black hole population.
 \end{itemize}
 
-\begin{acknowledgements}
+\begin{acknowledgments}
 The author acknowledges the Chronodynamic Relativity Research Initiative for computational support and expresses gratitude to the JWST JADES, CEERS, and UNCOVER science teams for making high-redshift spectroscopic and photometric catalogs openly available.
-\end{acknowledgements}
+\end{acknowledgments}
 
 \section*{Data and code availability}
 The complete source code, physics engine, and calculation reproduction pipelines supporting this study are openly available in the companion repository at \url{https://github.com/joshreve/Chronodynamic-Relativity}. A permanent, immutable version of record for the software framework is archived on Zenodo under Concept DOI: \href{https://doi.org/10.5281/zenodo.22697449}{10.5281/zenodo.22697449}. This manuscript and its associated reproduction assets are permanently archived on Zenodo under DOI: \href{https://doi.org/10.5281/zenodo.23149446}{10.5281/zenodo.23149446}.
 
-\bibliographystyle{aa}
 \bibliography{paper_jwst_references}
 
 \end{document}

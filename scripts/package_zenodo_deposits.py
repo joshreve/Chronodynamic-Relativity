@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Chronodynamic Relativity — Automated Zenodo Deposit Packager
+Chronodynamic Relativity  -  Automated Zenodo Deposit Packager
 ============================================================
 Builds publication-ready, untracked deposit bundles for Zenodo records
 covering all multi-paper series manuscripts and the core software framework.
@@ -140,13 +140,13 @@ ZENODO_REGISTRY = {
         "doi": "10.5281/zenodo.23149446",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.1",
+        "version": "v1.0.2",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-11",
+        "publication_date": "2026-10-13",
         "notes": (
-            "Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; "
-            "aligned title, section headings, and figure captions to A&A sentence case editorial standards; lowercased generic acronym expansions; "
-            "eliminated table overruns; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+            "Version 1.0.2 Revision Notes: Restored missing \\maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) "
+            "per Astronomy & Astrophysics (A&A) editorial notification (aa63573-26); enabled [letter] documentclass option for Letter to the Editor; "
+            "harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
         ),
         "description": (
             "Spectroscopic discoveries by the James Webb Space Telescope (JWST) have precipitated an acute crisis for standard "
@@ -170,17 +170,17 @@ ZENODO_REGISTRY = {
         "doi": "10.5281/zenodo.23149512",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.1",
+        "version": "v1.0.2",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-11",
+        "publication_date": "2026-10-13",
         "notes": (
-            "Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; "
-            "eliminated leading acronym/numeral from title; aligned section headings to A&A sentence case editorial standards; balanced multi-cluster table "
-            "column widths; lowercased generic acronym expansions; fixed adverb hyphenation; updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
+            "Version 1.0.2 Revision Notes: Restored missing \\maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) "
+            "per Astronomy & Astrophysics (A&A) editorial conventions; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; "
+            "updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
         ),
         "description": (
             "The observed spatial decoupling between collisional, X-ray-emitting intracluster plasma and reconstructed gravitational lensing "
-            "potential centroids in merging galaxy clusters—most prominently in the Bullet Cluster (1E 0657-56)—is widely considered unambiguous "
+            "potential centroids in merging galaxy clusters - most prominently in the Bullet Cluster (1E 0657-56) - is widely considered unambiguous "
             "empirical proof of non-baryonic collisionless dark matter. We present first-principles 3D relativistic adaptive mesh refinement (AMR) "
             "hydrodynamic simulations and Lagrangian kinetic relaxation calculations demonstrating that this spatial separation is a natural consequence "
             "of dynamic metric latency in Chronodynamic Relativity. In this framework, the effective gravitational potential Phi(x,t) is a dynamic "
@@ -253,12 +253,12 @@ ZENODO_REGISTRY = {
         "doi": "10.5281/zenodo.23149642",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.1",
+        "version": "v1.0.2",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-11",
+        "publication_date": "2026-10-13",
         "notes": (
-            "Version 1.0.1 Revision Notes: Formatted into official Astronomy & Astrophysics (A&A) two-column layout using aa.cls (v9.2) and aa.bst; "
-            "aligned title and section headings to A&A sentence case editorial standards; lowercased generic acronym expansions; "
+            "Version 1.0.2 Revision Notes: Restored missing \\maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) "
+            "per Astronomy & Astrophysics (A&A) editorial conventions; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; "
             "updated companion software framework to v1.1.1 (Concept DOI: 10.5281/zenodo.22697449)."
         ),
         "description": (
@@ -271,6 +271,65 @@ ZENODO_REGISTRY = {
             "wide binaries", "Gaia DR3", "modified gravity", "low acceleration", "radial acceleration relation",
             "stellar kinematics", "binary stars", "gravitational boost", "Milky Way"
         ]
+    },
+    "pre_discovery_predictions_2026_2028": {
+        "title": "Pre-Discovery Observational Predictions of Chronodynamic Relativity for 2026-2028 Astronomical Surveys and Laboratory Experiments",
+        "record_id": "pending",
+        "doi": "10.5281/zenodo.pending",
+        "upload_type": "publication",
+        "publication_type": "preprint",
+        "version": "v1.0.0",
+        "license": "cc-by-4.0",
+        "publication_date": "2026-10-14",
+        "notes": (
+            "Version 1.0.0 Initial Pre-Discovery Baseline: Locked mathematical predictions across ten empirical domains "
+            "prior to Gaia DR4 (Dec 2, 2026), DESI Year 5, Euclid DR1, and JWST Cycles 5/6."
+        ),
+        "description": (
+            "Establishes a formal, citable pre-discovery baseline for Chronodynamic Relativity across ten major experimental "
+            "domains ahead of forthcoming data releases between late 2026 and 2028. Evaluates exact parameter-free prediction bounds for: "
+            "(1) Gaia DR4 wide binary asymptotic velocity floor (v_flat = 0.425 km/s for 1.5 M_sun beyond 5.79 kAU); "
+            "(2) JWST cosmic dawn true expansion redshift mapping (z_obs = 14.32 to z_exp = 10.45, expanding available cosmic time by +52%); "
+            "(3) DESI Year 5 apparent evolving dark energy (w_0 = -0.852, w_a = -0.395); (4) Euclid DR1 suppressed cosmic shear clustering (S_8 = 0.763); "
+            "(5) CMB certified 3D acoustic peak structure (D_221.4 = 5,756.9 uK^2, H_3/H_2 = 0.9643); (6) Simons Observatory primordial tensor mode ceiling (r < 0.005); "
+            "(7) Rubin LSST distance duality break (eta(z=1) = 0.9205); (8) Quasar non-kinematic dipole (906 km/s); "
+            "(9) Bose-Marletto-Vedral (BMV) witness protocol observing suppression of gravitationally induced entanglement (W <= 1) and classical dephasing floor; "
+            "and (10) Fine-structure drift. Establishes six explicit empirical falsification criteria."
+        ),
+        "keywords": [
+            "observational predictions", "pre-discovery", "Gaia DR4", "JWST", "DESI", "Euclid", "cosmology",
+            "modified gravity", "wide binaries", "dark energy", "dark matter alternative", "CMB acoustic peaks",
+            "Simons Observatory", "Rubin LSST", "gravitational entanglement", "BMV protocol"
+        ]
+    },
+    "monograph_covariant_4d_action": {
+        "title": "Covariant 4D Action, Field Equations, PPN Solar System Proof, and Energy-Momentum Conservation in Chronodynamic Relativity",
+        "record_id": "pending",
+        "doi": "10.5281/zenodo.pending",
+        "upload_type": "publication",
+        "publication_type": "technicalnote",
+        "version": "v1.0.0",
+        "license": "cc-by-4.0",
+        "publication_date": "2026-10-15",
+        "notes": (
+            "Version 1.0.0 Foundational Theory Monograph: Rigorous derivation of Chronodynamic Relativity from a "
+            "diffeomorphism-invariant 4D action, Euler-Lagrange field equations, Bianchi contracted energy-momentum conservation, "
+            "Cassini PPN solar system proof, and tensor gravitational wave speed compliance."
+        ),
+        "description": (
+            "Establishes the foundational mathematical and field-theoretic architecture of Chronodynamic Relativity. "
+            "Derives the total system from a 4D diffeomorphism-invariant action coupling the spacetime metric to a non-linear "
+            "space-density scalar field. Formally proves: (1) exact energy-momentum conservation (nabla^mu T_mu_nu^(total) = 0) "
+            "via the contracted Bianchi identities; (2) asymptotic kinetic screening recovering General Relativity in high-acceleration "
+            "regimes, passing Cassini light deflection (|gamma_PPN - 1| <= 10^-17) and Mercury perihelion advance (|beta_PPN - 1| <= 10^-16) "
+            "by over 11 orders of magnitude; (3) gravitational wave speed identically c_GW = c (GW170817 compliant); and (4) the Machian "
+            "emergence of non-linear algebraic root gravity from the action variation."
+        ),
+        "keywords": [
+            "modified gravity", "covariant action", "scalar-tensor", "Bianchi identities", "energy conservation",
+            "PPN parameters", "Cassini bound", "GW170817", "dark matter alternative", "cosmology"
+        ],
+        "doc_dir": "docs/theory"
     }
 }
 
@@ -535,6 +594,57 @@ class ZenodoPackager:
         self.manifest_records.append(record_info)
         return record_info
 
+    def package_monograph(self, folder_name: str, meta: Dict[str, Any], doc_dir: Path) -> Optional[Dict[str, Any]]:
+        """Packages a standalone technical monograph or report into a clean distribution bundle."""
+        print(f"\n[+] Packaging Technical Monograph: {folder_name}")
+        pkg_dir = self.output_dir / folder_name
+        pkg_dir.mkdir(parents=True, exist_ok=True)
+
+        version_str = meta.get("version", "v1.0.0")
+        tar_filename = f"submission_{folder_name}_{version_str}.tar.gz"
+        tar_path = pkg_dir / tar_filename
+
+        source_files = []
+        files_dict = {}
+        if doc_dir.exists():
+            for p in doc_dir.glob("*"):
+                if p.is_file() and p.suffix in [".md", ".html", ".pdf", ".json"]:
+                    dest_f = pkg_dir / p.name
+                    shutil.copy2(p, dest_f)
+                    source_files.append(p)
+                    files_dict[p.name] = {
+                        "size_bytes": dest_f.stat().st_size,
+                        "sha256": compute_sha256(dest_f)
+                    }
+
+        with tarfile.open(tar_path, "w:gz") as tar:
+            for sf in source_files:
+                tar.add(sf, arcname=f"{folder_name}/{sf.name}")
+        print(f"    -> Created Source Tarball: {tar_filename} ({tar_path.stat().st_size:,} bytes)")
+        files_dict[tar_filename] = {
+            "size_bytes": tar_path.stat().st_size,
+            "sha256": compute_sha256(tar_path)
+        }
+
+        zenodo_json_data = build_zenodo_json(meta)
+        meta_path = pkg_dir / "zenodo_deposit_metadata.json"
+        with open(meta_path, "w", encoding="utf-8") as f:
+            json.dump(zenodo_json_data, f, indent=2)
+        with open(pkg_dir / ".zenodo.json", "w", encoding="utf-8") as f:
+            json.dump(zenodo_json_data["metadata"], f, indent=2)
+
+        record_info = {
+            "key": folder_name,
+            "title": meta["title"],
+            "doi": meta.get("doi", ""),
+            "record_id": meta.get("record_id", ""),
+            "version": version_str,
+            "target_dir": str(pkg_dir.relative_to(self.output_dir)),
+            "files": files_dict
+        }
+        self.manifest_records.append(record_info)
+        return record_info
+
     def package_software_codebase(self, meta: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         """Packages the core official software framework repository into a clean distribution tarball."""
         print(f"\n[+] Packaging Core Software Framework: {meta['version']}")
@@ -669,7 +779,11 @@ def main():
         if args.paper == "software":
             packager.package_software_codebase(ZENODO_REGISTRY["software"])
         elif args.paper in ZENODO_REGISTRY:
-            packager.package_manuscript(args.paper, ZENODO_REGISTRY[args.paper])
+            meta = ZENODO_REGISTRY[args.paper]
+            if "doc_dir" in meta:
+                packager.package_monograph(args.paper, meta, official_root / meta["doc_dir"])
+            else:
+                packager.package_manuscript(args.paper, meta)
         else:
             print(f"[!] Unknown item key: {args.paper}. Available keys: {list(ZENODO_REGISTRY.keys())}")
             sys.exit(1)
@@ -680,7 +794,10 @@ def main():
         for key, meta in ZENODO_REGISTRY.items():
             if key == "software":
                 continue
-            packager.package_manuscript(key, meta)
+            if "doc_dir" in meta:
+                packager.package_monograph(key, meta, official_root / meta["doc_dir"])
+            else:
+                packager.package_manuscript(key, meta)
 
     packager.write_release_manifest()
     print("\n[SUCCESS] All Zenodo deposit packages generated successfully.")

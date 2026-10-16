@@ -308,6 +308,29 @@
         "docs/investigations/wide_binary_parameter_fit_investigation_report.md",
         "docs/investigations/wide_binary_cr_kinematics.md"
       ]
+    },
+    "pre_discovery_predictions": {
+      "pillar": "Pre-Discovery Predictions (2026-2028)",
+      "scope": "official",
+      "description": "Comprehensive pre-discovery baseline and exact unalterable predictions across Gaia DR4, JWST, DESI Y5, Euclid DR1, CMB, Simons Observatory, Rubin LSST, BMV quantum entanglement witness, and alpha drift.",
+      "inputs": [],
+      "scripts": [
+        "manuscripts/pre_discovery_predictions_2026_2028/verify_calculations.py",
+        "manuscripts/pre_discovery_predictions_2026_2028/generate_prediction_figures.py"
+      ],
+      "results": [
+        "manuscripts/pre_discovery_predictions_2026_2028/reference_calculations.json"
+      ],
+      "figures": [
+        "manuscripts/pre_discovery_predictions_2026_2028/fig1_wide_binary_predictions.pdf",
+        "manuscripts/pre_discovery_predictions_2026_2028/fig2_multiscale_prediction_matrix.pdf",
+        "manuscripts/pre_discovery_predictions_2026_2028/fig3_cmb_acoustic_spectrum.pdf"
+      ],
+      "documentation": [
+        "manuscripts/pre_discovery_predictions_2026_2028/MANUSCRIPT_PLAN.md",
+        "manuscripts/pre_discovery_predictions_2026_2028/shreve_prediscovery_predictions.tex",
+        "manuscripts/pre_discovery_predictions_2026_2028/shreve_prediscovery_predictions.pdf"
+      ]
     }
   }
 }
