@@ -57,7 +57,7 @@ def test_packager_discovery(tmp_path):
         data = json.load(f)
     assert "metadata" in data
     assert data["metadata"]["title"] == ZENODO_REGISTRY["series_1_paper_1_foundations"]["title"]
-    assert data["metadata"]["doi"] == "10.5281/zenodo.22697885"
+    assert data["metadata"]["doi"] == ZENODO_REGISTRY["series_1_paper_1_foundations"]["doi"]
     assert data["metadata"]["upload_type"] == "publication"
     assert data["metadata"]["publication_type"] == "preprint"
 

@@ -36,8 +36,9 @@ from typing import Dict, List, Any, Optional
 ZENODO_REGISTRY = {
     "software": {
         "title": "Chronodynamic Relativity: Unified Relativistic & Cosmological Empirical Evaluation Framework",
-        "record_id": "22697449",
-        "doi": "10.5281/zenodo.22697449",
+        "record_id": "23330428",
+        "doi": "10.5281/zenodo.23330428",
+        "concept_doi": "10.5281/zenodo.22697449",
         "upload_type": "software",
         "version": "v1.1.1",
         "license": "mit",
@@ -62,8 +63,8 @@ ZENODO_REGISTRY = {
     },
     "series_1_paper_1_foundations": {
         "title": "Chronodynamic Relativity: Unifying Cosmic Expansion, Galactic Dynamics, Gravitational Lensing, and CMB Acoustic Peaks from a Single Environmental Scalar Field",
-        "record_id": "22697885",
-        "doi": "10.5281/zenodo.22697885",
+        "record_id": "23252687",
+        "doi": "10.5281/zenodo.23252687",
         "concept_doi": "10.5281/zenodo.22697884",
         "upload_type": "publication",
         "publication_type": "preprint",
@@ -101,8 +102,9 @@ ZENODO_REGISTRY = {
     },
     "series_1_paper_2_temporal_dissipation": {
         "title": "The Thermodynamic Arrow of Time and Quantum Relational Clocks in Chronodynamic Relativity: Unifying Cosmic Expansion, Total Field Energy Dissipation, and the Dynamic Acceleration Horizon",
-        "record_id": "23149338",
-        "doi": "10.5281/zenodo.23149338",
+        "record_id": "23328992",
+        "doi": "10.5281/zenodo.23328992",
+        "concept_doi": "10.5281/zenodo.23149337",
         "upload_type": "publication",
         "publication_type": "preprint",
         "version": "v1.0.1",
@@ -136,13 +138,14 @@ ZENODO_REGISTRY = {
     },
     "series_2_paper_1_jwst_early_galaxies": {
         "title": "Resolving the high-redshift JWST early galaxy and supermassive black hole crisis via chronodynamic proper time dilation",
-        "record_id": "23149446",
-        "doi": "10.5281/zenodo.23149446",
+        "record_id": "23428366",
+        "doi": "10.5281/zenodo.23428366",
+        "concept_doi": "10.5281/zenodo.23149445",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.2",
+        "version": "v1.0.3",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-13",
+        "publication_date": "2026-10-14",
         "notes": (
             "Version 1.0.2 Revision Notes: Restored missing \\maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) "
             "per Astronomy & Astrophysics (A&A) editorial notification (aa63573-26); enabled [letter] documentclass option for Letter to the Editor; "
@@ -166,13 +169,14 @@ ZENODO_REGISTRY = {
     },
     "series_2_paper_2_cluster_collision_hydrodynamics": {
         "title": "Three-dimensional relativistic shock hydrodynamics and multi-cluster decoupling without non-baryonic dark matter",
-        "record_id": "23149512",
-        "doi": "10.5281/zenodo.23149512",
+        "record_id": "23428446",
+        "doi": "10.5281/zenodo.23428446",
+        "concept_doi": "10.5281/zenodo.23149511",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.2",
+        "version": "v1.0.3",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-13",
+        "publication_date": "2026-10-14",
         "notes": (
             "Version 1.0.2 Revision Notes: Restored missing \\maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) "
             "per Astronomy & Astrophysics (A&A) editorial conventions; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; "
@@ -196,13 +200,14 @@ ZENODO_REGISTRY = {
     },
     "series_2_paper_3_hubble_tension_expansion": {
         "title": "Eliminating Dark Energy and Resolving the Hubble Tension via Linear Relativistic Cosmic Expansion",
-        "record_id": "23149595",
-        "doi": "10.5281/zenodo.23149595",
+        "record_id": "23428448",
+        "doi": "10.5281/zenodo.23428448",
+        "concept_doi": "10.5281/zenodo.23149594",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.1",
+        "version": "v1.0.2",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-11",
+        "publication_date": "2026-10-15",
         "notes": (
             "Version 1.0.1 Revision Notes: Certified RevTeX-4.2 publication candidate for Physical Review D / MNRAS; "
             "verified Pantheon+ SNe Ia and DESI 2024 BAO joint likelihoods; updated companion software framework "
@@ -223,8 +228,9 @@ ZENODO_REGISTRY = {
     },
     "series_2_paper_4_cmb_boltzmann_hierarchy": {
         "title": "Primordial Acoustic Perturbations and Full-Multipole Boltzmann Hierarchy in Chronodynamic Relativity",
-        "record_id": "23149609",
-        "doi": "10.5281/zenodo.23149609",
+        "record_id": "23329055",
+        "doi": "10.5281/zenodo.23329055",
+        "concept_doi": "10.5281/zenodo.23149608",
         "upload_type": "publication",
         "publication_type": "preprint",
         "version": "v1.0.1",
@@ -249,13 +255,14 @@ ZENODO_REGISTRY = {
     },
     "series_2_paper_5_wide_binary_kinematics": {
         "title": "Gaia DR3 wide binary star kinematics and the low-acceleration velocity plateau in Chronodynamic Relativity",
-        "record_id": "23149642",
-        "doi": "10.5281/zenodo.23149642",
+        "record_id": "23428447",
+        "doi": "10.5281/zenodo.23428447",
+        "concept_doi": "10.5281/zenodo.23149641",
         "upload_type": "publication",
         "publication_type": "preprint",
-        "version": "v1.0.2",
+        "version": "v1.0.3",
         "license": "cc-by-4.0",
-        "publication_date": "2026-10-13",
+        "publication_date": "2026-10-15",
         "notes": (
             "Version 1.0.2 Revision Notes: Restored missing \\maketitle enabling full title page (title, author, affiliation, structured abstract, keywords) "
             "per Astronomy & Astrophysics (A&A) editorial conventions; harmonized single-author affiliation and corresponding author markup per aa.cls v9.4 conventions; "
@@ -274,38 +281,39 @@ ZENODO_REGISTRY = {
     },
     "pre_discovery_predictions_2026_2028": {
         "title": "Pre-Discovery Observational Predictions of Chronodynamic Relativity for 2026-2028 Astronomical Surveys and Laboratory Experiments",
-        "record_id": "pending",
-        "doi": "10.5281/zenodo.pending",
+        "record_id": "23418266",
+        "doi": "10.5281/zenodo.23418266",
+        "concept_doi": "10.5281/zenodo.23418265",
         "upload_type": "publication",
         "publication_type": "preprint",
         "version": "v1.0.0",
         "license": "cc-by-4.0",
         "publication_date": "2026-10-14",
         "notes": (
-            "Version 1.0.0 Initial Pre-Discovery Baseline: Locked mathematical predictions across ten empirical domains "
+            "Version 1.0.0 Initial Pre-Discovery Baseline: Locked mathematical predictions across nine empirical domains "
             "prior to Gaia DR4 (Dec 2, 2026), DESI Year 5, Euclid DR1, and JWST Cycles 5/6."
         ),
         "description": (
-            "Establishes a formal, citable pre-discovery baseline for Chronodynamic Relativity across ten major experimental "
+            "Establishes a formal, citable pre-discovery baseline for Chronodynamic Relativity across nine major experimental "
             "domains ahead of forthcoming data releases between late 2026 and 2028. Evaluates exact parameter-free prediction bounds for: "
             "(1) Gaia DR4 wide binary asymptotic velocity floor (v_flat = 0.425 km/s for 1.5 M_sun beyond 5.79 kAU); "
             "(2) JWST cosmic dawn true expansion redshift mapping (z_obs = 14.32 to z_exp = 10.45, expanding available cosmic time by +52%); "
             "(3) DESI Year 5 apparent evolving dark energy (w_0 = -0.852, w_a = -0.395); (4) Euclid DR1 suppressed cosmic shear clustering (S_8 = 0.763); "
-            "(5) CMB certified 3D acoustic peak structure (D_221.4 = 5,756.9 uK^2, H_3/H_2 = 0.9643); (6) Simons Observatory primordial tensor mode ceiling (r < 0.005); "
-            "(7) Rubin LSST distance duality break (eta(z=1) = 0.9205); (8) Quasar non-kinematic dipole (906 km/s); "
-            "(9) Bose-Marletto-Vedral (BMV) witness protocol observing suppression of gravitationally induced entanglement (W <= 1) and classical dephasing floor; "
-            "and (10) Fine-structure drift. Establishes six explicit empirical falsification criteria."
+            "(5) Simons Observatory primordial tensor mode ceiling (r < 0.005); (6) Rubin LSST distance duality break (eta(z=1) = 0.9205); "
+            "(7) Quasar non-kinematic dipole (906 km/s); (8) Bose-Marletto-Vedral (BMV) witness protocol observing suppression of gravitationally "
+            "induced entanglement (W <= 1) and classical dephasing floor; and (9) Fine-structure drift. Establishes six explicit empirical falsification criteria."
         ),
         "keywords": [
             "observational predictions", "pre-discovery", "Gaia DR4", "JWST", "DESI", "Euclid", "cosmology",
-            "modified gravity", "wide binaries", "dark energy", "dark matter alternative", "CMB acoustic peaks",
+            "modified gravity", "wide binaries", "dark energy", "dark matter alternative", "fine-structure constant",
             "Simons Observatory", "Rubin LSST", "gravitational entanglement", "BMV protocol"
         ]
     },
     "monograph_covariant_4d_action": {
         "title": "Covariant 4D Action, Field Equations, PPN Solar System Proof, and Energy-Momentum Conservation in Chronodynamic Relativity",
-        "record_id": "pending",
-        "doi": "10.5281/zenodo.pending",
+        "record_id": "23428157",
+        "doi": "10.5281/zenodo.23428157",
+        "concept_doi": "10.5281/zenodo.23428156",
         "upload_type": "publication",
         "publication_type": "technicalnote",
         "version": "v1.0.0",

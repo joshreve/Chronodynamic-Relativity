@@ -200,98 +200,110 @@ def generate_figure_1():
 # ------------------------------------------------------------------------------
 def generate_figure_2():
     print("Generating Figure 2: Multi-Scale Pre-Discovery Matrix...")
-    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(7.0, 3.6), dpi=300)
+    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(7.2, 5.2), dpi=300)
 
     z = np.linspace(0.01, 16.0, 500)
     alpha_clock = 1.0 + n_space / 2.0
 
+    # -------------------------------------------------------------------------
     # Panel (a): JWST Redshift Mapping & Physical Age Expansion
+    # -------------------------------------------------------------------------
     z_exp = ((1.0 + z) ** (1.0 / alpha_clock)) - 1.0
-    ax1.plot(z, z, color="#6b7280", linestyle="--", label="Standard (z_obs = z_exp)")
-    ax1.plot(z, z_exp, color="#2563eb", label="Chronodynamic Mapping", zorder=3)
+    ax1.plot(z, z, color="#64748b", linestyle="--", lw=1.5, label=r"Standard GR ($z_{\rm obs} \equiv z_{\rm exp}$)")
+    ax1.plot(z, z_exp, color="#1d4ed8", lw=2.2, label=r"CR Metric Dilation $\eta(z)$", zorder=3)
     
     # Callout JADES-GS-z14-0
     z_jades = 14.32
     z_jades_exp = ((1.0 + z_jades) ** (1.0 / alpha_clock)) - 1.0
-    ax1.scatter([z_jades], [z_jades_exp], color="#dc2626", s=35, zorder=4)
-    ax1.annotate(f"JADES-GS-z14-0\nz_obs=14.32 -> z_exp={z_jades_exp:.2f}",
-                 xy=(z_jades, z_jades_exp), xytext=(z_jades - 5.5, z_jades_exp - 2.8),
-                 arrowprops=dict(arrowstyle="->", color="#dc2626", lw=1.0),
-                 fontsize=7.5, color="#dc2626", weight="bold")
+    ax1.scatter([z_jades], [z_jades_exp], color="#dc2626", s=45, zorder=5)
+    ax1.annotate(f"JADES-GS-z14-0\n$z_{{\\rm obs}}=14.32 \\to z_{{\\rm exp}}={z_jades_exp:.2f}$\n($+52\\%$ cosmic time)",
+                 xy=(z_jades, z_jades_exp), xytext=(7.0, 2.0),
+                 arrowprops=dict(arrowstyle="->", color="#dc2626", lw=1.2),
+                 bbox=dict(boxstyle="round,pad=0.35", fc="#fef2f2", ec="#dc2626", lw=1.0, alpha=0.95),
+                 fontsize=7.5, color="#991b1b", weight="bold")
 
     ax1.set_xlim(0, 16)
     ax1.set_ylim(0, 16)
-    ax1.set_xlabel("Observed Redshift z_obs")
-    ax1.set_ylabel("Physical Expansion Redshift z_exp")
-    ax1.set_title("(a) JWST Redshift Transformation")
-    ax1.grid(True, linestyle="--")
-    ax1.legend(loc="upper left", fontsize=7.5)
+    ax1.set_xlabel(r"Observed Redshift $z_{\rm obs}$", fontsize=9.5)
+    ax1.set_ylabel(r"Expansion Redshift $z_{\rm exp}$", fontsize=9.5)
+    ax1.set_title(r"(a) JWST Redshift Transformation", fontsize=10.0, fontweight="bold")
+    ax1.grid(True, linestyle=":", alpha=0.6)
+    ax1.legend(loc="upper left", framealpha=0.92, fontsize=7.5)
 
+    # -------------------------------------------------------------------------
     # Panel (b): Distance Duality Violation (Rubin LSST Target)
+    # -------------------------------------------------------------------------
     z_short = np.linspace(0.01, 3.0, 300)
     eta_z = (1.0 + z_short) ** (-n_space / 2.0)
-    ax2.plot(z_short, np.ones_like(z_short), color="#6b7280", linestyle="--", label="Etherington Duality (1.00)")
-    ax2.plot(z_short, eta_z, color="#dc2626", label="CR Metric Dilation eta(z)", zorder=3)
+    ax2.plot(z_short, np.ones_like(z_short), color="#64748b", linestyle="--", lw=1.5, label=r"Etherington Reciprocity ($1.00$)")
+    ax2.plot(z_short, eta_z, color="#dc2626", lw=2.2, label=r"CR Duality Break $\eta(z)$", zorder=3)
 
     # Annotate Rubin LSST z=1.0
     eta_1 = (1.0 + 1.0) ** (-n_space / 2.0)
-    ax2.scatter([1.0], [eta_1], color="#2563eb", s=35, zorder=4)
-    ax2.annotate(f"Rubin LSST (z=1.0)\neta = {eta_1:.4f} (-8.0%)",
-                 xy=(1.0, eta_1), xytext=(1.2, eta_1 + 0.04),
-                 arrowprops=dict(arrowstyle="->", color="#2563eb", lw=1.0),
-                 fontsize=7.5, color="#2563eb", weight="bold")
+    ax2.scatter([1.0], [eta_1], color="#1d4ed8", s=45, zorder=5)
+    ax2.annotate(f"Rubin LSST ($z=1.0$)\n$\\eta = {eta_1:.4f}$ ($-8.0\\%$)",
+                 xy=(1.0, eta_1), xytext=(1.45, 0.94),
+                 arrowprops=dict(arrowstyle="->", color="#1d4ed8", lw=1.2),
+                 bbox=dict(boxstyle="round,pad=0.35", fc="#eff6ff", ec="#1d4ed8", lw=1.0, alpha=0.95),
+                 fontsize=7.5, color="#1e40af", weight="bold")
 
     ax2.set_xlim(0, 3.0)
-    ax2.set_ylim(0.82, 1.02)
-    ax2.set_xlabel("Cosmological Redshift z")
-    ax2.set_ylabel("Duality Ratio: d_L / [(1+z)^2 d_A]")
-    ax2.set_title("(b) Distance Duality Break (Rubin LSST)")
-    ax2.grid(True, linestyle="--")
-    ax2.legend(loc="lower left", fontsize=7.5)
+    ax2.set_ylim(0.82, 1.03)
+    ax2.set_xlabel(r"Cosmological Redshift $z$", fontsize=9.5)
+    ax2.set_ylabel(r"Duality Ratio $d_L / [(1+z)^2 d_A]$", fontsize=9.5)
+    ax2.set_title(r"(b) Distance Duality Break (Rubin LSST)", fontsize=10.0, fontweight="bold")
+    ax2.grid(True, linestyle=":", alpha=0.6)
+    ax2.legend(loc="lower left", framealpha=0.92, fontsize=7.5)
 
+    # -------------------------------------------------------------------------
     # Panel (c): DESI Year 5 Apparent Dark Energy w(z)
+    # -------------------------------------------------------------------------
     z_desi = np.linspace(0.0, 2.5, 300)
     a_desi = 1.0 / (1.0 + z_desi)
     w0 = ref["desi_year_5_dark_energy"]["w0_eff"]
     wa = ref["desi_year_5_dark_energy"]["wa_eff"]
     w_z = w0 + wa * (1.0 - a_desi)
 
-    ax3.axhline(-1.0, color="#6b7280", linestyle="--", label="Cosmological Constant (w = -1)")
-    ax3.plot(z_desi, w_z, color="#059669", label=f"Apparent w(z) (w0={w0}, wa={wa})", zorder=3)
-    ax3.fill_between(z_desi, w_z - 0.05, w_z + 0.05, color="#059669", alpha=0.2, label="DESI Y5 Projected 1-sigma")
+    ax3.axhline(-1.0, color="#64748b", linestyle="--", lw=1.5, label=r"$\Lambda$CDM Constant ($w \equiv -1$)")
+    ax3.plot(z_desi, w_z, color="#059669", lw=2.2, label=rf"CR Apparent $w(z)$ ($w_0={w0}$, $w_a={wa}$)", zorder=3)
+    ax3.fill_between(z_desi, w_z - 0.05, w_z + 0.05, color="#059669", alpha=0.18, label=r"DESI Y5 Projected $1\sigma$ Band")
 
     ax3.set_xlim(0, 2.5)
-    ax3.set_ylim(-1.3, -0.7)
-    ax3.set_xlabel("Cosmological Redshift z")
-    ax3.set_ylabel("Dark Energy Equation of State w(z)")
-    ax3.set_title("(c) Apparent Evolving Dark Energy (DESI)")
-    ax3.grid(True, linestyle="--")
-    ax3.legend(loc="lower left", fontsize=7.5)
+    ax3.set_ylim(-1.45, -0.65)
+    ax3.set_xlabel(r"Cosmological Redshift $z$", fontsize=9.5)
+    ax3.set_ylabel(r"Dark Energy Equation of State $w(z)$", fontsize=9.5)
+    ax3.set_title(r"(c) Apparent Evolving Dark Energy (DESI)", fontsize=10.0, fontweight="bold")
+    ax3.grid(True, linestyle=":", alpha=0.6)
+    ax3.legend(loc="lower left", framealpha=0.92, fontsize=7.5)
 
+    # -------------------------------------------------------------------------
     # Panel (d): Quasar Fine-Structure Constant Drift Delta_alpha / alpha
+    # -------------------------------------------------------------------------
     z_spec = np.linspace(0.0, 4.0, 300)
     alpha_drift_pct = (((1.0 + z_spec) ** (-n_space)) - 1.0) * 100.0
 
-    ax4.axhline(0.0, color="#6b7280", linestyle="--", label="Standard Physics (Delta alpha = 0)")
-    ax4.plot(z_spec, alpha_drift_pct, color="#7c3aed", label="CR Space-Density Drift", zorder=3)
+    ax4.axhline(0.0, color="#64748b", linestyle="--", lw=1.5, label=r"Standard Physics ($\Delta\alpha \equiv 0$)")
+    ax4.plot(z_spec, alpha_drift_pct, color="#7c3aed", lw=2.2, label=r"CR Space-Density Drift", zorder=3)
     
-    # ELT / ANDES mark at z=2.0
-    drift_2 = (((1.0 + 2.0) ** (-n_space)) - 1.0) * 100.0
-    ax4.scatter([2.0], [drift_2], color="#7c3aed", s=35, zorder=4)
-    ax4.annotate(f"ELT / ANDES (z=2.0)\nDelta alpha / alpha = {drift_2:.1f}%",
-                 xy=(2.0, drift_2), xytext=(1.5, drift_2 - 6.0),
-                 arrowprops=dict(arrowstyle="->", color="#7c3aed", lw=1.0),
-                 fontsize=7.5, color="#7c3aed", weight="bold")
+    # Mark z=1.0
+    drift_1 = (((1.0 + 1.0) ** (-n_space)) - 1.0) * 100.0
+    ax4.scatter([1.0], [drift_1], color="#7c3aed", s=45, zorder=5)
+    ax4.annotate(r"ELT / ANDES ($z=1.0$)" + "\n" + r"$\Delta\alpha/\alpha = -15.2\%$",
+                 xy=(1.0, drift_1), xytext=(1.45, -9.0),
+                 arrowprops=dict(arrowstyle="->", color="#7c3aed", lw=1.2),
+                 bbox=dict(boxstyle="round,pad=0.35", fc="#f5f3ff", ec="#7c3aed", lw=1.0, alpha=0.95),
+                 fontsize=7.5, color="#5b21b6", weight="bold")
 
     ax4.set_xlim(0, 4.0)
-    ax4.set_ylim(-35, 5)
-    ax4.set_xlabel("Cosmological Redshift z")
-    ax4.set_ylabel("Relative Drift Delta alpha / alpha (%)")
-    ax4.set_title("(d) Fine-Structure Drift (ELT / ANDES)")
-    ax4.grid(True, linestyle="--")
-    ax4.legend(loc="lower left", fontsize=7.5)
+    ax4.set_ylim(-35, 6)
+    ax4.set_xlabel(r"Cosmological Redshift $z$", fontsize=9.5)
+    ax4.set_ylabel(r"Fractional Drift $\Delta\alpha/\alpha$ (%)", fontsize=9.5)
+    ax4.set_title(r"(d) Fine-Structure Drift (ELT / ANDES)", fontsize=10.0, fontweight="bold")
+    ax4.grid(True, linestyle=":", alpha=0.6)
+    ax4.legend(loc="lower left", framealpha=0.92, fontsize=7.5)
 
     plt.tight_layout()
+    plt.subplots_adjust(left=0.08, right=0.98, top=0.93, bottom=0.09, wspace=0.25, hspace=0.34)
     pdf_path = os.path.join(SCRIPT_DIR, "fig2_multiscale_prediction_matrix.pdf")
     png_path = os.path.join(SCRIPT_DIR, "fig2_multiscale_prediction_matrix.png")
     plt.savefig(pdf_path)
@@ -393,5 +405,4 @@ def generate_figure_3():
 if __name__ == "__main__":
     generate_figure_1()
     generate_figure_2()
-    generate_figure_3()
-    print("[Complete] All pre-discovery figures generated successfully.")
+    print("[Complete] Pre-discovery figures 1 and 2 generated successfully (Figure 3 omitted as WIP).")

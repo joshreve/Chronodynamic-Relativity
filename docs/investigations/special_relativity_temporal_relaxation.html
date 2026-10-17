@@ -38,7 +38,7 @@
             background: #0f172a;
             color: #ffffff;
             padding: 14px 32px;
-            display: flex;
+            /* display: flex; */
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -266,12 +266,57 @@
         .badge-out { background: rgba(168, 85, 247, 0.2); color: var(--accent-purple); }
         .badge-osc { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
     </style>
+
+<style id="cr-universal-top-nav-style">
+.cr-top-nav-bar {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 99999 !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+}
+.cr-nav-return-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #1e293b !important;
+    color: #38bdf8 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9em !important;
+    padding: 7px 16px !important;
+    border-radius: 6px !important;
+    border: 1px solid #334155 !important;
+    transition: all 0.2s ease !important;
+}
+.cr-nav-return-btn:hover {
+    background: #334155 !important;
+    color: #ffffff !important;
+    border-color: #38bdf8 !important;
+}
+.cr-nav-brand {
+    font-size: 0.95em !important;
+    font-weight: 600 !important;
+    color: #94a3b8 !important;
+    letter-spacing: 0.5px !important;
+}
+@media (max-width: 640px) {
+    .cr-top-nav-bar { padding: 10px 16px !important; flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
+}
+</style>
+
 </head>
 <body>
 
 <header class="cr-top-nav-bar">
     <a href="../index.html" class="cr-nav-return-btn">&larr; Return to Documentation Index</a>
-    <span class="cr-nav-brand">Chronodynamic Relativity Research Initiative</span>
+    <span class="cr-nav-brand">Chronodynamic Relativity Research Suite</span>
 </header>
 
 <div class="container">
